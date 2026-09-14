@@ -1,0 +1,911 @@
+<title>Dolce Aesthetic Clinic</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Alex+Brush&family=Work+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500&display=swap');
+
+  :root{
+    --ground:#F5EFE6;
+    --surface:#FFFFFF;
+    --surface-2:#F8F2EA;
+    --ink:#2A211D;
+    --ink-soft:#6B5D54;
+    --ink-faint:#9C9088;
+    --line:#E4D8C9;
+    --accent:#6B2E33;
+    --accent-ink:#F8EEEA;
+    --accent-soft:#EDDAD6;
+    --rose-1:#CFAE9F;
+    --rose-2:#8C6459;
+    --nav-ink:#FBF3EE;
+    --nav-ink-soft:#E7D4CC;
+    --taupe:#A99C97;
+    --taupe-ink:#2A211D;
+    --sand:#DAD0BC;
+    --sand-ink:#3A322A;
+    --gold:#B9915B;
+    --shadow:rgba(42,33,29,0.14);
+    --focus:#6B2E33;
+    --font-script:'Alex Brush', cursive;
+    --font-display:'Cormorant Garamond', 'Iowan Old Style', Georgia, serif;
+    --font-body:'Work Sans', 'Segoe UI', system-ui, sans-serif;
+    --font-mono:'IBM Plex Mono', 'SFMono-Regular', Consolas, monospace;
+  }
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]){
+      --ground:#1C1512; --surface:#241B17; --surface-2:#2A201B;
+      --ink:#F2E7DC; --ink-soft:#C9B8AA; --ink-faint:#8F8074; --line:#3C2E27;
+      --accent:#DE9298; --accent-ink:#2A1315; --accent-soft:#3C2226;
+      --rose-1:#8C6459; --rose-2:#54372F;
+      --nav-ink:#F7EEE8; --nav-ink-soft:#D9C4B9;
+      --taupe:#4B3E39; --taupe-ink:#F2E7DC;
+      --sand:#3B3226; --sand-ink:#E7DCC8;
+      --gold:#D8B67C; --shadow:rgba(0,0,0,0.5); --focus:#DE9298;
+    }
+  }
+  :root[data-theme="dark"]{
+    --ground:#1C1512; --surface:#241B17; --surface-2:#2A201B;
+    --ink:#F2E7DC; --ink-soft:#C9B8AA; --ink-faint:#8F8074; --line:#3C2E27;
+    --accent:#DE9298; --accent-ink:#2A1315; --accent-soft:#3C2226;
+    --rose-1:#8C6459; --rose-2:#54372F;
+    --nav-ink:#F7EEE8; --nav-ink-soft:#D9C4B9;
+    --taupe:#4B3E39; --taupe-ink:#F2E7DC;
+    --sand:#3B3226; --sand-ink:#E7DCC8;
+    --gold:#D8B67C; --shadow:rgba(0,0,0,0.5); --focus:#DE9298;
+  }
+
+  *{box-sizing:border-box;}
+  html{-webkit-text-size-adjust:100%;}
+  body{margin:0;background:var(--ground);color:var(--ink);font-family:var(--font-body);font-size:16px;line-height:1.6;}
+  [hidden]{display:none!important;}
+  img{max-width:100%;}
+  a{color:inherit;}
+  ::selection{background:var(--accent);color:var(--accent-ink);}
+  :focus-visible{outline:2px solid var(--focus);outline-offset:3px;}
+
+  h1,h2,h3{font-family:var(--font-display);font-weight:500;margin:0;text-wrap:balance;}
+  .eyebrow{font-family:var(--font-body);font-size:12px;font-weight:600;letter-spacing:0.16em;text-transform:uppercase;color:var(--gold);}
+  p{margin:0;}
+  .lede{color:var(--ink-soft);max-width:58ch;}
+
+  .wrap{max-width:1180px;margin-inline:auto;padding-inline:20px;}
+  .band-pad{padding-block:84px;}
+  @media (max-width:720px){ .band-pad{padding-block:52px;} }
+
+  /* ---------- utility bar ---------- */
+  .utilbar{background:var(--accent);color:var(--nav-ink-soft);font-size:12px;}
+  .utilbar .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;padding-block:7px;flex-wrap:wrap;}
+  .utilbar-left{display:flex;gap:18px;flex-wrap:wrap;align-items:center;}
+  .utilbar a{text-decoration:none;color:var(--nav-ink);}
+  .utilbar a:hover{color:var(--gold);}
+  .langswitch{display:flex;gap:2px;background:rgba(255,255,255,0.12);border-radius:999px;padding:2px;}
+  .langswitch button{font-family:var(--font-body);font-size:11px;font-weight:600;letter-spacing:0.03em;border:0;background:transparent;color:var(--nav-ink-soft);padding:4px 11px;border-radius:999px;cursor:pointer;}
+  .langswitch button[aria-pressed="true"]{background:var(--gold);color:#2A1B0C;}
+
+  /* ---------- header ---------- */
+  header.site{position:sticky;top:0;z-index:40;background:linear-gradient(180deg,var(--rose-1),var(--rose-2));}
+  .nav{display:flex;align-items:center;justify-content:space-between;gap:20px;padding-block:12px;}
+  .wordmark{display:flex;align-items:baseline;gap:8px;text-decoration:none;}
+  .wordmark .script{font-family:var(--font-script);font-size:38px;line-height:1;color:var(--gold);}
+  .wordmark .sub{font-family:var(--font-body);font-size:9.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--nav-ink-soft);}
+  .navlinks{display:flex;gap:24px;list-style:none;margin:0;padding:0;}
+  .navlinks a{font-size:12.5px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;text-decoration:none;color:var(--nav-ink);}
+  .navlinks a:hover{color:var(--gold);}
+  .navcta{display:flex;align-items:center;gap:16px;}
+  .socialrow{display:flex;gap:10px;}
+  .socialrow a{display:flex;align-items:center;justify-content:center;width:30px;height:30px;border-radius:50%;background:rgba(255,255,255,.14);color:var(--nav-ink);}
+  .socialrow svg{width:15px;height:15px;fill:currentColor;}
+  .btn{display:inline-flex;align-items:center;gap:8px;font-family:var(--font-body);font-weight:600;font-size:13px;letter-spacing:.03em;padding:11px 22px;border-radius:2px;border:1px solid transparent;cursor:pointer;text-decoration:none;white-space:nowrap;}
+  .btn-gold{background:var(--gold);color:#2A1B0C;}
+  .btn-gold:hover{background:color-mix(in srgb, var(--gold) 85%, black);}
+  .btn-line{border-color:var(--ink);color:var(--ink);background:transparent;}
+  .btn-line:hover{border-color:var(--accent);color:var(--accent);}
+  .navtoggle{display:none;background:none;border:1px solid rgba(255,255,255,.4);border-radius:3px;padding:8px 10px;color:var(--nav-ink);}
+  @media (max-width:980px){ .navlinks{display:none;} .navtoggle{display:inline-flex;} }
+
+  /* ---------- hero (full-bleed) ---------- */
+  .hero-photo{
+    position:relative;min-height:clamp(380px,58vw,540px);display:flex;align-items:center;justify-content:center;overflow:hidden;
+    background:
+      linear-gradient(180deg, rgba(24,17,14,.42), rgba(24,17,14,.66)),
+      repeating-linear-gradient(90deg, rgba(255,255,255,.09) 0 2px, transparent 2px 44px),
+      repeating-linear-gradient(0deg, rgba(255,255,255,.06) 0 2px, transparent 2px 30px),
+      linear-gradient(200deg, #7FA1C2 0%, #B9C7D2 34%, #DDD2C0 68%, #C7AC97 100%);
+  }
+  .hero-photo::after{
+    content:"";position:absolute;left:-10%;right:-10%;top:38%;height:15%;
+    background:var(--accent);opacity:.88;
+    clip-path:polygon(0 30%,100% 0,100% 68%,0 100%);
+  }
+  .hero-text{position:relative;z-index:2;text-align:center;padding:0 20px;}
+  .hero-text .eyebrow{color:var(--nav-ink-soft);}
+  .hero-text h1{
+    font-size:clamp(34px,6.4vw,68px);line-height:1.08;color:#fff;text-transform:uppercase;letter-spacing:.03em;
+    text-shadow:0 2px 18px rgba(0,0,0,.35);margin-top:10px;
+  }
+  .hero-text .loc{margin-top:16px;font-size:13.5px;letter-spacing:.22em;text-transform:uppercase;color:#F1E6DC;}
+
+  .ctastrip{background:var(--surface);border-bottom:1px solid var(--line);}
+  .ctastrip .wrap{display:flex;align-items:center;justify-content:space-between;gap:24px;padding-block:22px;flex-wrap:wrap;}
+  .trust-strip{display:flex;gap:28px;flex-wrap:wrap;}
+  .trust-strip div{font-size:12px;color:var(--ink-soft);}
+  .trust-strip strong{display:block;font-family:var(--font-display);font-size:18px;color:var(--ink);font-weight:500;}
+
+  /* ---------- about (split) ---------- */
+  .about-grid{display:grid;grid-template-columns:1fr 1fr;}
+  @media (max-width:860px){ .about-grid{grid-template-columns:1fr;} }
+  .about-photo{
+    min-height:420px;position:relative;overflow:hidden;
+    background:
+      radial-gradient(120% 100% at 20% 15%, rgba(255,255,255,.16), transparent 55%),
+      linear-gradient(155deg, #7A3A40 0%, #4A2226 60%, #2E1618 100%);
+  }
+  .about-photo .tag{position:absolute;bottom:18px;inset-inline-start:18px;font-size:11px;color:rgba(255,255,255,.75);border:1px solid rgba(255,255,255,.35);padding:7px 11px;border-radius:2px;}
+  .about-copy{background:var(--taupe);color:var(--taupe-ink);display:flex;flex-direction:column;justify-content:center;padding:64px 60px;}
+  @media (max-width:600px){ .about-copy{padding:48px 24px;} }
+  .about-copy h2{font-size:clamp(26px,3vw,34px);letter-spacing:.05em;text-transform:uppercase;}
+  .about-copy blockquote{margin:26px 0 0;font-family:var(--font-display);font-style:italic;font-size:17px;line-height:1.7;quotes:"“" "”";}
+  .about-copy blockquote::before{content:open-quote;}
+  .about-copy blockquote::after{content:close-quote;}
+
+  /* ---------- sand quote band (full-bleed) ---------- */
+  .quoteband{
+    position:relative;overflow:hidden;padding-block:80px;text-align:center;
+    background:
+      repeating-linear-gradient(78deg, rgba(58,50,42,.07) 0 3px, transparent 3px 26px),
+      repeating-linear-gradient(70deg, rgba(255,255,255,.35) 0 2px, transparent 2px 40px),
+      linear-gradient(120deg, #E4DAC5, #CBBEA2 55%, #D8CDB6);
+  }
+  .quoteband .wrap{position:relative;z-index:1;}
+  .quoteband .eyebrow{color:var(--sand-ink);opacity:.75;}
+  .quoteband blockquote{
+    margin:18px auto 0;max-width:46ch;font-family:var(--font-display);font-weight:400;
+    font-size:clamp(22px,3.6vw,32px);line-height:1.35;text-transform:uppercase;letter-spacing:.03em;color:var(--sand-ink);
+  }
+  .quoteband blockquote::before{content:open-quote;} .quoteband blockquote::after{content:close-quote;}
+
+  /* ---------- category band (3-col full-bleed) ---------- */
+  .cat-grid{display:grid;grid-template-columns:repeat(3,1fr);}
+  @media (max-width:760px){ .cat-grid{grid-template-columns:1fr;} }
+  .cat-tile{position:relative;aspect-ratio:3/4;overflow:hidden;text-decoration:none;display:flex;align-items:flex-end;}
+  @media (max-width:760px){ .cat-tile{aspect-ratio:16/10;} }
+  .cat-tile .duo{position:absolute;inset:0;transition:transform .4s ease;}
+  .cat-tile:hover .duo{transform:scale(1.05);}
+  .cat-tile::before{content:"";position:absolute;inset:0;background:linear-gradient(0deg, rgba(10,8,7,.72), rgba(10,8,7,.05) 55%);}
+  .cat-derm .duo{background:linear-gradient(160deg,#E15C99,#3A0F2C);}
+  .cat-surgery .duo{background:linear-gradient(160deg,#B9C4C9,#333C40);}
+  .cat-wellness .duo{background:linear-gradient(160deg,#D7CE4E,#57621E);}
+  .cat-tile span{position:relative;z-index:1;color:#fff;font-size:13px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;padding:26px;}
+
+  /* ---------- mosaic (Instagram-style) ---------- */
+  .mosaic{display:grid;grid-template-columns:repeat(6,1fr);grid-auto-rows:150px;gap:6px;}
+  @media (max-width:760px){ .mosaic{grid-template-columns:repeat(2,1fr);grid-auto-rows:150px;} }
+  .m-tile{position:relative;overflow:hidden;display:flex;align-items:flex-end;padding:14px;color:#fff;}
+  .m-tile span{position:relative;z-index:1;font-size:11px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;}
+  .m-word{grid-column:span 2;grid-row:span 2;background:var(--surface-2);color:var(--ink);align-items:center;justify-content:center;flex-direction:column;gap:4px;border:1px solid var(--line);}
+  .m-word .script{font-family:var(--font-script);font-size:44px;color:var(--accent);}
+  .m-word small{font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-faint);}
+  .m-arch{grid-column:span 2;background:linear-gradient(155deg,#7FA1C2,#3E5266);}
+  .m-treat{grid-column:span 2;background:linear-gradient(155deg,#E15C99,#3A0F2C);}
+  .m-iv{grid-column:span 2;grid-row:span 2;background:linear-gradient(155deg,#D7CE4E,#57621E);flex-direction:column;align-items:flex-start;justify-content:flex-end;gap:8px;}
+  .m-iv ul{list-style:none;margin:0;padding:0;font-size:10.5px;line-height:1.6;color:rgba(255,255,255,.92);position:relative;z-index:1;}
+  .m-lounge{grid-column:span 2;background:linear-gradient(155deg,#D8A468,#5A3A1E);}
+  .m-product{grid-column:span 2;background:var(--surface-2);color:var(--ink);align-items:center;justify-content:center;flex-direction:column;gap:6px;border:1px solid var(--line);}
+  .m-product svg{width:26px;height:26px;stroke:var(--accent);}
+  .m-product small{font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-faint);}
+  .follow-row{display:flex;align-items:center;justify-content:center;gap:10px;margin-top:26px;font-size:13px;color:var(--ink-soft);}
+  .follow-row a{display:inline-flex;align-items:center;gap:7px;text-decoration:none;color:var(--accent);font-weight:600;}
+  .follow-row svg{width:16px;height:16px;fill:currentColor;}
+
+  /* ---------- section headers ---------- */
+  .sec-head{display:flex;justify-content:space-between;align-items:flex-end;gap:24px;margin-bottom:36px;flex-wrap:wrap;}
+  .sec-head h2{font-size:clamp(26px,3.2vw,38px);}
+  .sec-head .lede{margin-top:10px;}
+
+  /* ---------- treatments ---------- */
+  .treat-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);border:1px solid var(--line);}
+  @media (max-width:900px){ .treat-grid{grid-template-columns:repeat(2,1fr);} }
+  @media (max-width:600px){ .treat-grid{grid-template-columns:1fr;} }
+  .treat-card{background:var(--surface);padding:30px 26px;transition:background .15s ease;}
+  .treat-card:hover{background:var(--surface-2);}
+  .treat-cat{font-size:10.5px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--gold);}
+  .treat-card svg{width:28px;height:28px;stroke:var(--accent);margin-top:12px;}
+  .treat-card h3{font-size:19px;margin-top:14px;}
+  .treat-card p{margin-top:8px;color:var(--ink-soft);font-size:14.5px;}
+  .treat-foot{display:flex;justify-content:flex-end;align-items:center;margin-top:20px;}
+  .treat-link{font-size:13px;font-weight:600;text-decoration:none;color:var(--ink);}
+  .treat-link:hover{color:var(--accent);}
+
+  /* ---------- difference band (bold accent) ---------- */
+  .band{background:var(--accent);color:var(--accent-ink);}
+  .band .lede{color:color-mix(in srgb, var(--accent-ink) 78%, transparent);}
+  .band .sec-head h2{color:var(--accent-ink);}
+  .diff-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:32px;}
+  @media (max-width:900px){ .diff-grid{grid-template-columns:repeat(2,1fr);} }
+  @media (max-width:560px){ .diff-grid{grid-template-columns:1fr;} }
+  .diff-item .num{font-family:var(--font-mono);font-size:12px;color:var(--gold);letter-spacing:0.08em;}
+  .diff-item h3{color:var(--accent-ink);font-size:18px;margin-top:10px;}
+  .diff-item p{color:color-mix(in srgb, var(--accent-ink) 78%, transparent);font-size:14px;margin-top:8px;}
+
+  /* ---------- gallery ---------- */
+  .gallery-note{font-size:13px;color:var(--ink-faint);border:1px dashed var(--line);padding:10px 14px;border-radius:2px;margin-top:14px;max-width:60ch;}
+  .filters{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:26px;}
+  .chip{font-size:12.5px;font-weight:600;border:1px solid var(--line);background:var(--surface);padding:7px 14px;border-radius:999px;cursor:pointer;color:var(--ink-soft);}
+  .chip[aria-pressed="true"]{background:var(--accent);border-color:var(--accent);color:var(--accent-ink);}
+  .ba-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;}
+  @media (max-width:900px){ .ba-grid{grid-template-columns:repeat(2,1fr);} }
+  @media (max-width:600px){ .ba-grid{grid-template-columns:1fr;} }
+  .ba-tile{border:1px solid var(--line);background:var(--surface);overflow:hidden;}
+  .ba-visual{aspect-ratio:4/3;position:relative;overflow:hidden;}
+  .ba-half{position:absolute;top:0;bottom:0;width:52%;display:flex;align-items:flex-end;padding:10px;font-family:var(--font-mono);font-size:10.5px;letter-spacing:.06em;text-transform:uppercase;}
+  .ba-before{left:0;background:linear-gradient(160deg,var(--surface-2),var(--ground));color:var(--ink-faint);clip-path:polygon(0 0,100% 0,88% 100%,0 100%);}
+  .ba-after{right:0;background:linear-gradient(160deg,var(--accent-soft),var(--surface-2));color:var(--ink-soft);clip-path:polygon(12% 0,100% 0,100% 100%,0 100%);}
+  .ba-tile figcaption{padding:12px 14px;font-size:13px;color:var(--ink-soft);display:flex;justify-content:space-between;}
+  .ba-tile figcaption b{color:var(--ink);font-weight:600;}
+
+  /* ---------- reviews ---------- */
+  .rev-top{display:flex;align-items:center;gap:22px;flex-wrap:wrap;margin-bottom:34px;}
+  .rev-badge{display:flex;flex-direction:column;align-items:center;justify-content:center;width:92px;height:92px;border-radius:50%;border:1px solid var(--gold);color:var(--ink);flex-shrink:0;}
+  .rev-badge b{font-family:var(--font-display);font-size:25px;}
+  .rev-badge span{font-size:10px;color:var(--ink-faint);}
+  .rev-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;}
+  @media (max-width:900px){ .rev-grid{grid-template-columns:1fr 1fr;} }
+  @media (max-width:600px){ .rev-grid{grid-template-columns:1fr;} }
+  .rev-card{background:var(--surface);border:1px solid var(--line);padding:24px;display:flex;flex-direction:column;gap:14px;}
+  .stars{color:var(--gold);letter-spacing:2px;font-size:14px;}
+  .rev-card q{font-family:var(--font-display);font-size:16.5px;font-style:italic;line-height:1.45;quotes:"“" "”";}
+  .rev-attr{font-size:12.5px;color:var(--ink-faint);border-top:1px solid var(--line);padding-top:12px;}
+
+  /* ---------- journal ---------- */
+  .journal-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;}
+  @media (max-width:900px){ .journal-grid{grid-template-columns:1fr;} }
+  .journal-card{border:1px solid var(--line);background:var(--surface);}
+  .journal-thumb{aspect-ratio:16/10;background:linear-gradient(135deg,var(--taupe),var(--accent));opacity:.9;}
+  .journal-body{padding:20px 22px 24px;}
+  .journal-cat{font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--gold);font-weight:600;}
+  .journal-card h3{font-size:18px;margin-top:10px;}
+  .journal-card a{display:inline-block;margin-top:14px;font-size:13px;font-weight:600;text-decoration:none;color:var(--ink);border-bottom:1px solid var(--gold);}
+
+  /* ---------- booking ---------- */
+  .book-grid{display:grid;grid-template-columns:0.9fr 1.1fr;gap:56px;}
+  @media (max-width:900px){ .book-grid{grid-template-columns:1fr;} }
+  .book-points{display:flex;flex-direction:column;gap:22px;margin-top:28px;}
+  .book-point{display:flex;gap:14px;align-items:flex-start;}
+  .book-point svg{width:20px;height:20px;stroke:var(--accent);flex-shrink:0;margin-top:2px;}
+  .book-point p{font-size:14px;color:var(--ink-soft);}
+  .book-point b{display:block;font-size:15px;color:var(--ink);margin-bottom:2px;}
+  .book-alt{margin-top:26px;font-size:12.5px;color:var(--ink-faint);border-top:1px solid var(--line);padding-top:18px;}
+  .book-alt a{color:var(--accent);text-decoration:none;font-weight:600;}
+
+  form.book-form{background:var(--surface-2);border:1px solid var(--line);padding:32px;}
+  .field{display:flex;flex-direction:column;gap:6px;margin-bottom:18px;}
+  .field label{font-size:12.5px;font-weight:600;letter-spacing:.03em;color:var(--ink-soft);}
+  .field input, .field select, .field textarea{font-family:var(--font-body);font-size:15px;padding:11px 12px;border:1px solid var(--line);border-radius:2px;background:var(--surface);color:var(--ink);}
+  .field textarea{resize:vertical;min-height:72px;}
+  .field-row{display:grid;grid-template-columns:1fr 1fr;gap:16px;}
+  @media (max-width:560px){ .field-row{grid-template-columns:1fr;} }
+  .book-form .btn{width:100%;justify-content:center;margin-top:6px;padding-block:13px;}
+  .book-success{padding:40px 10px;text-align:center;}
+  .book-success svg{width:44px;height:44px;stroke:var(--accent);margin-bottom:16px;}
+  .book-success h3{font-size:22px;}
+  .book-success p{color:var(--ink-soft);margin-top:10px;}
+
+  /* ---------- footer (full-bleed gradient) ---------- */
+  footer{background:linear-gradient(160deg,var(--rose-1),var(--rose-2));color:var(--nav-ink-soft);padding-block:56px 24px;font-size:13.5px;}
+  .foot-grid{display:grid;grid-template-columns:1.2fr 1.1fr 1fr 1fr;gap:32px;}
+  @media (max-width:800px){ .foot-grid{grid-template-columns:1fr 1fr;} }
+  @media (max-width:480px){ .foot-grid{grid-template-columns:1fr;} }
+  .foot-grid h4{font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--nav-ink-soft);opacity:.85;margin-bottom:14px;font-weight:600;}
+  .foot-links{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:9px;color:var(--nav-ink);}
+  .foot-links a{text-decoration:none;color:var(--nav-ink);}
+  .foot-links a:hover{color:var(--gold);}
+  .foot-word{font-family:var(--font-script);font-size:34px;color:var(--nav-ink);text-decoration:none;}
+  .foot-map{border:1px solid rgba(255,255,255,.3);background:rgba(255,255,255,.06);padding:14px;margin-top:4px;}
+  .foot-map .grid{height:74px;background:repeating-linear-gradient(90deg, rgba(255,255,255,.14) 0 1px, transparent 1px 18px),repeating-linear-gradient(0deg, rgba(255,255,255,.1) 0 1px, transparent 1px 18px);position:relative;}
+  .foot-map .pin{position:absolute;left:52%;top:44%;width:9px;height:9px;border-radius:50% 50% 50% 0;background:var(--gold);transform:rotate(-45deg);}
+  .foot-map a{display:block;margin-top:10px;font-size:11.5px;color:var(--gold);text-decoration:none;font-weight:600;}
+  footer .foot-bottom{margin-top:40px;padding-top:20px;border-top:1px solid rgba(255,255,255,.2);display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;font-size:11.5px;color:var(--nav-ink-soft);}
+
+  [dir="rtl"] .stars{letter-spacing:2px;}
+  [dir="rtl"] .ba-before{clip-path:polygon(0 0,100% 0,100% 100%,12% 100%);}
+  [dir="rtl"] .ba-after{clip-path:polygon(0 0,88% 0,100% 100%,0 100%);}
+</style>
+
+<div class="utilbar">
+  <div class="wrap">
+    <div class="utilbar-left">
+      <span data-i18n="util_location">📍 Park View, Erbil, Iraq</span>
+      <a href="tel:+9647509000200">+964 750 900 0200</a>
+      <a href="https://www.instagram.com/dolce.erbil/" target="_blank" rel="noopener">@dolce.erbil</a>
+    </div>
+    <div class="langswitch" role="group" aria-label="Language">
+      <button type="button" data-lang="en" aria-pressed="true">EN</button>
+      <button type="button" data-lang="ku" aria-pressed="false">کوردی</button>
+      <button type="button" data-lang="ar" aria-pressed="false">عربي</button>
+    </div>
+  </div>
+</div>
+
+<header class="site">
+  <div class="wrap nav">
+    <a class="wordmark" href="#top"><span class="script">Dolçe</span><span class="sub">Aesthetic<br>Clinic</span></a>
+    <ul class="navlinks">
+      <li><a href="#top" data-i18n="nav_home">Home</a></li>
+      <li><a href="#treatments" data-i18n="nav_derm">Dermatology &amp; Non-Invasive</a></li>
+      <li><a href="#treatments" data-i18n="nav_surgery">Plastic Surgery</a></li>
+      <li><a href="#treatments" data-i18n="nav_wellness">Wellness</a></li>
+      <li><a href="#reviews" data-i18n="nav_reviews">Reviews</a></li>
+      <li><a href="#journal" data-i18n="nav_journal">Journal</a></li>
+    </ul>
+    <div class="navcta">
+      <div class="socialrow">
+        <a href="https://www.instagram.com/dolce.erbil/" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24"><path d="M12 2.2c3.2 0 3.6 0 4.9.07 1.2.06 2.1.26 2.8.55a5.7 5.7 0 0 1 2.1 1.35 5.7 5.7 0 0 1 1.35 2.1c.29.7.49 1.6.55 2.8.06 1.3.07 1.7.07 4.9s0 3.6-.07 4.9c-.06 1.2-.26 2.1-.55 2.8a5.9 5.9 0 0 1-3.45 3.45c-.7.29-1.6.49-2.8.55-1.3.06-1.7.07-4.9.07s-3.6 0-4.9-.07c-1.2-.06-2.1-.26-2.8-.55a5.7 5.7 0 0 1-2.1-1.35 5.7 5.7 0 0 1-1.35-2.1c-.29-.7-.49-1.6-.55-2.8C2.21 15.6 2.2 15.2 2.2 12s0-3.6.07-4.9c.06-1.2.26-2.1.55-2.8A5.7 5.7 0 0 1 4.17 2.2a5.7 5.7 0 0 1 2.1-1.35c.7-.29 1.6-.49 2.8-.55C10.4 2.21 10.8 2.2 12 2.2zm0 3.3a6.5 6.5 0 1 0 0 13 6.5 6.5 0 0 0 0-13zm0 10.7a4.2 4.2 0 1 1 0-8.4 4.2 4.2 0 0 1 0 8.4zm6.8-11a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z"/></svg></a>
+        <a href="#" aria-label="Facebook"><svg viewBox="0 0 24 24"><path d="M13.5 21v-7.6h2.55l.38-2.96h-2.93V8.55c0-.86.24-1.44 1.47-1.44h1.57V4.46A21 21 0 0 0 14.2 4.3c-2.2 0-3.7 1.34-3.7 3.8v2.12H7.94v2.96h2.56V21h3z"/></svg></a>
+      </div>
+      <a class="btn btn-gold" href="#booking" data-i18n="nav_book">Book a Consultation</a>
+    </div>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- HERO -->
+  <div class="hero-photo">
+    <div class="hero-text">
+      <p class="eyebrow" data-i18n="hero_eyebrow">Erbil's Leading Aesthetic Clinic</p>
+      <h1 data-i18n="hero_title">Dolce Aesthetic Clinic</h1>
+      <p class="loc" data-i18n="hero_loc">Park View, Erbil, Iraq</p>
+    </div>
+  </div>
+
+  <div class="ctastrip">
+    <div class="wrap">
+      <div class="trust-strip">
+        <div><strong data-i18n="trust_1_num">MD</strong><span data-i18n="trust_1">Board-certified doctors</span></div>
+        <div><strong>Allergan · Medik8</strong><span data-i18n="trust_2">Certified injectors, trusted skincare</span></div>
+        <div><strong>27K+</strong><span data-i18n="trust_3">Instagram community</span></div>
+        <div><strong>EN · KU · AR</strong><span data-i18n="trust_4">Trilingual patient care</span></div>
+      </div>
+      <a class="btn btn-line" href="#booking" data-i18n="hero_cta">Book a Free Consultation</a>
+    </div>
+  </div>
+
+  <!-- ABOUT -->
+  <section class="about-grid">
+    <div class="about-photo">
+      <div class="tag" data-i18n="about_photo_tag">Treatment room — Park View clinic</div>
+    </div>
+    <div class="about-copy">
+      <h2 data-i18n="about_heading">About Us</h2>
+      <blockquote data-i18n="about_body">Dolce Aesthetic Clinic is committed to helping you look &amp; feel your best, with outstanding cosmetic, dermatology and plastic surgery services performed by our highly experienced doctors and therapists. Our clinic is centered in the heart of Erbil, Park View. Elevating your beauty with subtle cosmetic enhancements — dermal fillers, Botox, or plastic surgery. Our dermatology services include facials, mesotherapy and lasers, treating skin concerns like acne, pigmentation and ageing, alongside hair-loss solutions and wellness services such as IV therapy, vitamin booster shots and blood testing.</blockquote>
+    </div>
+  </section>
+
+  <!-- SAND QUOTE BAND -->
+  <section class="quoteband">
+    <div class="wrap">
+      <p class="eyebrow" data-i18n="quote_eyebrow">Erbil's Leading Aesthetic Clinic</p>
+      <blockquote data-i18n="quote_body">A center for cosmetic and medical solutions, aesthetic treatments &amp; wellness experiences</blockquote>
+    </div>
+  </section>
+
+  <!-- CATEGORY BAND -->
+  <div class="cat-grid">
+    <a class="cat-tile cat-derm" href="#treatments"><div class="duo"></div><span data-i18n="nav_derm">Dermatology &amp; Non-Invasive</span></a>
+    <a class="cat-tile cat-surgery" href="#treatments"><div class="duo"></div><span data-i18n="nav_surgery">Plastic Surgery</span></a>
+    <a class="cat-tile cat-wellness" href="#treatments"><div class="duo"></div><span data-i18n="nav_wellness">Wellness</span></a>
+  </div>
+
+  <!-- MOSAIC -->
+  <section class="wrap band-pad">
+    <div class="sec-head">
+      <div>
+        <p class="eyebrow" data-i18n="mosaic_eyebrow">Life at Dolçe</p>
+        <h2 data-i18n="mosaic_heading">Inside the clinic</h2>
+      </div>
+      <p class="lede" data-i18n="mosaic_intro">A look at the space, the treatments and the wellness lounge — styled preview, standing in for real clinic photography.</p>
+    </div>
+    <div class="mosaic">
+      <div class="m-tile m-word"><span class="script">Dolçe</span><small data-i18n="m_word_sub">Park View, Erbil</small></div>
+      <div class="m-tile m-arch"><span data-i18n="m_arch">Exterior · Park View</span></div>
+      <div class="m-tile m-treat"><span data-i18n="m_treat">LED &amp; Laser Therapy</span></div>
+      <div class="m-tile m-iv">
+        <span data-i18n="m_iv_title">Hydration IV Drip</span>
+        <ul>
+          <li data-i18n="m_iv_1">Relieves skin, joints &amp; muscles</li>
+          <li data-i18n="m_iv_2">Boosts immunity, prevents infection</li>
+          <li data-i18n="m_iv_3">Speeds up recovery</li>
+          <li data-i18n="m_iv_4">Rehydrates the body</li>
+        </ul>
+      </div>
+      <div class="m-tile m-lounge"><span data-i18n="m_lounge">The Wellness Lounge</span></div>
+      <div class="m-tile m-product">
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M10 3h4M10 3v4l-4 8v4a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2v-4l-4-8V3"/></svg>
+        <small data-i18n="m_product">Medik8 Skincare Partner</small>
+      </div>
+    </div>
+    <div class="follow-row">
+      <a href="https://www.instagram.com/dolce.erbil/" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24"><path d="M12 2.2c3.2 0 3.6 0 4.9.07 1.2.06 2.1.26 2.8.55a5.7 5.7 0 0 1 2.1 1.35 5.7 5.7 0 0 1 1.35 2.1c.29.7.49 1.6.55 2.8.06 1.3.07 1.7.07 4.9s0 3.6-.07 4.9c-.06 1.2-.26 2.1-.55 2.8a5.9 5.9 0 0 1-3.45 3.45c-.7.29-1.6.49-2.8.55-1.3.06-1.7.07-4.9.07s-3.6 0-4.9-.07c-1.2-.06-2.1-.26-2.8-.55a5.7 5.7 0 0 1-2.1-1.35 5.7 5.7 0 0 1-1.35-2.1c-.29-.7-.49-1.6-.55-2.8C2.21 15.6 2.2 15.2 2.2 12s0-3.6.07-4.9c.06-1.2.26-2.1.55-2.8A5.7 5.7 0 0 1 4.17 2.2a5.7 5.7 0 0 1 2.1-1.35c.7-.29 1.6-.49 2.8-.55C10.4 2.21 10.8 2.2 12 2.2zm0 3.3a6.5 6.5 0 1 0 0 13 6.5 6.5 0 0 0 0-13zm0 10.7a4.2 4.2 0 1 1 0-8.4 4.2 4.2 0 0 1 0 8.4zm6.8-11a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z"/></svg>
+        <span data-i18n="follow_text">Follow @dolce.erbil</span>
+      </a>
+    </div>
+  </section>
+
+  <!-- TREATMENTS -->
+  <section id="treatments" class="wrap band-pad">
+    <div class="sec-head">
+      <div>
+        <p class="eyebrow" data-i18n="treat_eyebrow">Treatments</p>
+        <h2 data-i18n="treat_heading">Care, organised by category</h2>
+      </div>
+      <p class="lede" data-i18n="treat_intro">Every treatment sits under one of our three departments, so you always know who you're booking with.</p>
+    </div>
+
+    <div class="treat-grid">
+      <article class="treat-card">
+        <p class="treat-cat" data-i18n="nav_derm">Dermatology &amp; Non-Invasive</p>
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14 4l6 6-1.5 1.5L17 10l-6.5 6.5.5 2.5-2 2-1-3-2-1 2-2 2.5.5L17 8l-1.5-1.5z"/><path d="M4 20l3-3"/></svg>
+        <h3 data-i18n="treat_botox_title">Botox &amp; Wrinkle Relaxers</h3>
+        <p data-i18n="treat_botox_desc">FDA/CE-approved Allergan Botox to soften expression lines while keeping your natural movement.</p>
+        <div class="treat-foot"><a class="treat-link" href="#booking" data-i18n="treat_learnmore">Book →</a></div>
+      </article>
+
+      <article class="treat-card">
+        <p class="treat-cat" data-i18n="nav_derm">Dermatology &amp; Non-Invasive</p>
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3c3 4.5 6 8 6 11.5A6 6 0 1 1 6 14.5C6 11 9 7.5 12 3z"/></svg>
+        <h3 data-i18n="treat_filler_title">Dermal Fillers</h3>
+        <p data-i18n="treat_filler_desc">Fillers for lips, cheeks, jawline and tear troughs, matched to your facial anatomy.</p>
+        <div class="treat-foot"><a class="treat-link" href="#booking" data-i18n="treat_learnmore">Book →</a></div>
+      </article>
+
+      <article class="treat-card">
+        <p class="treat-cat" data-i18n="nav_derm">Dermatology &amp; Non-Invasive</p>
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v3M12 19v3M4.2 4.2l2.1 2.1M17.7 17.7l2.1 2.1M2 12h3M19 12h3M4.2 19.8l2.1-2.1M17.7 6.3l2.1-2.1"/></svg>
+        <h3 data-i18n="treat_laser_title">Laser, LED &amp; Skin Resurfacing</h3>
+        <p data-i18n="treat_laser_desc">Carbon facials, LED therapy, laser hair removal and resurfacing for pigmentation, acne and texture.</p>
+        <div class="treat-foot"><a class="treat-link" href="#booking" data-i18n="treat_learnmore">Book →</a></div>
+      </article>
+
+      <article class="treat-card">
+        <p class="treat-cat" data-i18n="nav_surgery">Plastic Surgery</p>
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 15c0-6 2.5-11 8-11 3 0 5 2 5 5 0 2-1 3-1 5 0 3 2 3 2 5-2 2-5 1-6-1"/><path d="M6 15c0 3 2 6 6 6"/></svg>
+        <h3 data-i18n="treat_surgery_title">Facial &amp; Body Plastic Surgery</h3>
+        <p data-i18n="treat_surgery_desc">Minimally invasive lifting, contouring and body procedures performed by board-certified surgeons.</p>
+        <div class="treat-foot"><a class="treat-link" href="#booking" data-i18n="treat_learnmore">Book →</a></div>
+      </article>
+
+      <article class="treat-card">
+        <p class="treat-cat" data-i18n="nav_derm">Dermatology &amp; Non-Invasive</p>
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="10" cy="10" r="6"/><path d="M14.5 14.5L20 20"/></svg>
+        <h3 data-i18n="treat_derm_title">Dermatology &amp; Skin Health</h3>
+        <p data-i18n="treat_derm_desc">Acne, pigmentation and ageing concerns assessed and treated by dermatologists, not sales staff.</p>
+        <div class="treat-foot"><a class="treat-link" href="#booking" data-i18n="treat_learnmore">Book →</a></div>
+      </article>
+
+      <article class="treat-card">
+        <p class="treat-cat" data-i18n="nav_wellness">Wellness</p>
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v6M9 6h6"/><rect x="7" y="9" width="10" height="12" rx="2"/><path d="M10 21v-4a2 2 0 0 1 4 0v4"/></svg>
+        <h3 data-i18n="treat_wellness_title">Wellness &amp; IV Therapy</h3>
+        <p data-i18n="treat_wellness_desc">Vitamin boosters, IV drips, blood panels and aesthetic gynaecology to support you from the inside out.</p>
+        <div class="treat-foot"><a class="treat-link" href="#booking" data-i18n="treat_learnmore">Book →</a></div>
+      </article>
+    </div>
+  </section>
+
+  <!-- DIFFERENCE -->
+  <section id="difference" class="band">
+    <div class="wrap band-pad">
+      <div class="sec-head">
+        <div>
+          <p class="eyebrow" data-i18n="diff_eyebrow">The Dolce Difference</p>
+          <h2 data-i18n="diff_heading">What every other clinic in Erbil makes you chase down</h2>
+        </div>
+        <p class="lede" data-i18n="diff_intro">We reviewed the leading aesthetic clinics in the city. Here is what patients consistently had to DM, call or guess at — and what we do instead.</p>
+      </div>
+      <div class="diff-grid">
+        <div class="diff-item"><span class="num">01</span><h3 data-i18n="diff_1_title">Book online, any hour</h3><p data-i18n="diff_1_desc">No clinic in our review offered real online scheduling. You can reserve your slot here in under a minute, day or night.</p></div>
+        <div class="diff-item"><span class="num">02</span><h3 data-i18n="diff_2_title">Follow-up, built in</h3><p data-i18n="diff_2_desc">A complimentary check-in within two weeks of every treatment, so results — and any concerns — are never left unchecked.</p></div>
+        <div class="diff-item"><span class="num">03</span><h3 data-i18n="diff_3_title">Board-certified, always</h3><p data-i18n="diff_3_desc">Every injector and surgeon's credentials are published, matching the standard set by the city's hospital-based providers.</p></div>
+        <div class="diff-item"><span class="num">04</span><h3 data-i18n="diff_4_title">Care in your language</h3><p data-i18n="diff_4_desc">Consultations and this site in English, Kurdish (Sorani) and Arabic — not English-only, with translation left to chance.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- GALLERY -->
+  <section id="gallery" class="wrap band-pad">
+    <div class="sec-head">
+      <div><p class="eyebrow" data-i18n="gallery_eyebrow">Results</p><h2 data-i18n="gallery_heading">Before &amp; after, by treatment</h2></div>
+      <p class="lede" data-i18n="gallery_intro">Filter by treatment to see the kind of change patients come in for.</p>
+    </div>
+    <p class="gallery-note" data-i18n="gallery_note">Layout preview only — tile artwork is placeholder. At launch, replace each tile with real, consented before/after clinical photography.</p>
+    <div class="filters" style="margin-top:26px;" role="group" aria-label="Filter gallery">
+      <button class="chip" data-filter="all" aria-pressed="true" data-i18n="gallery_filter_all">All</button>
+      <button class="chip" data-filter="botox" aria-pressed="false" data-i18n="gallery_filter_botox">Botox</button>
+      <button class="chip" data-filter="filler" aria-pressed="false" data-i18n="gallery_filter_filler">Fillers</button>
+      <button class="chip" data-filter="laser" aria-pressed="false" data-i18n="gallery_filter_laser">Laser</button>
+      <button class="chip" data-filter="surgery" aria-pressed="false" data-i18n="gallery_filter_surgery">Surgery</button>
+    </div>
+    <div class="ba-grid" id="baGrid">
+      <figure class="ba-tile" data-cat="botox"><div class="ba-visual"><div class="ba-half ba-before" data-i18n="before_label">Before</div><div class="ba-half ba-after" data-i18n="after_label">After</div></div><figcaption><b data-i18n="treat_botox_title">Botox</b><span>3 sessions · forehead</span></figcaption></figure>
+      <figure class="ba-tile" data-cat="filler"><div class="ba-visual"><div class="ba-half ba-before" data-i18n="before_label">Before</div><div class="ba-half ba-after" data-i18n="after_label">After</div></div><figcaption><b data-i18n="treat_filler_title">Filler</b><span>1 session · lips</span></figcaption></figure>
+      <figure class="ba-tile" data-cat="laser"><div class="ba-visual"><div class="ba-half ba-before" data-i18n="before_label">Before</div><div class="ba-half ba-after" data-i18n="after_label">After</div></div><figcaption><b data-i18n="treat_laser_title">Laser</b><span>4 sessions · pigmentation</span></figcaption></figure>
+      <figure class="ba-tile" data-cat="filler"><div class="ba-visual"><div class="ba-half ba-before" data-i18n="before_label">Before</div><div class="ba-half ba-after" data-i18n="after_label">After</div></div><figcaption><b data-i18n="treat_filler_title">Filler</b><span>1 session · cheeks</span></figcaption></figure>
+      <figure class="ba-tile" data-cat="surgery"><div class="ba-visual"><div class="ba-half ba-before" data-i18n="before_label">Before</div><div class="ba-half ba-after" data-i18n="after_label">After</div></div><figcaption><b data-i18n="treat_surgery_title">Surgery</b><span>Neck &amp; jaw contour</span></figcaption></figure>
+      <figure class="ba-tile" data-cat="botox"><div class="ba-visual"><div class="ba-half ba-before" data-i18n="before_label">Before</div><div class="ba-half ba-after" data-i18n="after_label">After</div></div><figcaption><b data-i18n="treat_botox_title">Botox</b><span>2 sessions · crow's feet</span></figcaption></figure>
+    </div>
+  </section>
+
+  <!-- REVIEWS -->
+  <section id="reviews" class="wrap band-pad">
+    <div class="sec-head"><div><p class="eyebrow" data-i18n="reviews_eyebrow">Reviews</p><h2 data-i18n="reviews_heading">What patients say</h2></div></div>
+    <p class="gallery-note" data-i18n="reviews_note">Sample layout — quotes below are placeholders. At launch, replace with verified reviews pulled from Google and Instagram.</p>
+    <div class="rev-top" style="margin-top:26px;">
+      <div class="rev-badge"><b>4.9</b><span data-i18n="reviews_badge_sub">sample rating</span></div>
+      <p class="lede" data-i18n="reviews_aggregate_label">Aggregate score across Google Reviews and Instagram, refreshed automatically once connected at launch.</p>
+    </div>
+    <div class="rev-grid">
+      <div class="rev-card"><div class="stars">★★★★★</div><q data-i18n="rev_1_quote">Booked my Botox appointment online at midnight and got a confirmation before I woke up. Never had that anywhere else in Erbil.</q><div class="rev-attr" data-i18n="rev_1_attr">Verified patient · Botox</div></div>
+      <div class="rev-card"><div class="stars">★★★★★</div><q data-i18n="rev_2_quote">The consultation felt like a real conversation with my doctor about what I actually needed — not a sales pitch.</q><div class="rev-attr" data-i18n="rev_2_attr">Verified patient · Dermal filler</div></div>
+      <div class="rev-card"><div class="stars">★★★★★</div><q data-i18n="rev_3_quote">My whole consultation was in Kurdish, start to finish. Small thing, but it made a real difference.</q><div class="rev-attr" data-i18n="rev_3_attr">Verified patient · Dermatology</div></div>
+    </div>
+  </section>
+
+  <!-- JOURNAL -->
+  <section id="journal" class="wrap band-pad">
+    <div class="sec-head"><div><p class="eyebrow" data-i18n="journal_eyebrow">Journal</p><h2 data-i18n="journal_heading">Understand before you book</h2></div>
+      <p class="lede" data-i18n="journal_intro">Plain-language answers to the questions patients ask most, written by the clinical team.</p>
+    </div>
+    <div class="journal-grid">
+      <article class="journal-card"><div class="journal-thumb"></div><div class="journal-body"><span class="journal-cat" data-i18n="journal_cat_injectables">Injectables</span><h3 data-i18n="journal_1_title">Botox vs. dermal fillers: how to choose your first treatment</h3><a href="#" data-i18n="journal_read">Read the guide →</a></div></article>
+      <article class="journal-card"><div class="journal-thumb"></div><div class="journal-body"><span class="journal-cat" data-i18n="journal_cat_laser">Laser</span><h3 data-i18n="journal_2_title">What to expect the week after a laser resurfacing facial</h3><a href="#" data-i18n="journal_read">Read the guide →</a></div></article>
+      <article class="journal-card"><div class="journal-thumb"></div><div class="journal-body"><span class="journal-cat" data-i18n="journal_cat_consult">Consultations</span><h3 data-i18n="journal_3_title">Ten questions worth asking before your first consultation</h3><a href="#" data-i18n="journal_read">Read the guide →</a></div></article>
+    </div>
+  </section>
+
+  <!-- BOOKING -->
+  <section id="booking" class="wrap band-pad">
+    <div class="book-grid">
+      <div>
+        <p class="eyebrow" data-i18n="booking_eyebrow">Booking</p>
+        <h2 data-i18n="booking_heading">Reserve your consultation</h2>
+        <p class="lede" style="margin-top:14px;" data-i18n="booking_intro">Tell us what you're interested in and when suits you. Our care team confirms every request within one business day.</p>
+        <div class="book-points">
+          <div class="book-point"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg><p><b data-i18n="bp_1_title">No phone tag</b><span data-i18n="bp_1_desc"> — submit once, we call to confirm your time.</span></p></div>
+          <div class="book-point"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg><p><b data-i18n="bp_2_title">Private by default</b><span data-i18n="bp_2_desc"> — your details go only to our clinical front desk.</span></p></div>
+          <div class="book-point"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg><p><b data-i18n="bp_3_title">Free first consultation</b><span data-i18n="bp_3_desc"> — no charge to discuss your options with a provider.</span></p></div>
+        </div>
+        <p class="book-alt" data-i18n="book_alt">Prefer email? Write to <a href="mailto:Dolce.erbil@gmail.com">Dolce.erbil@gmail.com</a></p>
+      </div>
+      <div>
+        <form class="book-form" id="bookingForm">
+          <div class="field"><label for="bk-name" data-i18n="form_name">Full name</label><input id="bk-name" name="name" type="text" required autocomplete="name"></div>
+          <div class="field-row">
+            <div class="field"><label for="bk-phone" data-i18n="form_phone">Phone / WhatsApp</label><input id="bk-phone" name="phone" type="tel" required autocomplete="tel"></div>
+            <div class="field"><label for="bk-date" data-i18n="form_date">Preferred date</label><input id="bk-date" name="date" type="date"></div>
+          </div>
+          <div class="field">
+            <label for="bk-treatment" data-i18n="form_treatment">Treatment of interest</label>
+            <select id="bk-treatment" name="treatment" required>
+              <option value="" data-i18n="form_select_placeholder">Select a treatment</option>
+              <option value="botox" data-i18n="treat_botox_title">Botox &amp; Wrinkle Relaxers</option>
+              <option value="filler" data-i18n="treat_filler_title">Dermal Fillers</option>
+              <option value="laser" data-i18n="treat_laser_title">Laser, LED &amp; Skin Resurfacing</option>
+              <option value="surgery" data-i18n="treat_surgery_title">Facial &amp; Body Plastic Surgery</option>
+              <option value="derm" data-i18n="treat_derm_title">Dermatology &amp; Skin Health</option>
+              <option value="wellness" data-i18n="treat_wellness_title">Wellness &amp; IV Therapy</option>
+            </select>
+          </div>
+          <div class="field"><label for="bk-notes" data-i18n="form_notes">Notes for the care team (optional)</label><textarea id="bk-notes" name="notes" data-i18n-ph="form_notes_placeholder" placeholder="Anything you'd like us to know before your consultation"></textarea></div>
+          <button type="submit" class="btn btn-gold" data-i18n="form_submit">Request my consultation</button>
+        </form>
+        <div class="book-success" id="bookingSuccess" hidden>
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M8 12.5l2.5 2.5L16 9.5"/></svg>
+          <h3 data-i18n="form_success_title">Request received</h3>
+          <p data-i18n="form_success_body">Thank you — our care team will reach out within one business day to confirm your appointment.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <a class="foot-word" href="#top">Dolçe</a>
+        <p style="margin-top:14px;max-width:30ch;color:var(--nav-ink);" data-i18n="footer_tagline">Aesthetic, dermatology and plastic surgery care in the heart of Park View, Erbil.</p>
+      </div>
+      <div>
+        <h4 data-i18n="footer_locations_heading">Our Locations</h4>
+        <ul class="foot-links">
+          <li data-i18n="footer_loc_1">Dolce Clinic &amp; Polished by Dolce Salon — Park View, Erbil, Iraq</li>
+          <li data-i18n="footer_loc_2">Core by Dolce Studio — The Boulevard, Erbil, Iraq</li>
+        </ul>
+      </div>
+      <div>
+        <h4 data-i18n="footer_contact_heading">Contact</h4>
+        <ul class="foot-links">
+          <li><a href="mailto:Dolce.erbil@gmail.com">Dolce.erbil@gmail.com</a></li>
+          <li><a href="mailto:Polished.erbil@gmail.com">Polished.erbil@gmail.com</a></li>
+          <li><a href="mailto:Core.erbil@gmail.com">Core.erbil@gmail.com</a></li>
+          <li><a href="tel:+9647509000200">+964 750 900 0200</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 data-i18n="footer_map_heading">Find Us</h4>
+        <div class="foot-map">
+          <div class="grid"><div class="pin"></div></div>
+          <a href="https://www.google.com/maps/search/?api=1&query=Park+View+Erbil+Iraq" target="_blank" rel="noopener" data-i18n="footer_directions">Park View, Erbil, Iraq — Directions ↗</a>
+        </div>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span data-i18n="footer_disclaimer">Concept redesign for internal review — not the live Dolce Clinic website.</span>
+      <span data-i18n="footer_copy">© Dolce Aesthetic Clinic, Erbil</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var dict = {
+    en: {
+      util_location:"📍 Park View, Erbil, Iraq",
+      nav_home:"Home", nav_derm:"Dermatology & Non-Invasive", nav_surgery:"Plastic Surgery", nav_wellness:"Wellness",
+      nav_reviews:"Reviews", nav_journal:"Journal", nav_book:"Book a Consultation",
+      hero_eyebrow:"Erbil's Leading Aesthetic Clinic", hero_title:"Dolce Aesthetic Clinic", hero_loc:"Park View, Erbil, Iraq",
+      trust_1_num:"MD", trust_1:"Board-certified doctors", trust_2:"Certified injectors, trusted skincare", trust_3:"Instagram community", trust_4:"Trilingual patient care",
+      hero_cta:"Book a Free Consultation",
+      about_photo_tag:"Treatment room — Park View clinic",
+      about_heading:"About Us",
+      about_body:"Dolce Aesthetic Clinic is committed to helping you look & feel your best, with outstanding cosmetic, dermatology and plastic surgery services performed by our highly experienced doctors and therapists. Our clinic is centered in the heart of Erbil, Park View. Elevating your beauty with subtle cosmetic enhancements — dermal fillers, Botox, or plastic surgery. Our dermatology services include facials, mesotherapy and lasers, treating skin concerns like acne, pigmentation and ageing, alongside hair-loss solutions and wellness services such as IV therapy, vitamin booster shots and blood testing.",
+      quote_eyebrow:"Erbil's Leading Aesthetic Clinic",
+      quote_body:"A center for cosmetic and medical solutions, aesthetic treatments & wellness experiences",
+      mosaic_eyebrow:"Life at Dolçe", mosaic_heading:"Inside the clinic",
+      mosaic_intro:"A look at the space, the treatments and the wellness lounge — styled preview, standing in for real clinic photography.",
+      m_word_sub:"Park View, Erbil", m_arch:"Exterior · Park View", m_treat:"LED & Laser Therapy",
+      m_iv_title:"Hydration IV Drip", m_iv_1:"Relieves skin, joints & muscles", m_iv_2:"Boosts immunity, prevents infection", m_iv_3:"Speeds up recovery", m_iv_4:"Rehydrates the body",
+      m_lounge:"The Wellness Lounge", m_product:"Medik8 Skincare Partner", follow_text:"Follow @dolce.erbil",
+      treat_eyebrow:"Treatments", treat_heading:"Care, organised by category",
+      treat_intro:"Every treatment sits under one of our three departments, so you always know who you're booking with.",
+      treat_botox_title:"Botox & Wrinkle Relaxers", treat_botox_desc:"FDA/CE-approved Allergan Botox to soften expression lines while keeping your natural movement.",
+      treat_filler_title:"Dermal Fillers", treat_filler_desc:"Fillers for lips, cheeks, jawline and tear troughs, matched to your facial anatomy.",
+      treat_laser_title:"Laser, LED & Skin Resurfacing", treat_laser_desc:"Carbon facials, LED therapy, laser hair removal and resurfacing for pigmentation, acne and texture.",
+      treat_surgery_title:"Facial & Body Plastic Surgery", treat_surgery_desc:"Minimally invasive lifting, contouring and body procedures performed by board-certified surgeons.",
+      treat_derm_title:"Dermatology & Skin Health", treat_derm_desc:"Acne, pigmentation and ageing concerns assessed and treated by dermatologists, not sales staff.",
+      treat_wellness_title:"Wellness & IV Therapy", treat_wellness_desc:"Vitamin boosters, IV drips, blood panels and aesthetic gynaecology to support you from the inside out.",
+      treat_learnmore:"Book →",
+      diff_eyebrow:"The Dolce Difference", diff_heading:"What every other clinic in Erbil makes you chase down",
+      diff_intro:"We reviewed the leading aesthetic clinics in the city. Here is what patients consistently had to DM, call or guess at — and what we do instead.",
+      diff_1_title:"Book online, any hour", diff_1_desc:"No clinic in our review offered real online scheduling. You can reserve your slot here in under a minute, day or night.",
+      diff_2_title:"Follow-up, built in", diff_2_desc:"A complimentary check-in within two weeks of every treatment, so results — and any concerns — are never left unchecked.",
+      diff_3_title:"Board-certified, always", diff_3_desc:"Every injector and surgeon's credentials are published, matching the standard set by the city's hospital-based providers.",
+      diff_4_title:"Care in your language", diff_4_desc:"Consultations and this site in English, Kurdish (Sorani) and Arabic — not English-only, with translation left to chance.",
+      gallery_eyebrow:"Results", gallery_heading:"Before & after, by treatment", gallery_intro:"Filter by treatment to see the kind of change patients come in for.",
+      gallery_note:"Layout preview only — tile artwork is placeholder. At launch, replace each tile with real, consented before/after clinical photography.",
+      gallery_filter_all:"All", gallery_filter_botox:"Botox", gallery_filter_filler:"Fillers", gallery_filter_laser:"Laser", gallery_filter_surgery:"Surgery",
+      before_label:"Before", after_label:"After",
+      reviews_eyebrow:"Reviews", reviews_heading:"What patients say",
+      reviews_note:"Sample layout — quotes below are placeholders. At launch, replace with verified reviews pulled from Google and Instagram.",
+      reviews_badge_sub:"sample rating",
+      reviews_aggregate_label:"Aggregate score across Google Reviews and Instagram, refreshed automatically once connected at launch.",
+      rev_1_quote:"Booked my Botox appointment online at midnight and got a confirmation before I woke up. Never had that anywhere else in Erbil.", rev_1_attr:"Verified patient · Botox",
+      rev_2_quote:"The consultation felt like a real conversation with my doctor about what I actually needed — not a sales pitch.", rev_2_attr:"Verified patient · Dermal filler",
+      rev_3_quote:"My whole consultation was in Kurdish, start to finish. Small thing, but it made a real difference.", rev_3_attr:"Verified patient · Dermatology",
+      journal_eyebrow:"Journal", journal_heading:"Understand before you book",
+      journal_intro:"Plain-language answers to the questions patients ask most, written by the clinical team.",
+      journal_cat_injectables:"Injectables", journal_1_title:"Botox vs. dermal fillers: how to choose your first treatment",
+      journal_cat_laser:"Laser", journal_2_title:"What to expect the week after a laser resurfacing facial",
+      journal_cat_consult:"Consultations", journal_3_title:"Ten questions worth asking before your first consultation",
+      journal_read:"Read the guide →",
+      booking_eyebrow:"Booking", booking_heading:"Reserve your consultation",
+      booking_intro:"Tell us what you're interested in and when suits you. Our care team confirms every request within one business day.",
+      bp_1_title:"No phone tag", bp_1_desc:" — submit once, we call to confirm your time.",
+      bp_2_title:"Private by default", bp_2_desc:" — your details go only to our clinical front desk.",
+      bp_3_title:"Free first consultation", bp_3_desc:" — no charge to discuss your options with a provider.",
+      book_alt:'Prefer email? Write to <a href="mailto:Dolce.erbil@gmail.com">Dolce.erbil@gmail.com</a>',
+      form_name:"Full name", form_phone:"Phone / WhatsApp", form_date:"Preferred date", form_treatment:"Treatment of interest",
+      form_select_placeholder:"Select a treatment", form_notes:"Notes for the care team (optional)",
+      form_notes_placeholder:"Anything you'd like us to know before your consultation", form_submit:"Request my consultation",
+      form_success_title:"Request received", form_success_body:"Thank you — our care team will reach out within one business day to confirm your appointment.",
+      footer_tagline:"Aesthetic, dermatology and plastic surgery care in the heart of Park View, Erbil.",
+      footer_locations_heading:"Our Locations",
+      footer_loc_1:"Dolce Clinic & Polished by Dolce Salon — Park View, Erbil, Iraq",
+      footer_loc_2:"Core by Dolce Studio — The Boulevard, Erbil, Iraq",
+      footer_contact_heading:"Contact",
+      footer_map_heading:"Find Us", footer_directions:"Park View, Erbil, Iraq — Directions ↗",
+      footer_disclaimer:"Concept redesign for internal review — not the live Dolce Clinic website.",
+      footer_copy:"© Dolce Aesthetic Clinic, Erbil"
+    },
+    ku: {
+      util_location:"📍 پارک ڤیو، هەولێر، عێراق",
+      nav_home:"سەرەکی", nav_derm:"چاودێری پێست", nav_surgery:"نەشتەرگەری جوانکاری", nav_wellness:"تەندروستی",
+      nav_reviews:"ڕاوبۆچوونەکان", nav_journal:"وتار", nav_book:"داواکاری چاوپێکەوتن",
+      hero_eyebrow:"باشترین کلینیکی جوانکاری هەولێر", hero_title:"کلینیکی جوانکاری دۆلچە", hero_loc:"پارک ڤیو، هەولێر، عێراق",
+      trust_1_num:"پزیشک", trust_1:"پزیشکی بڕوانامەدار", trust_2:"دەرمانلێدەری بڕوانامەدار و کاڵای پێستی متمانەپێکراو", trust_3:"چالاکی ئینستاگرام", trust_4:"چاودێری بە سێ زمان",
+      hero_cta:"داواکاری چاوپێکەوتنی خۆڕایی",
+      about_photo_tag:"ژووری چارەسەر — کلینیکی پارک ڤیو",
+      about_heading:"دەربارەی ئێمە",
+      about_body:"کلینیکی جوانکاری دۆلچە پابەندە بە یارمەتیدانت بۆ باشترین دیمەن و هەستکردن، بە خزمەتگوزاری تایبەتی جوانکاری، پێست و نەشتەرگەری لەلایەن پزیشک و پسپۆڕە شارەزاکانمانەوە. کلینیکەکەمان لە ناوەندی هەولێرە، لە پارک ڤیو. جوانیت بەرزبکەرەوە بە چارەسەری سووکی جوانکاری — فلەری پێست، بۆتۆکس، یان نەشتەرگەری. خزمەتگوزاری پێستیمان چاودێری، مێزۆتێراپی و لەیزەر لەخۆدەگرێت، بۆ چارەسەری جۆش، لەکە و کێشەی تەمەن، لەگەڵ چارەسەری لادانی موو و خزمەتگوزاری تەندروستی وەک IV و ڤیتامین و پشکنینی خوێن.",
+      quote_eyebrow:"باشترین کلینیکی جوانکاری هەولێر",
+      quote_body:"ناوەندێک بۆ چارەسەری جوانکاری و پزیشکی، چارەسەری جوانی و ئەزموونی تەندروستی",
+      mosaic_eyebrow:"ژیان لە دۆلچە", mosaic_heading:"ناو کلینیکەکە",
+      mosaic_intro:"دیمەنێک لە شوێنەکە، چارەسەرەکان و ژووری تەندروستی — نموونەی ڕووکار، شوێنگرەوەی وێنەی ڕاستەقینەی کلینیک.",
+      m_word_sub:"پارک ڤیو، هەولێر", m_arch:"دەرەوە · پارک ڤیو", m_treat:"چاودێری LED و لەیزەر",
+      m_iv_title:"سیرۆمی ئاودار کردنەوە", m_iv_1:"پێست، جومگە و ماسولکە ئارام دەکاتەوە", m_iv_2:"بەرگری زیاد دەکات، ڕێگری لە نەخۆشی دەکات", m_iv_3:"خێراکردنی چاکبوونەوە", m_iv_4:"لەشت ئاودار دەکاتەوە",
+      m_lounge:"ژووری تەندروستی", m_product:"هاوبەشی کاڵای پێستی Medik8", follow_text:"شوێن @dolce.erbil بکەوە",
+      treat_eyebrow:"چارەسەرەکان", treat_heading:"چاودێری، بەپێی بەش ڕێکخراوە",
+      treat_intro:"هەموو چارەسەرێک لەژێر یەکێک لە سێ بەشەکانمانە، بۆ ئەوەی هەمیشە بزانیت لەگەڵ کێ داواکاری دەکەیت.",
+      treat_botox_title:"بۆتۆکس", treat_botox_desc:"بۆتۆکسی ئەلێرگان، پەسەندکراوی FDA/CE، بۆ نەرمکردنی هێڵەکانی دەموچاو بەبێ لەدەستدانی جواڵەی سروشتی.",
+      treat_filler_title:"فلەری پێست", treat_filler_desc:"فلەر بۆ لێو، گۆنە، شانە و ژێر چاو، گونجاو لەگەڵ شێوەی دەموچاوت.",
+      treat_laser_title:"لەیزەر، LED و نوێکردنەوەی پێست", treat_laser_desc:"چاودێری کاربۆن، چاودێری LED، لادانی موی بە لەیزەر و چاکسازیی پێست بۆ لەکە، جۆش و شێوە.",
+      treat_surgery_title:"نەشتەرگەری جوانکاری دەموچاو و لەش", treat_surgery_desc:"بەرزکردنەوە و شێوەدانی کەم-هێرش بۆ دەموچاو و لەش، لەلایەن نەشتەرگەری بڕوانامەدارەوە.",
+      treat_derm_title:"چاودێری پێست", treat_derm_desc:"جۆش، لەکە و کێشەکانی تەمەن، هەڵسەنگاندن و چارەسەر بەدەستی پسپۆڕی پێست، نەک فرۆشیار.",
+      treat_wellness_title:"تەندروستی و IV", treat_wellness_desc:"ڤیتامین، سیرۆمی IV، پشکنینی خوێن و پزیشکی ژنان بۆ پاڵپشتیت لە ناوەوە.",
+      treat_learnmore:"داواکاری →",
+      diff_eyebrow:"جیاوازی دۆلچە", diff_heading:"ئەوەی هەموو کلینیکێکی دیکەی هەولێر پێویستە بۆی بگەڕێیت",
+      diff_intro:"سەرەکیترین کلینیکەکانی شارمان پێداچوونەوەیان بۆ کرا. ئەمە ئەو شتانەیە کە نەخۆشان بەردەوام پێویستیان بە پەیامنان، پەیوەندیکردن یان گمانکردن بووە — و ئەوەی ئێمە لە بڕیاریدا دەیکەین.",
+      diff_1_title:"داواکاری ئۆنلاین، هەر کاتێک", diff_1_desc:"هیچ کلینیکێک لە پێداچوونەوەکەماندا کاتی ئۆنلاینی ڕاستەقینەی نەبوو. لێرە دەتوانیت لە کەمتر لە خولەکێکدا کاتەکەت دیاری بکەیت، شەو یان ڕۆژ.",
+      diff_2_title:"پشکنینی دواتر، بەخۆڕایی", diff_2_desc:"دوو هەفتە دوای هەر چارەسەرێک پشکنینێکی بەخۆڕایی بۆ دڵنیابوون لە ئەنجام و وەڵامدانەوەی نیگەرانیەکانت.",
+      diff_3_title:"هەمیشە بڕوانامەدار", diff_3_desc:"بڕوانامەی هەموو دەرمانلێدەرێک و نەشتەرگەرێک بڵاوکراوەتەوە، هاوتای ستانداردی نەخۆشخانە گەورەکانی شار.",
+      diff_4_title:"چاودێری بە زمانی خۆت", diff_4_desc:"چاوپێکەوتن و ئەم ماڵپەڕە بە ئینگلیزی، کوردی و عەرەبی — نەک تەنها ئینگلیزی و پشتبەستن بە هەڵبژاردن.",
+      gallery_eyebrow:"ئەنجامەکان", gallery_heading:"پێش و پاش، بەپێی چارەسەر", gallery_intro:"بەپێی چارەسەر پاڵاوتن بکە بۆ بینینی جۆری گۆڕانکاری.",
+      gallery_note:"تەنها پیشاندانی ڕووکار — وێنەکان شوێنگرەوەن. لە کاتی بڵاوکردنەوە، بە وێنەی ڕاستەقینەی پێش و پاشی نەخۆش (بە ڕەزامەندی) بگۆڕدرێن.",
+      gallery_filter_all:"هەموو", gallery_filter_botox:"بۆتۆکس", gallery_filter_filler:"فلەر", gallery_filter_laser:"لەیزەر", gallery_filter_surgery:"نەشتەرگەری",
+      before_label:"پێش", after_label:"پاش",
+      reviews_eyebrow:"ڕاوبۆچوونەکان", reviews_heading:"نەخۆشان چی دەڵێن",
+      reviews_note:"نموونەی ڕووکار — وتەکان خوارەوە تەنها نموونەن. لە کاتی بڵاوکردنەوە، بە ڕاوبۆچوونی ڕاستەقینەی گووگڵ و ئینستاگرام دەگۆڕدرێن.",
+      reviews_badge_sub:"هەڵسەنگاندنی نموونە",
+      reviews_aggregate_label:"کۆی هەڵسەنگاندن لە گووگڵ ڕیڤیوز و ئینستاگرام، بەشێوەی خۆکار نوێ دەبێتەوە دوای پەیوەستبوون.",
+      rev_1_quote:"لە نیوەشەودا داواکاری بۆتۆکسم کرد و پێش خەبەرم بوونەوە پشتڕاستکردنەوەم بۆ هات. هیچ کوێی دیکەی هەولێر ئەمەم بۆ نەکرابوو.", rev_1_attr:"نەخۆشی پشتڕاستکراو · بۆتۆکس",
+      rev_2_quote:"هەموو چاوپێکەوتنەکەم وەک گفتوگۆیەکی ڕاستەقینە بوو لەگەڵ پزیشکەکەم دەربارەی ئەوەی ڕاستی پێویستم بوو — نەک بازاڕگەری.", rev_2_attr:"نەخۆشی پشتڕاستکراو · فلەر",
+      rev_3_quote:"هەموو چاوپێکەوتنەکەم بە کوردی بوو، لە سەرەتاوە تا کۆتایی. شتێکی بچووک بوو، بەڵام جیاوازیی ڕاستەقینەی دروستکرد.", rev_3_attr:"نەخۆشی پشتڕاستکراو · پێست",
+      journal_eyebrow:"وتار", journal_heading:"پێش داواکاری تێبگە",
+      journal_intro:"وەڵامی سادە بۆ ئەو پرسیارانەی نەخۆشان زۆرترین جار دەیپرسن، نووسراوە لەلایەن تیمی پزیشکییەوە.",
+      journal_cat_injectables:"دەرمانلێدان", journal_1_title:"بۆتۆکس بەرامبەر فلەر: چۆن یەکەم چارەسەرت هەڵبژێریت",
+      journal_cat_laser:"لەیزەر", journal_2_title:"چی چاوەڕوان بکە دوای هەفتەیەک لە چاودێری لەیزەری پێست",
+      journal_cat_consult:"چاوپێکەوتن", journal_3_title:"دە پرسیار پێش یەکەم چاوپێکەوتنت بیپرسە",
+      journal_read:"ڕێنماییەکە بخوێنەرەوە →",
+      booking_eyebrow:"داواکاری", booking_heading:"چاوپێکەوتنەکەت دیاری بکە",
+      booking_intro:"پێمان بڵێ بە چی سەرنجڕاکێشیت و کەی گونجاوترە. تیمی چاودێریمان لە ماوەی یەک ڕۆژی کارکردندا هەموو داواکارییەک پشتڕاست دەکاتەوە.",
+      bp_1_title:"بێ پەیوەندی زۆر", bp_1_desc:" — تەنها یەک جار بنێرە، ئێمە پەیوەندی دەکەین بۆ پشتڕاستکردنەوەی کاتەکەت.",
+      bp_2_title:"بە شێوەیەکی سەرەتایی نهێنی", bp_2_desc:" — زانیاریەکانت تەنها بۆ ڕیزبەندی پزیشکیمان دەچێت.",
+      bp_3_title:"یەکەم چاوپێکەوتن خۆڕاییە", bp_3_desc:" — هیچ کرێیەک نییە بۆ گفتوگۆکردن لەگەڵ پزیشک.",
+      book_alt:'ئیمەیلت باشترە؟ بنووسە بۆ <a href="mailto:Dolce.erbil@gmail.com">Dolce.erbil@gmail.com</a>',
+      form_name:"ناوی تەواو", form_phone:"مۆبایل / واتسئاپ", form_date:"بەرواری دڵخواز", form_treatment:"چارەسەری دڵخواز",
+      form_select_placeholder:"چارەسەرێک هەڵبژێرە", form_notes:"تێبینی بۆ تیمی چاودێری (ئارەزوومەندانە)",
+      form_notes_placeholder:"هەر شتێک پێت باشە پێش چاوپێکەوتنەکەت پێمان بڵێیت", form_submit:"داواکاری چاوپێکەوتن بنێرە",
+      form_success_title:"داواکاریەکەت وەرگیرا", form_success_body:"سوپاس — تیمی چاودێریمان لە ماوەی یەک ڕۆژی کارکردندا پەیوەندیت پێوە دەکات بۆ پشتڕاستکردنەوەی کاتەکەت.",
+      footer_tagline:"چاودێری جوانکاری، پێست و نەشتەرگەری لە دڵی پارک ڤیوی هەولێر.",
+      footer_locations_heading:"شوێنەکانمان",
+      footer_loc_1:"کلینیکی دۆلچە و سالۆنی Polished by Dolce — پارک ڤیو، هەولێر، عێراق",
+      footer_loc_2:"ستۆدیۆی Core by Dolce — بوولیڤارد، هەولێر، عێراق",
+      footer_contact_heading:"پەیوەندی",
+      footer_map_heading:"شوێنمان بدۆزەرەوە", footer_directions:"پارک ڤیو، هەولێر، عێراق — ڕێنیشاندان ↗",
+      footer_disclaimer:"دیزاینێکی پێشنیارە بۆ پێداچوونەوەی ناوخۆیی — ئەمە ماڵپەڕی ڕاستەقینەی دۆلچە نییە.",
+      footer_copy:"© کلینیکی جوانکاریی دۆلچە، هەولێر"
+    },
+    ar: {
+      util_location:"📍 بارك فيو، أربيل، العراق",
+      nav_home:"الرئيسية", nav_derm:"الجلدية والعلاجات غير الجراحية", nav_surgery:"جراحة التجميل", nav_wellness:"العافية",
+      nav_reviews:"التقييمات", nav_journal:"المدونة", nav_book:"احجزي استشارة",
+      hero_eyebrow:"عيادة التجميل الرائدة في أربيل", hero_title:"عيادة دولتشي للتجميل", hero_loc:"بارك فيو، أربيل، العراق",
+      trust_1_num:"طبيب", trust_1:"أطباء معتمدون", trust_2:"حاقنون معتمدون، عناية بشرة موثوقة", trust_3:"متابعون على إنستغرام", trust_4:"رعاية بثلاث لغات",
+      hero_cta:"احجزي استشارة مجانية",
+      about_photo_tag:"غرفة العلاج — عيادة بارك فيو",
+      about_heading:"من نحن",
+      about_body:"تلتزم عيادة دولتشي للتجميل بمساعدتك على الظهور والشعور بأفضل حال، من خلال خدمات تجميلية وجلدية وجراحية متميزة يقدّمها أطباء ومعالجون ذوو خبرة عالية. تقع عيادتنا في قلب أربيل، بارك فيو. نرتقي بجمالك بلمسات تجميلية دقيقة — فيلر أو بوتوكس أو جراحة تجميل. تشمل خدماتنا الجلدية جلسات العناية بالبشرة والميزوثيرابي والليزر لعلاج حب الشباب والتصبغ وعلامات التقدم بالعمر، إلى جانب حلول تساقط الشعر وخدمات العافية مثل العلاج الوريدي والفيتامينات وفحوصات الدم.",
+      quote_eyebrow:"عيادة التجميل الرائدة في أربيل",
+      quote_body:"مركز للحلول التجميلية والطبية، والعلاجات الجمالية وتجارب العافية",
+      mosaic_eyebrow:"الحياة في دولتشي", mosaic_heading:"داخل العيادة",
+      mosaic_intro:"نظرة على المكان والعلاجات وصالة العافية — عرض تصميمي مؤقت، بديل عن صور العيادة الحقيقية.",
+      m_word_sub:"بارك فيو، أربيل", m_arch:"الواجهة · بارك فيو", m_treat:"علاج بالليزر وLED",
+      m_iv_title:"محلول الترطيب الوريدي", m_iv_1:"يريح البشرة والمفاصل والعضلات", m_iv_2:"يعزز المناعة ويقي من العدوى", m_iv_3:"يسرّع التعافي", m_iv_4:"يرطّب الجسم",
+      m_lounge:"صالة العافية", m_product:"شريك العناية بالبشرة Medik8", follow_text:"تابعينا @dolce.erbil",
+      treat_eyebrow:"العلاجات", treat_heading:"رعاية مرتّبة حسب القسم",
+      treat_intro:"كل علاج يندرج تحت أحد أقسامنا الثلاثة، فتعرفين دائمًا مع من تحجزين.",
+      treat_botox_title:"البوتوكس", treat_botox_desc:"بوتوكس أليرغان المعتمد من FDA/CE لتنعيم خطوط التعبير مع الحفاظ على حركة الوجه الطبيعية.",
+      treat_filler_title:"الفيلر", treat_filler_desc:"فيلر للشفاه والخدود والفك وأسفل العين، بما يناسب تشريح وجهك.",
+      treat_laser_title:"الليزر وLED وتجديد البشرة", treat_laser_desc:"جلسات الكربون وعلاج LED وإزالة الشعر بالليزر وتجديد البشرة لعلاج التصبغ وحب الشباب والملمس.",
+      treat_surgery_title:"جراحة تجميل الوجه والجسم", treat_surgery_desc:"شد ونحت طفيف التدخل وإجراءات الجسم، على يد جراحين معتمدين.",
+      treat_derm_title:"طب الجلدية والعناية بالبشرة", treat_derm_desc:"تقييم وعلاج حب الشباب والتصبغ وعلامات التقدم بالعمر على يد طبيب جلدية، لا موظف مبيعات.",
+      treat_wellness_title:"العافية والعلاج الوريدي", treat_wellness_desc:"فيتامينات ومحاليل وريدية وفحوصات دم وطب نسائي تجميلي لدعمك من الداخل.",
+      treat_learnmore:"احجزي →",
+      diff_eyebrow:"تميّز دولتشي", diff_heading:"ما تضطرين للبحث عنه في أي عيادة أخرى بأربيل",
+      diff_intro:"راجعنا أبرز عيادات التجميل في المدينة. هذا ما كان على المريضات دائمًا السؤال عنه عبر الرسائل أو الهاتف أو التخمين — وهذا ما نفعله نحن بدلًا من ذلك.",
+      diff_1_title:"احجزي أونلاين، في أي وقت", diff_1_desc:"لم تقدّم أي عيادة في مراجعتنا حجزًا إلكترونيًا حقيقيًا. هنا يمكنك حجز موعدك في أقل من دقيقة، ليلًا أو نهارًا.",
+      diff_2_title:"متابعة مجانية بعد كل جلسة", diff_2_desc:"زيارة متابعة مجانية خلال أسبوعين من أي علاج، لنتأكد من النتيجة ونستمع لأي استفسار لديك.",
+      diff_3_title:"اعتماد مهني دائمًا", diff_3_desc:"شهادات كل حاقن وجرّاح منشورة، بما يوازي المعيار المعتمد في المستشفيات الكبرى بالمدينة.",
+      diff_4_title:"رعاية بلغتك", diff_4_desc:"الاستشارات وهذا الموقع بالإنجليزية والكردية والعربية — لا الإنجليزية فقط مع ترك الترجمة للصدفة.",
+      gallery_eyebrow:"النتائج", gallery_heading:"قبل وبعد، حسب العلاج", gallery_intro:"صفّي حسب العلاج لرؤية نوع التغيير الذي تبحث عنه المريضات.",
+      gallery_note:"عرض تخطيطي فقط — الصور هنا نماذج مؤقتة. عند الإطلاق، تُستبدل كل بطاقة بصور سريرية حقيقية بموافقة المريضة.",
+      gallery_filter_all:"الكل", gallery_filter_botox:"بوتوكس", gallery_filter_filler:"فيلر", gallery_filter_laser:"ليزر", gallery_filter_surgery:"جراحة",
+      before_label:"قبل", after_label:"بعد",
+      reviews_eyebrow:"التقييمات", reviews_heading:"ماذا تقول المريضات",
+      reviews_note:"عرض نموذجي — الاقتباسات أدناه نماذج مؤقتة. عند الإطلاق، تُستبدل بتقييمات حقيقية موثّقة من غوغل وإنستغرام.",
+      reviews_badge_sub:"تقييم نموذجي",
+      reviews_aggregate_label:"متوسط التقييم من غوغل وإنستغرام، يتحدّث تلقائيًا بعد الربط عند الإطلاق.",
+      rev_1_quote:"حجزت موعد البوتوكس أونلاين في منتصف الليل ووصلني التأكيد قبل أن أستيقظ. لم يحدث هذا معي في أي مكان آخر بأربيل.", rev_1_attr:"مريضة موثّقة · بوتوكس",
+      rev_2_quote:"شعرت أن الاستشارة كانت حوارًا حقيقيًا مع طبيبتي حول ما أحتاجه فعلًا — لا عرضًا تسويقيًا.", rev_2_attr:"مريضة موثّقة · فيلر",
+      rev_3_quote:"كانت استشارتي بالكامل بالكردية، من البداية للنهاية. تفصيل بسيط، لكنه أحدث فرقًا حقيقيًا.", rev_3_attr:"مريضة موثّقة · جلدية",
+      journal_eyebrow:"المدونة", journal_heading:"افهمي قبل أن تحجزي",
+      journal_intro:"إجابات واضحة عن الأسئلة الأكثر شيوعًا لدى المريضات، بقلم الفريق الطبي.",
+      journal_cat_injectables:"الحقن", journal_1_title:"البوتوكس أم الفيلر: كيف تختارين علاجك الأول",
+      journal_cat_laser:"الليزر", journal_2_title:"ماذا تتوقعين في الأسبوع التالي لجلسة تجديد البشرة بالليزر",
+      journal_cat_consult:"الاستشارات", journal_3_title:"عشرة أسئلة تستحق أن تُطرح قبل استشارتك الأولى",
+      journal_read:"اقرئي المقال →",
+      booking_eyebrow:"الحجز", booking_heading:"احجزي استشارتك",
+      booking_intro:"أخبرينا بما يهمك ومتى يناسبك. يؤكّد فريق الرعاية كل طلب خلال يوم عمل واحد.",
+      bp_1_title:"بلا مكالمات متكررة", bp_1_desc:" — أرسلي مرة واحدة، وسنتصل لتأكيد موعدك.",
+      bp_2_title:"خاصة بشكل افتراضي", bp_2_desc:" — بياناتك تصل فقط إلى فريق الاستقبال الطبي لدينا.",
+      bp_3_title:"استشارتك الأولى مجانية", bp_3_desc:" — بلا رسوم لمناقشة خياراتك مع الطبيب.",
+      book_alt:'تفضّلين البريد الإلكتروني؟ راسلينا على <a href="mailto:Dolce.erbil@gmail.com">Dolce.erbil@gmail.com</a>',
+      form_name:"الاسم الكامل", form_phone:"الهاتف / واتساب", form_date:"التاريخ المفضّل", form_treatment:"العلاج المطلوب",
+      form_select_placeholder:"اختاري علاجًا", form_notes:"ملاحظات لفريق الرعاية (اختياري)",
+      form_notes_placeholder:"أي شيء تودّين إخبارنا به قبل استشارتك", form_submit:"إرسال طلب الاستشارة",
+      form_success_title:"تم استلام طلبك", form_success_body:"شكرًا لك — سيتواصل معك فريق الرعاية خلال يوم عمل واحد لتأكيد موعدك.",
+      footer_tagline:"رعاية تجميلية وجلدية وجراحية في قلب بارك فيو، أربيل.",
+      footer_locations_heading:"مواقعنا",
+      footer_loc_1:"عيادة دولتشي وصالون Polished by Dolce — بارك فيو، أربيل، العراق",
+      footer_loc_2:"استوديو Core by Dolce — البوليفارد، أربيل، العراق",
+      footer_contact_heading:"تواصل معنا",
+      footer_map_heading:"موقعنا", footer_directions:"بارك فيو، أربيل، العراق — الاتجاهات ↗",
+      footer_disclaimer:"تصميم مفاهيمي للمراجعة الداخلية — هذا ليس موقع دولتشي كلينك الفعلي.",
+      footer_copy:"© عيادة دولتشي للتجميل، أربيل"
+    }
+  };
+
+  var current = 'en';
+  var rtl = {ku:true, ar:true};
+
+  function applyLang(lang){
+    var d = dict[lang] || dict.en;
+    document.querySelectorAll('[data-i18n]').forEach(function(el){
+      var key = el.getAttribute('data-i18n');
+      if (d[key] != null) el.innerHTML = d[key];
+    });
+    document.querySelectorAll('[data-i18n-ph]').forEach(function(el){
+      var key = el.getAttribute('data-i18n-ph');
+      if (d[key] != null) el.setAttribute('placeholder', d[key]);
+    });
+    document.documentElement.lang = lang;
+    document.documentElement.dir = rtl[lang] ? 'rtl' : 'ltr';
+    document.querySelectorAll('.langswitch button').forEach(function(b){
+      b.setAttribute('aria-pressed', String(b.getAttribute('data-lang') === lang));
+    });
+    current = lang;
+  }
+
+  document.querySelectorAll('.langswitch button').forEach(function(b){
+    b.addEventListener('click', function(){ applyLang(b.getAttribute('data-lang')); });
+  });
+
+  document.querySelectorAll('.chip').forEach(function(chip){
+    chip.addEventListener('click', function(){
+      document.querySelectorAll('.chip').forEach(function(c){ c.setAttribute('aria-pressed','false'); });
+      chip.setAttribute('aria-pressed','true');
+      var f = chip.getAttribute('data-filter');
+      document.querySelectorAll('#baGrid .ba-tile').forEach(function(tile){
+        tile.hidden = (f !== 'all' && tile.getAttribute('data-cat') !== f);
+      });
+    });
+  });
+
+  var form = document.getElementById('bookingForm');
+  var success = document.getElementById('bookingSuccess');
+  form.addEventListener('submit', async function(e){
+    e.preventDefault();
+    var payload = {
+      name: form.name.value.trim(), phone: form.phone.value.trim(), date: form.date.value || null,
+      treatment: form.treatment.value, notes: form.notes.value.trim(), language: current,
+      submittedAt: new Date().toISOString()
+    };
+    try{
+      var db = await claude.use('db');
+      if (db) { await db.collection('bookings').add(payload); }
+    } catch(err){ console.warn('Booking not saved to db:', err); }
+    form.hidden = true;
+    success.hidden = false;
+  });
+})();
+</script>
