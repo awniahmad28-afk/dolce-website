@@ -1,3 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Dolce Aesthetic Clinic — board-certified Botox, dermal fillers, laser treatments, plastic surgery and dermatology in Park View, Erbil. Book your consultation online, in English, Kurdish or Arabic.">
+<meta name="theme-color" content="#6B2E33">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><circle cx='32' cy='32' r='32' fill='%236B2E33'/><text x='32' y='45' font-family='Georgia, Times, serif' font-size='38' font-weight='700' fill='%23F5EFE6' text-anchor='middle'>D</text></svg>">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Dolce Aesthetic Clinic — Park View, Erbil">
+<meta property="og:description" content="Board-certified Botox, dermal fillers, laser treatments, plastic surgery and dermatology in Park View, Erbil. Book your consultation online.">
+<meta property="og:url" content="https://awniahmad28-afk.github.io/dolce-website/">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Dolce Aesthetic Clinic — Park View, Erbil">
+<meta name="twitter:description" content="Board-certified Botox, dermal fillers, laser treatments, plastic surgery and dermatology in Park View, Erbil.">
 <title>Dolce Aesthetic Clinic</title>
 <style>
   @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Alex+Brush&family=Work+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500&display=swap');
@@ -308,6 +323,9 @@
   [dir="rtl"] .ba-before{clip-path:polygon(0 0,100% 0,100% 100%,12% 100%);}
   [dir="rtl"] .ba-after{clip-path:polygon(0 0,88% 0,100% 100%,0 100%);}
 </style>
+</head>
+<body>
+
 
 <div class="utilbar">
   <div class="wrap">
@@ -599,8 +617,14 @@
         </form>
         <div class="book-success" id="bookingSuccess" hidden>
           <svg viewBox="0 0 24 24" fill="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M8 12.5l2.5 2.5L16 9.5"/></svg>
-          <h3 data-i18n="form_success_title">Request received</h3>
-          <p data-i18n="form_success_body">Thank you — our care team will reach out within one business day to confirm your appointment.</p>
+          <div id="successSaved">
+            <h3 data-i18n="form_success_title">Request received</h3>
+            <p data-i18n="form_success_body">Thank you — our care team will reach out within one business day to confirm your appointment.</p>
+          </div>
+          <div id="successMail" hidden>
+            <h3 data-i18n="form_success_mail_title">Almost there</h3>
+            <p data-i18n="form_success_mail_body">We've opened your email app with your request ready to send — just hit send and our care team will confirm within one business day. Didn't open automatically? Email us directly at Dolce.erbil@gmail.com.</p>
+          </div>
         </div>
       </div>
     </div>
@@ -708,6 +732,7 @@
       form_select_placeholder:"Select a treatment", form_notes:"Notes for the care team (optional)",
       form_notes_placeholder:"Anything you'd like us to know before your consultation", form_submit:"Request my consultation",
       form_success_title:"Request received", form_success_body:"Thank you — our care team will reach out within one business day to confirm your appointment.",
+      form_success_mail_title:"Almost there", form_success_mail_body:"We've opened your email app with your request ready to send — just hit send and our care team will confirm within one business day. Didn't open automatically? Email us directly at Dolce.erbil@gmail.com.",
       footer_tagline:"Aesthetic, dermatology and plastic surgery care in the heart of Park View, Erbil.",
       footer_locations_heading:"Our Locations",
       footer_loc_1:"Dolce Clinic & Polished by Dolce Salon — Park View, Erbil, Iraq",
@@ -776,6 +801,7 @@
       form_select_placeholder:"چارەسەرێک هەڵبژێرە", form_notes:"تێبینی بۆ تیمی چاودێری (ئارەزوومەندانە)",
       form_notes_placeholder:"هەر شتێک پێت باشە پێش چاوپێکەوتنەکەت پێمان بڵێیت", form_submit:"داواکاری چاوپێکەوتن بنێرە",
       form_success_title:"داواکاریەکەت وەرگیرا", form_success_body:"سوپاس — تیمی چاودێریمان لە ماوەی یەک ڕۆژی کارکردندا پەیوەندیت پێوە دەکات بۆ پشتڕاستکردنەوەی کاتەکەت.",
+      form_success_mail_title:"خەریکە تەواو دەبێت", form_success_mail_body:"ئیمەیلەکەمان بە داواکارییەکەتەوە کراوەتەوە — تەنها دوگمەی ناردن دابگرە و تیمی چاودێریمان لە ماوەی یەک ڕۆژی کارکردندا پشتڕاستی دەکاتەوە. خۆکار نەکراوەتەوە؟ ڕاستەوخۆ ئیمەیل بنێرە بۆ Dolce.erbil@gmail.com.",
       footer_tagline:"چاودێری جوانکاری، پێست و نەشتەرگەری لە دڵی پارک ڤیوی هەولێر.",
       footer_locations_heading:"شوێنەکانمان",
       footer_loc_1:"کلینیکی دۆلچە و سالۆنی Polished by Dolce — پارک ڤیو، هەولێر، عێراق",
@@ -844,6 +870,7 @@
       form_select_placeholder:"اختاري علاجًا", form_notes:"ملاحظات لفريق الرعاية (اختياري)",
       form_notes_placeholder:"أي شيء تودّين إخبارنا به قبل استشارتك", form_submit:"إرسال طلب الاستشارة",
       form_success_title:"تم استلام طلبك", form_success_body:"شكرًا لك — سيتواصل معك فريق الرعاية خلال يوم عمل واحد لتأكيد موعدك.",
+      form_success_mail_title:"خطوة أخيرة", form_success_mail_body:"فتحنا تطبيق البريد لديك مع تعبئة طلبك مسبقًا — فقط اضغطي إرسال وسيؤكد فريق الرعاية خلال يوم عمل واحد. لم يفتح تلقائيًا؟ راسلينا مباشرة على Dolce.erbil@gmail.com.",
       footer_tagline:"رعاية تجميلية وجلدية وجراحية في قلب بارك فيو، أربيل.",
       footer_locations_heading:"مواقعنا",
       footer_loc_1:"عيادة دولتشي وصالون Polished by Dolce — بارك فيو، أربيل، العراق",
@@ -893,6 +920,9 @@
 
   var form = document.getElementById('bookingForm');
   var success = document.getElementById('bookingSuccess');
+  var successSaved = document.getElementById('successSaved');
+  var successMail = document.getElementById('successMail');
+
   form.addEventListener('submit', async function(e){
     e.preventDefault();
     var payload = {
@@ -900,12 +930,36 @@
       treatment: form.treatment.value, notes: form.notes.value.trim(), language: current,
       submittedAt: new Date().toISOString()
     };
+
+    var saved = false;
     try{
-      var db = await claude.use('db');
-      if (db) { await db.collection('bookings').add(payload); }
-    } catch(err){ console.warn('Booking not saved to db:', err); }
+      var db = window.claude ? await claude.use('db') : null;
+      if (db) { await db.collection('bookings').add(payload); saved = true; }
+    } catch(err){ console.warn('Booking db unavailable, falling back to email:', err); }
+
+    if (!saved) {
+      // No db capability on this host (e.g. the static GitHub Pages copy) —
+      // hand the filled-in request to the visitor's email app instead of
+      // silently pretending it was received.
+      var subject = 'New consultation request — ' + (payload.name || 'Website visitor');
+      var body = [
+        'Name: ' + payload.name,
+        'Phone: ' + payload.phone,
+        'Treatment: ' + payload.treatment,
+        'Preferred date: ' + (payload.date || '—'),
+        'Notes: ' + (payload.notes || '—'),
+        'Language: ' + payload.language
+      ].join('\n');
+      window.location.href = 'mailto:Dolce.erbil@gmail.com?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
+    }
+
+    successSaved.hidden = !saved;
+    successMail.hidden = saved;
     form.hidden = true;
     success.hidden = false;
   });
 })();
 </script>
+
+</body>
+</html>
