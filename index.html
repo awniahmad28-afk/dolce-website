@@ -98,9 +98,8 @@
   /* ---------- header ---------- */
   header.site{position:sticky;top:0;z-index:40;background:linear-gradient(180deg,var(--rose-1),var(--rose-2));}
   .nav{display:flex;align-items:center;justify-content:space-between;gap:20px;padding-block:12px;}
-  .wordmark{display:flex;align-items:baseline;gap:8px;text-decoration:none;}
-  .wordmark .script{font-family:var(--font-script);font-size:38px;line-height:1;color:var(--nav-ink);}
-  .wordmark .sub{font-family:var(--font-body);font-size:9.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--nav-ink-soft);}
+  .wordmark{display:flex;align-items:center;text-decoration:none;}
+  .logo-img{height:52px;width:auto;display:block;}
   .navlinks{display:flex;gap:24px;list-style:none;margin:0;padding:0;}
   .navlinks a{font-size:12.5px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;text-decoration:none;color:var(--nav-ink);}
   .navlinks a:hover{color:var(--gold);}
@@ -312,7 +311,8 @@
   .foot-links{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:9px;color:var(--nav-ink);}
   .foot-links a{text-decoration:none;color:var(--nav-ink);}
   .foot-links a:hover{color:var(--gold);}
-  .foot-word{font-family:var(--font-script);font-size:34px;color:var(--nav-ink);text-decoration:none;}
+  .foot-word{display:inline-block;text-decoration:none;}
+  .foot-logo-img{height:60px;width:auto;display:block;}
   .foot-map{border:1px solid rgba(255,255,255,.3);background:rgba(255,255,255,.06);padding:14px;margin-top:4px;}
   .foot-map .grid{height:74px;background:repeating-linear-gradient(90deg, rgba(255,255,255,.14) 0 1px, transparent 1px 18px),repeating-linear-gradient(0deg, rgba(255,255,255,.1) 0 1px, transparent 1px 18px);position:relative;}
   .foot-map .pin{position:absolute;left:52%;top:44%;width:9px;height:9px;border-radius:50% 50% 50% 0;background:var(--accent-soft);transform:rotate(-45deg);}
@@ -344,7 +344,7 @@
 
 <header class="site">
   <div class="wrap nav">
-    <a class="wordmark" href="#top"><span class="script">Dolçe</span><span class="sub">Aesthetic<br>Clinic</span></a>
+    <a class="wordmark" href="#top"><img class="logo-img" src="logo.png" alt="Dolçe Aesthetic Clinic"></a>
     <ul class="navlinks">
       <li><a href="#top" data-i18n="nav_home">Home</a></li>
       <li><a href="#treatments" data-i18n="nav_derm">Dermatology &amp; Non-Invasive</a></li>
@@ -636,7 +636,7 @@
   <div class="wrap">
     <div class="foot-grid">
       <div>
-        <a class="foot-word" href="#top">Dolçe</a>
+        <a class="foot-word" href="#top"><img class="foot-logo-img" src="logo.png" alt="Dolçe Aesthetic Clinic"></a>
         <p style="margin-top:14px;max-width:30ch;color:var(--nav-ink);" data-i18n="footer_tagline">Aesthetic, dermatology and plastic surgery care in the heart of Park View, Erbil.</p>
       </div>
       <div>
