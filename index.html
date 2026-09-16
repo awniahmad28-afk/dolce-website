@@ -42,6 +42,12 @@
     --focus:#1F5C46;
     --derm-intro-bg:#FFFFFF;
     --derm-intro-text:#2E2013;
+    --derm-detail-bg:#F7F1E7;
+    --derm-detail-text:#2E2013;
+    --surgery-bg:#F7F1E7;
+    --surgery-text:#2E2013;
+    --wellness-bg:#F7F1E7;
+    --wellness-text:#2E2013;
     --font-script:'Alex Brush', cursive;
     --font-display:'Cormorant Garamond', 'Iowan Old Style', Georgia, serif;
     --font-body:'Work Sans', 'Segoe UI', system-ui, sans-serif;
@@ -58,6 +64,9 @@
       --sand:#332B1E; --sand-ink:#E3D8BE;
       --gold:#C4A276; --shadow:rgba(0,0,0,0.5); --focus:#4FAE8A;
       --derm-intro-bg:#241E17; --derm-intro-text:#F1E9D8;
+      --derm-detail-bg:#1B1712; --derm-detail-text:#F1E9D8;
+      --surgery-bg:#1B1712; --surgery-text:#F1E9D8;
+      --wellness-bg:#1B1712; --wellness-text:#F1E9D8;
     }
   }
   :root[data-theme="dark"]{
@@ -70,6 +79,9 @@
     --sand:#332B1E; --sand-ink:#E3D8BE;
     --gold:#C4A276; --shadow:rgba(0,0,0,0.5); --focus:#4FAE8A;
     --derm-intro-bg:#241E17; --derm-intro-text:#F1E9D8;
+    --derm-detail-bg:#1B1712; --derm-detail-text:#F1E9D8;
+    --surgery-bg:#1B1712; --surgery-text:#F1E9D8;
+    --wellness-bg:#1B1712; --wellness-text:#F1E9D8;
   }
 
   *{box-sizing:border-box;}
@@ -239,6 +251,15 @@
   .treat-link:hover{color:var(--accent);}
 
   /* ---------- department detail sections ---------- */
+  #derm-detail{background:var(--derm-detail-bg);color:var(--derm-detail-text);}
+  #derm-detail .eyebrow, #derm-detail .dept-sub-eyebrow{color:var(--gold);}
+  #derm-detail h2, #derm-detail h3, #derm-detail .dept-sub-body{color:inherit;}
+  #surgery{background:var(--surgery-bg);color:var(--surgery-text);}
+  #surgery .eyebrow, #surgery .dept-sub-eyebrow{color:var(--gold);}
+  #surgery h2, #surgery h3, #surgery .lede, #surgery .dept-sub-body, #surgery .dept-cta{color:inherit;}
+  #wellness{background:var(--wellness-bg);color:var(--wellness-text);}
+  #wellness .eyebrow{color:var(--gold);}
+  #wellness h2, #wellness h3, #wellness .lede, #wellness .dept-sub-body{color:inherit;}
   .dept-block{margin-top:60px;}
   .dept-block:first-child{margin-top:0;}
   .dept-sub-eyebrow{font-family:var(--font-body);font-size:12px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);}
@@ -492,7 +513,7 @@
   </section>
 
   <!-- DERMATOLOGY DETAIL -->
-  <section class="wrap band-pad">
+  <section id="derm-detail" class="wrap band-pad">
     <div class="dept-block">
       <p class="eyebrow" data-i18n="nav_derm">Dermatology &amp; Non-Invasive</p>
       <h2 class="dept-sub-heading" style="margin-top:6px;font-size:clamp(24px,3vw,32px);" data-i18n="derm_treat_heading">Treatments we offer</h2>
