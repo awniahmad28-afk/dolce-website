@@ -16,24 +16,25 @@
 <title>Dolce Aesthetic Clinic</title>
 <title>Dolce Aesthetic Clinic</title>
 <style>
-  @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Alex+Brush&family=Work+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500&display=swap');
+  @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Alex+Brush&family=Work+Sans:wght@400;500;600;700&family=Karla:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500&display=swap');
 
   :root{
-    --ground:#682C2C;
+    --ground:#000000;
     --surface:#FFFFFF;
-    --surface-2:#F1E8D2;
-    --ink:#2E2013;
+    --surface-2:#000000;
+    --ink:#503a25;
     --ink-soft:#6B5843;
     --ink-faint:#9C8C74;
     --line:#E3D6BB;
     --accent:#90855a;
     --accent-ink:#37301f;
     --accent-soft:#DCEAE2;
-    --rose-1:#ffcf56;
+    --rose-1:#966e64;
     --rose-2:#2a1818;
     --nav-ink:#FBF6EC;
     --nav-ink-soft:#E4D8BE;
     --nav-link-color:#c1b79f;
+    --nav-font-family:'Karla', 'Segoe UI', system-ui, sans-serif;
     --social-icon-bg:#c3b79d;
     --footer-tagline-color:#ddc9a6;
     --footer-disclaimer-color:#3f2c03;
@@ -43,7 +44,7 @@
     --hero-headline-color:#FFFFFF;
     --hero-location-color:#F1E6DC;
     --about-photo-bg:#fea9a9;
-    --about-panel-bg:#95756f;
+    --about-panel-bg:#b0b0b0;
     --about-heading-color:#2E2013;
     --about-quote-color:#2E2013;
     --cat-derm:#707070;
@@ -53,7 +54,7 @@
     --taupe-ink:#2E2013;
     --sand:#EFE6CF;
     --sand-ink:#362A18;
-    --gold:#A6805A;
+    --gold:#b7a18a;
     --shadow:rgba(46,32,19,0.14);
     --focus:#1F5C46;
     --derm-intro-bg:#FFFFFF;
@@ -64,6 +65,16 @@
     --surgery-text:#2E2013;
     --wellness-bg:#b2d4b0;
     --wellness-text:#2E2013;
+    --treatments-bg:#000000;
+    --treatments-text:#503a25;
+    --gallery-bg:#000000;
+    --gallery-text:#503a25;
+    --reviews-bg:#000000;
+    --reviews-text:#503a25;
+    --journal-bg:#000000;
+    --journal-text:#503a25;
+    --booking-bg:#000000;
+    --booking-text:#503a25;
     --font-script:'Alex Brush', cursive;
     --font-display:'Cormorant Garamond', 'Iowan Old Style', Georgia, serif;
     --font-body:'Work Sans', 'Segoe UI', system-ui, sans-serif;
@@ -76,7 +87,7 @@
       --accent:#5C3A2E; --accent-ink:#F8F3E7; --accent-soft:#1F3A30;
       --rose-1:#AB5959; --rose-2:#633636;
       --nav-ink:#F3ECDD; --nav-ink-soft:#CBB99E;
-      --nav-link-color:#F3ECDD; --social-icon-bg:rgba(255,255,255,.14);
+      --nav-link-color:#F3ECDD; --nav-font-family:'Karla','Segoe UI',system-ui,sans-serif; --social-icon-bg:rgba(255,255,255,.14);
       --footer-tagline-color:#F3ECDD; --footer-disclaimer-color:#CBB99E;
       --hero-base:#C9A46B; --hero-stripe:#5C3A2E; --hero-eyebrow-color:#CBB99E;
       --hero-headline-color:#FFFFFF; --hero-location-color:#F1E6DC;
@@ -90,6 +101,11 @@
       --derm-detail-bg:#1B1712; --derm-detail-text:#F1E9D8;
       --surgery-bg:#1B1712; --surgery-text:#F1E9D8;
       --wellness-bg:#1B1712; --wellness-text:#F1E9D8;
+      --treatments-bg:#1B1712; --treatments-text:#F1E9D8;
+      --gallery-bg:#1B1712; --gallery-text:#F1E9D8;
+      --reviews-bg:#1B1712; --reviews-text:#F1E9D8;
+      --journal-bg:#1B1712; --journal-text:#F1E9D8;
+      --booking-bg:#1B1712; --booking-text:#F1E9D8;
     }
   }
   :root[data-theme="dark"]{
@@ -98,7 +114,7 @@
     --accent:#5C3A2E; --accent-ink:#F8F3E7; --accent-soft:#1F3A30;
     --rose-1:#AB5959; --rose-2:#633636;
     --nav-ink:#F3ECDD; --nav-ink-soft:#CBB99E;
-    --nav-link-color:#F3ECDD; --social-icon-bg:rgba(255,255,255,.14);
+    --nav-link-color:#F3ECDD; --nav-font-family:'Karla','Segoe UI',system-ui,sans-serif; --social-icon-bg:rgba(255,255,255,.14);
     --footer-tagline-color:#F3ECDD; --footer-disclaimer-color:#CBB99E;
     --hero-base:#C9A46B; --hero-stripe:#5C3A2E; --hero-eyebrow-color:#CBB99E;
     --hero-headline-color:#FFFFFF; --hero-location-color:#F1E6DC;
@@ -112,6 +128,11 @@
     --derm-detail-bg:#1B1712; --derm-detail-text:#F1E9D8;
     --surgery-bg:#1B1712; --surgery-text:#F1E9D8;
     --wellness-bg:#1B1712; --wellness-text:#F1E9D8;
+    --treatments-bg:#1B1712; --treatments-text:#F1E9D8;
+    --gallery-bg:#1B1712; --gallery-text:#F1E9D8;
+    --reviews-bg:#1B1712; --reviews-text:#F1E9D8;
+    --journal-bg:#1B1712; --journal-text:#F1E9D8;
+    --booking-bg:#1B1712; --booking-text:#F1E9D8;
   }
 
   *{box-sizing:border-box;}
@@ -129,6 +150,7 @@
   .lede{color:var(--ink-soft);max-width:58ch;}
 
   .wrap{max-width:1180px;margin-inline:auto;padding-inline:20px;}
+  .hidden-section{display:none;}
   .band-pad{padding-block:96px;}
   @media (max-width:720px){ .band-pad{padding-block:56px;} }
 
@@ -148,7 +170,7 @@
   .wordmark{display:flex;align-items:center;text-decoration:none;}
   .logo-img{height:52px;width:auto;display:block;}
   .navlinks{display:flex;gap:24px;list-style:none;margin:0;padding:0;}
-  .navlinks a{font-size:12.5px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;text-decoration:none;color:var(--nav-link-color);}
+  .navlinks a{font-size:12.5px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;text-decoration:none;color:var(--nav-link-color);font-family:var(--nav-font-family);}
   .navlinks a:hover{color:var(--gold);}
   .navcta{display:flex;align-items:center;gap:16px;}
   .socialrow{display:flex;gap:10px;}
@@ -290,6 +312,21 @@
   #wellness{background:var(--wellness-bg);color:var(--wellness-text);}
   #wellness .eyebrow{color:var(--gold);}
   #wellness h2, #wellness h3, #wellness .lede, #wellness .dept-sub-body{color:inherit;}
+  #treatments{background:var(--treatments-bg);color:var(--treatments-text);}
+  #treatments .eyebrow{color:var(--gold);}
+  #treatments h2, #treatments .lede{color:inherit;}
+  #gallery{background:var(--gallery-bg);color:var(--gallery-text);}
+  #gallery .eyebrow{color:var(--gold);}
+  #gallery h2, #gallery .lede, #gallery .gallery-note{color:inherit;}
+  #reviews{background:var(--reviews-bg);color:var(--reviews-text);}
+  #reviews .eyebrow{color:var(--gold);}
+  #reviews h2, #reviews .lede, #reviews .gallery-note, #reviews .rev-badge{color:inherit;}
+  #journal{background:var(--journal-bg);color:var(--journal-text);}
+  #journal .eyebrow{color:var(--gold);}
+  #journal h2, #journal .lede{color:inherit;}
+  #booking{background:var(--booking-bg);color:var(--booking-text);}
+  #booking .eyebrow{color:var(--gold);}
+  #booking h2, #booking .lede, #booking .book-points p, #booking .book-alt{color:inherit;}
   .dept-block{margin-top:60px;}
   .dept-block:first-child{margin-top:0;}
   .dept-sub-eyebrow{font-family:var(--font-body);font-size:12px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);}
@@ -474,7 +511,7 @@
   </div>
 
   <!-- TREATMENTS OVERVIEW -->
-  <section id="treatments" class="wrap band-pad">
+  <section id="treatments" class="wrap band-pad hidden-section">
     <div class="sec-head">
       <div>
         <p class="eyebrow" data-i18n="treat_eyebrow">Treatments</p>
@@ -535,7 +572,7 @@
   </section>
 
   <!-- DERMATOLOGY INTRO -->
-  <section id="derm" class="derm-intro">
+  <section id="derm" class="derm-intro hidden-section">
     <div class="wrap">
       <h2 data-i18n="derm_intro_heading">Dermatology Services &amp; Hair Loss Solutions</h2>
       <p data-i18n="derm_intro_body">Get our expert skin specialists' opinion on what dermatology services will best suit you. From lasers, chemical peels, injectable skin boosters, to the top medical devices to tighten, rejuvenate and revive your skin!</p>
@@ -687,7 +724,7 @@
   </section>
 
   <!-- DIFFERENCE -->
-  <section id="difference" class="band">
+  <section id="difference" class="band hidden-section">
     <div class="wrap band-pad">
       <div class="sec-head">
         <div>
@@ -706,7 +743,7 @@
   </section>
 
   <!-- MOSAIC -->
-  <section class="wrap band-pad">
+  <section class="wrap band-pad hidden-section">
     <div class="sec-head">
       <div>
         <p class="eyebrow" data-i18n="mosaic_eyebrow">Life at Dolçe</p>
