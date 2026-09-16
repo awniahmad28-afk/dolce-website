@@ -14,6 +14,7 @@
 <meta name="twitter:title" content="Dolce Aesthetic Clinic — Park View, Erbil">
 <meta name="twitter:description" content="Board-certified Botox, dermal fillers, laser treatments, plastic surgery and dermatology in Park View, Erbil.">
 <title>Dolce Aesthetic Clinic</title>
+<title>Dolce Aesthetic Clinic</title>
 <style>
   @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Alex+Brush&family=Work+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500&display=swap');
 
@@ -237,6 +238,32 @@
   .treat-link{font-size:13px;font-weight:600;text-decoration:none;color:var(--ink);}
   .treat-link:hover{color:var(--accent);}
 
+  /* ---------- department detail sections ---------- */
+  .dept-block{margin-top:60px;}
+  .dept-block:first-child{margin-top:0;}
+  .dept-sub-eyebrow{font-family:var(--font-body);font-size:12px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);}
+  .dept-sub-heading{font-family:var(--font-display);font-size:clamp(20px,2.4vw,28px);margin-top:8px;}
+  .dept-sub-body{color:var(--ink-soft);max-width:72ch;margin-top:12px;line-height:1.7;font-size:15px;}
+  .dept-list{list-style:none;margin:28px 0 0;padding:0;display:grid;gap:12px;}
+  .dept-list li{background:var(--surface);border:1px solid var(--line);border-radius:4px;padding:16px 20px;font-size:14.5px;line-height:1.6;color:var(--ink-soft);}
+  .dept-list li b{color:var(--ink);font-weight:600;}
+  .dept-cols{display:grid;grid-template-columns:1fr 1fr;gap:12px 32px;margin-top:24px;}
+  .dept-cols ul{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:10px;}
+  .dept-cols li{background:var(--surface);border:1px solid var(--line);border-radius:4px;padding:12px 16px;font-size:14px;color:var(--ink-soft);}
+  @media (max-width:640px){ .dept-cols{grid-template-columns:1fr;} }
+  .dept-faq{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:24px;}
+  @media (max-width:900px){ .dept-faq{grid-template-columns:1fr;} }
+  .dept-faq .faq-card{background:var(--surface);border:1px solid var(--line);border-radius:4px;padding:22px 24px;}
+  .dept-faq .faq-card h4{font-size:15px;color:var(--ink);}
+  .dept-faq .faq-card p{margin-top:8px;font-size:13.5px;color:var(--ink-soft);line-height:1.6;}
+  .dept-cta{margin-top:28px;font-size:14.5px;color:var(--ink-soft);}
+  .dept-cta a{color:var(--accent);font-weight:600;}
+  .iv-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:24px;}
+  @media (max-width:900px){ .iv-grid{grid-template-columns:1fr;} }
+  .iv-card{background:var(--surface);border:1px solid var(--line);border-radius:4px;padding:24px 22px;}
+  .iv-card h4{font-size:16px;color:var(--accent);}
+  .iv-card p{margin-top:10px;font-size:13.5px;color:var(--ink-soft);line-height:1.65;}
+
   /* ---------- difference band (bold accent) ---------- */
   .band{background:var(--accent);color:var(--accent-ink);}
   .band .lede{color:color-mix(in srgb, var(--accent-ink) 78%, transparent);}
@@ -341,9 +368,9 @@
     <a class="wordmark" href="#top"><img class="logo-img" src="logo.png" alt="Dolçe Aesthetic Clinic"></a>
     <ul class="navlinks">
       <li><a href="#top" data-i18n="nav_home">Home</a></li>
-      <li><a href="#treatments" data-i18n="nav_derm">Dermatology &amp; Non-Invasive</a></li>
-      <li><a href="#treatments" data-i18n="nav_surgery">Plastic Surgery</a></li>
-      <li><a href="#treatments" data-i18n="nav_wellness">Wellness</a></li>
+      <li><a href="#derm" data-i18n="nav_derm">Dermatology &amp; Non-Invasive</a></li>
+      <li><a href="#surgery" data-i18n="nav_surgery">Plastic Surgery</a></li>
+      <li><a href="#wellness" data-i18n="nav_wellness">Wellness</a></li>
       <li><a href="#booking" data-i18n="nav_contact">Contact Us</a></li>
     </ul>
     <div class="navcta">
@@ -390,20 +417,12 @@
 
   <!-- CATEGORY BAND -->
   <div class="cat-grid">
-    <a class="cat-tile cat-derm" href="#treatments"><div class="duo"></div><span data-i18n="nav_derm">Dermatology &amp; Non-Invasive</span></a>
-    <a class="cat-tile cat-surgery" href="#treatments"><div class="duo"></div><span data-i18n="nav_surgery">Plastic Surgery</span></a>
-    <a class="cat-tile cat-wellness" href="#treatments"><div class="duo"></div><span data-i18n="nav_wellness">Wellness</span></a>
+    <a class="cat-tile cat-derm" href="#derm"><div class="duo"></div><span data-i18n="nav_derm">Dermatology &amp; Non-Invasive</span></a>
+    <a class="cat-tile cat-surgery" href="#surgery"><div class="duo"></div><span data-i18n="nav_surgery">Plastic Surgery</span></a>
+    <a class="cat-tile cat-wellness" href="#wellness"><div class="duo"></div><span data-i18n="nav_wellness">Wellness</span></a>
   </div>
 
-  <!-- DERMATOLOGY INTRO -->
-  <section class="derm-intro">
-    <div class="wrap">
-      <h2 data-i18n="derm_intro_heading">Dermatology Services &amp; Hair Loss Solutions</h2>
-      <p data-i18n="derm_intro_body">Get our expert skin specialists' opinion on what dermatology services will best suit you. From lasers, chemical peels, injectable skin boosters, to the top medical devices to tighten, rejuvenate and revive your skin!</p>
-    </div>
-  </section>
-
-  <!-- TREATMENTS -->
+  <!-- TREATMENTS OVERVIEW -->
   <section id="treatments" class="wrap band-pad">
     <div class="sec-head">
       <div>
@@ -461,6 +480,158 @@
         <p data-i18n="treat_wellness_desc">Vitamin boosters, IV drips, blood panels and aesthetic gynaecology to support you from the inside out.</p>
         <div class="treat-foot"><a class="treat-link" href="#booking" data-i18n="treat_learnmore">Book →</a></div>
       </article>
+    </div>
+  </section>
+
+  <!-- DERMATOLOGY INTRO -->
+  <section id="derm" class="derm-intro">
+    <div class="wrap">
+      <h2 data-i18n="derm_intro_heading">Dermatology Services &amp; Hair Loss Solutions</h2>
+      <p data-i18n="derm_intro_body">Get our expert skin specialists' opinion on what dermatology services will best suit you. From lasers, chemical peels, injectable skin boosters, to the top medical devices to tighten, rejuvenate and revive your skin!</p>
+    </div>
+  </section>
+
+  <!-- DERMATOLOGY DETAIL -->
+  <section class="wrap band-pad">
+    <div class="dept-block">
+      <p class="eyebrow" data-i18n="nav_derm">Dermatology &amp; Non-Invasive</p>
+      <h2 class="dept-sub-heading" style="margin-top:6px;font-size:clamp(24px,3vw,32px);" data-i18n="derm_treat_heading">Treatments we offer</h2>
+      <ul class="dept-list">
+        <li data-i18n="derm_t1">Morpheus8 — minimises acne scarring, lifts and tightens skin, stimulates collagen</li>
+        <li data-i18n="derm_t2">Carboxy — medical CO₂ to thicken skin, creates new collagen, improves appearance</li>
+        <li data-i18n="derm_t3">Fractional Laser — diminishes the appearance of wrinkles, stimulates collagen production, treats acne scars</li>
+        <li data-i18n="derm_t4">CPL Laser — treats active acne and pigmentation</li>
+        <li data-i18n="derm_t5">PRP — platelet-rich plasma for face and hair, improves skin tone, boosts hair growth and stops hair fall</li>
+        <li data-i18n="derm_t6">Mesotherapy — injections of vitamins, enzymes, hormones and plant extracts to rejuvenate and tighten skin</li>
+        <li data-i18n="derm_t7">NCTF 135 Mesotherapy (Paris Shine)</li>
+        <li data-i18n="derm_t8">Biopeel — organic skin peel</li>
+        <li data-i18n="derm_t9">Plasma Pen — mole removal, rejuvenates under-eye bags and skin</li>
+        <li data-i18n="derm_t10">Profhilo, Croma Rich, Juvederm Volite &amp; Teosyal Redensity 1 — injectables for deep hydration, rejuvenation and radiance across face, neck and hands</li>
+        <li data-i18n="derm_t11">Stem C'rum — our best-selling hair re-growth treatment</li>
+      </ul>
+    </div>
+
+    <div class="dept-block">
+      <p class="dept-sub-eyebrow" data-i18n="nav_derm">Dermatology &amp; Non-Invasive</p>
+      <h3 class="dept-sub-heading" data-i18n="facial_menu_heading">Facial Menu</h3>
+      <p class="dept-sub-body" data-i18n="facial_menu_intro">At Dolce Aesthetic Clinic we pride ourselves on using top clinical-grade products in our facial treatments, with a wide selection to help deeply cleanse and rejuvenate your skin. You'll leave with our Dolce glow!</p>
+      <div class="dept-cols">
+        <ul>
+          <li data-i18n="f_1">Hydrafacial</li>
+          <li data-i18n="f_2">Express Hydrafacial (30 Min)</li>
+          <li data-i18n="f_3">Young Adult Facial</li>
+          <li data-i18n="f_4">Sensitive Skin Facial – Rosacea (45 Min)</li>
+          <li data-i18n="f_5">Anti-Aging Facial (60 Min)</li>
+          <li data-i18n="f_6">Pigmentation / Discoloration Facial</li>
+          <li data-i18n="f_7">Acne Facial (45–60 Min)</li>
+        </ul>
+        <ul>
+          <li data-i18n="f_8">Dolce's Signature Gold Extract Facial</li>
+          <li data-i18n="f_9">Skinceuticals Deep Cleansing Facial + Hydrafacial (60–90 Min)</li>
+          <li data-i18n="f_10">Radiant Skin Facial</li>
+          <li data-i18n="f_11">Intense Hydration Facial</li>
+          <li data-i18n="f_12">Dermapen + Skinceuticals Facial</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="dept-block">
+      <h3 class="dept-sub-heading" data-i18n="laser_hr_heading">Laser Hair Removal</h3>
+      <p class="dept-sub-body" data-i18n="laser_hr_body">Put an end to slow, messy and painful hair removal methods such as shaving, waxing, tweezing and creams. Our Xlase Machine uses short, safe bursts of light from a cold tip to remove unwanted hair from all body sites.</p>
+    </div>
+
+    <div class="dept-block">
+      <h3 class="dept-sub-heading" data-i18n="derm_faq_heading">Frequently asked</h3>
+      <div class="dept-faq">
+        <div class="faq-card"><h4 data-i18n="faq_1_q">Does it hurt?</h4><p data-i18n="faq_1_a">Pain tolerance is very individual. No anaesthetic is required — most people describe the sensation as similar to a cold ice cube moving across the skin.</p></div>
+        <div class="faq-card"><h4 data-i18n="faq_2_q">Do I need precautions before &amp; after treatment?</h4><p data-i18n="faq_2_a">Shave 24–48 hours before treatment so the laser can catch the hair root, and avoid plucking, tweezing, waxing or hair-removal cream for four weeks after. Avoid sun, solarium or self-tanning before and during treatment.</p></div>
+        <div class="faq-card"><h4 data-i18n="faq_3_q">How many sessions do I need?</h4><p data-i18n="faq_3_a">Growth cycles vary by body site, hair density, ethnic origin, hormones and age. Clinical studies confirm at least 3–6 treatments are needed, spaced 1–3 months apart. Call +964-750-900-0200 to discuss your plan.</p></div>
+      </div>
+    </div>
+
+    <div class="dept-block">
+      <h3 class="dept-sub-heading" data-i18n="gyno_heading">Aesthetic Gynecology</h3>
+      <p class="dept-sub-body" data-i18n="gyno_body">An innovative branch of medicine allowing women to improve appearance or function for personal or medical reasons. Our Forma V device by Votiva InMode is the latest technology resolving vaginal and urethral issues related to menopause and natural ageing, restoring internal and external vaginal health through natural healing and tightening. Come in for a consultation with our specialist to find out if it's right for you.</p>
+    </div>
+  </section>
+
+  <!-- PLASTIC SURGERY -->
+  <section id="surgery" class="wrap band-pad">
+    <div class="sec-head">
+      <div>
+        <p class="eyebrow" data-i18n="surgery_eyebrow">Plastic Surgery</p>
+        <h2 data-i18n="surgery_face_heading">Face</h2>
+      </div>
+      <p class="lede" data-i18n="surgery_face_body">If sagging, loose facial skin or stubborn wrinkles — or a nose that isn't quite the shape you'd like — are on your mind, our facial procedures are designed to rejuvenate your appearance and restore your confidence. Whether your concerns sit in the upper, middle or lower face and neck, our experienced doctors help find the right procedure, prioritising the safest, highest-quality results.</p>
+    </div>
+    <ul class="dept-list">
+      <li data-i18n="s_f1">Upper &amp; lower blepharoplasty — eyelid surgery to remove excess skin, tighten and create an eyelid crease</li>
+      <li data-i18n="s_f2">Face lift (rhytidectomy) — addresses sagging and wrinkles in the mid-to-lower face by tightening underlying tissue and removing excess skin</li>
+      <li data-i18n="s_f3">Neck lift (lower rhytidectomy) — often performed with a face lift for a harmonious result</li>
+      <li data-i18n="s_f4">Brow lift (forehead lift) — elevates a drooping eyebrow</li>
+      <li data-i18n="s_f5">Rhinoplasty — adjusts the size, shape and projection of the nose</li>
+      <li data-i18n="s_f6">Lip lift — removes a section of tissue along the base of the nose for a fuller, more youthful pout</li>
+    </ul>
+    <div class="dept-block">
+      <div class="dept-faq" style="grid-template-columns:1fr;">
+        <div class="faq-card"><h4 data-i18n="surgery_faq_q">Can I undergo more than one facial procedure?</h4><p data-i18n="surgery_faq_a">Yes — if desired, we can combine two or more procedures into one surgery for a more comprehensive, balanced result, with less overall downtime and lower cost than separate surgeries.</p></div>
+      </div>
+    </div>
+
+    <div class="dept-block">
+      <p class="dept-sub-eyebrow" data-i18n="surgery_eyebrow">Plastic Surgery</p>
+      <h3 class="dept-sub-heading" data-i18n="surgery_body_heading">Body</h3>
+      <p class="dept-sub-body" data-i18n="surgery_body_body">Aesthetic body surgeries significantly alter and improve the appearance of the body — for areas affected by weight change, pregnancy or excess skin. Cosmetic surgery can change your life by helping you feel better in your own body. Every procedure is individualised and determined with our specialist surgeon during your consultation.</p>
+      <ul class="dept-list">
+        <li data-i18n="s_b1">Liposuction — removes fat from areas such as the abdomen, arms, thighs and chin</li>
+        <li data-i18n="s_b2">Breast augmentation — improves breast size or shape</li>
+        <li data-i18n="s_b3">Fat grafting — removes fat from one area and uses it to enhance another</li>
+        <li data-i18n="s_b4">Tummy tuck — flattens, smooths and tightens the abdomen</li>
+      </ul>
+      <p class="dept-cta" data-i18n="surgery_cta">To learn more, book your consultation with our plastic surgeon today — call or message +964-750-900-0200.</p>
+    </div>
+  </section>
+
+  <!-- WELLNESS -->
+  <section id="wellness" class="wrap band-pad">
+    <div class="sec-head">
+      <div>
+        <p class="eyebrow" data-i18n="wellness_eyebrow">Wellness</p>
+        <h2 data-i18n="wellness_heading">Wellness at Dolce Aesthetic Clinic</h2>
+      </div>
+      <p class="lede" data-i18n="wellness_intro">Learn about our variety of wellness and holistic treatments to help attain better physical as well as mental health.</p>
+    </div>
+
+    <div class="dept-block">
+      <h3 class="dept-sub-heading" data-i18n="iv_heading">IV Therapy &amp; Booster Shots</h3>
+      <p class="dept-sub-body"><b data-i18n="iv_what_heading">What is IV therapy?</b><br><span data-i18n="iv_what_body">IV therapy delivers nutrients and hydration directly into the bloodstream for immediate absorption — a 90–100% absorption rate versus only 20–50% orally. Lead a healthy, balanced, enriched lifestyle with our specially formulated injections and IV therapies, packed with minerals, antioxidants, vitamins and nutrients to leave you re-energised.</span></p>
+      <div class="iv-grid">
+        <div class="iv-card"><h4 data-i18n="iv_1_title">Hydration Drip</h4><p data-i18n="iv_1_body">Improves skin, joints and muscles. Keeps your immune system strong and fights infection. Helps your body recover and rehydrate.</p></div>
+        <div class="iv-card"><h4 data-i18n="iv_2_title">Detox Drip</h4><p data-i18n="iv_2_body">Aids the body's ability to absorb minerals, protects against toxic chemicals, and offers anti-ageing benefits — good for liver, kidney, high cholesterol, heart disease and hepatitis. Helps ease nausea, pain and inflammation.</p></div>
+        <div class="iv-card"><h4 data-i18n="iv_3_title">Booster Shots</h4><p data-i18n="iv_3_body">Energy Booster (Vitamin B12) — delivered intramuscularly for immediate effect. Vitamin D — supports immune function, stronger bones and teeth, and improved mood. Biotin — the "keratin" shot for dry skin, brittle nails and hair, and hair loss.</p></div>
+      </div>
+    </div>
+
+    <div class="dept-block">
+      <h3 class="dept-sub-heading" data-i18n="blood_heading">Blood Testing</h3>
+      <p class="dept-sub-body" data-i18n="blood_body">Dolce Clinic provides blood testing so you understand your body's reactions, progress, functions and overall wellbeing — helping determine disease risk, check treatment success, catch conditions early, identify side effects and monitor chronic disease. Choose from our Silver, Gold and Diamond packages, or our Vitamin + Hair Loss package to build a custom IV drip suited to you.</p>
+    </div>
+
+    <div class="dept-block">
+      <h3 class="dept-sub-heading" data-i18n="spa_heading">Spa — Massage Menu</h3>
+      <p class="dept-sub-body" data-i18n="spa_intro">Enjoy a one-of-a-kind spa experience with our internationally licensed massage therapists.</p>
+      <div class="dept-cols">
+        <ul>
+          <li data-i18n="sp_1">Hot Stone Massage (90 Min)</li>
+          <li data-i18n="sp_2">Thai Massage (60 Min)</li>
+          <li data-i18n="sp_3">Classic Massage (60 Min)</li>
+        </ul>
+        <ul>
+          <li data-i18n="sp_4">Swedish Massage (90 Min)</li>
+          <li data-i18n="sp_5">Full Body Scrub (60 Min)</li>
+          <li data-i18n="sp_6">Medik8 Medical Body Scrub + Massage (60 Min)</li>
+        </ul>
+      </div>
     </div>
   </section>
 
@@ -733,7 +904,64 @@
       footer_contact_heading:"Contact",
       footer_map_heading:"Find Us", footer_directions:"Park View, Erbil, Iraq — Directions ↗",
       footer_disclaimer:"Concept redesign for internal review — not the live Dolce Clinic website.",
-      footer_copy:"© Dolce Aesthetic Clinic, Erbil"
+      footer_copy:"© Dolce Aesthetic Clinic, Erbil",
+      derm_treat_heading:"Treatments we offer",
+      derm_t1:"Morpheus8 — minimises acne scarring, lifts and tightens skin, stimulates collagen",
+      derm_t2:"Carboxy — medical CO₂ to thicken skin, creates new collagen, improves appearance",
+      derm_t3:"Fractional Laser — diminishes the appearance of wrinkles, stimulates collagen production, treats acne scars",
+      derm_t4:"CPL Laser — treats active acne and pigmentation",
+      derm_t5:"PRP — platelet-rich plasma for face and hair, improves skin tone, boosts hair growth and stops hair fall",
+      derm_t6:"Mesotherapy — injections of vitamins, enzymes, hormones and plant extracts to rejuvenate and tighten skin",
+      derm_t7:"NCTF 135 Mesotherapy (Paris Shine)",
+      derm_t8:"Biopeel — organic skin peel",
+      derm_t9:"Plasma Pen — mole removal, rejuvenates under-eye bags and skin",
+      derm_t10:"Profhilo, Croma Rich, Juvederm Volite & Teosyal Redensity 1 — injectables for deep hydration, rejuvenation and radiance across face, neck and hands",
+      derm_t11:"Stem C'rum — our best-selling hair re-growth treatment",
+      facial_menu_heading:"Facial Menu",
+      facial_menu_intro:"At Dolce Aesthetic Clinic we pride ourselves on using top clinical-grade products in our facial treatments, with a wide selection to help deeply cleanse and rejuvenate your skin. You'll leave with our Dolce glow!",
+      f_1:"Hydrafacial", f_2:"Express Hydrafacial (30 Min)", f_3:"Young Adult Facial",
+      f_4:"Sensitive Skin Facial – Rosacea (45 Min)", f_5:"Anti-Aging Facial (60 Min)", f_6:"Pigmentation / Discoloration Facial", f_7:"Acne Facial (45–60 Min)",
+      f_8:"Dolce's Signature Gold Extract Facial", f_9:"Skinceuticals Deep Cleansing Facial + Hydrafacial (60–90 Min)",
+      f_10:"Radiant Skin Facial", f_11:"Intense Hydration Facial", f_12:"Dermapen + Skinceuticals Facial",
+      laser_hr_heading:"Laser Hair Removal",
+      laser_hr_body:"Put an end to slow, messy and painful hair removal methods such as shaving, waxing, tweezing and creams. Our Xlase Machine uses short, safe bursts of light from a cold tip to remove unwanted hair from all body sites.",
+      derm_faq_heading:"Frequently asked",
+      faq_1_q:"Does it hurt?", faq_1_a:"Pain tolerance is very individual. No anaesthetic is required — most people describe the sensation as similar to a cold ice cube moving across the skin.",
+      faq_2_q:"Do I need precautions before & after treatment?", faq_2_a:"Shave 24–48 hours before treatment so the laser can catch the hair root, and avoid plucking, tweezing, waxing or hair-removal cream for four weeks after. Avoid sun, solarium or self-tanning before and during treatment.",
+      faq_3_q:"How many sessions do I need?", faq_3_a:"Growth cycles vary by body site, hair density, ethnic origin, hormones and age. Clinical studies confirm at least 3–6 treatments are needed, spaced 1–3 months apart. Call +964-750-900-0200 to discuss your plan.",
+      gyno_heading:"Aesthetic Gynecology",
+      gyno_body:"An innovative branch of medicine allowing women to improve appearance or function for personal or medical reasons. Our Forma V device by Votiva InMode is the latest technology resolving vaginal and urethral issues related to menopause and natural ageing, restoring internal and external vaginal health through natural healing and tightening. Come in for a consultation with our specialist to find out if it's right for you.",
+      surgery_eyebrow:"Plastic Surgery", surgery_face_heading:"Face",
+      surgery_face_body:"If sagging, loose facial skin or stubborn wrinkles — or a nose that isn't quite the shape you'd like — are on your mind, our facial procedures are designed to rejuvenate your appearance and restore your confidence. Whether your concerns sit in the upper, middle or lower face and neck, our experienced doctors help find the right procedure, prioritising the safest, highest-quality results.",
+      s_f1:"Upper & lower blepharoplasty — eyelid surgery to remove excess skin, tighten and create an eyelid crease",
+      s_f2:"Face lift (rhytidectomy) — addresses sagging and wrinkles in the mid-to-lower face by tightening underlying tissue and removing excess skin",
+      s_f3:"Neck lift (lower rhytidectomy) — often performed with a face lift for a harmonious result",
+      s_f4:"Brow lift (forehead lift) — elevates a drooping eyebrow",
+      s_f5:"Rhinoplasty — adjusts the size, shape and projection of the nose",
+      s_f6:"Lip lift — removes a section of tissue along the base of the nose for a fuller, more youthful pout",
+      surgery_faq_q:"Can I undergo more than one facial procedure?",
+      surgery_faq_a:"Yes — if desired, we can combine two or more procedures into one surgery for a more comprehensive, balanced result, with less overall downtime and lower cost than separate surgeries.",
+      surgery_body_heading:"Body",
+      surgery_body_body:"Aesthetic body surgeries significantly alter and improve the appearance of the body — for areas affected by weight change, pregnancy or excess skin. Cosmetic surgery can change your life by helping you feel better in your own body. Every procedure is individualised and determined with our specialist surgeon during your consultation.",
+      s_b1:"Liposuction — removes fat from areas such as the abdomen, arms, thighs and chin",
+      s_b2:"Breast augmentation — improves breast size or shape",
+      s_b3:"Fat grafting — removes fat from one area and uses it to enhance another",
+      s_b4:"Tummy tuck — flattens, smooths and tightens the abdomen",
+      surgery_cta:"To learn more, book your consultation with our plastic surgeon today — call or message +964-750-900-0200.",
+      wellness_eyebrow:"Wellness", wellness_heading:"Wellness at Dolce Aesthetic Clinic",
+      wellness_intro:"Learn about our variety of wellness and holistic treatments to help attain better physical as well as mental health.",
+      iv_heading:"IV Therapy & Booster Shots",
+      iv_what_heading:"What is IV therapy?",
+      iv_what_body:"IV therapy delivers nutrients and hydration directly into the bloodstream for immediate absorption — a 90–100% absorption rate versus only 20–50% orally. Lead a healthy, balanced, enriched lifestyle with our specially formulated injections and IV therapies, packed with minerals, antioxidants, vitamins and nutrients to leave you re-energised.",
+      iv_1_title:"Hydration Drip", iv_1_body:"Improves skin, joints and muscles. Keeps your immune system strong and fights infection. Helps your body recover and rehydrate.",
+      iv_2_title:"Detox Drip", iv_2_body:"Aids the body's ability to absorb minerals, protects against toxic chemicals, and offers anti-ageing benefits — good for liver, kidney, high cholesterol, heart disease and hepatitis. Helps ease nausea, pain and inflammation.",
+      iv_3_title:"Booster Shots", iv_3_body:"Energy Booster (Vitamin B12) — delivered intramuscularly for immediate effect. Vitamin D — supports immune function, stronger bones and teeth, and improved mood. Biotin — the \"keratin\" shot for dry skin, brittle nails and hair, and hair loss.",
+      blood_heading:"Blood Testing",
+      blood_body:"Dolce Clinic provides blood testing so you understand your body's reactions, progress, functions and overall wellbeing — helping determine disease risk, check treatment success, catch conditions early, identify side effects and monitor chronic disease. Choose from our Silver, Gold and Diamond packages, or our Vitamin + Hair Loss package to build a custom IV drip suited to you.",
+      spa_heading:"Spa — Massage Menu",
+      spa_intro:"Enjoy a one-of-a-kind spa experience with our internationally licensed massage therapists.",
+      sp_1:"Hot Stone Massage (90 Min)", sp_2:"Thai Massage (60 Min)", sp_3:"Classic Massage (60 Min)",
+      sp_4:"Swedish Massage (90 Min)", sp_5:"Full Body Scrub (60 Min)", sp_6:"Medik8 Medical Body Scrub + Massage (60 Min)"
     },
     ku: {
       util_location:"📍 پارک ڤیو، هەولێر، عێراق",
@@ -804,7 +1032,64 @@
       footer_contact_heading:"پەیوەندی",
       footer_map_heading:"شوێنمان بدۆزەرەوە", footer_directions:"پارک ڤیو، هەولێر، عێراق — ڕێنیشاندان ↗",
       footer_disclaimer:"دیزاینێکی پێشنیارە بۆ پێداچوونەوەی ناوخۆیی — ئەمە ماڵپەڕی ڕاستەقینەی دۆلچە نییە.",
-      footer_copy:"© کلینیکی جوانکاریی دۆلچە، هەولێر"
+      footer_copy:"© کلینیکی جوانکاریی دۆلچە، هەولێر",
+      derm_treat_heading:"چارەسەرەکانمان",
+      derm_t1:"مۆرفیوس ٨ — کەمکردنەوەی شوێنی جوش، بەرزکردنەوە و توندکردنەوەی پێست، هاندانی کۆلاجین",
+      derm_t2:"کاربۆکسی — CO₂ی پزیشکی بۆ ئەستووركردنی پێست، دروستکردنی کۆلاجینی نوێ، باشترکردنی دیمەن",
+      derm_t3:"لەیزەری فراکشناڵ — کەمکردنەوەی چۆک، هاندانی بەرهەمهێنانی کۆلاجین، چارەسەری شوێنی جوش",
+      derm_t4:"لەیزەری CPL — چارەسەری جوشی چالاک و لەکە",
+      derm_t5:"PRP — پلازمای دەوڵەمەند بە پلاکێت بۆ دەموچاو و مووسک، باشترکردنی ڕەنگی پێست، هاندانی گەشەی موو و ڕاگرتنی ڕووتانی موو",
+      derm_t6:"مێزۆتێراپی — دەرزی ڤیتامین، ئینزایم، هۆرمۆن و دەرهێنراوی ڕووەک بۆ گەنجینەوە و توندکردنەوەی پێست",
+      derm_t7:"مێزۆتێراپی NCTF 135 (پاریس شاین)",
+      derm_t8:"بایۆپیل — لایەنبردنەوەی ئۆرگانیکی پێست",
+      derm_t9:"پێنی پلازما — لابردنی خاڵ، گەنجینەوەی چاوی وەرزیو/پێست",
+      derm_t10:"پڕۆفیلۆ، کرۆما ڕیچ، جوڤیدێرم ڤۆلایت و تیۆسیاڵ ڕیدینسیتی ١ — دەرزی بۆ شێدانی قووڵ، گەنجینەوە و درەوشانەوەی دەموچاو، مل و دەست",
+      derm_t11:"ستێم سی‌ڕەم — باشترین چارەسەری گەشەی دووبارەی موومان",
+      facial_menu_heading:"مینیوی چارەسەری دەموچاو",
+      facial_menu_intro:"لە کلینیکی جوانکاری دۆلچە شانازیمان بە بەکارهێنانی باشترین بەرهەمی پلەیەکی پزیشکییە لە چارەسەری دەموچاودا، لەگەڵ هەڵبژاردنێکی فراوان بۆ خاوێنکردنەوەی قووڵ و گەنجینەوەی پێستت. بە درەوشانەوەی دۆلچەوە دەڕۆیت!",
+      f_1:"هایدرافەیشیاڵ", f_2:"هایدرافەیشیاڵی خێرا (٣٠ خولەک)", f_3:"چارەسەری دەموچاوی گەنجان",
+      f_4:"چارەسەری پێستی هەستیار – ڕۆزاشیا (٤٥ خولەک)", f_5:"چارەسەری دژی تەمەن (٦٠ خولەک)", f_6:"چارەسەری لەکە/ڕەنگاوڕەنگی", f_7:"چارەسەری جوش (٤٥–٦٠ خولەک)",
+      f_8:"چارەسەری تایبەتی زێڕی دۆلچە", f_9:"خاوێنکردنەوەی قووڵی سکینسیوتیکاڵز + هایدرافەیشیاڵ (٦٠–٩٠ خولەک)",
+      f_10:"چارەسەری درەوشانەوەی پێست", f_11:"چارەسەری شێدانی توند", f_12:"دێرماپێن + چارەسەری سکینسیوتیکاڵز",
+      laser_hr_heading:"لادانی موو بە لەیزەر",
+      laser_hr_body:"کۆتایی بهێنە بە ڕێگای هێواش و پڕئازار وەک تاشین، وەکس، چنین و کرێمی لادانی موو. ئامێری Xlase تیشکی کورت و سەلامەت لە سەرێکی سارد بەکاردەهێنێت بۆ لابردنی موو لە هەموو شوێنێکی جەستە.",
+      derm_faq_heading:"پرسیارە دووبارەکراوەکان",
+      faq_1_q:"ئازاری هەیە؟", faq_1_a:"لێبووردەیی لە ئازار جیاوازە لە کەسێکەوە بۆ کەسێک. پێویست بە هۆشبەری ناکات — زۆربەی خەڵک هەستپێکردنەکە بە شتێک لە پارچە بەفرێک کە بەسەر پێستدا دەخلیسکێت لێک دەدەنەوە.",
+      faq_2_q:"پێش و پاش چارەسەرکردن پێویستم بە ئاگاداری تایبەتە؟", faq_2_a:"٢٤-٤٨ کاتژمێر پێش چارەسەر تاشین، تاکو لەیزەرەکە ڕەگی مووەکە بگرێت، و بۆ چوار هەفتە دوای چارەسەرکردن دووربکەوە لە کێشان، وەکس یان کرێمی لادانی موو. پێش و لە کاتی چارەسەردا دووربکەوە لە خۆر، سۆلاریۆم یان کرێمی بریسکاندن.",
+      faq_3_q:"چەند دانەم پێویستە؟", faq_3_a:"خولی گەشەکردن بەگوێرەی شوێنی جەستە، چڕی موو، ڕەچەڵەک، هۆرمۆن و تەمەن جیاوازە. لێکۆڵینەوە پزیشکییەکان دەڵێن بەلایەنی کەم ٣-٦ چارەسەر پێویستە، بە بۆشایی ١-٣ مانگ. پەیوەندی بکە بە +964-750-900-0200 بۆ گفتوگۆکردنی پلانەکەت.",
+      gyno_heading:"ژنانی جوانکاری",
+      gyno_body:"لقێکی نوێی پزیشکییە کە یارمەتی ژنان دەدات دیمەن یان کارکردن باشتر بکەن بۆ هۆکاری کەسی یان پزیشکی. ئامێری Forma V ی Votiva InMode نوێترین تەکنەلۆجیایە بۆ چارەسەری کێشەی مەڵزەڕ و میزڕۆ پەیوەندیدار بە یاسەوسات و پیرایینی سروشتی، بۆ گەڕاندنەوەی تەندروستی ناوەوە و دەرەوەی مەڵزەڕ بە چاکبوونەوە و توندکردنەوەی سروشتی. وەرە بۆ کۆنسوڵتەیی لەگەڵ پسپۆڕەکەمان بۆ زانینی ئایا گونجاوە بۆت.",
+      surgery_eyebrow:"نەشتەرگەری جوانکاری", surgery_face_heading:"دەموچاو",
+      surgery_face_body:"ئەگەر شۆڕبوونەوەی پێستی دەموچاو یان چۆکی سەرسەخت — یان لووتێک کە شێوە یان قەبارەی دڵخوازت نییە — لە بیرتدایە، پرۆسیجەرەکانمان بۆ گەنجینەوەی دیمەن و گەڕاندنەوەی متمانەت بەخۆتەوە دیزاین کراون. جا کێشەکەت لە دەموچاوی سەرەوە، ناوەڕاست یان خوارەوە و مل بێت، پزیشکە شارەزاکانمان یارمەتیت دەدەن گونجاوترین پرۆسیجەر بدۆزنەوە، بە پێشینەدان بە سەلامەتی و کوالیتی بەرزترین ئەنجام.",
+      s_f1:"نەشتەرگەری بلێفاروپلاستی سەرەوە و خوارەوە — نەشتەرگەری پێڵوی چاو بۆ لابردنی پێستی زیادە، توندکردنەوە و دروستکردنی چینی پێڵو",
+      s_f2:"بەرزکردنەوەی دەموچاو (ڕایتیدێکتۆمی) — چارەسەری شۆڕبوونەوە و چۆکی ناوەڕاست و خوارەوەی دەموچاو بە توندکردنەوەی بافتی ژێرەوە و لابردنی پێستی زیادە",
+      s_f3:"بەرزکردنەوەی مل (ڕایتیدێکتۆمی خوارەوە) — زۆرجار پێکەوە لەگەڵ بەرزکردنەوەی دەموچاو ئەنجام دەدرێت بۆ ئەنجامێکی هاوسەنگ",
+      s_f4:"بەرزکردنەوەی برۆ (بەرزکردنەوەیناوچاو) — بۆ بەرزکردنەوەی برۆیەکی شۆڕبووەوە",
+      s_f5:"ڕینۆپلاستی — گۆڕینی قەبارە، شێوە و بەرزیی لووت",
+      s_f6:"بەرزکردنەوەی لێو — بە بڕینێک لە بنی لووت پارچەیەک بافت لادەبات بۆ لێوێکی پڕتر و گەنجتر",
+      surgery_faq_q:"دەتوانم زیاتر لە یەک پرۆسیجەری دەموچاو ئەنجام بدەم؟",
+      surgery_faq_a:"بەڵێ — ئەگەر بتەوێت، دەتوانین دوو یان زیاتر پرۆسیجەر بکەینە یەک نەشتەرگەری بۆ ئەنجامێکی گشتگیرتر و هاوسەنگتر، بە کاتی چاکبوونەوەی کەمتر و تێچووی نزمتر لە جیاکردنەوەی نەشتەرگەرییەکان.",
+      surgery_body_heading:"جەستە",
+      surgery_body_body:"نەشتەرگەری جوانکاری جەستە بەشێوەیەکی بەرچاو دیمەنی جەستە دەگۆڕێت و باشتری دەکات — بۆ ناوچەکانی کاریگەربوو بە گۆڕانی کێش، سکپڕی یان پێستی زیادە. نەشتەرگەری جوانکاری دەتوانێت ژیانت بگۆڕێت بە یارمەتیدانت بۆ هەستکردنی باشتر بە لەشی خۆت. هەر پرۆسیجەرێک تایبەتە بە هەر نەخۆشێک و لەگەڵ پزیشکی پسپۆڕی نەشتەرگەرمان لە کاتی کۆنسوڵتەیدا دیاری دەکرێت.",
+      s_b1:"لیپۆساکشن — لابردنی چەوری لە ناوچەکانی وەک سک، دەست، ڕان و چەناگە",
+      s_b2:"گەورەکردنی مەمک — باشترکردنی قەبارە یان شێوەی مەمک",
+      s_b3:"گواستنەوەی چەوری — لابردنی چەوری لە ناوچەیەک و بەکارهێنانی بۆ گەورەکردن یان نەرمکردنی دیمەنی ناوچەیەکی تر",
+      s_b4:"تەمی تەک — تەخت، نەرم و توندکردنەوەی ناوچەی سک",
+      surgery_cta:"بۆ زانیاری زیاتر، ئەمڕۆ کۆنسوڵتەیەکت لەگەڵ نەشتەرگەرمان دابنێ — پەیوەندی یان نامە بنێرە بۆ +964-750-900-0200.",
+      wellness_eyebrow:"تەندروستی", wellness_heading:"تەندروستی لە کلینیکی جوانکاری دۆلچە",
+      wellness_intro:"زیاتر بزانە دەربارەی جۆراوجۆری چارەسەری تەندروستی و گشتگیرمان بۆ گەیشتن بە تەندروستی جەستەیی و دەروونی باشتر.",
+      iv_heading:"IV تێراپی و دەرزی هاندەر",
+      iv_what_heading:"IV تێراپی چییە؟",
+      iv_what_body:"IV تێراپی خۆراک و شێدان ڕاستەوخۆ دەگەیەنێتە خوێن بۆ وەرگرتنی خێرا — ڕێژەی وەرگرتنی ٩٠-١٠٠٪ بەراورد بە ٢٠-٥٠٪ لە ڕێگەی دەمەوە. ژیانێکی تەندروست، هاوسەنگ و دەوڵەمەند بژی لەگەڵ دەرزی و IV تێراپی تایبەتمان، پڕ لە کانزا، ئانتی ئۆکسیدان، ڤیتامین و خۆراک بۆ وزەبەخشینی دووبارە.",
+      iv_1_title:"دڕۆپی شێدان", iv_1_body:"باشترکردنی پێست، جومگە و ماسولکە. بەهێزکردنی سیستەمی بەرگری و بەربەرەکانی دژی هەرزوو. یارمەتی چاکبوونەوە و شێداندنەوەی جەستە.",
+      iv_2_title:"دڕۆپی دیتۆکس", iv_2_body:"یارمەتی جەستە دەدات بۆ وەرگرتنی کانزا، پاراستن لە کیمیاوی ژەهراوی، و سوودی دژی پیرایین — باشە بۆ جگەر، گورچیلە، کۆلێستڕۆڵی بەرز، نەخۆشی دڵ و هەپاتایت. یارمەتی کەمکردنەوەی دڵتێکچوون، ئازار و هەوکردن دەدات.",
+      iv_3_title:"دەرزی هاندەر", iv_3_body:"دەرزی وزە (ڤیتامین B12) — لە ڕێگەی ماسولکەوە دەدرێت بۆ کاریگەری خێرا. ڤیتامین D — پشتگیری سیستەمی بەرگری، ئێسک و ددانی بەهێزتر، و کەشوهەوای باشتر. بایۆتین — دەرزی \"کێراتین\" بۆ پێستی وشک، نینۆکی لاواز، موو و ڕووتانی موو.",
+      blood_heading:"پشکنینی خوێن",
+      blood_body:"کلینیکی دۆلچە پشکنینی خوێن پێشکەش دەکات تاکو کاردانەوە، پێشکەوتن، کارکرد و تەندروستی گشتیی جەستەت باش تێبگەیت — یارمەتیدان لە دیاریکردنی مەترسی نەخۆشی، پشکنینی سەرکەوتنی چارەسەر، دۆزینەوەی زوی هەندێک بارودۆخ، دیاریکردنی کاریگەری لاوەکی و چاودێری نەخۆشی درێژخایەن. لە پاکێجی زیو، زێڕ و ئەلماسمان هەڵبژێرە، یان پاکێجی ڤیتامین + ڕووتانی موو بۆ دروستکردنی دڕۆپێکی IVی تایبەت بە خۆت.",
+      spa_heading:"سپا — مینیوی مەساج",
+      spa_intro:"چێژ لە ئەزموونێکی سپای بێهاوتا وەربگرە لەگەڵ چارەسەرکارە مەساژی بڕوانامەداری نێودەوڵەتیمان.",
+      sp_1:"مەساژی بەردی گەرم (٩٠ خولەک)", sp_2:"مەساژی تایلەندی (٦٠ خولەک)", sp_3:"مەساژی کلاسیک (٦٠ خولەک)",
+      sp_4:"مەساژی سویدی (٩٠ خولەک)", sp_5:"سکراب بۆ هەموو جەستە (٦٠ خولەک)", sp_6:"سکرابی پزیشکی میدیک٨ + مەساژ (٦٠ خولەک)"
     },
     ar: {
       util_location:"📍 بارك فيو، أربيل، العراق",
@@ -875,7 +1160,64 @@
       footer_contact_heading:"تواصل معنا",
       footer_map_heading:"موقعنا", footer_directions:"بارك فيو، أربيل، العراق — الاتجاهات ↗",
       footer_disclaimer:"تصميم مفاهيمي للمراجعة الداخلية — هذا ليس موقع دولتشي كلينك الفعلي.",
-      footer_copy:"© عيادة دولتشي للتجميل، أربيل"
+      footer_copy:"© عيادة دولتشي للتجميل، أربيل",
+      derm_treat_heading:"العلاجات التي نقدمها",
+      derm_t1:"مورفيوس ٨ — يقلل من ندبات حب الشباب، يشد ويرفع البشرة، يحفّز الكولاجين",
+      derm_t2:"كاربوكسي — ثاني أكسيد الكربون الطبي لتكثيف البشرة، إنتاج كولاجين جديد، تحسين المظهر",
+      derm_t3:"الليزر الجزئي (Fractional) — يقلل مظهر التجاعيد، يحفّز إنتاج الكولاجين، يعالج ندبات حب الشباب",
+      derm_t4:"ليزر CPL — لعلاج حب الشباب النشط والتصبغات",
+      derm_t5:"البلازما الغنية بالصفائح (PRP) — للوجه والشعر، يحسّن لون البشرة، يعزز نمو الشعر ويوقف تساقطه",
+      derm_t6:"الميزوثيرابي — حقن من الفيتامينات والإنزيمات والهرمونات ومستخلصات النباتات لتجديد وشد البشرة",
+      derm_t7:"ميزوثيرابي NCTF 135 (باريس شاين)",
+      derm_t8:"بيوبيل — تقشير عضوي للبشرة",
+      derm_t9:"قلم البلازما — إزالة الشامات، تجديد الجفون والانتفاخات تحت العين",
+      derm_t10:"بروفايلو، كروما ريتش، جوفيديرم فوليت وتيوسيال ريدنسيتي ١ — حقن للترطيب العميق والتجديد والإشراقة للوجه والرقبة واليدين",
+      derm_t11:"ستيم سي رَم — أكثر علاجاتنا مبيعاً لإعادة إنبات الشعر",
+      facial_menu_heading:"قائمة العناية بالوجه",
+      facial_menu_intro:"في عيادة دولتشي للتجميل نفخر باستخدام أفضل المنتجات ذات الدرجة السريرية في علاجات العناية بالوجه، مع تشكيلة واسعة لتنظيف بشرتك بعمق وتجديدها. ستغادرين بإشراقة دولتشي الخاصة بنا!",
+      f_1:"هايدرافيشل", f_2:"هايدرافيشل سريع (٣٠ دقيقة)", f_3:"عناية للبشرة الشابة",
+      f_4:"عناية للبشرة الحساسة – الوردية (٤٥ دقيقة)", f_5:"عناية مضادة للشيخوخة (٦٠ دقيقة)", f_6:"عناية للتصبغات وعدم التجانس", f_7:"عناية لحب الشباب (٤٥–٦٠ دقيقة)",
+      f_8:"عناية الذهب المميزة من دولتشي", f_9:"تنظيف عميق سكينسيوتيكالز + هايدرافيشل (٦٠–٩٠ دقيقة)",
+      f_10:"عناية لإشراقة البشرة", f_11:"عناية ترطيب مكثفة", f_12:"ديرمابن + عناية سكينسيوتيكالز",
+      laser_hr_heading:"إزالة الشعر بالليزر",
+      laser_hr_body:"ضعي حداً لطرق إزالة الشعر البطيئة والمؤلمة مثل الحلاقة والشمع والنتف والكريمات. يستخدم جهاز Xlase نبضات ضوء قصيرة وآمنة من رأس بارد لإزالة الشعر غير المرغوب فيه من جميع مناطق الجسم.",
+      derm_faq_heading:"أسئلة شائعة",
+      faq_1_q:"هل الأمر مؤلم؟", faq_1_a:"تحمّل الألم يختلف من شخص لآخر. لا حاجة لأي تخدير — يصف معظم الأشخاص الإحساس بأنه أشبه بمكعب ثلج بارد يمر على الجلد.",
+      faq_2_q:"هل أحتاج احتياطات خاصة قبل وبعد العلاج؟", faq_2_a:"يُفضّل الحلاقة قبل ٢٤–٤٨ ساعة من الجلسة حتى يتمكن الليزر من التقاط جذر الشعرة، وتجنّب النتف أو الشمع أو كريمات إزالة الشعر لمدة أربعة أسابيع بعد العلاج. تجنّبي الشمس والتسمير الاصطناعي قبل وأثناء فترة العلاج.",
+      faq_3_q:"كم جلسة أحتاج؟", faq_3_a:"تختلف دورات نمو الشعر حسب منطقة الجسم وكثافة الشعر والأصل العرقي والهرمونات والعمر. تؤكد الدراسات السريرية أن ٣ إلى ٦ جلسات على الأقل مطلوبة، بفاصل ١ إلى ٣ أشهر بينها. اتصلي على +964-750-900-0200 لمناقشة خطتك.",
+      gyno_heading:"طب النساء التجميلي",
+      gyno_body:"فرع مبتكر من الطب يتيح للنساء تحسين المظهر أو الوظيفة لأسباب شخصية أو طبية. جهاز Forma V من Votiva InMode هو أحدث تقنية لعلاج مشاكل المهبل والإحليل المرتبطة بسن اليأس والتقدم الطبيعي في العمر، ويعيد الصحة المهبلية الداخلية والخارجية من خلال الشفاء الطبيعي والشد. تفضلي بزيارتنا لاستشارة مع أخصائيتنا لمعرفة ما إذا كان هذا العلاج مناسباً لك.",
+      surgery_eyebrow:"جراحة التجميل", surgery_face_heading:"الوجه",
+      surgery_face_body:"إذا كان ترهل الجلد وتجاعيده العنيدة في الوجه، أو أنف لا يمتلك الشكل أو الحجم الذي ترغبين به، يشغل تفكيرك، فإن إجراءاتنا للوجه مصممة لتجديد مظهرك واستعادة ثقتك بنفسك. سواء كانت اهتماماتك في أعلى أو وسط أو أسفل الوجه والرقبة، يساعدك أطباؤنا ذوو الخبرة في إيجاد الإجراء المناسب، مع إعطاء الأولوية لأكثر النتائج أماناً وجودة.",
+      s_f1:"جراحة تجميل الجفون العلوية والسفلية — لإزالة الجلد الزائد وشد الجفن وتكوين ثنية الجفن",
+      s_f2:"شد الوجه (Rhytidectomy) — يعالج الترهل والتجاعيد في منتصف وأسفل الوجه عبر شد الأنسجة تحت الجلد وإزالة الجلد الزائد",
+      s_f3:"شد الرقبة — غالباً ما يُجرى مع شد الوجه لنتيجة متناسقة",
+      s_f4:"شد الحاجب (شد الجبهة) — لرفع الحاجب المترهل",
+      s_f5:"تجميل الأنف (Rhinoplasty) — لتعديل حجم وشكل وبروز الأنف",
+      s_f6:"رفع الشفاه — عبر شق عند قاعدة الأنف لإزالة جزء من النسيج، لنتيجة أكثر امتلاءً وشباباً",
+      surgery_faq_q:"هل يمكنني إجراء أكثر من عملية للوجه في آن واحد؟",
+      surgery_faq_a:"نعم — إذا رغبتِ، يمكننا دمج إجراءين أو أكثر في عملية واحدة للحصول على نتيجة أكثر شمولاً وتناسقاً، مع فترة تعافٍ أقل وتكلفة أقل مقارنة بإجراء عمليات منفصلة.",
+      surgery_body_heading:"الجسم",
+      surgery_body_body:"تُحدث جراحات تجميل الجسم تغييراً كبيراً وتحسّن مظهر الجسم — للمناطق المتأثرة بتغير الوزن أو الحمل أو الجلد الزائد. يمكن لجراحة التجميل أن تغيّر حياتك بمساعدتك على الشعور بالرضا تجاه جسمك. كل إجراء مصمم خصيصاً ويُحدَّد مع جراحنا المختص خلال استشارتك.",
+      s_b1:"شفط الدهون — لإزالة الدهون من مناطق مثل البطن والذراعين والفخذين والذقن",
+      s_b2:"تكبير الثدي — لتحسين حجم أو شكل الثدي",
+      s_b3:"نقل الدهون — إزالة الدهون من منطقة واستخدامها لتكبير أو تنعيم مظهر منطقة أخرى",
+      s_b4:"شد البطن — لتسطيح وتنعيم وشد منطقة البطن",
+      surgery_cta:"لمعرفة المزيد، احجزي استشارتك مع جراح التجميل لدينا اليوم — اتصلي أو راسلينا على +964-750-900-0200.",
+      wellness_eyebrow:"العافية", wellness_heading:"العافية في عيادة دولتشي للتجميل",
+      wellness_intro:"تعرّفي على تشكيلتنا المتنوعة من علاجات العافية والعلاجات الشاملة للمساعدة في تحقيق صحة جسدية ونفسية أفضل.",
+      iv_heading:"العلاج الوريدي وحقن الطاقة",
+      iv_what_heading:"ما هو العلاج الوريدي (IV)؟",
+      iv_what_body:"يقدّم العلاج الوريدي العناصر الغذائية والترطيب مباشرة إلى مجرى الدم لامتصاص فوري — بمعدل امتصاص ٩٠–١٠٠٪ مقارنة بـ ٢٠–٥٠٪ فقط عن طريق الفم. عيشي نمط حياة صحياً ومتوازناً وغنياً بمساعدة حقننا وعلاجاتنا الوريدية المُركّبة خصيصاً، المليئة بالمعادن ومضادات الأكسدة والفيتامينات والعناصر الغذائية لتشعري بالنشاط من جديد.",
+      iv_1_title:"محلول الترطيب", iv_1_body:"يحسّن البشرة والمفاصل والعضلات. يحافظ على قوة جهاز المناعة ويقاوم العدوى. يساعد جسمك على التعافي والترطيب.",
+      iv_2_title:"محلول إزالة السموم", iv_2_body:"يساعد الجسم على امتصاص المعادن، يحمي من المواد الكيميائية السامة، ويقدّم فوائد مضادة للشيخوخة — مفيد للكبد والكلى وارتفاع الكوليسترول وأمراض القلب والتهاب الكبد. يساعد في تخفيف الغثيان والألم والالتهاب.",
+      iv_3_title:"حقن الطاقة", iv_3_body:"حقنة الطاقة (فيتامين B12) — تُعطى عضلياً لتأثير فوري متجاوزةً الجهاز الهضمي. فيتامين D — يدعم وظائف المناعة، ويقوّي العظام والأسنان، ويحسّن المزاج. البيوتين — حقنة \"الكيراتين\" لعلاج جفاف البشرة وهشاشة الأظافر والشعر وتساقط الشعر.",
+      blood_heading:"فحوصات الدم",
+      blood_body:"تقدّم عيادة دولتشي فحوصات الدم لتمنحك فهماً أفضل لاستجابات جسمك وتقدّمك ووظائفه وصحتك العامة — تساعد على تحديد مخاطر الإصابة بالأمراض، ومتابعة نجاح العلاج، والتشخيص المبكر لبعض الحالات، وتحديد الآثار الجانبية، ومراقبة الأمراض المزمنة. اختاري من باقاتنا الفضية والذهبية والماسية، أو باقة الفيتامينات وتساقط الشعر لبناء محلول وريدي مخصص لك.",
+      spa_heading:"السبا — قائمة المساج",
+      spa_intro:"استمتعي بتجربة سبا فريدة من نوعها مع معالجينا المرخصين دولياً في التدليك.",
+      sp_1:"مساج الأحجار الساخنة (٩٠ دقيقة)", sp_2:"مساج تايلندي (٦٠ دقيقة)", sp_3:"مساج كلاسيكي (٦٠ دقيقة)",
+      sp_4:"مساج سويدي (٩٠ دقيقة)", sp_5:"تقشير كامل للجسم (٦٠ دقيقة)", sp_6:"تقشير Medik8 الطبي + مساج (٦٠ دقيقة)"
     }
   };
 
