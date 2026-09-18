@@ -16,10 +16,10 @@
     btn.addEventListener('click', function(){
       var email = btn.dataset.email;
       var done = function(){
-        var orig = btn.textContent;
-        btn.textContent = '✓';
+        var orig = btn.innerHTML;
+        btn.textContent = '✓ Copied';
         btn.classList.add('copied');
-        setTimeout(function(){ btn.textContent = orig; btn.classList.remove('copied'); }, 1500);
+        setTimeout(function(){ btn.innerHTML = orig; btn.classList.remove('copied'); }, 1500);
       };
       if (navigator.clipboard && navigator.clipboard.writeText) {
         navigator.clipboard.writeText(email).then(done);
