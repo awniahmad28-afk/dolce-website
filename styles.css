@@ -119,6 +119,11 @@ nav.mainnav a:hover, nav.mainnav a.current{color:var(--gold);}
 .fillers-copy{margin-top:20px;}
 .fillers-copy h4{font-size:19px;}
 .fillers-copy p{margin-top:10px;color:var(--ink-soft);font-size:14.5px;max-width:60ch;}
+.qa-block{display:grid;grid-template-columns:1.1fr 1fr;gap:44px;align-items:center;}
+@media (max-width:760px){ .qa-block{grid-template-columns:1fr;} }
+.qa-copy h3{font-size:clamp(24px,3vw,32px);line-height:1.2;}
+.qa-copy p.lede{margin-top:20px;}
+.qa-photo{aspect-ratio:4/3;background:linear-gradient(155deg,#d9d4c8,#a99f8a 60%,#736855);border-radius:3px;}
 .idx-cols div{padding:10px 0;border-bottom:1px solid var(--line);font-size:14px;color:var(--ink-soft);}
 .idx-faq{display:grid;grid-template-columns:repeat(3,1fr);gap:30px;margin-top:30px;}
 @media (max-width:860px){ .idx-faq{grid-template-columns:1fr;} }
