@@ -100,7 +100,7 @@
     <p class="eyebrow">Visit</p>
     <h2>Find Polished</h2>
     <p class="lede" style="margin-top:14px;">Polished by Dolce Salon — Park View, Erbil, Iraq. Located alongside Dolce Aesthetic Clinic.</p>
-    <p class="lede" style="margin-top:14px;"><a class="tel-link" href="tel:+9647509000200">+964 750 900 0200</a> &nbsp;·&nbsp; <a class="tel-link" href="mailto:Dolce.erbil@gmail.com">Dolce.erbil@gmail.com</a></p>
+    <p class="lede" style="margin-top:14px;"><a class="tel-link" href="tel:+9647509000200">+964 750 900 0200</a> &nbsp;·&nbsp; <a class="tel-link" href="mailto:Dolce.erbil@gmail.com">Dolce.erbil@gmail.com</a><button type="button" class="copy-email-btn" data-email="Dolce.erbil@gmail.com" aria-label="Copy email address" title="Copy email address">⧉</button></p>
   </div>
 </section>
 
@@ -131,6 +131,29 @@
     a.addEventListener('click', function(e){
       e.preventDefault();
       window.location.href = 'index.html';
+    });
+  });
+
+  document.querySelectorAll('.copy-email-btn').forEach(function(btn){
+    btn.addEventListener('click', function(){
+      var email = btn.dataset.email;
+      var done = function(){
+        var orig = btn.textContent;
+        btn.textContent = '✓';
+        btn.classList.add('copied');
+        setTimeout(function(){ btn.textContent = orig; btn.classList.remove('copied'); }, 1500);
+      };
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(email).then(done);
+      } else {
+        var ta = document.createElement('textarea');
+        ta.value = email;
+        document.body.appendChild(ta);
+        ta.select();
+        document.execCommand('copy');
+        document.body.removeChild(ta);
+        done();
+      }
     });
   });
 })();
