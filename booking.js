@@ -12,6 +12,31 @@
 })();
 
 (function(){
+  document.querySelectorAll('.copy-email-btn').forEach(function(btn){
+    btn.addEventListener('click', function(){
+      var email = btn.dataset.email;
+      var done = function(){
+        var orig = btn.textContent;
+        btn.textContent = '✓';
+        btn.classList.add('copied');
+        setTimeout(function(){ btn.textContent = orig; btn.classList.remove('copied'); }, 1500);
+      };
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(email).then(done);
+      } else {
+        var ta = document.createElement('textarea');
+        ta.value = email;
+        document.body.appendChild(ta);
+        ta.select();
+        document.execCommand('copy');
+        document.body.removeChild(ta);
+        done();
+      }
+    });
+  });
+})();
+
+(function(){
   var form = document.getElementById('bookingForm');
   if (!form) return;
   var success = document.getElementById('bookingSuccess');
