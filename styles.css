@@ -112,6 +112,13 @@ nav.mainnav a:hover, nav.mainnav a.current{color:var(--gold);}
 .idx-sub p.lede{color:var(--ink-soft);font-size:14.5px;max-width:65ch;margin-top:10px;}
 .idx-cols{display:grid;grid-template-columns:1fr 1fr;gap:10px 40px;margin-top:24px;}
 @media (max-width:640px){ .idx-cols{grid-template-columns:1fr;} }
+.fillers-grid{display:grid;grid-template-columns:1fr 1fr;gap:40px;margin-top:24px;}
+@media (max-width:760px){ .fillers-grid{grid-template-columns:1fr;} }
+.fillers-card{display:flex;flex-direction:column;}
+.fillers-photo{aspect-ratio:4/3;background:linear-gradient(155deg,#e7ded0,#b9ac95 60%,#8c7d63);border-radius:3px;}
+.fillers-copy{margin-top:20px;}
+.fillers-copy h4{font-size:19px;}
+.fillers-copy p{margin-top:10px;color:var(--ink-soft);font-size:14.5px;max-width:60ch;}
 .idx-cols div{padding:10px 0;border-bottom:1px solid var(--line);font-size:14px;color:var(--ink-soft);}
 .idx-faq{display:grid;grid-template-columns:repeat(3,1fr);gap:30px;margin-top:30px;}
 @media (max-width:860px){ .idx-faq{grid-template-columns:1fr;} }
