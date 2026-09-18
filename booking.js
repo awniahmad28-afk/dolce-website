@@ -56,7 +56,7 @@
     } catch(err){}
     if (!saved) {
       var body = 'Name: ' + data.name + '%0APhone: ' + data.phone + '%0ADate: ' + data.date + '%0ATreatment: ' + data.treatment + '%0ANotes: ' + data.notes;
-      window.location.href = 'mailto:Dolce.erbil@gmail.com?subject=Consultation request&body=' + body;
+      window.location.href = 'mailto:hello@dolceclinic.com?subject=Consultation request&body=' + body;
     }
     form.style.display = 'none';
     success.classList.add('show');
