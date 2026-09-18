@@ -38,6 +38,9 @@ nav.mainnav a:hover, nav.mainnav a.current{color:var(--gold);}
 .head-social a{color:var(--ink-soft);}
 .head-social svg{width:16px;height:16px;fill:currentColor;}
 .polished-mark{height:19px;width:auto;display:block;}
+.nav-app-btn{border:1px solid var(--gold);color:var(--gold);border-radius:999px;padding:9px 18px;font-size:12.5px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;text-decoration:none;white-space:nowrap;transition:background .15s ease,color .15s ease;}
+.nav-app-btn:hover{background:var(--gold);color:var(--ground);}
+@media (max-width:820px){ .nav-app-btn{padding:8px 14px;} }
 .nav-toggle{display:none;background:none;border:none;padding:4px;cursor:pointer;color:var(--ink);order:-1;}
 .nav-toggle svg{width:24px;height:24px;display:block;}
 @media (max-width:820px){
@@ -96,6 +99,14 @@ nav.mainnav a:hover, nav.mainnav a.current{color:var(--gold);}
 .page-banner .banner-copy p{max-width:52ch;margin:22px 0 0;color:var(--ink-soft);font-size:15.5px;}
 .back-link{display:inline-block;margin-top:18px;font-size:12px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;text-decoration:none;color:var(--ink-soft);}
 .back-link:hover{color:var(--gold);}
+
+/* ---------- app teaser section ---------- */
+.app-photo{background:linear-gradient(155deg,#2b2420,#171310 65%,#0c0a08);display:flex;align-items:center;justify-content:center;}
+.app-photo .phone-mock{width:150px;height:300px;border:6px solid #3a332c;border-radius:28px;background:linear-gradient(160deg,var(--gold),#7a5c3e);display:flex;align-items:center;justify-content:center;font-family:var(--font-display);color:#241a10;font-size:14px;text-align:center;padding:14px;}
+.app-tag{display:inline-block;font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--gold);border:1px solid var(--gold);border-radius:999px;padding:4px 12px;margin-top:14px;}
+.app-badges{display:flex;gap:14px;margin-top:22px;flex-wrap:wrap;}
+.app-badge{display:inline-flex;align-items:center;gap:8px;border:1px solid var(--ink);border-radius:8px;padding:10px 18px;font-size:12.5px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;text-decoration:none;color:var(--ink);}
+.app-badge:hover{background:var(--ink);color:var(--ground);}
 
 /* ---------- numbered treatment list (editorial index style) ---------- */
 .idx-head{text-align:center;padding-bottom:10px;}
@@ -189,4 +200,9 @@ footer .copy-email-btn{background:transparent;border-color:rgba(233,223,203,.5);
 footer .copy-email-btn:hover{background:#E9DFCB;color:var(--ink);border-color:#E9DFCB;}
 footer .copy-email-btn.copied{background:var(--gold);color:var(--ground);border-color:var(--gold);}
 .foot-locs{margin-top:44px;font-size:13px;color:rgba(233,223,203,.7);line-height:1.9;}
+.foot-app-row{margin-top:36px;padding-top:32px;border-top:1px solid rgba(233,223,203,.18);}
+.foot-app-row p{font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:rgba(233,223,203,.6);margin-bottom:16px;}
+.foot-app-badges{display:flex;justify-content:center;gap:14px;flex-wrap:wrap;}
+.foot-app-badge{display:inline-flex;align-items:center;gap:8px;border:1px solid rgba(233,223,203,.5);border-radius:8px;padding:10px 18px;font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;text-decoration:none;color:#E9DFCB;}
+.foot-app-badge:hover{background:#E9DFCB;color:var(--ink);}
 .foot-bottom{margin-top:44px;padding-top:22px;border-top:1px solid rgba(233,223,203,.18);display:flex;justify-content:center;gap:24px;flex-wrap:wrap;font-size:11.5px;color:rgba(233,223,203,.55);}
