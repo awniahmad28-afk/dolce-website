@@ -105,8 +105,12 @@ nav.mainnav a:hover, nav.mainnav a.current{color:var(--gold);}
 .app-photo .phone-mock{width:150px;height:300px;border:6px solid #3a332c;border-radius:28px;background:linear-gradient(160deg,var(--gold),#7a5c3e);display:flex;align-items:center;justify-content:center;font-family:var(--font-display);color:#241a10;font-size:14px;text-align:center;padding:14px;}
 .app-tag{display:inline-block;font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--gold);border:1px solid var(--gold);border-radius:999px;padding:4px 12px;margin-top:14px;}
 .app-badges{display:flex;gap:14px;margin-top:22px;flex-wrap:wrap;}
-.app-badge{display:inline-flex;align-items:center;gap:8px;border:1px solid var(--ink);border-radius:8px;padding:10px 18px;font-size:12.5px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;text-decoration:none;color:var(--ink);}
-.app-badge:hover{background:var(--ink);color:var(--ground);}
+.store-icon{width:20px;height:20px;flex-shrink:0;fill:currentColor;}
+.badge-text{display:flex;flex-direction:column;line-height:1.15;text-align:left;}
+.badge-text .badge-small{font-size:9px;letter-spacing:.04em;text-transform:uppercase;font-weight:500;opacity:.85;}
+.badge-text .badge-big{font-size:14px;font-weight:700;}
+.app-badge{display:inline-flex;align-items:center;gap:10px;background:var(--ink);color:var(--ground);border:none;border-radius:8px;padding:9px 16px;text-decoration:none;transition:opacity .15s ease;}
+.app-badge:hover{opacity:.82;}
 
 /* ---------- numbered treatment list (editorial index style) ---------- */
 .idx-head{text-align:center;padding-bottom:10px;}
@@ -203,6 +207,6 @@ footer .copy-email-btn.copied{background:var(--gold);color:var(--ground);border-
 .foot-app-row{margin-top:36px;padding-top:32px;border-top:1px solid rgba(233,223,203,.18);}
 .foot-app-row p{font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:rgba(233,223,203,.6);margin-bottom:16px;}
 .foot-app-badges{display:flex;justify-content:center;gap:14px;flex-wrap:wrap;}
-.foot-app-badge{display:inline-flex;align-items:center;gap:8px;border:1px solid rgba(233,223,203,.5);border-radius:8px;padding:10px 18px;font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;text-decoration:none;color:#E9DFCB;}
-.foot-app-badge:hover{background:#E9DFCB;color:var(--ink);}
+.foot-app-badge{display:inline-flex;align-items:center;gap:10px;background:#E9DFCB;color:var(--ink);border:none;border-radius:8px;padding:9px 16px;text-decoration:none;transition:opacity .15s ease;}
+.foot-app-badge:hover{opacity:.82;}
 .foot-bottom{margin-top:44px;padding-top:22px;border-top:1px solid rgba(233,223,203,.18);display:flex;justify-content:center;gap:24px;flex-wrap:wrap;font-size:11.5px;color:rgba(233,223,203,.55);}
