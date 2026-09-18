@@ -100,7 +100,7 @@
     <p class="eyebrow">Visit</p>
     <h2>Find Polished</h2>
     <p class="lede" style="margin-top:14px;">Polished by Dolce Salon — Park View, Erbil, Iraq. Located alongside Dolce Aesthetic Clinic.</p>
-    <p class="lede" style="margin-top:14px;"><a class="tel-link" href="tel:+9647509000200">+964 750 900 0200</a> &nbsp;·&nbsp; <a class="tel-link" href="mailto:Dolce.erbil@gmail.com">Dolce.erbil@gmail.com</a><button type="button" class="copy-email-btn" data-email="Dolce.erbil@gmail.com" aria-label="Copy email address" title="Copy email address">⧉</button></p>
+    <p class="lede" style="margin-top:14px;"><a class="tel-link" href="tel:+9647509000200">+964 750 900 0200</a> &nbsp;·&nbsp; <a class="tel-link" href="mailto:Dolce.erbil@gmail.com">Dolce.erbil@gmail.com</a><button type="button" class="copy-email-btn" data-email="Dolce.erbil@gmail.com" aria-label="Copy email address" title="Copy email address"><span>⧉</span> Copy</button></p>
   </div>
 </section>
 
@@ -138,10 +138,10 @@
     btn.addEventListener('click', function(){
       var email = btn.dataset.email;
       var done = function(){
-        var orig = btn.textContent;
-        btn.textContent = '✓';
+        var orig = btn.innerHTML;
+        btn.textContent = '✓ Copied';
         btn.classList.add('copied');
-        setTimeout(function(){ btn.textContent = orig; btn.classList.remove('copied'); }, 1500);
+        setTimeout(function(){ btn.innerHTML = orig; btn.classList.remove('copied'); }, 1500);
       };
       if (navigator.clipboard && navigator.clipboard.writeText) {
         navigator.clipboard.writeText(email).then(done);
