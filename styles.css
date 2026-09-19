@@ -185,7 +185,7 @@ button.submit-btn:hover{opacity:.88;}
 /* ---------- footer ---------- */
 footer{background:var(--ink);color:#E9DFCB;text-align:center;padding:clamp(50px,8vw,80px) 20px 30px;}
 footer .foot-logo{height:44px;margin-top:56px;margin-inline:auto;filter:brightness(0) invert(1) opacity(.9);}
-.foot-top{text-align:left;}
+.foot-top{text-align:left;padding-inline:clamp(20px,5vw,48px);}
 .foot-book{max-width:480px;}
 .foot-book h2{margin-top:10px;font-size:clamp(24px,3.4vw,32px);color:#E9DFCB;}
 .foot-book p.lede{margin-top:16px;color:rgba(233,223,203,.75);max-width:52ch;font-size:15px;}
