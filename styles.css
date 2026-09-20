@@ -203,7 +203,7 @@ footer .copy-email-btn{background:transparent;border-color:rgba(233,223,203,.5);
 footer .copy-email-btn:hover{background:#E9DFCB;color:var(--ink);border-color:#E9DFCB;}
 footer .copy-email-btn.copied{background:var(--gold);color:var(--ground);border-color:var(--gold);}
 .foot-center{display:flex;flex-direction:column;align-items:center;text-align:center;justify-self:center;}
-.foot-center .foot-logo{height:44px;margin:0;filter:brightness(0) invert(1) opacity(.9);}
+.foot-center .foot-logo{height:44px;margin:0;}
 .foot-center .foot-locs{margin-top:18px;font-size:13px;color:rgba(233,223,203,.7);line-height:1.9;}
 .foot-map-col{display:flex;flex-direction:column;align-items:flex-end;text-align:right;justify-self:end;}
 .foot-map{margin:0;width:280px;max-width:100%;aspect-ratio:16/9;border-radius:10px;overflow:hidden;border:1px solid rgba(233,223,203,.18);}
