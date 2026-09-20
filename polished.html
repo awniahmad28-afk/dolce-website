@@ -51,7 +51,9 @@
   @keyframes polGlow{ 0%,100%{ opacity:.35; transform:scale(1);} 50%{ opacity:.6; transform:scale(1.07);} }
   .pol-hero-copy{position:relative; flex:1 1 460px; min-width:300px; display:flex; flex-direction:column; justify-content:center; gap:20px; padding:64px clamp(24px,5vw,64px);}
   .pol-hero-copy .eyebrow{color:var(--pol-gold); font-family:var(--pol-font-body); letter-spacing:.2em;}
-  .pol-hero-copy h1{font-family:var(--pol-font-display); font-style:italic; font-weight:400; font-size:clamp(48px,7vw,78px); line-height:1; letter-spacing:-.01em; color:#F1E9DA; margin-top:14px;}
+  .pol-hero-copy h1{margin:0;}
+  .pol-hero-logo-plate{align-self:flex-start; background:var(--pol-beige); padding:24px 36px; border-radius:8px; box-shadow:0 20px 40px rgba(0,0,0,.35); margin-top:14px;}
+  .pol-hero-logo-plate img{height:clamp(56px,8vw,88px); width:auto; display:block;}
   .pol-hero-copy p{margin-top:18px; max-width:42ch; font-size:16px; line-height:1.65; color:#D9CBB4; font-weight:300;}
   .pol-hero-actions{display:flex; gap:14px; margin-top:22px; flex-wrap:wrap;}
   .pol-btn{font-size:12.5px; font-weight:600; letter-spacing:.08em; text-transform:uppercase; padding:15px 28px; border-radius:2px; text-decoration:none; transition:opacity .18s ease, transform .18s ease;}
@@ -158,7 +160,7 @@
   <div class="pol-hero-glow"></div>
   <div class="pol-hero-copy">
     <p class="eyebrow">Hair &middot; Nails &middot; Beauty</p>
-    <h1>Polished</h1>
+    <h1 class="pol-hero-logo-plate"><img src="polished-logo.png" alt="Polished by Dolce"></h1>
     <p>Beige, brass gold, walnut brown and emerald green &mdash; the beauty salon arm of Dolce, in the same Park View address, with the same standard of care.</p>
     <div class="pol-hero-actions">
       <a href="#book" class="pol-btn pol-btn-solid">Book Your Chair</a>
