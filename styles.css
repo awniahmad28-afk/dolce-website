@@ -130,6 +130,7 @@ nav.mainnav a:hover, nav.mainnav a.current{color:var(--gold);}
 .fillers-grid{display:grid;grid-template-columns:1fr 1fr;gap:40px;margin-top:24px;}
 @media (max-width:760px){ .fillers-grid{grid-template-columns:1fr;} }
 .fillers-card{display:flex;flex-direction:column;}
+.fillers-photos{display:grid;grid-template-columns:1fr 1fr;gap:8px;}
 .fillers-photo{aspect-ratio:4/3;background:linear-gradient(155deg,#e7ded0,#b9ac95 60%,#8c7d63);border-radius:3px;}
 .fillers-copy{margin-top:20px;}
 .fillers-copy h4{font-size:19px;}
