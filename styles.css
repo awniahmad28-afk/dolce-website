@@ -133,6 +133,16 @@ nav.mainnav a:hover, nav.mainnav a.current{color:var(--gold);}
 .fillers-photos{display:grid;grid-template-columns:1fr 1fr;gap:8px;}
 .fillers-photo{aspect-ratio:4/3;background:linear-gradient(155deg,#e7ded0,#b9ac95 60%,#8c7d63);border-radius:3px;overflow:hidden;}
 .fillers-photo img{width:100%;height:100%;object-fit:cover;display:block;}
+.fillers-photo img[alt="lip filler"]{
+  object-fit: cover;
+  object-position: 50% 50%;
+  transform: scale(1.00);
+}
+.fillers-photo img[alt="rhino filler"]{
+  object-fit: cover;
+  object-position: 0% 54%;
+  transform: scale(1.04);
+}
 .fillers-copy{margin-top:20px;}
 .fillers-copy h4{font-size:19px;}
 .fillers-copy p{margin-top:10px;color:var(--ink-soft);font-size:14.5px;max-width:60ch;}
