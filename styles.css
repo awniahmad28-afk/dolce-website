@@ -148,6 +148,11 @@ nav.mainnav a:hover, nav.mainnav a.current{color:var(--gold);}
 .idx-faq h5{font-size:15px;}
 .idx-faq p{margin-top:10px;font-size:13.5px;color:var(--ink-soft);}
 
+/* ---------- full-bleed landscape banner photo ---------- */
+.full-photo{width:100%;aspect-ratio:21/9;overflow:hidden;margin-top:clamp(44px,6vw,76px);}
+@media (max-width:700px){ .full-photo{aspect-ratio:4/3;} }
+.full-photo img{width:100%;height:100%;object-fit:cover;display:block;}
+
 /* ---------- CTA band ---------- */
 .cta{text-align:center;padding-block:clamp(70px,10vw,120px);}
 .cta h2{font-size:clamp(30px,4.6vw,54px);color:var(--gold);opacity:.9;max-width:16ch;margin:22px auto 0;line-height:1.1;}
