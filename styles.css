@@ -93,6 +93,8 @@ nav.mainnav a:hover, nav.mainnav a.current{color:var(--gold);}
 @media (max-width:860px){ .page-banner{grid-template-columns:1fr;min-height:0;} }
 .page-banner .banner-photo{min-height:320px;overflow:hidden;}
 .page-banner .banner-photo img{width:100%;height:100%;object-fit:cover;display:block;}
+.page-banner .banner-photo.contain{background:linear-gradient(155deg,#e7ded0,#b9ac95 60%,#8c7d63);}
+.page-banner .banner-photo.contain img{object-fit:contain;}
 .page-banner .banner-copy{padding:clamp(36px,6vw,88px);text-align:left;display:flex;flex-direction:column;justify-content:center;}
 .page-banner .banner-copy .dept-num{display:block;}
 .page-banner .banner-copy h3{font-size:clamp(28px,3.4vw,40px);margin-top:12px;}
