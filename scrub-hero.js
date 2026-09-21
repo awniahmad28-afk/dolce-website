@@ -6,10 +6,11 @@
   var bar = document.getElementById('scrub-progress-bar');
 
   var total = 102;
-  var frameW = 1280;
-  var frameH = 2276;
+  var frameW = 2160;
+  var frameH = 3840;
   var frames = new Array(total);
   var currentFrame = 0;
+  var cacheBust = '2';
 
   canvas.width = frameW;
   canvas.height = frameH;
@@ -17,7 +18,7 @@
   ctx.fillRect(0, 0, frameW, frameH);
 
   function frameSrc(i){
-    return 'hero-frames/frame-' + String(i).padStart(3, '0') + '.jpg';
+    return 'hero-frames/frame-' + String(i).padStart(3, '0') + '.jpg?v=' + cacheBust;
   }
 
   function nearestLoaded(i){
