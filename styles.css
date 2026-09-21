@@ -140,7 +140,8 @@ nav.mainnav a:hover, nav.mainnav a.current{color:var(--gold);}
 @media (max-width:760px){ .qa-block{grid-template-columns:1fr;} }
 .qa-copy h3{font-size:clamp(24px,3vw,32px);line-height:1.2;}
 .qa-copy p.lede{margin-top:20px;}
-.qa-photo{aspect-ratio:4/3;background:linear-gradient(155deg,#d9d4c8,#a99f8a 60%,#736855);border-radius:3px;}
+.qa-photo{aspect-ratio:4/3;background:linear-gradient(155deg,#d9d4c8,#a99f8a 60%,#736855);border-radius:3px;overflow:hidden;}
+.qa-photo img{width:100%;height:100%;object-fit:cover;display:block;}
 .idx-cols div{padding:10px 0;border-bottom:1px solid var(--line);font-size:14px;color:var(--ink-soft);}
 .idx-faq{display:grid;grid-template-columns:repeat(3,1fr);gap:30px;margin-top:30px;}
 @media (max-width:860px){ .idx-faq{grid-template-columns:1fr;} }
