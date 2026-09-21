@@ -117,7 +117,7 @@ nav.mainnav a:hover, nav.mainnav a.current{color:var(--gold);}
 .idx-head h2{font-size:clamp(26px,3.2vw,38px);}
 .idx-head p{max-width:60ch;margin:20px auto 0;color:var(--ink-soft);font-size:15px;}
 .idx-list{margin-top:clamp(44px,6vw,76px);}
-.idx-item{display:grid;grid-template-columns:70px 1fr;gap:26px;padding-block:34px;border-top:1px solid var(--line);}
+.idx-item{display:grid;grid-template-columns:70px 1fr;gap:26px;padding-block:48px;border-top:1px solid var(--line);}
 .idx-item:last-child{border-bottom:1px solid var(--line);}
 .idx-item .n{font-family:var(--font-display);font-size:15px;color:var(--gold);padding-top:4px;}
 .idx-item h4{font-size:19px;}
