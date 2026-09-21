@@ -122,7 +122,7 @@ nav.mainnav a:hover, nav.mainnav a.current{color:var(--gold);}
 .idx-item .n{font-family:var(--font-display);font-size:15px;color:var(--gold);padding-top:4px;}
 .idx-item h4{font-size:19px;}
 .idx-item p{margin-top:10px;color:var(--ink-soft);font-size:14.5px;max-width:70ch;}
-.idx-sub{margin-top:76px;}
+.idx-sub{margin-top:clamp(90px,11vw,140px);}
 .idx-sub h3{font-size:20px;}
 .idx-sub p.lede{color:var(--ink-soft);font-size:14.5px;max-width:65ch;margin-top:16px;}
 .idx-cols{display:grid;grid-template-columns:1fr 1fr;gap:16px 48px;margin-top:30px;}
