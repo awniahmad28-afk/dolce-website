@@ -5,12 +5,12 @@
   var ctx = canvas.getContext('2d');
   var bar = document.getElementById('scrub-progress-bar');
 
-  var total = 102;
+  var total = 67;
   var frameW = 2160;
   var frameH = 3840;
   var frames = new Array(total);
   var currentFrame = 0;
-  var cacheBust = '2';
+  var cacheBust = '3';
 
   canvas.width = frameW;
   canvas.height = frameH;
