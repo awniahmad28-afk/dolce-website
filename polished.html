@@ -65,6 +65,7 @@
   .pol-btn-solid{background:var(--pol-gold); color:var(--pol-ink);}
   .pol-btn-outline{color:#F1E9DA; border:1px solid rgba(241,233,218,.35);}
   .pol-hero-photo{position:relative; flex:1 1 380px; min-width:260px; display:flex; align-items:stretch;}
+  .pol-hero-video{width:100%; height:100%; object-fit:cover; display:block;}
   .pol-photo-block{width:100%; display:flex; align-items:center; justify-content:center; font-size:12px; letter-spacing:.08em; text-transform:uppercase; color:#E8DCC8; transition:transform .25s ease;}
   .pol-photo-block:hover{transform:scale(1.02);}
   .pol-photo-emerald{background:linear-gradient(160deg,#1F5C4A,#123D31);}
@@ -180,7 +181,7 @@
     </div>
   </div>
   <div class="pol-hero-photo">
-    <div class="pol-photo-block pol-photo-emerald">[ Salon interior photo ]</div>
+    <video class="pol-hero-video" src="polished-hero.mp4" autoplay muted loop playsinline></video>
   </div>
 </section>
 
