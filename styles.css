@@ -71,13 +71,6 @@ header.header-overlay .nav-toggle{color:#F1E9DA;}
 .scrub-progress{position:fixed;bottom:22px;left:50%;transform:translateX(-50%);width:min(280px,60vw);height:2px;background:rgba(255,255,255,.2);z-index:5;pointer-events:none;}
 .scrub-progress-bar{height:100%;background:var(--gold);width:0%;}
 
-.hero-overlay{position:absolute;left:clamp(20px,5vw,64px);bottom:clamp(70px,10vw,110px);right:clamp(20px,5vw,64px);z-index:4;max-width:560px;color:#F1E9DA;}
-.hero-title{font-family:var(--font-display);font-weight:500;font-size:clamp(40px,6vw,72px);line-height:1.05;color:#F8F3E9;text-shadow:0 2px 20px rgba(0,0,0,.4);}
-.hero-sub{margin-top:16px;font-size:15.5px;color:#E6DCC8;text-shadow:0 1px 10px rgba(0,0,0,.4);}
-@media (max-width:700px){
-  .hero-overlay{left:20px;right:20px;bottom:56px;max-width:none;}
-}
-
 /* ---------- hero ---------- */
 .hero{padding:min(6vw,70px) clamp(20px,5vw,48px) clamp(60px,8vw,100px);text-align:center;}
 .hero h1{font-size:clamp(46px,8vw,104px);line-height:1.03;color:var(--gold);opacity:.85;margin-top:18px;letter-spacing:-.01em;}
