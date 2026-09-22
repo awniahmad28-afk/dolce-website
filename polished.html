@@ -301,7 +301,19 @@
   if (t && n) {
     t.addEventListener('click', function(){ n.classList.toggle('open'); });
     n.querySelectorAll('a').forEach(function(a){
-      a.addEventListener('click', function(){ n.classList.remove('open'); });
+      a.addEventListener('click', function(e){
+        var href = a.getAttribute('href') || '';
+        n.classList.remove('open');
+        if (href.charAt(0) === '#' && href.length > 1) {
+          var target = document.querySelector(href);
+          if (target) {
+            e.preventDefault();
+            requestAnimationFrame(function(){
+              target.scrollIntoView({behavior:'smooth', block:'start'});
+            });
+          }
+        }
+      });
     });
   }
   document.querySelectorAll('a[href="index.html"]').forEach(function(a){
