@@ -50,6 +50,20 @@ nav.mainnav a:hover, nav.mainnav a.current{color:var(--gold);}
   nav.mainnav a{width:100%;padding:13px 0;border-bottom:1px solid var(--line);}
 }
 
+/* ---------- header overlaid on hero video ---------- */
+header.header-overlay{position:absolute;top:0;left:0;right:0;z-index:20;background:transparent;}
+header.header-overlay nav.mainnav a{color:#F1E9DA;}
+header.header-overlay nav.mainnav a:hover,
+header.header-overlay nav.mainnav a.current{color:var(--gold);}
+header.header-overlay .head-social a{color:#F1E9DA;}
+header.header-overlay .nav-app-btn{border-color:#F1E9DA;color:#F1E9DA;}
+header.header-overlay .nav-app-btn:hover{background:#F1E9DA;color:var(--ink);}
+header.header-overlay .nav-toggle{color:#F1E9DA;}
+@media (max-width:820px){
+  header.header-overlay nav.mainnav{background:var(--ink);border-color:rgba(241,233,218,.2);}
+  header.header-overlay nav.mainnav a{color:#F1E9DA;border-bottom-color:rgba(241,233,218,.15);}
+}
+
 /* ---------- hero: scroll-scrubbed intro ---------- */
 .scrub-wrap{position:relative;height:250vh;background:#0d0906;}
 .scrub-sticky{position:sticky;top:0;height:100vh;overflow:hidden;display:flex;align-items:center;justify-content:center;}
@@ -61,7 +75,7 @@ nav.mainnav a:hover, nav.mainnav a.current{color:var(--gold);}
 .scrub-progress{position:fixed;bottom:22px;left:50%;transform:translateX(-50%);width:min(280px,60vw);height:2px;background:rgba(255,255,255,.2);z-index:5;pointer-events:none;}
 .scrub-progress-bar{height:100%;background:var(--gold);width:0%;}
 
-.hero-top-tag{position:absolute;top:28px;right:clamp(20px,5vw,48px);z-index:4;text-align:right;color:#F1E9DA;font-size:11px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;line-height:1.9;text-shadow:0 1px 8px rgba(0,0,0,.4);}
+.hero-top-tag{position:absolute;top:120px;right:clamp(20px,5vw,48px);z-index:4;text-align:right;color:#F1E9DA;font-size:11px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;line-height:1.9;text-shadow:0 1px 8px rgba(0,0,0,.4);}
 .hero-top-tag::after{content:"";display:block;width:40px;height:1px;background:var(--gold);margin:8px 0 0 auto;}
 .hero-overlay{position:absolute;left:clamp(20px,5vw,64px);bottom:clamp(70px,10vw,110px);right:clamp(20px,5vw,64px);z-index:4;max-width:560px;color:#F1E9DA;}
 .hero-eyebrow{color:var(--gold);letter-spacing:.3em;}
