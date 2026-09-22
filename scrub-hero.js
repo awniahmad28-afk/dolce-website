@@ -62,7 +62,9 @@
     ctx.restore();
 
     var containScale = Math.min(cw / iw, ch / ih);
-    var fw = iw * containScale, fh = ih * containScale;
+    var widthStretch = 1.4;
+    var fw = Math.min(cw, iw * containScale * widthStretch);
+    var fh = ih * containScale;
     var fx = (cw - fw) / 2, fy = (ch - fh) / 2;
     ctx.drawImage(img, fx, fy, fw, fh);
   }
