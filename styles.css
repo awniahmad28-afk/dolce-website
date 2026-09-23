@@ -338,14 +338,14 @@ footer .copy-email-btn.copied{background:var(--gold);color:var(--ground);border-
   /* Every size inside these two sections is in vh (not px/vw), tied to the
      same unit as the section heights themselves, so the fit holds at any
      window height instead of overflowing on a short-but-wide browser. */
-  .about-v2{height:42vh;min-height:0;overflow:hidden;}
+  .about-v2{height:25vh;min-height:0;overflow:hidden;}
   .about-v2-copy{padding:1.8vh 4vw;gap:0.8vh;overflow:hidden;}
   .about-v2-copy .eyebrow{font-size:1.3vh;margin-bottom:0;}
   .about-v2-copy h2{font-size:clamp(18px,3.6vh,30px);}
   .about-v2-copy .lede{font-size:clamp(10.5px,1.7vh,13px);line-height:1.4;max-width:56ch;}
   .about-v2-copy .lede:nth-of-type(3){display:none;}
   .about-v2-photo{aspect-ratio:auto;height:100%;overflow:hidden;}
-  #services{margin-top:0;height:28vh;display:flex;align-items:center;overflow:hidden;}
+  #services{margin-top:0;height:45vh;display:flex;align-items:center;overflow:hidden;}
   #services .services-grid{height:100%;width:100%;}
   #services .service-tile{aspect-ratio:auto;height:100%;}
   #services .service-tile-label{padding:1.2vh 14px;}
