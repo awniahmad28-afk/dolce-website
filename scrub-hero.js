@@ -62,7 +62,7 @@
     ctx.restore();
 
     var containScale = Math.min(cw / iw, ch / ih);
-    var widthStretch = 1.4;
+    var widthStretch = 1.7;
     var fw = Math.min(cw, iw * containScale * widthStretch);
     var fh = ih * containScale;
     var fx = (cw - fw) / 2, fy = (ch - fh) / 2;
