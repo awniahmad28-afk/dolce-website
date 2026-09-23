@@ -308,7 +308,25 @@ footer .copy-email-btn.copied{background:var(--gold);color:var(--ground);border-
   .rev-card q{font-size:16.5px;}
 
   .book h2, .foot-book h2{font-size:clamp(32px,3.4vw,50px);}
-  .book .lede, .foot-book p.lede{font-size:16.5px;}
+  .book .lede{font-size:16.5px;}
+
+  /* footer: much smaller than the rest of the editorial pass above */
+  footer{padding:clamp(20px,2.6vw,32px) 20px 18px;}
+  .foot-hero{gap:20px;}
+  .foot-book h2{font-size:clamp(18px,1.8vw,24px);margin-top:6px;}
+  .foot-book p.lede{font-size:13px;margin-top:8px;}
+  .foot-book-phone{font-size:clamp(16px,1.6vw,20px);margin-top:8px;}
+  .foot-center .foot-logo{height:28px;}
+  .foot-center .foot-locs{margin-top:10px;font-size:11px;line-height:1.6;}
+  .foot-map{width:160px;}
+  .foot-map-link{margin-top:6px;font-size:11px;}
+  .foot-app-row{margin-top:16px;padding-top:14px;}
+  .foot-app-row p{font-size:10px;margin-bottom:10px;}
+  .foot-app-badge{padding:6px 12px;gap:8px;}
+  .foot-app-badge .store-icon{width:15px;height:15px;}
+  .foot-app-badge .badge-small{font-size:8px;}
+  .foot-app-badge .badge-big{font-size:12px;}
+  .foot-bottom{margin-top:16px;padding-top:10px;font-size:10px;}
 }
 
 /* ---------- homepage: fit hero + about + services into one screen, scroll only for the footer ---------- */
@@ -317,16 +335,19 @@ footer .copy-email-btn.copied{background:var(--gold);color:var(--ground);border-
   .scrub-sticky{height:56vh;}
   .scrub-progress{bottom:12px;}
   .social-row{display:none;}
-  .about-v2{height:26vh;min-height:0;}
-  .about-v2-copy{padding:clamp(14px,1.6vw,24px) clamp(32px,4vw,56px);gap:6px;}
-  .about-v2-copy .eyebrow{font-size:10.5px;margin-bottom:0;}
-  .about-v2-copy h2{font-size:clamp(20px,2vw,30px);}
-  .about-v2-copy .lede{font-size:12.5px;line-height:1.45;max-width:56ch;}
+  /* Every size inside these two sections is in vh (not px/vw), tied to the
+     same unit as the section heights themselves, so the fit holds at any
+     window height instead of overflowing on a short-but-wide browser. */
+  .about-v2{height:26vh;min-height:0;overflow:hidden;}
+  .about-v2-copy{padding:1.8vh 4vw;gap:0.8vh;overflow:hidden;}
+  .about-v2-copy .eyebrow{font-size:1.3vh;margin-bottom:0;}
+  .about-v2-copy h2{font-size:clamp(18px,3.6vh,30px);}
+  .about-v2-copy .lede{font-size:clamp(10.5px,1.7vh,13px);line-height:1.4;max-width:56ch;}
   .about-v2-copy .lede:nth-of-type(3){display:none;}
-  .about-v2-photo{aspect-ratio:auto;height:100%;}
-  #services{margin-top:0;height:18vh;display:flex;align-items:center;}
+  .about-v2-photo{aspect-ratio:auto;height:100%;overflow:hidden;}
+  #services{margin-top:0;height:18vh;display:flex;align-items:center;overflow:hidden;}
   #services .services-grid{height:100%;width:100%;}
   #services .service-tile{aspect-ratio:auto;height:100%;}
-  #services .service-tile-label{padding:10px 14px;}
-  #services .service-tile-label h4{font-size:11px;}
+  #services .service-tile-label{padding:1.2vh 14px;}
+  #services .service-tile-label h4{font-size:clamp(9px,1.3vh,12px);}
 }
