@@ -66,6 +66,11 @@ header.header-overlay .nav-toggle{color:#F1E9DA;}
 
 /* ---------- hero: scroll-scrubbed intro ---------- */
 .scrub-wrap{position:relative;height:250vh;background:#0d0906;}
+@media (min-width:701px) and (hover:hover) and (pointer:fine){
+  /* Desktop: scrubbing is driven by hovering + wheel input on the video itself,
+     not page scroll, so the section only needs to be one viewport tall. */
+  .scrub-wrap{height:100vh;}
+}
 .scrub-sticky{position:sticky;top:0;height:100vh;overflow:hidden;display:flex;align-items:center;justify-content:center;}
 .scrub-sticky canvas{width:100%;height:100%;object-fit:cover;display:block;}
 .scrub-progress{position:fixed;bottom:22px;left:50%;transform:translateX(-50%);width:min(280px,60vw);height:2px;background:rgba(255,255,255,.2);z-index:5;pointer-events:none;}
