@@ -103,12 +103,18 @@ header.header-overlay .nav-toggle{color:#F1E9DA;}
 .about-v2-copy h2{font-size:clamp(28px,3.4vw,40px);line-height:1.15;}
 .about-v2-copy .lede{color:var(--ink-soft);font-size:15.5px;max-width:48ch;}
 .about-v2-photo{position:relative;min-height:320px;overflow:hidden;background:linear-gradient(155deg,#e7ded0,#b9ac95 60%,#8c7d63);}
+@media (min-width:861px){
+  /* Without a fixed ratio, this column's height is set by the photo's own
+     (portrait) proportions, ballooning the whole About section. */
+  .about-v2-photo{aspect-ratio:4/3;}
+}
 .about-v2-photo img{width:100%;height:100%;object-fit:cover;display:block;}
 
 /* ---------- services grid ---------- */
 .services-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;}
 @media (max-width:760px){ .services-grid{grid-template-columns:1fr;} }
 .service-tile{position:relative;aspect-ratio:3/4;overflow:hidden;border-radius:3px;display:block;text-decoration:none;background:linear-gradient(155deg,#e7ded0,#b9ac95 60%,#8c7d63);}
+@media (min-width:761px){ .service-tile{aspect-ratio:4/3;} }
 .service-tile img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .35s ease;}
 .service-tile:hover img{transform:scale(1.05);}
 .service-tile-label{position:absolute;left:0;right:0;bottom:0;padding:22px 20px;background:linear-gradient(180deg,rgba(20,14,8,0) 0%,rgba(20,14,8,.82) 78%);color:#F1E9DA;}
@@ -267,3 +273,39 @@ footer .copy-email-btn.copied{background:var(--gold);color:var(--ground);border-
 .foot-app-badge{display:inline-flex;align-items:center;gap:10px;background:#E9DFCB;color:var(--ink);border:none;border-radius:8px;padding:9px 16px;text-decoration:none;transition:opacity .15s ease;}
 .foot-app-badge:hover{opacity:.82;}
 .foot-bottom{margin-top:44px;padding-top:22px;border-top:1px solid rgba(233,223,203,.18);display:flex;justify-content:center;gap:24px;flex-wrap:wrap;font-size:11.5px;color:rgba(233,223,203,.55);}
+
+/* ---------- desktop editorial pass: wider container, more air, restrained type ---------- */
+@media (min-width:1024px){
+  .wrap{max-width:1500px;padding-inline:clamp(40px,4vw,64px);}
+  .pad{padding-block:clamp(90px,9vw,140px);}
+  header{padding:30px clamp(40px,4vw,64px);}
+  nav.mainnav{gap:42px;}
+  nav.mainnav a{font-size:11.5px;letter-spacing:.13em;}
+
+  .about-copy, .about-v2-copy{padding:clamp(56px,6vw,110px);}
+  .about-copy h2, .about-v2-copy h2{font-size:clamp(44px,4.2vw,72px);}
+  .about-copy p.lede, .about-v2-copy .lede{font-size:17px;max-width:52ch;}
+
+  .dept-body, .page-banner .banner-copy{padding:clamp(48px,6vw,96px);}
+  .dept-body h3, .page-banner .banner-copy h3{font-size:clamp(38px,4vw,60px);}
+  .dept-body p, .page-banner .banner-copy p{font-size:17px;}
+
+  .idx-head h2{font-size:clamp(34px,3.6vw,52px);}
+  .idx-head p{font-size:16.5px;}
+  .idx-list{margin-top:clamp(64px,7vw,100px);}
+  .idx-item{padding-block:56px;}
+  .idx-item h4{font-size:21px;}
+  .idx-item p, .idx-sub p.lede, .fillers-copy p{font-size:16px;}
+  .idx-sub{margin-top:clamp(110px,10vw,170px);}
+  .fillers-copy h4{font-size:21px;}
+
+  .cta h2{font-size:clamp(38px,4.2vw,64px);}
+  .cta p{font-size:17px;}
+  .closing h2{font-size:clamp(36px,4vw,60px);}
+
+  .rev-grid{max-width:900px;}
+  .rev-card q{font-size:16.5px;}
+
+  .book h2, .foot-book h2{font-size:clamp(32px,3.4vw,50px);}
+  .book .lede, .foot-book p.lede{font-size:16.5px;}
+}
