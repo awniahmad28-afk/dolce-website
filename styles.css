@@ -86,11 +86,6 @@ header.header-overlay .nav-toggle{color:#F1E9DA;}
 .hero{padding:min(6vw,70px) clamp(20px,5vw,48px) clamp(60px,8vw,100px);text-align:center;}
 .hero h1{font-size:clamp(46px,8vw,104px);line-height:1.03;color:var(--gold);opacity:.85;margin-top:18px;letter-spacing:-.01em;}
 .hero .sub{max-width:52ch;margin:30px auto 0;color:var(--ink-soft);font-size:16px;}
-.social-row{display:flex;justify-content:center;gap:22px;padding-bottom:clamp(50px,8vw,90px);}
-.social-row a{width:34px;height:34px;border-radius:50%;border:1px solid var(--line);display:flex;align-items:center;justify-content:center;color:var(--ink-soft);text-decoration:none;}
-.social-row svg{width:15px;height:15px;fill:currentColor;}
-.social-row a.polished-link{width:auto;height:34px;border:none;padding:0 4px;}
-.social-row a.polished-link .polished-mark{height:32px;}
 
 /* ---------- about ---------- */
 .about{display:grid;grid-template-columns:1fr 1fr;min-height:520px;}
@@ -105,13 +100,22 @@ header.header-overlay .nav-toggle{color:#F1E9DA;}
 /* ---------- about v2 ---------- */
 .about-v2{display:grid;grid-template-columns:1fr 1fr;min-height:520px;}
 @media (max-width:860px){ .about-v2{grid-template-columns:1fr;min-height:0;} }
-.about-v2-copy{display:flex;flex-direction:column;justify-content:center;gap:16px;padding:clamp(36px,6vw,88px);background:var(--ground);}
+.about-v2-copy{display:flex;flex-direction:column;justify-content:flex-start;gap:16px;padding:clamp(36px,6vw,88px);background:var(--ground);}
 .about-v2-copy h2{font-size:clamp(28px,3.4vw,40px);line-height:1.15;}
 .about-v2-copy .lede{color:var(--ink-soft);font-size:15.5px;max-width:48ch;}
+.about-v2-copy .about-sub{font-size:clamp(22px,2.2vw,28px);margin-top:28px;}
+.about-principles{display:grid;gap:18px;max-width:52ch;}
+.about-principles > div{padding-top:16px;border-top:1px solid var(--line);}
+.about-principles h4{font-size:19px;}
+.about-principles p{margin-top:6px;color:var(--ink-soft);font-size:15px;}
+.about-promise{font-family:var(--font-display);font-size:clamp(20px,2vw,26px);line-height:1.4;color:var(--ink);max-width:40ch;}
+.about-signoff{margin-top:20px;font-family:var(--font-display);font-style:italic;font-size:clamp(19px,1.8vw,23px);color:var(--ink);}
+.about-signoff span{display:block;margin-bottom:6px;font-family:var(--font-body);font-style:normal;font-size:12px;font-weight:600;letter-spacing:.22em;text-transform:uppercase;color:var(--gold);}
 .about-v2-photo{position:relative;min-height:320px;overflow:hidden;background:linear-gradient(155deg,#e7ded0,#b9ac95 60%,#8c7d63);}
 @media (min-width:861px){
-  /* Without a fixed ratio, this column's height is set by the photo's own
-     (portrait) proportions, ballooning the whole About section. */
+  /* Desktop: photo sits at the top right, flush against the bottom of the hero,
+     at a fixed ratio rather than stretching down the full length of the text. */
+  .about-v2{align-items:start;}
   .about-v2-photo{aspect-ratio:4/3;}
 }
 .about-v2-photo img{width:100%;height:100%;object-fit:cover;display:block;}
