@@ -6,15 +6,17 @@
   var bar = document.getElementById('scrub-progress-bar');
   var sticky = wrap.querySelector('.scrub-sticky');
 
-  var total = 244;
-  var nativeW = 1920;
-  var nativeH = 1080;
+  // Which hero footage to show is set by data-hero on <html> in index.html.
+  var landscape = document.documentElement.getAttribute('data-hero') === 'landscape';
+  var total    = landscape ? 244 : 67;
+  var nativeW  = landscape ? 1920 : 2160;
+  var nativeH  = landscape ? 1080 : 3840;
+  var frameDir = landscape ? 'hero-frames-landscape' : 'hero-frames-portrait';
   var frames = new Array(total);
   var currentFrame = 0;
-  var cacheBust = '4';
+  var cacheBust = '5';
 
   var desktopQuery = window.matchMedia('(min-width:701px) and (hover:hover) and (pointer:fine)');
-  var frameDir = 'hero-frames';
 
   // On desktop the video is scrubbed by hovering it and using the wheel,
   // independent of page scroll. On mobile, scrubbing stays tied to normal
@@ -57,10 +59,32 @@
     ctx.drawImage(img, (cw - w) / 2, (ch - h) / 2, w, h);
   }
 
+  // Portrait footage on a wide screen: full uncropped frame (stretched 2x
+  // wide) over a blurred, darkened cover-fill of itself.
+  function drawBlurPad(img){
+    var cw = canvas.width, ch = canvas.height;
+    var iw = img.naturalWidth, ih = img.naturalHeight;
+    ctx.fillStyle = '#0d0906';
+    ctx.fillRect(0, 0, cw, ch);
+
+    var coverScale = Math.max(cw / iw, ch / ih);
+    var bw = iw * coverScale, bh = ih * coverScale;
+    ctx.save();
+    ctx.filter = 'blur(50px) brightness(0.55)';
+    ctx.drawImage(img, (cw - bw) / 2, (ch - bh) / 2, bw, bh);
+    ctx.restore();
+
+    var containScale = Math.min(cw / iw, ch / ih);
+    var fw = Math.min(cw, iw * containScale * 2.0);
+    var fh = ih * containScale;
+    ctx.drawImage(img, (cw - fw) / 2, (ch - fh) / 2, fw, fh);
+  }
+
   function draw(i){
     var img = frames[i - 1];
     if (!img || !img.complete || !img.naturalWidth) return;
-    drawCover(img);
+    if (!landscape && desktopQuery.matches) drawBlurPad(img);
+    else drawCover(img);
     currentFrame = i;
   }
 
@@ -100,11 +124,14 @@
     return progress;
   }
 
-  // On touch devices the hero is a 16:9 strip pinned at the top while the
-  // About section scrolls beneath it; that scroll distance drives the frames.
-  var pinZone = document.querySelector('.pin-zone') || wrap;
+  // Touch devices: portrait footage fills the screen and scrubs through the
+  // tall hero section. Landscape footage is a 16:9 strip pinned at the top
+  // while the About section scrolls beneath it; that distance drives it.
+  var pinZone = landscape ? (document.querySelector('.pin-zone') || wrap) : wrap;
   function onScrollMobile(){
-    var scrollable = pinZone.offsetHeight - sticky.offsetHeight;
+    var scrollable = landscape
+      ? pinZone.offsetHeight - sticky.offsetHeight
+      : wrap.offsetHeight - window.innerHeight;
     var rect = pinZone.getBoundingClientRect();
     var progress = scrollable > 0 ? Math.min(1, Math.max(0, -rect.top / scrollable)) : 0;
     updateProgress(progress);

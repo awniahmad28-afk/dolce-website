@@ -1,10 +1,12 @@
 <!DOCTYPE html>
-<html lang="en">
+<!-- Hero footage: data-hero="portrait" (original) or "landscape" (walkthrough). ?hero=... in the URL overrides it. -->
+<html lang="en" data-hero="portrait">
 <head>
+<script>(function(){var h=new URLSearchParams(location.search).get('hero');if(h==='portrait'||h==='landscape')document.documentElement.setAttribute('data-hero',h);})();</script>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Dolce Aesthetic Clinic — Erbil's Leading Aesthetic Clinic</title>
-<link rel="stylesheet" href="styles.css?v=33">
+<link rel="stylesheet" href="styles.css?v=34">
 </head>
 <body>
 
@@ -187,6 +189,6 @@
 </footer>
 
 <script src="booking.js"></script>
-<script src="scrub-hero.js?v=5"></script>
+<script src="scrub-hero.js?v=6"></script>
 </body>
 </html>
