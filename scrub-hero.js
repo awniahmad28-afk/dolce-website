@@ -7,15 +7,14 @@
   var sticky = wrap.querySelector('.scrub-sticky');
 
   var total = 244;
-  var nativeW = 810;
-  var nativeH = 1440;
+  var nativeW = 1920;
+  var nativeH = 1080;
   var frames = new Array(total);
   var currentFrame = 0;
   var cacheBust = '4';
 
   var desktopQuery = window.matchMedia('(min-width:701px) and (hover:hover) and (pointer:fine)');
-  // Landscape frames for desktop; a pre-cropped vertical set keeps phones light.
-  var frameDir = desktopQuery.matches ? 'hero-frames' : 'hero-frames-mobile';
+  var frameDir = 'hero-frames';
 
   // On desktop the video is scrubbed by hovering it and using the wheel,
   // independent of page scroll. On mobile, scrubbing stays tied to normal
@@ -101,9 +100,12 @@
     return progress;
   }
 
+  // On touch devices the hero is a 16:9 strip pinned at the top while the
+  // About section scrolls beneath it; that scroll distance drives the frames.
+  var pinZone = document.querySelector('.pin-zone') || wrap;
   function onScrollMobile(){
-    var scrollable = wrap.offsetHeight - window.innerHeight;
-    var rect = wrap.getBoundingClientRect();
+    var scrollable = pinZone.offsetHeight - sticky.offsetHeight;
+    var rect = pinZone.getBoundingClientRect();
     var progress = scrollable > 0 ? Math.min(1, Math.max(0, -rect.top / scrollable)) : 0;
     updateProgress(progress);
   }
