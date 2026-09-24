@@ -88,6 +88,8 @@
   .pol-menu-item .desc{font-size:13.5px; color:#7A6650; margin-top:5px; font-weight:300;}
   .pol-menu-item .price{font-size:14px; color:#7A6650; white-space:nowrap; font-weight:300;}
   .pol-services-photo{flex:1 1 360px; min-width:260px; display:flex; align-items:stretch;}
+  .pol-services-video{width:100%; height:100%; object-fit:cover; display:block; background:#3B2A1E;}
+  @media (max-width:840px){ .pol-services-video{aspect-ratio:608/1080;} }
 
   /* gallery */
   .pol-gallery{background:var(--pol-emerald); text-align:center;}
@@ -223,7 +225,7 @@
     </div>
   </div>
   <div class="pol-services-photo">
-    <div class="pol-photo-block pol-photo-brown">[ Styling chair photo ]</div>
+    <video class="pol-services-video" src="styling%20chair.mp4" autoplay muted loop playsinline aria-label="Styling chair at Polished by Dolce"></video>
   </div>
 </section>
 
