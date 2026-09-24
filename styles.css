@@ -52,9 +52,9 @@ nav.mainnav a:hover, nav.mainnav a.current{color:var(--gold);}
 
 /* ---------- header overlaid on hero video ---------- */
 header.header-overlay{position:absolute;top:0;left:0;right:0;z-index:20;background:transparent;}
+header.header-overlay::before{content:"";position:absolute;left:0;right:0;top:0;bottom:-48px;background:linear-gradient(180deg,rgba(13,9,6,.55) 0%,rgba(13,9,6,.28) 55%,rgba(13,9,6,0) 100%);pointer-events:none;z-index:-1;}
 header.header-overlay nav.mainnav a{color:#F1E9DA;}
-header.header-overlay nav.mainnav a:hover,
-header.header-overlay nav.mainnav a.current{color:var(--gold);}
+header.header-overlay nav.mainnav a:hover{color:var(--gold);}
 header.header-overlay .head-social a{color:#F1E9DA;}
 header.header-overlay .nav-app-btn{border-color:#F1E9DA;color:#F1E9DA;}
 header.header-overlay .nav-app-btn:hover{background:#F1E9DA;color:var(--ink);}
