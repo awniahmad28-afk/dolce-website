@@ -113,10 +113,10 @@ header.header-overlay .nav-toggle{color:#F1E9DA;}
 .about-signoff span{display:block;margin-bottom:6px;font-family:var(--font-body);font-style:normal;font-size:12px;font-weight:600;letter-spacing:.22em;text-transform:uppercase;color:var(--gold);}
 .about-v2-photo{position:relative;min-height:320px;overflow:hidden;background:linear-gradient(155deg,#e7ded0,#b9ac95 60%,#8c7d63);}
 @media (min-width:861px){
-  /* Desktop: photo sits at the top right, flush against the bottom of the hero,
-     at a fixed ratio rather than stretching down the full length of the text. */
+  /* Desktop: photo at the top right, flush against the hero, at its own
+     portrait ratio (capped to the screen height), pinned while the text scrolls. */
   .about-v2{align-items:start;}
-  .about-v2-photo{aspect-ratio:4/3;}
+  .about-v2-photo{position:sticky;top:0;width:100%;aspect-ratio:4/5;max-height:100vh;}
 }
 .about-v2-photo img{width:100%;height:100%;object-fit:cover;display:block;}
 
