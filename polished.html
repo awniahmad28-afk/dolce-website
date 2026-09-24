@@ -84,7 +84,7 @@
   .pol-about-copy > p{max-width:52ch; font-size:16px; line-height:1.75; color:#6E5A45; font-weight:300;}
   .pol-about-copy > p.pol-about-close{margin-top:8px; font-family:var(--pol-font-display); font-style:italic; font-size:clamp(19px,1.8vw,22px); line-height:1.5; color:var(--pol-ink); font-weight:400;}
   .pol-about-photo{flex:1 1 360px; min-width:260px; display:flex; align-items:stretch;}
-  @media (max-width:840px){ .pol-about-photo .pol-photo-block{aspect-ratio:4/5;} }
+  .pol-about-img{width:100%; aspect-ratio:4/5; object-fit:cover; display:block;}
 
   /* services */
   .pol-services{background:var(--pol-beige); display:flex; flex-wrap:wrap;}
@@ -208,7 +208,7 @@
     <p class="pol-about-close">Our aim is simple: that you leave looking refined, feeling cared for, and entirely yourself.</p>
   </div>
   <div class="pol-about-photo">
-    <div class="pol-photo-block pol-photo-brown">[ About photo ]</div>
+    <img class="pol-about-img" src="polished%20miror.jpg" alt="Illuminated mirror at Polished by Dolce">
   </div>
 </section>
 
