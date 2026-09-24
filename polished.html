@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Polished by Dolce Salon — Park View, Erbil</title>
-<link rel="stylesheet" href="styles.css?v=38">
+<link rel="stylesheet" href="styles.css?v=39">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400..600;1,9..144,400..600&family=Jost:wght@300;400;500;600&display=swap">
 <style>
   :root{
@@ -75,6 +75,16 @@
   .pol-section{padding:clamp(64px,8vw,100px) clamp(24px,5vw,64px);}
   .pol-section-head p.eyebrow{font-family:var(--pol-font-body); letter-spacing:.2em; color:var(--pol-gold);}
   .pol-section-head h2{font-family:var(--pol-font-display); font-weight:400; font-size:clamp(30px,3.6vw,38px); letter-spacing:-.01em; margin-top:14px; color:var(--pol-ink);}
+
+  /* about */
+  .pol-about{background:var(--pol-cream); display:flex; flex-wrap:wrap;}
+  .pol-about-copy{flex:1 1 480px; min-width:300px; padding:clamp(64px,8vw,96px) clamp(24px,5vw,64px); display:flex; flex-direction:column; justify-content:center; gap:18px;}
+  .pol-about-copy .pol-section-head{margin-bottom:10px;}
+  .pol-about-copy .pol-section-head p.eyebrow{color:var(--pol-emerald);}
+  .pol-about-copy > p{max-width:52ch; font-size:16px; line-height:1.75; color:#6E5A45; font-weight:300;}
+  .pol-about-copy > p.pol-about-close{margin-top:8px; font-family:var(--pol-font-display); font-style:italic; font-size:clamp(19px,1.8vw,22px); line-height:1.5; color:var(--pol-ink); font-weight:400;}
+  .pol-about-photo{flex:1 1 360px; min-width:260px; display:flex; align-items:stretch;}
+  @media (max-width:840px){ .pol-about-photo .pol-photo-block{aspect-ratio:4/5;} }
 
   /* services */
   .pol-services{background:var(--pol-beige); display:flex; flex-wrap:wrap;}
@@ -184,6 +194,21 @@
   </div>
   <div class="pol-hero-photo">
     <video class="pol-hero-video" src="polished-hero.mp4" autoplay muted loop playsinline></video>
+  </div>
+</section>
+
+<section id="about" class="pol-about">
+  <div class="pol-about-copy">
+    <div class="pol-section-head">
+      <p class="eyebrow">About Polished</p>
+      <h2>Beauty, to the Dolce standard</h2>
+    </div>
+    <p>Polished by Dolce is the beauty salon of Dolce Aesthetic Clinic, set within the same Park View address in Erbil. It brings the clinic&rsquo;s care, precision and attention to detail to every hair, nail and beauty appointment.</p>
+    <p>From colour and blow-dry styling to manicures, lashes, brows and bridal makeup, each service is delivered by a skilled team in a calm, considered space finished in warm beige, brass gold, walnut and emerald.</p>
+    <p class="pol-about-close">Our aim is simple: that you leave looking refined, feeling cared for, and entirely yourself.</p>
+  </div>
+  <div class="pol-about-photo">
+    <div class="pol-photo-block pol-photo-brown">[ About photo ]</div>
   </div>
 </section>
 
