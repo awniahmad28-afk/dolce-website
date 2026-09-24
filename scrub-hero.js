@@ -6,14 +6,16 @@
   var bar = document.getElementById('scrub-progress-bar');
   var sticky = wrap.querySelector('.scrub-sticky');
 
-  var total = 67;
-  var nativeW = 2160;
-  var nativeH = 3840;
+  var total = 244;
+  var nativeW = 810;
+  var nativeH = 1440;
   var frames = new Array(total);
   var currentFrame = 0;
-  var cacheBust = '3';
+  var cacheBust = '4';
 
   var desktopQuery = window.matchMedia('(min-width:701px) and (hover:hover) and (pointer:fine)');
+  // Landscape frames for desktop; a pre-cropped vertical set keeps phones light.
+  var frameDir = desktopQuery.matches ? 'hero-frames' : 'hero-frames-mobile';
 
   // On desktop the video is scrubbed by hovering it and using the wheel,
   // independent of page scroll. On mobile, scrubbing stays tied to normal
@@ -21,7 +23,7 @@
   var desktopProgress = 0;
 
   function frameSrc(i){
-    return 'hero-frames/frame-' + String(i).padStart(3, '0') + '.jpg?v=' + cacheBust;
+    return frameDir + '/frame-' + String(i).padStart(3, '0') + '.jpg?v=' + cacheBust;
   }
 
   function nearestLoaded(i){
@@ -48,42 +50,18 @@
     if (canvas.height !== h) canvas.height = h;
   }
 
-  function drawMobile(img){
-    ctx.drawImage(img, 0, 0, nativeW, nativeH);
-  }
-
-  // Full frame, no cropping: a blurred cover-fill backdrop behind it fills
-  // whatever space is left on the sides, so the real footage is never cut.
-  function drawDesktop(img){
+  function drawCover(img){
     var cw = canvas.width, ch = canvas.height;
     var iw = img.naturalWidth, ih = img.naturalHeight;
-
-    var coverScale = Math.max(cw / iw, ch / ih);
-    var bw = iw * coverScale, bh = ih * coverScale;
-    var bx = (cw - bw) / 2, by = (ch - bh) / 2;
-    ctx.save();
-    ctx.filter = 'blur(50px) brightness(0.55)';
-    ctx.drawImage(img, bx, by, bw, bh);
-    ctx.restore();
-
-    var containScale = Math.min(cw / iw, ch / ih);
-    var widthStretch = 2.0;
-    var fw = Math.min(cw, iw * containScale * widthStretch);
-    var fh = ih * containScale;
-    var fx = (cw - fw) / 2, fy = (ch - fh) / 2;
-    ctx.drawImage(img, fx, fy, fw, fh);
+    var scale = Math.max(cw / iw, ch / ih);
+    var w = iw * scale, h = ih * scale;
+    ctx.drawImage(img, (cw - w) / 2, (ch - h) / 2, w, h);
   }
 
   function draw(i){
     var img = frames[i - 1];
     if (!img || !img.complete || !img.naturalWidth) return;
-    ctx.fillStyle = '#0d0906';
-    ctx.fillRect(0, 0, canvas.width, canvas.height);
-    if (desktopQuery.matches){
-      drawDesktop(img);
-    } else {
-      drawMobile(img);
-    }
+    drawCover(img);
     currentFrame = i;
   }
 
