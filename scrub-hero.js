@@ -75,7 +75,8 @@
     ctx.restore();
 
     var containScale = Math.min(cw / iw, ch / ih);
-    var fw = Math.min(cw, iw * containScale * 2.0);
+    var stretched = Math.min(cw, iw * containScale * 2.0);
+    var fw = cw - (cw - stretched) * 0.7;  // side bars 30% narrower than at 2x
     var fh = ih * containScale;
     ctx.drawImage(img, (cw - fw) / 2, (ch - fh) / 2, fw, fh);
   }
