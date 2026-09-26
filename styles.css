@@ -178,6 +178,8 @@ header.header-overlay .nav-toggle{color:#F1E9DA;}
 .badge-text .badge-big{font-size:14px;font-weight:700;}
 .app-badge{display:inline-flex;align-items:center;gap:10px;background:var(--ink);color:var(--ground);border:none;border-radius:8px;padding:9px 16px;text-decoration:none;transition:opacity .15s ease;}
 .app-badge:hover{opacity:.82;}
+.app-badge.is-soon{cursor:default;}
+.app-badge.is-soon:hover{opacity:1;}
 
 /* ---------- numbered treatment list (editorial index style) ---------- */
 .idx-head{text-align:center;padding-bottom:14px;}
