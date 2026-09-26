@@ -273,10 +273,11 @@
     <h2>Recent Work</h2>
   </div>
   <div class="pol-masonry">
-    <a class="pol-m-item" href="lashes-1.jpg"><img src="lashes-1.jpg" alt="Lash extensions by Polished" loading="lazy"></a>
-    <a class="pol-m-item" href="nail-1.jpg"><img src="nail-1.jpg" alt="Blue marble nail art by Polished" loading="lazy"></a>
     <a class="pol-m-item" href="hair-1.jpg"><img src="hair-1.jpg" alt="Soft waves styled at Polished" loading="lazy"></a>
     <a class="pol-m-item" href="hair-2.jpg"><img src="hair-2.jpg" alt="Braided half-up waves styled at Polished" loading="lazy"></a>
+    <a class="pol-m-item" href="lashes-1.jpg"><img src="lashes-1.jpg" alt="Lash extensions by Polished" loading="lazy"></a>
+    <a class="pol-m-item" href="nail-1.jpg"><img src="nail-1.jpg" alt="Blue marble nail art by Polished" loading="lazy"></a>
+    <a class="pol-m-item" href="nail-2.jpg"><img src="nail-2.jpg" alt="Lilac shimmer almond nails by Polished" loading="lazy"></a>
   </div>
   <button type="button" class="pol-more">Show more</button>
 </section>
@@ -420,6 +421,10 @@
     if (items.length < cols){
       grid.style.columnCount = items.length;
       grid.style.maxWidth = (1200 / cols * items.length) + 'px';
+    } else if (cols >= 4 && items.length === cols + 1){
+      // One photo more than fits a row: spread across one extra column
+      // rather than leaving a single photo hanging below.
+      grid.style.columnCount = items.length;
     }
   }
   fitColumns();
