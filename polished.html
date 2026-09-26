@@ -106,8 +106,10 @@
   .pol-gallery .pol-section-head p.eyebrow{color:var(--pol-gold);}
   .pol-gallery .pol-section-head h2{color:#F1E9DA;}
   .pol-masonry{column-count:4; column-gap:8px; max-width:1200px; margin:44px auto 0; text-align:left;}
-  @media (max-width:1000px){ .pol-masonry{column-count:3;} }
   @media (max-width:640px){ .pol-masonry{column-count:2; column-gap:6px;} }
+  .pol-masonry.is-rows{column-count:auto; display:flex; align-items:flex-start; gap:8px;}
+  @media (max-width:640px){ .pol-masonry.is-rows{gap:6px;} }
+  .pol-m-col{flex:1 1 0; min-width:0;}
   .pol-m-item{display:block; break-inside:avoid; margin:0 0 8px; overflow:hidden; cursor:zoom-in; background:rgba(0,0,0,.12);}
   @media (max-width:640px){ .pol-m-item{margin-bottom:6px;} }
   .pol-m-item img{width:100%; height:auto; display:block; transition:transform .35s ease;}
@@ -276,6 +278,7 @@
     <a class="pol-m-item" href="hair-1.jpg"><img src="hair-1.jpg" alt="Soft waves styled at Polished" loading="lazy"></a>
     <a class="pol-m-item" href="hair-2.jpg"><img src="hair-2.jpg" alt="Braided half-up waves styled at Polished" loading="lazy"></a>
     <a class="pol-m-item" href="lashes-1.jpg"><img src="lashes-1.jpg" alt="Lash extensions by Polished" loading="lazy"></a>
+    <a class="pol-m-item" href="lashes-2.jpg"><img src="lashes-2.jpg" alt="Volume lash extensions by Polished" loading="lazy"></a>
     <a class="pol-m-item" href="nail-1.jpg"><img src="nail-1.jpg" alt="Blue marble nail art by Polished" loading="lazy"></a>
     <a class="pol-m-item" href="nail-2.jpg"><img src="nail-2.jpg" alt="Lilac shimmer almond nails by Polished" loading="lazy"></a>
   </div>
@@ -411,24 +414,30 @@
   if (more) more.addEventListener('click', function(){ shown = Math.min(shown + PAGE, items.length); applyShown(); });
   applyShown();
 
-  // With only a few photos, use fewer columns and centre them instead of
-  // leaving empty columns on the right. Full layout returns as photos are added.
+  // Photos are dealt left to right, row by row, into 4 columns (2 on phones),
+  // so photos 1-2, 3-4, 5-6... always sit side by side. With fewer photos
+  // than columns, use fewer columns and centre them.
   var grid = document.querySelector('.pol-masonry');
-  function fitColumns(){
+  var phoneQuery = window.matchMedia('(max-width:640px)');
+  function layoutRows(){
     if (!grid) return;
-    grid.style.columnCount = ''; grid.style.maxWidth = '';
-    var cols = parseInt(getComputedStyle(grid).columnCount, 10) || 1;
-    if (items.length < cols){
-      grid.style.columnCount = items.length;
-      grid.style.maxWidth = (1200 / cols * items.length) + 'px';
-    } else if (cols >= 4 && items.length === cols + 1){
-      // One photo more than fits a row: spread across one extra column
-      // rather than leaving a single photo hanging below.
-      grid.style.columnCount = items.length;
+    var full = phoneQuery.matches ? 2 : 4;
+    var cols = Math.max(1, Math.min(full, items.length));
+    grid.style.maxWidth = cols < full ? (1200 / 4 * cols) + 'px' : '';
+    grid.innerHTML = '';
+    var columns = [];
+    for (var c = 0; c < cols; c++){
+      var col = document.createElement('div');
+      col.className = 'pol-m-col';
+      grid.appendChild(col);
+      columns.push(col);
     }
+    items.forEach(function(a, i){ columns[i % cols].appendChild(a); });
+    grid.classList.add('is-rows');
   }
-  fitColumns();
-  window.addEventListener('resize', fitColumns);
+  layoutRows();
+  if (phoneQuery.addEventListener) phoneQuery.addEventListener('change', layoutRows);
+  else if (phoneQuery.addListener) phoneQuery.addListener(layoutRows);
 
   var box = document.createElement('div');
   box.className = 'pol-lightbox';
