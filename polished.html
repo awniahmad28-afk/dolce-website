@@ -144,8 +144,9 @@
   .pol-testi-card .src{margin-top:4px; font-size:11.5px; letter-spacing:.04em; color:#8A7560;}
 
   /* booking CTA */
-  /* Desktop (mouse) only: calling from a computer isn't useful, so hide Call. */
-  @media (min-width:701px) and (hover:hover) and (pointer:fine){ .pol-call-btn{display:none;} }
+  /* Call shows on phones only (incl. phones turned sideways); hidden on
+     desktops and tablets. */
+  @media (min-width:701px) and (hover:hover) and (pointer:fine), (min-width:701px) and (min-height:600px){ .pol-call-btn{display:none;} }
   .pol-book{position:relative; background:var(--pol-gold); padding:clamp(64px,9vw,110px) clamp(24px,5vw,64px); text-align:center; display:flex; flex-direction:column; align-items:center; gap:26px; overflow:hidden;}
   .pol-book-glow{position:absolute; top:0; left:50%; transform:translateX(-50%); width:560px; height:320px; border-radius:50%; background:radial-gradient(circle, rgba(255,255,255,.5) 0%, rgba(255,255,255,0) 68%); filter:blur(36px); animation:polGlow 6s ease-in-out infinite;}
   .pol-book p.eyebrow{position:relative; color:var(--pol-ink); font-family:var(--pol-font-body); letter-spacing:.2em;}
