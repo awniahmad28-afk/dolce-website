@@ -113,7 +113,8 @@
   .pol-g-3{background:var(--pol-gold); color:var(--pol-ink);}
   .pol-g-4{background:var(--pol-emerald-dark); color:#E8DCC8;}
   .pol-g-5{grid-column:span 2; background:var(--pol-ink); color:#E8DCC8;}
-  @media (max-width:760px){ .pol-gallery-grid{grid-template-columns:repeat(2,1fr); grid-auto-rows:auto;} .pol-gallery-item{min-height:170px;} .pol-g-1,.pol-g-2,.pol-g-5{grid-column:span 2;} .pol-g-1{grid-row:auto; aspect-ratio:1045/1350;} }
+  .pol-g-tall{grid-row:span 2; background:var(--pol-brown);}
+  @media (max-width:760px){ .pol-gallery-grid{grid-template-columns:repeat(2,1fr); grid-auto-rows:auto;} .pol-gallery-item{min-height:170px;} .pol-g-1,.pol-g-2,.pol-g-5{grid-column:span 2;} .pol-g-1{grid-row:auto; aspect-ratio:1045/1350;} .pol-g-tall{grid-column:span 2; grid-row:auto; aspect-ratio:3/4;} }
   .pol-g-photo{overflow:hidden; cursor:zoom-in; padding:0;}
   .pol-g-photo img{width:100%; height:100%; object-fit:cover; object-position:center top; display:block;}
 
@@ -271,9 +272,9 @@
   <div class="pol-gallery-grid">
     <a class="pol-gallery-item pol-g-1 pol-g-photo" href="lashes-1.jpg" aria-label="View lash extensions photo"><img src="lashes-1.jpg" alt="Lash extensions by Polished" loading="lazy"></a>
     <div class="pol-gallery-item pol-g-2">[ Photo ]</div>
+    <a class="pol-gallery-item pol-g-tall pol-g-photo" href="hair-1.jpg" aria-label="View hair styling photo"><img src="hair-1.jpg" alt="Soft waves styled at Polished" loading="lazy"></a>
     <div class="pol-gallery-item pol-g-3">[ Photo ]</div>
     <div class="pol-gallery-item pol-g-4">[ Photo ]</div>
-    <div class="pol-gallery-item pol-g-5">[ Photo ]</div>
   </div>
 </section>
 
