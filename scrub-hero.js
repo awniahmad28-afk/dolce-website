@@ -178,6 +178,16 @@
     }, 150);
   }
 
+  // The progress bar is pinned to the bottom of the screen; show it only
+  // while the video itself is on screen.
+  var progressEl = bar && bar.parentNode;
+  if (progressEl && 'IntersectionObserver' in window){
+    new IntersectionObserver(function(entries){
+      var e = entries[0];
+      progressEl.classList.toggle('is-hidden', !(e.isIntersecting && e.intersectionRatio >= 0.35));
+    }, { threshold: [0, 0.35, 0.6, 1] }).observe(sticky);
+  }
+
   window.addEventListener('scroll', onWindowScroll, { passive: true });
   window.addEventListener('resize', onResize);
   if (desktopQuery.addEventListener) desktopQuery.addEventListener('change', onResize);
