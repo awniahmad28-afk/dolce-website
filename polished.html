@@ -105,25 +105,28 @@
   .pol-gallery{background:var(--pol-emerald); text-align:center;}
   .pol-gallery .pol-section-head p.eyebrow{color:var(--pol-gold);}
   .pol-gallery .pol-section-head h2{color:#F1E9DA;}
-  .pol-gallery-grid{display:grid; grid-template-columns:repeat(4,1fr); grid-auto-rows:170px; gap:6px; max-width:1200px; margin:44px auto 0;}
-  .pol-gallery-item{display:flex; align-items:center; justify-content:center; font-size:12px; letter-spacing:.06em; text-transform:uppercase; transition:transform .25s ease;}
-  .pol-gallery-item:hover{transform:scale(1.02);}
-  .pol-g-1{grid-column:span 1; grid-row:span 2; background:var(--pol-brown); color:#E8DCC8;}
-  .pol-g-2{grid-column:span 2; background:#E8DCC8; color:var(--pol-ink);}
-  .pol-g-3{background:var(--pol-gold); color:var(--pol-ink);}
-  .pol-g-4{background:var(--pol-emerald-dark); color:#E8DCC8;}
-  .pol-g-5{grid-column:span 2; background:var(--pol-ink); color:#E8DCC8;}
-  .pol-g-tall{grid-row:span 2; background:var(--pol-brown);}
-  @media (max-width:760px){ .pol-gallery-grid{grid-template-columns:repeat(2,1fr); grid-auto-rows:auto;} .pol-gallery-item{min-height:170px;} .pol-g-1,.pol-g-2,.pol-g-5{grid-column:span 2;} .pol-g-1{grid-row:auto; aspect-ratio:1045/1350;} .pol-g-tall{grid-column:span 2; grid-row:auto; aspect-ratio:3/4;} }
-  .pol-g-photo{overflow:hidden; cursor:zoom-in; padding:0;}
-  .pol-g-photo img{width:100%; height:100%; object-fit:cover; object-position:center top; display:block;}
+  .pol-masonry{column-count:4; column-gap:8px; max-width:1200px; margin:44px auto 0; text-align:left;}
+  @media (max-width:1000px){ .pol-masonry{column-count:3;} }
+  @media (max-width:640px){ .pol-masonry{column-count:2; column-gap:6px;} }
+  .pol-m-item{display:block; break-inside:avoid; margin:0 0 8px; overflow:hidden; cursor:zoom-in; background:rgba(0,0,0,.12);}
+  @media (max-width:640px){ .pol-m-item{margin-bottom:6px;} }
+  .pol-m-item img{width:100%; height:auto; display:block; transition:transform .35s ease;}
+  .pol-m-item:hover img{transform:scale(1.03);}
+  .pol-m-item.is-hidden{display:none;}
+  .pol-more{margin-top:32px; font-family:var(--pol-font-body); font-size:12.5px; font-weight:600; letter-spacing:.12em; text-transform:uppercase; color:#F1E9DA; background:none; border:1px solid rgba(241,233,218,.5); border-radius:999px; padding:13px 30px; cursor:pointer; transition:background .2s ease,color .2s ease,border-color .2s ease;}
+  .pol-more:hover{background:var(--pol-gold); border-color:var(--pol-gold); color:var(--pol-ink);}
 
   /* photo viewer */
-  .pol-lightbox{position:fixed; inset:0; z-index:200; display:none; align-items:center; justify-content:center; padding:clamp(16px,4vw,48px); background:rgba(22,15,10,.92); cursor:zoom-out;}
+  .pol-lightbox{position:fixed; inset:0; z-index:200; display:none; align-items:center; justify-content:center; padding:clamp(56px,6vw,72px) clamp(16px,6vw,88px); background:rgba(22,15,10,.94);}
   .pol-lightbox.open{display:flex;}
-  .pol-lightbox img{max-width:100%; max-height:100%; object-fit:contain; box-shadow:0 20px 60px rgba(0,0,0,.45); cursor:default;}
-  .pol-lightbox-close{position:absolute; top:14px; right:18px; width:44px; height:44px; border:none; background:none; color:#F1E9DA; font-size:34px; line-height:1; cursor:pointer;}
-  .pol-lightbox-close:hover{color:var(--pol-gold);}
+  .pol-lightbox img{max-width:100%; max-height:100%; object-fit:contain; box-shadow:0 20px 60px rgba(0,0,0,.45);}
+  .pol-lb-btn{position:absolute; border:none; background:none; color:#F1E9DA; cursor:pointer; line-height:1; padding:10px;}
+  .pol-lb-btn:hover{color:var(--pol-gold);}
+  .pol-lb-close{top:10px; right:14px; font-size:36px;}
+  .pol-lb-prev, .pol-lb-next{top:50%; transform:translateY(-50%); font-size:44px;}
+  .pol-lb-prev{left:clamp(4px,1.5vw,20px);}
+  .pol-lb-next{right:clamp(4px,1.5vw,20px);}
+  .pol-lb-count{position:absolute; bottom:16px; left:0; right:0; text-align:center; font-size:12px; letter-spacing:.14em; color:rgba(241,233,218,.7);}
 
   /* testimonials */
   .pol-testimonials{background:var(--pol-beige); text-align:center;}
@@ -269,13 +272,11 @@
     <p class="eyebrow">Portfolio</p>
     <h2>Recent Work</h2>
   </div>
-  <div class="pol-gallery-grid">
-    <a class="pol-gallery-item pol-g-1 pol-g-photo" href="lashes-1.jpg" aria-label="View lash extensions photo"><img src="lashes-1.jpg" alt="Lash extensions by Polished" loading="lazy"></a>
-    <div class="pol-gallery-item pol-g-2">[ Photo ]</div>
-    <a class="pol-gallery-item pol-g-tall pol-g-photo" href="hair-1.jpg" aria-label="View hair styling photo"><img src="hair-1.jpg" alt="Soft waves styled at Polished" loading="lazy"></a>
-    <div class="pol-gallery-item pol-g-3">[ Photo ]</div>
-    <div class="pol-gallery-item pol-g-4">[ Photo ]</div>
+  <div class="pol-masonry">
+    <a class="pol-m-item" href="lashes-1.jpg"><img src="lashes-1.jpg" alt="Lash extensions by Polished" loading="lazy"></a>
+    <a class="pol-m-item" href="hair-1.jpg"><img src="hair-1.jpg" alt="Soft waves styled at Polished" loading="lazy"></a>
   </div>
+  <button type="button" class="pol-more">Show more</button>
 </section>
 
 <section id="testimonials" class="pol-testimonials pol-section">
@@ -393,32 +394,76 @@
   });
 })();
 
-// Gallery: click a photo to view it large; close with ×, backdrop click or Esc.
+// Gallery: first 12 shown, "Show more" reveals the rest. Click a photo to view it
+// large; move with the arrows, arrow keys or a swipe; close with ×, backdrop or Esc.
 (function(){
+  var PAGE = 12;
+  var items = Array.prototype.slice.call(document.querySelectorAll('.pol-m-item'));
+  var more = document.querySelector('.pol-more');
+  var shown = Math.min(PAGE, items.length);
+  function applyShown(){
+    items.forEach(function(a, i){ a.classList.toggle('is-hidden', i >= shown); });
+    if (more) more.style.display = shown >= items.length ? 'none' : '';
+  }
+  if (more) more.addEventListener('click', function(){ shown = Math.min(shown + PAGE, items.length); applyShown(); });
+  applyShown();
+
+  // With only a few photos, use fewer columns and centre them instead of
+  // leaving empty columns on the right. Full layout returns as photos are added.
+  var grid = document.querySelector('.pol-masonry');
+  function fitColumns(){
+    if (!grid) return;
+    grid.style.columnCount = ''; grid.style.maxWidth = '';
+    var cols = parseInt(getComputedStyle(grid).columnCount, 10) || 1;
+    if (items.length < cols){
+      grid.style.columnCount = items.length;
+      grid.style.maxWidth = (1200 / cols * items.length) + 'px';
+    }
+  }
+  fitColumns();
+  window.addEventListener('resize', fitColumns);
+
   var box = document.createElement('div');
   box.className = 'pol-lightbox';
   box.setAttribute('role', 'dialog');
   box.setAttribute('aria-modal', 'true');
-  box.innerHTML = '<button type="button" class="pol-lightbox-close" aria-label="Close">&times;</button><img alt="">';
+  box.innerHTML = '<button type="button" class="pol-lb-btn pol-lb-close" aria-label="Close">&times;</button>' +
+    '<button type="button" class="pol-lb-btn pol-lb-prev" aria-label="Previous photo">&#8249;</button>' +
+    '<img alt="">' +
+    '<button type="button" class="pol-lb-btn pol-lb-next" aria-label="Next photo">&#8250;</button>' +
+    '<div class="pol-lb-count"></div>';
   document.body.appendChild(box);
-  var img = box.querySelector('img');
-  var closeBtn = box.querySelector('.pol-lightbox-close');
-  var lastFocus = null;
+  var img = box.querySelector('img'), count = box.querySelector('.pol-lb-count');
+  var current = 0, lastFocus = null;
+
+  function show(i){
+    current = (i + items.length) % items.length;
+    var a = items[current], thumb = a.querySelector('img');
+    img.src = a.getAttribute('href');
+    img.alt = thumb ? thumb.alt : '';
+    count.textContent = (current + 1) + ' / ' + items.length;
+  }
+  function open(i){ lastFocus = items[i]; show(i); box.classList.add('open'); document.body.style.overflow = 'hidden'; box.querySelector('.pol-lb-close').focus(); }
   function close(){ box.classList.remove('open'); document.body.style.overflow = ''; if (lastFocus) lastFocus.focus(); }
-  document.querySelectorAll('.pol-g-photo').forEach(function(a){
-    a.addEventListener('click', function(e){
-      e.preventDefault();
-      lastFocus = a;
-      var thumb = a.querySelector('img');
-      img.src = a.getAttribute('href');
-      img.alt = thumb ? thumb.alt : '';
-      box.classList.add('open');
-      document.body.style.overflow = 'hidden';
-      closeBtn.focus();
-    });
+
+  items.forEach(function(a, i){ a.addEventListener('click', function(e){ e.preventDefault(); open(i); }); });
+  box.querySelector('.pol-lb-close').addEventListener('click', close);
+  box.querySelector('.pol-lb-prev').addEventListener('click', function(e){ e.stopPropagation(); show(current - 1); });
+  box.querySelector('.pol-lb-next').addEventListener('click', function(e){ e.stopPropagation(); show(current + 1); });
+  box.addEventListener('click', function(e){ if (e.target === box) close(); });
+  document.addEventListener('keydown', function(e){
+    if (!box.classList.contains('open')) return;
+    if (e.key === 'Escape') close();
+    else if (e.key === 'ArrowLeft') show(current - 1);
+    else if (e.key === 'ArrowRight') show(current + 1);
   });
-  box.addEventListener('click', function(e){ if (e.target !== img) close(); });
-  document.addEventListener('keydown', function(e){ if (e.key === 'Escape' && box.classList.contains('open')) close(); });
+  var touchX = null;
+  box.addEventListener('touchstart', function(e){ touchX = e.touches[0].clientX; }, {passive:true});
+  box.addEventListener('touchend', function(e){
+    if (touchX === null) return;
+    var dx = e.changedTouches[0].clientX - touchX; touchX = null;
+    if (Math.abs(dx) > 40) show(current + (dx < 0 ? 1 : -1));
+  });
 })();
 </script>
 </body>
