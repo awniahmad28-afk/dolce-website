@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Dermatology &amp; Non-Invasive — Dolce Aesthetic Clinic</title>
+<title>Our Story — Dolce Aesthetic Clinic</title>
 <link rel="stylesheet" href="styles.css?v=47">
 </head>
 <body>
@@ -13,8 +13,8 @@
   <button class="nav-toggle" aria-label="Menu"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 6h18M3 12h18M3 18h18"/></svg></button>
   <nav class="mainnav">
     <a href="index.html">Home</a>
-    <a href="our-story.html">Our Story</a>
-    <a href="dermatology.html" class="current">Dermatology &amp; Non-Invasive</a>
+    <a href="our-story.html" class="current">Our Story</a>
+    <a href="dermatology.html">Dermatology &amp; Non-Invasive</a>
     <a href="plastic-surgery.html">Plastic Surgery</a>
     <a href="wellness.html">Wellness</a>
     <a href="index.html#booking">Contact</a>
@@ -35,98 +35,50 @@
 </header>
 <div class="rule"></div>
 
-<!-- PAGE BANNER -->
-<section>
-  <div class="dept-photo" style="background:url('face.jpg') center/cover;"></div>
-  <div class="dept-body wrap">
-    <p class="dept-num">01</p>
-    <h3>Dermatology &amp; Non-Invasive</h3>
-    <p>Get our expert skin specialists' opinion on what dermatology services will best suit you. From lasers, chemical peels and injectable skin boosters, to the top medical devices to tighten, rejuvenate and revive your skin.</p>
-    <a class="back-link" href="index.html">← Back to Home</a>
-  </div>
-</section>
+<main class="story">
+  <section class="story-intro wrap">
+    <p class="eyebrow">Our Story</p>
+    <h1 class="story-title">The story of Dolce</h1>
+  </section>
 
-<div class="wrap idx-list">
-  <div class="idx-head">
-    <p class="eyebrow">Treatments</p>
-    <h2>What we treat, one by one</h2>
-  </div>
-  <div class="idx-intro">
-    <p>At Dolce, our dermatology and non-invasive treatments are chosen to address a wide range of skin concerns with precision and care. <strong>Morpheus8</strong> refines the appearance of acne scarring while lifting and tightening the skin, and <strong>Carboxy</strong> therapy uses medical-grade CO₂ to thicken the skin and encourage the formation of new collagen.</p>
-    <p>For texture and fine lines, our <strong>Fractional Laser</strong> softens the appearance of wrinkles and treats acne scars by stimulating collagen production. <strong>PRP</strong> — platelet-rich plasma — draws on the body’s own healing properties to improve skin tone, support hair growth and help reduce hair fall.</p>
-    <p>Each treatment is recommended following a consultation with our specialists, so that every plan reflects your skin, your concerns and your goals.</p>
-  </div>
-
-  <div class="idx-sub">
-    <h3>Facial Menu</h3>
-    <p class="lede">At Dolce Aesthetic Clinic we pride ourselves on using top clinical-grade products in our facial treatments, with a wide selection to help deeply cleanse and rejuvenate your skin. You'll leave with our Dolce glow!</p>
-    <div class="idx-cols">
-      <div>Hydrafacial</div>
-      <div>Dolce's Signature Gold Extract Facial</div>
-      <div>Express Hydrafacial (30 Min)</div>
-      <div>Skinceuticals Deep Cleansing Facial + Hydrafacial (60–90 Min)</div>
-      <div>Young Adult Facial</div>
-      <div>Radiant Skin Facial</div>
-      <div>Sensitive Skin Facial – Rosacea (45 Min)</div>
-      <div>Intense Hydration Facial</div>
-      <div>Anti-Aging Facial (60 Min)</div>
-      <div>Dermapen + Skinceuticals Facial</div>
-      <div>Pigmentation / Discoloration Facial</div>
-      <div>Acne Facial (45–60 Min)</div>
+  <!-- CEO photo + story. Set data-photo="portrait" (photo beside the text)
+       or data-photo="landscape" (large full-width photo above the text)
+       to match the picture that goes in. -->
+  <section class="story-main" data-photo="portrait">
+    <figure class="story-photo">
+      <div class="story-photo-frame"><span class="story-slot-label">[ CEO photo ]</span></div>
+      <figcaption>
+        <span class="story-name">[ Name ]</span>
+        <span class="story-role">[ Title ]</span>
+      </figcaption>
+    </figure>
+    <div class="story-text">
+      <p class="story-placeholder">[ The story of how Dolce began goes here. ]</p>
     </div>
-  </div>
+  </section>
 
-  <div class="idx-sub">
-    <h3>Dermal Fillers &amp; Botox</h3>
-    <div class="fillers-grid">
-      <div class="fillers-card">
-        <div class="fillers-photos">
-          <div class="fillers-photo"><img src="lip%20filler.png" alt="lip filler"></div>
-          <div class="fillers-photo"><img src="rhino%20filler.png" alt="rhino filler"></div>
-        </div>
-        <div class="fillers-copy">
-          <h4>Dermal Fillers</h4>
-          <p>Dermal fillers are versatile cosmetic injectables that can enhance your natural beauty and restore a youthful appearance. Experience an instant confidence boost by creating lift, restoring volume, smoothing deep creases, and contouring facial features. With minimal downtime and long-lasting results, Dolce Aesthetic Clinic's bespoke filler treatments are popular for all demographics.</p>
-        </div>
-      </div>
-      <div class="fillers-card">
-        <div class="fillers-photo" style="aspect-ratio:1/1;max-width:260px;">
-          <img src="botox.png" alt="Botox treatment">
-        </div>
-        <div class="fillers-copy">
-          <h4>Botox</h4>
-          <p>At Dolce we administer the FDA approved Allergan Botox as muscle relaxing injections, which have an immediate effect on freezing the muscles, the main cause for creating lines and wrinkles. By injecting Botox we can effectively prevent the skin from creasing and creating frown lines on the forehead and crow's feet around eyes and also minor facial corrections.</p>
-        </div>
+  <section class="story-family wrap">
+    <p class="eyebrow">The Dolce Family</p>
+    <div class="family-grid">
+      <a class="family-item" href="index.html">
+        <span class="family-logo"><img src="logo.png" alt="Dolçe Aesthetic Clinic"></span>
+        <span class="family-label">Aesthetic Clinic</span>
+      </a>
+      <a class="family-item" href="polished.html">
+        <span class="family-logo"><img src="polished-logo.png" alt="Polished by Dolce"></span>
+        <span class="family-label">Hair, Nails &amp; Beauty</span>
+      </a>
+      <a class="family-item" href="https://coreyogapilatesstudio.com/" target="_blank" rel="noopener">
+        <span class="family-logo"><img src="core-logo-dark.png" alt="Core Yoga &amp; Pilates Studio"></span>
+        <span class="family-label">Yoga &amp; Pilates Studio</span>
+      </a>
+      <div class="family-item">
+        <span class="family-logo family-logo-slot">[ App logo ]</span>
+        <span class="family-label">The Dolce App &middot; Coming soon</span>
       </div>
     </div>
-  </div>
-
-  <div class="idx-sub">
-    <h3>Hair Loss Solutions</h3>
-    <p class="lede tx-wide">PRP (Platelet-Rich Plasma) therapy is one of our most effective non-surgical treatments for hair thinning and early-stage hair loss. A small sample of the patient's own blood is drawn and processed to concentrate its platelets, which are then injected into the scalp. The growth factors released stimulate dormant follicles, extend the hair's natural growth phase and improve density over a course of sessions. Because the treatment uses the patient's own blood, it carries minimal risk and requires no downtime — making it a popular, medically-grounded option for both men and women noticing early signs of thinning.</p>
-    <div class="tx-below-photo"><img src="hair%20loss.jpg" alt="Hair loss / PRP treatment"></div>
-  </div>
-
-  <div class="idx-sub">
-    <h3>Laser Hair Removal</h3>
-    <p class="lede tx-wide">Put an end to slow, messy and painful hair removal methods such as shaving, waxing, tweezing and creams. Our Xlase Machine uses short, safe bursts of light from a cold tip to remove unwanted hair from all body sites.</p>
-    <div class="tx-below-photo"><img src="laser.JPG" alt="Laser hair removal treatment"></div>
-  </div>
-
-  <div class="idx-sub">
-    <h3>Frequently asked</h3>
-    <div class="idx-faq">
-      <div><h5>Does it hurt?</h5><p>Pain tolerance is very individual. No anaesthetic is required — most people describe the sensation as similar to a cold ice cube moving across the skin.</p></div>
-      <div><h5>Precautions before &amp; after?</h5><p>Shave 24–48 hours before treatment, and avoid plucking, waxing or hair-removal cream for four weeks after. Avoid sun and self-tanning before and during treatment.</p></div>
-      <div><h5>How many sessions?</h5><p>Clinical studies confirm at least 3–6 treatments are needed, spaced 1–3 months apart. Call <a class="tel-link" href="tel:+9647509000200">+964-750-900-0200</a> to discuss your plan.</p></div>
-    </div>
-  </div>
-
-  <div class="idx-sub">
-    <h3>Aesthetic Gynecology</h3>
-    <p class="lede">An innovative branch of medicine allowing women to improve appearance or function for personal or medical reasons. Our Forma V device by Votiva InMode is the latest technology resolving vaginal and urethral issues related to menopause and natural ageing, restoring internal and external vaginal health through natural healing and tightening.</p>
-  </div>
-</div>
+  </section>
+</main>
 
 <!-- CTA -->
 <section class="cta wrap">
