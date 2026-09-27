@@ -390,6 +390,12 @@ footer .copy-email-btn.copied{background:var(--gold);color:var(--ground);border-
 .story-text p{font-size:clamp(16px,1.25vw,18px);line-height:1.85;color:var(--ink-soft);margin:0 0 1.2em;}
 .story-text p:first-child::first-letter{font-family:var(--font-display);float:left;font-size:3.4em;line-height:.9;padding:6px 10px 0 0;color:var(--gold);}
 .story-text .story-placeholder::first-letter{all:unset;}
+.story-pull{font-family:var(--font-display);font-style:italic;font-size:clamp(20px,1.9vw,25px)!important;line-height:1.45!important;color:var(--ink)!important;margin:1.6em 0 1.1em!important;}
+.story-statement{font-family:var(--font-display);font-size:clamp(24px,2.6vw,34px)!important;line-height:1.3!important;color:var(--gold)!important;margin:1.1em 0 1.2em!important;}
+.story-heading{font-size:clamp(26px,2.6vw,36px);font-weight:400;margin:2.2em 0 .8em;padding-top:1.4em;border-top:1px solid var(--line);}
+.story-brands{font-family:var(--font-display);font-size:clamp(19px,1.7vw,23px)!important;line-height:1.6!important;color:var(--ink)!important;margin:2em 0 1.2em!important;padding-left:18px;border-left:2px solid var(--gold);}
+.story-brands em{color:var(--gold);}
+.story-close{font-size:12.5px!important;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--gold)!important;margin-top:1.8em!important;}
 .story-placeholder{padding:28px;border:1px dashed var(--line);color:var(--ink-faint)!important;text-align:center;}
 /* Portrait photo: photo beside the story (stacked on phones) */
 .story-main[data-photo="portrait"]{grid-template-columns:minmax(0,5fr) minmax(0,7fr);align-items:start;}
