@@ -396,16 +396,12 @@ footer .copy-email-btn.copied{background:var(--gold);color:var(--ground);border-
 .story-brands em{color:var(--gold);}
 .story-close{font-size:12.5px!important;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--gold)!important;margin-top:1.8em!important;}
 .story-placeholder{padding:28px;border:1px dashed var(--line);color:var(--ink-faint)!important;text-align:center;}
-/* Founders: two portrait photos side by side, or one landscape photo of both */
-.story-founders{max-width:980px;margin:clamp(36px,5vw,64px) auto 0;padding-inline:clamp(20px,5vw,48px);display:grid;grid-template-columns:1fr 1fr;gap:clamp(16px,3vw,40px);}
-.story-founders .story-photo-frame{aspect-ratio:4/5;}
+/* Founders: one photo of both founders; wide (landscape) or tall (portrait) */
+.story-founders{margin:clamp(36px,5vw,64px) auto 0;}
 .story-founders figcaption{align-items:center;text-align:center;}
-.story-founders .founders-group{display:none;}
-.story-founders[data-photo="landscape"]{max-width:none;padding-inline:0;grid-template-columns:1fr;}
-.story-founders[data-photo="landscape"] .founder{display:none;}
-.story-founders[data-photo="landscape"] .founders-group{display:block;}
 .story-founders[data-photo="landscape"] .story-photo-frame{aspect-ratio:16/9;max-height:82vh;width:100%;border-inline:none;}
-@media (max-width:560px){ .story-founders[data-photo="portrait"]{gap:12px;} .story-founders .story-name{font-size:18px;} }
+.story-founders[data-photo="portrait"]{max-width:560px;padding-inline:clamp(20px,5vw,48px);}
+.story-founders[data-photo="portrait"] .story-photo-frame{aspect-ratio:4/5;}
 /* Story text: one centred reading column */
 .story-main{max-width:720px;margin:clamp(48px,6vw,88px) auto 0;padding-inline:clamp(20px,5vw,48px);}
 /* The Dolce family of brands */
