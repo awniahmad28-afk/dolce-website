@@ -79,6 +79,7 @@
   .dx-split{grid-template-columns:1fr;min-height:0;}
   .dx-split.flip .dx-split-media{order:0;}
   .dx-split-media{min-height:0;aspect-ratio:4/3;}
+  .dx-split-media.is-portrait{aspect-ratio:4/5;}
   .dx-split-media.is-sticky .dx-media{position:absolute;height:auto;}
 }
 
