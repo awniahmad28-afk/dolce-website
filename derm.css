@@ -1,0 +1,123 @@
+/* ---------- Dermatology & Non-Invasive (v2 layout) ---------- */
+.dx *{box-sizing:border-box;}
+.dx-eyebrow{font-size:11.5px;font-weight:600;letter-spacing:.22em;text-transform:uppercase;color:var(--gold);}
+.dx-h2{font-family:var(--font-display);font-weight:400;font-size:clamp(34px,4.2vw,58px);line-height:1.05;margin-top:12px;color:var(--ink);}
+.dx-lede{margin-top:18px;font-size:clamp(15.5px,1.15vw,17px);line-height:1.8;color:var(--ink-soft);max-width:56ch;}
+
+/* Media: a photo, a video, or an empty slot waiting for one */
+.dx-media{position:relative;overflow:hidden;background:#EFE6D6;}
+.dx-media img,.dx-media video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;}
+.dx-slot{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;border:1px dashed rgba(166,128,90,.55);color:var(--ink-faint);font-size:11.5px;letter-spacing:.16em;text-transform:uppercase;text-align:center;padding:16px;}
+.dx-slot svg{width:34px;height:34px;opacity:.7;}
+
+/* Hero */
+.dx-hero{position:relative;min-height:min(78vh,760px);display:flex;align-items:flex-end;color:#F4ECDD;overflow:hidden;}
+.dx-hero .dx-media{position:absolute;inset:0;}
+.dx-hero::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(20,14,9,.82) 0%,rgba(20,14,9,.55) 45%,rgba(20,14,9,.1) 100%),linear-gradient(0deg,rgba(20,14,9,.55),rgba(20,14,9,0) 50%);}
+.dx-hero-copy{position:relative;z-index:1;padding:clamp(40px,6vw,88px) clamp(20px,5vw,64px);max-width:760px;}
+.dx-hero-copy .dx-eyebrow{color:#D8B88E;}
+.dx-hero h1{font-family:var(--font-display);font-weight:400;font-size:clamp(44px,6.4vw,96px);line-height:.98;margin:16px 0 0;color:#FBF6EC;}
+.dx-hero p{margin-top:22px;font-size:clamp(15.5px,1.2vw,18px);line-height:1.75;color:rgba(244,236,221,.86);max-width:54ch;}
+.dx-hero .back-link{color:#D8B88E;margin-top:26px;}
+
+/* Sticky section tabs */
+.dx-tabs{position:sticky;top:0;z-index:40;background:rgba(251,247,239,.92);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-bottom:1px solid var(--line);}
+.dx-tabs ul{list-style:none;margin:0 auto;padding:0 clamp(12px,4vw,48px);display:flex;gap:clamp(6px,1.4vw,26px);overflow-x:auto;scrollbar-width:none;max-width:1400px;justify-content:center;}
+.dx-tabs ul::-webkit-scrollbar{display:none;}
+.dx-tabs a{display:block;white-space:nowrap;padding:17px 6px 15px;font-size:12px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-soft);text-decoration:none;border-bottom:2px solid transparent;transition:color .2s ease,border-color .2s ease;}
+.dx-tabs a:hover{color:var(--ink);}
+.dx-tabs a.is-active{color:var(--gold);border-bottom-color:var(--gold);}
+@media (max-width:860px){ .dx-tabs ul{justify-content:flex-start;} }
+.dx-section{scroll-margin-top:64px;}
+
+/* Signature treatments explorer */
+.dx-sig{max-width:1320px;margin:0 auto;padding:clamp(64px,9vw,130px) clamp(20px,5vw,64px);}
+.dx-sig-head{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(24px,5vw,80px);align-items:end;}
+.dx-sig-body{margin-top:clamp(36px,5vw,64px);display:grid;grid-template-columns:minmax(0,6fr) minmax(0,5fr);gap:clamp(28px,5vw,80px);align-items:start;}
+.dx-list{list-style:none;margin:0;padding:0;border-top:1px solid var(--line);}
+.dx-item{border-bottom:1px solid var(--line);}
+.dx-item button{all:unset;box-sizing:border-box;cursor:pointer;width:100%;display:grid;grid-template-columns:52px 1fr 24px;align-items:baseline;gap:8px;padding:clamp(20px,2.4vw,30px) 0;}
+.dx-item .n{font-family:var(--font-display);font-size:17px;color:var(--gold);}
+.dx-item .t{font-family:var(--font-display);font-size:clamp(26px,2.8vw,40px);line-height:1.1;color:var(--ink-faint);transition:color .25s ease;}
+.dx-item .arr{font-size:18px;color:var(--gold);opacity:0;transform:translateX(-6px);transition:opacity .25s ease,transform .25s ease;}
+.dx-item .d{display:grid;grid-template-rows:0fr;transition:grid-template-rows .35s ease;padding-left:60px;}
+.dx-item .d > div{overflow:hidden;}
+.dx-item .d p{margin:0 0 clamp(20px,2.4vw,28px);font-size:15.5px;line-height:1.75;color:var(--ink-soft);max-width:48ch;}
+.dx-item.is-active .t,.dx-item button:hover .t{color:var(--ink);}
+.dx-item.is-active .arr{opacity:1;transform:none;}
+.dx-item.is-active .d{grid-template-rows:1fr;}
+.dx-sig-note{margin-top:28px;font-size:14px;color:var(--ink-faint);font-style:italic;max-width:56ch;}
+.dx-stage-col{position:sticky;top:90px;}
+.dx-stage{position:relative;aspect-ratio:4/5;}
+.dx-stage .dx-media{position:absolute;inset:0;opacity:0;transition:opacity .45s ease;}
+.dx-stage .dx-media.is-active{opacity:1;}
+.dx-stage-cap{margin-top:14px;font-size:11.5px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--ink-faint);}
+@media (max-width:860px){
+  .dx-sig-head,.dx-sig-body{grid-template-columns:1fr;}
+  .dx-stage-col{position:static;}
+  .dx-item .d{padding-left:0;}
+  .dx-item .dx-stage-col{margin:0 0 22px;}
+  .dx-stage{aspect-ratio:4/3;}
+}
+
+/* Treatments intro: the original text beside one photo */
+.dx-intro{display:grid;grid-template-columns:minmax(0,6fr) minmax(0,5fr);gap:clamp(28px,5vw,80px);align-items:start;}
+.dx-intro .idx-intro{margin:clamp(20px,2.4vw,32px) 0 0;text-align:left;}
+.dx-intro-media{position:sticky;top:90px;}
+.dx-intro-media .dx-media{aspect-ratio:4/5;}
+@media (max-width:860px){ .dx-intro{grid-template-columns:1fr;} .dx-intro-media{position:static;} .dx-intro-media .dx-media{aspect-ratio:4/3;} }
+
+/* Split sections: media on one side, text on the other */
+.dx-split{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);min-height:min(92vh,880px);}
+.dx-split.flip .dx-split-media{order:2;}
+.dx-split-media{position:relative;min-height:420px;}
+.dx-split-media .dx-media{position:absolute;inset:0;}
+.dx-split-media.is-sticky .dx-media{position:sticky;top:0;height:100vh;max-height:100%;}
+.dx-split-copy{padding:clamp(56px,8vw,120px) clamp(20px,5vw,80px);display:flex;flex-direction:column;justify-content:center;}
+.dx-tag{display:inline-block;align-self:flex-start;margin-top:18px;padding:6px 14px;border:1px solid var(--gold);border-radius:999px;font-size:11px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);}
+@media (max-width:860px){
+  .dx-split{grid-template-columns:1fr;min-height:0;}
+  .dx-split.flip .dx-split-media{order:0;}
+  .dx-split-media{min-height:0;aspect-ratio:4/3;}
+  .dx-split-media.is-sticky .dx-media{position:absolute;height:auto;}
+}
+
+/* Facial menu */
+.dx-menu{list-style:none;margin:clamp(26px,3vw,40px) 0 0;padding:0;counter-reset:m;columns:2;column-gap:clamp(20px,3vw,48px);}
+.dx-menu li{break-inside:avoid;counter-increment:m;display:grid;grid-template-columns:30px 1fr;gap:4px;padding:13px 0;border-bottom:1px solid var(--line);font-size:14.5px;line-height:1.45;color:var(--ink);}
+.dx-menu li::before{content:counter(m,decimal-leading-zero);font-family:var(--font-display);font-size:14px;color:var(--gold);}
+.dx-menu small{display:block;margin-top:2px;font-size:11.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-faint);}
+@media (max-width:560px){ .dx-menu{columns:1;} }
+
+/* Fillers & Botox: before / after row */
+.dx-ba{background:var(--ink);color:#EFE6D6;padding:clamp(64px,9vw,130px) clamp(20px,5vw,64px);}
+.dx-ba-inner{max-width:1320px;margin:0 auto;}
+.dx-ba .dx-h2{color:#FBF6EC;}
+.dx-ba .dx-eyebrow{color:#D8B88E;}
+.dx-ba-grid{margin-top:clamp(32px,4vw,56px);display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(10px,1.6vw,22px);}
+.dx-ba-card{margin:0;}
+.dx-ba-card .dx-media{aspect-ratio:4/5;background:#2E241A;}
+.dx-ba-card figcaption{margin-top:12px;font-size:11.5px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:#D8B88E;}
+.dx-ba-copy{margin-top:clamp(36px,5vw,64px);display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:clamp(24px,5vw,80px);}
+.dx-ba-copy h3{font-family:var(--font-display);font-weight:400;font-size:clamp(26px,2.4vw,34px);color:#FBF6EC;}
+.dx-ba-copy p{margin-top:12px;font-size:15.5px;line-height:1.8;color:rgba(239,230,214,.78);}
+@media (max-width:860px){
+  .dx-ba-grid{grid-template-columns:repeat(3,minmax(0,1fr));}
+  .dx-ba-copy{grid-template-columns:1fr;}
+}
+@media (max-width:560px){ .dx-ba-grid{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;gap:12px;margin-inline:calc(-1 * clamp(20px,5vw,64px));padding-inline:clamp(20px,5vw,64px);scroll-padding-inline:clamp(20px,5vw,64px);scrollbar-width:none;} .dx-ba-grid::-webkit-scrollbar{display:none;} .dx-ba-card{flex:0 0 78%;scroll-snap-align:start;} }
+
+/* FAQ accordion */
+.dx-faq{margin-top:clamp(28px,3vw,40px);border-top:1px solid var(--line);}
+.dx-faq details{border-bottom:1px solid var(--line);}
+.dx-faq summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:16px;padding:18px 0;font-family:var(--font-display);font-size:clamp(19px,1.6vw,22px);color:var(--ink);}
+.dx-faq summary::-webkit-details-marker{display:none;}
+.dx-faq summary::after{content:"+";font-family:var(--font-body);font-size:20px;color:var(--gold);transition:transform .25s ease;}
+.dx-faq details[open] summary::after{transform:rotate(45deg);}
+.dx-faq p{margin:0 0 18px;font-size:15px;line-height:1.75;color:var(--ink-soft);max-width:56ch;}
+
+/* Aesthetic Gynecology band */
+.dx-band{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);align-items:stretch;background:#EFE6D6;}
+.dx-band .dx-media{min-height:360px;}
+.dx-band-copy{padding:clamp(56px,8vw,110px) clamp(20px,5vw,80px);}
+@media (max-width:860px){ .dx-band{grid-template-columns:1fr;} .dx-band .dx-media{min-height:0;aspect-ratio:16/10;} }
