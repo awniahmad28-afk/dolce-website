@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Wellness — Dolce Aesthetic Clinic</title>
-<link rel="stylesheet" href="styles.css?v=52">
+<link rel="stylesheet" href="styles.css?v=53">
 </head>
 <body>
 
@@ -59,10 +59,17 @@
     <div class="trio-photo"><img src="iv%203.jpg" alt="IV therapy treatment"></div>
   </div>
 
-  <div>
-    <div class="idx-item"><span class="n">01</span><div><h4>Hydration Drip</h4><p>Improves skin, joints and muscles. Keeps your immune system strong and fights infection.</p></div></div>
-    <div class="idx-item"><span class="n">02</span><div><h4>Detox Drip</h4><p>Aids the body's ability to absorb minerals, protects against toxic chemicals, and offers anti-ageing benefits.</p></div></div>
-    <div class="idx-item"><span class="n">03</span><div><h4>Booster Shots</h4><p>Energy (B12), Vitamin D and Biotin shots — for immediate effect, immune support and healthier skin, nails and hair.</p></div></div>
+  <!-- IV list: on desktop, pointing at a treatment shows its picture to the
+       right. To add a picture, put its file name in that item's data-img. -->
+  <div class="iv-list">
+    <div class="idx-item" data-img=""><span class="n">01</span><div><h4>Hydration Drip</h4><p>Improves skin, joints and muscles. Keeps your immune system strong and fights infection.</p></div></div>
+    <div class="idx-item" data-img=""><span class="n">02</span><div><h4>Detox Drip</h4><p>Aids the body's ability to absorb minerals, protects against toxic chemicals, and offers anti-ageing benefits.</p></div></div>
+    <div class="idx-item" data-img=""><span class="n">03</span><div><h4>Anti-Aging Drip</h4></div></div>
+    <div class="idx-item" data-img=""><span class="n">04</span><div><h4>Power Drip</h4></div></div>
+    <div class="idx-item" data-img=""><span class="n">05</span><div><h4>Radiant Skin Drip</h4></div></div>
+    <div class="idx-item" data-img=""><span class="n">06</span><div><h4>Hair Boost Drip</h4></div></div>
+    <div class="idx-item" data-img=""><span class="n">07</span><div><h4>Booster Shots</h4><p>Energy (B12), Vitamin D and Biotin shots — for immediate effect, immune support and healthier skin, nails and hair.</p></div></div>
+    <div class="iv-preview" aria-hidden="true"><div class="iv-preview-inner"></div></div>
   </div>
 
   <div class="idx-sub">
@@ -141,5 +148,32 @@
 </footer>
 
 <script src="booking.js"></script>
+<script>
+// IV list (desktop / mouse only): pointing at a treatment shows its picture
+// to the right of that row; a labelled placeholder until a picture is set.
+(function(){
+  var list = document.querySelector('.iv-list'); if (!list) return;
+  var mouse = window.matchMedia('(min-width:861px) and (hover:hover) and (pointer:fine)');
+  var preview = list.querySelector('.iv-preview'), inner = preview.querySelector('.iv-preview-inner');
+  var items = [].slice.call(list.querySelectorAll('.idx-item'));
+  function show(it){
+    if (!mouse.matches) return;
+    var src = it.getAttribute('data-img'), name = it.querySelector('h4').textContent;
+    inner.innerHTML = src
+      ? '<img src="' + encodeURI(src) + '" alt="">'
+      : '<span class="iv-slot">Photo<br>' + name + '</span>';
+    var top = it.offsetTop + it.offsetHeight / 2 - preview.offsetHeight / 2;
+    top = Math.max(0, Math.min(top, list.offsetHeight - preview.offsetHeight));
+    preview.style.transform = 'translateY(' + top + 'px)';
+    items.forEach(function(x){ x.classList.toggle('is-hover', x === it); });
+    list.classList.add('is-previewing');
+  }
+  items.forEach(function(it){ it.addEventListener('mouseenter', function(){ show(it); }); });
+  list.addEventListener('mouseleave', function(){
+    list.classList.remove('is-previewing');
+    items.forEach(function(x){ x.classList.remove('is-hover'); });
+  });
+})();
+</script>
 </body>
 </html>

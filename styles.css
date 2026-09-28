@@ -420,3 +420,18 @@ a.family-item:hover{border-color:var(--gold);transform:translateY(-2px);}
 .family-logo-slot{max-width:150px;border:1px dashed var(--line);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-faint);}
 .family-label{font-size:11px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-soft);}
 @media (max-width:860px){ .family-grid{grid-template-columns:repeat(2,minmax(0,1fr));} }
+
+/* ---------- Wellness: IV list with picture on hover (desktop only) ---------- */
+.iv-list{position:relative;}
+.iv-list .idx-item:nth-last-child(2){border-bottom:1px solid var(--line);}
+.iv-preview{display:none;}
+@media (min-width:861px) and (hover:hover) and (pointer:fine){
+  .iv-list .idx-item{padding-right:calc(min(300px,30%) + 40px);cursor:default;}
+  .iv-list .idx-item h4{transition:color .2s ease,transform .25s ease;}
+  .iv-list .idx-item.is-hover h4{color:var(--gold);transform:translateX(6px);}
+  .iv-preview{display:block;position:absolute;top:0;right:0;width:min(300px,30%);aspect-ratio:4/5;pointer-events:none;opacity:0;transition:opacity .3s ease,transform .35s ease;z-index:2;}
+  .iv-list.is-previewing .iv-preview{opacity:1;}
+  .iv-preview-inner{position:absolute;inset:0;overflow:hidden;background:#EFE6D6;box-shadow:0 18px 40px rgba(46,32,19,.14);}
+  .iv-preview-inner img{width:100%;height:100%;object-fit:cover;display:block;}
+  .iv-slot{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;text-align:center;padding:16px;border:1px dashed rgba(166,128,90,.55);font-size:11.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-faint);}
+}
