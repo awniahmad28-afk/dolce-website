@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Wellness — Dolce Aesthetic Clinic</title>
-<link rel="stylesheet" href="styles.css?v=54">
+<link rel="stylesheet" href="styles.css?v=56">
 </head>
 <body>
 
@@ -59,19 +59,31 @@
     <div class="trio-photo"><img src="iv%203.jpg" alt="IV therapy treatment"></div>
   </div>
 
-  <!-- IV list: on desktop, pointing at a treatment shows its picture to the
-       right. To add a picture, put its file name in that item's data-img. -->
-  <div class="iv-list">
-    <div class="iv-items">
-      <div class="idx-item" data-img=""><span class="n">01</span><div><h4>Hydration Drip</h4><p>Improves skin, joints and muscles. Keeps your immune system strong and fights infection.</p></div></div>
-      <div class="idx-item" data-img=""><span class="n">02</span><div><h4>Detox Drip</h4><p>Aids the body's ability to absorb minerals, protects against toxic chemicals, and offers anti-ageing benefits.</p></div></div>
-      <div class="idx-item" data-img=""><span class="n">03</span><div><h4>Anti-Aging Drip</h4></div></div>
-      <div class="idx-item" data-img=""><span class="n">04</span><div><h4>Power Drip</h4></div></div>
-      <div class="idx-item" data-img=""><span class="n">05</span><div><h4>Radiant Skin Drip</h4></div></div>
-      <div class="idx-item" data-img=""><span class="n">06</span><div><h4>Hair Boost Drip</h4></div></div>
-      <div class="idx-item" data-img=""><span class="n">07</span><div><h4>Booster Shots</h4><p>Energy (B12), Vitamin D and Biotin shots — for immediate effect, immune support and healthier skin, nails and hair.</p></div></div>
-    </div>
-    <div class="iv-preview" aria-hidden="true"><div class="iv-preview-inner"></div></div>
+  <!-- IV list (gallery): the picture on the right changes to the treatment
+       you point at / tap. Each treatment's picture is the matching <img> in
+       .ivB-frame (same order as the list). -->
+  <div class="ivB">
+    <ol class="ivB-list">
+      <li class="ivB-row is-on" data-i="0"><span class="n">01</span><div><h4>Hydration Drip</h4><div class="ivB-d"><div><p>Improves skin, joints and muscles. Keeps your immune system strong and fights infection.</p></div></div></div></li>
+      <li class="ivB-row" data-i="1"><span class="n">02</span><div><h4>Detox Drip</h4><div class="ivB-d"><div><p>Aids the body's ability to absorb minerals, protects against toxic chemicals, and offers anti-ageing benefits.</p></div></div></div></li>
+      <li class="ivB-row" data-i="2"><span class="n">03</span><div><h4>Anti-Aging Drip</h4><div class="ivB-d"><div><p>&nbsp;</p></div></div></div></li>
+      <li class="ivB-row" data-i="3"><span class="n">04</span><div><h4>Power Drip</h4><div class="ivB-d"><div><p>&nbsp;</p></div></div></div></li>
+      <li class="ivB-row" data-i="4"><span class="n">05</span><div><h4>Radiant Skin Drip</h4><div class="ivB-d"><div><p>&nbsp;</p></div></div></div></li>
+      <li class="ivB-row" data-i="5"><span class="n">06</span><div><h4>Hair Boost Drip</h4><div class="ivB-d"><div><p>&nbsp;</p></div></div></div></li>
+      <li class="ivB-row" data-i="6"><span class="n">07</span><div><h4>Booster Shots</h4><div class="ivB-d"><div><p>Energy (B12), Vitamin D and Biotin shots — for immediate effect, immune support and healthier skin, nails and hair.</p></div></div></div></li>
+    </ol>
+    <figure class="ivB-stage">
+      <div class="ivB-frame">
+        <img src="iv%20room.jpg" alt="" class="is-on">
+        <img src="iv%20bag%201.jpg" alt="">
+        <img src="iv%203.jpg" alt="">
+        <img src="iv%20drip%20therapy.jpg" alt="">
+        <img src="wellness.jpg" alt="">
+        <img src="iv%20room.jpg" alt="">
+        <img src="iv%20bag%201.jpg" alt="">
+      </div>
+      <figcaption><em class="ivB-name">Hydration Drip</em><span class="ivB-count">01 / 07</span></figcaption>
+    </figure>
   </div>
 
   <div class="idx-sub">
@@ -151,22 +163,32 @@
 
 <script src="booking.js"></script>
 <script>
-// IV list (desktop / mouse only): pointing at a treatment shows its picture
-// in the column to the right; the last one pointed at stays shown.
+// IV list (gallery): pointing at a treatment (desktop) or tapping it (phone)
+// shows its picture. On phones the picture opens right under the tapped row.
 (function(){
-  var list = document.querySelector('.iv-list'); if (!list) return;
-  var mouse = window.matchMedia('(min-width:861px) and (hover:hover) and (pointer:fine)');
-  var inner = list.querySelector('.iv-preview-inner');
-  var items = [].slice.call(list.querySelectorAll('.idx-item'));
-  function show(it){
-    var src = it.getAttribute('data-img'), name = it.querySelector('h4').textContent;
-    inner.innerHTML = src
-      ? '<img src="' + encodeURI(src) + '" alt="">'
-      : '<span class="iv-slot">Photo<br>' + name + '</span>';
-    items.forEach(function(x){ x.classList.toggle('is-hover', x === it); });
+  var box = document.querySelector('.ivB'); if (!box) return;
+  var rows = [].slice.call(box.querySelectorAll('.ivB-row')), imgs = [].slice.call(box.querySelectorAll('.ivB-frame img'));
+  var stage = box.querySelector('.ivB-stage'), name = box.querySelector('.ivB-name'), count = box.querySelector('.ivB-count'), total = rows.length;
+  var mouse = window.matchMedia('(hover:hover) and (pointer:fine)'), phone = window.matchMedia('(max-width:860px)');
+  var current = 0;
+  function place(){
+    if (phone.matches) rows[current].querySelector('.ivB-d > div').appendChild(stage);
+    else if (stage.parentNode !== box) box.appendChild(stage);
   }
-  items.forEach(function(it){ it.addEventListener('mouseenter', function(){ if (mouse.matches) show(it); }); });
-  show(items[0]);
+  function on(i){
+    current = i;
+    rows.forEach(function(r, k){ r.classList.toggle('is-on', k === i); });
+    imgs.forEach(function(m, k){ m.classList.toggle('is-on', k === i); });
+    name.textContent = rows[i].querySelector('h4').textContent;
+    count.textContent = ('0' + (i + 1)).slice(-2) + ' / ' + ('0' + total).slice(-2);
+    place();
+  }
+  rows.forEach(function(r, i){
+    r.addEventListener('mouseenter', function(){ if (mouse.matches && !phone.matches) on(i); });
+    r.addEventListener('click', function(){ on(i); });
+  });
+  if (phone.addEventListener) phone.addEventListener('change', place);
+  place();
 })();
 </script>
 </body>
