@@ -118,7 +118,7 @@
 .dx-faq p{margin:0 0 18px;font-size:15px;line-height:1.75;color:var(--ink-soft);max-width:56ch;}
 
 /* Aesthetic Gynecology band */
-.dx-band{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);align-items:stretch;background:#EFE6D6;}
-.dx-band .dx-media{min-height:360px;}
+.dx-band{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);align-items:center;background:#EFE6D6;}
+.dx-band .dx-media{aspect-ratio:4/5;}
 .dx-band-copy{padding:clamp(56px,8vw,110px) clamp(20px,5vw,80px);}
-@media (max-width:860px){ .dx-band{grid-template-columns:1fr;} .dx-band .dx-media{min-height:0;aspect-ratio:16/10;} }
+@media (max-width:860px){ .dx-band{grid-template-columns:1fr;} }
