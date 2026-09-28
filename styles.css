@@ -240,6 +240,8 @@ header.header-overlay .nav-toggle{color:#F1E9DA;}
 @media (max-width:700px){ .trio-photos{grid-template-columns:1fr;} }
 .trio-photo{aspect-ratio:4/5;background:linear-gradient(155deg,#e7ded0,#b9ac95 60%,#8c7d63);border-radius:3px;overflow:hidden;}
 .trio-photo img{width:100%;height:100%;object-fit:cover;display:block;}
+.duo-photos{grid-template-columns:repeat(2,1fr);max-width:900px;margin:0 auto clamp(20px,3vw,40px);}
+@media (max-width:700px){ .duo-photos{grid-template-columns:repeat(2,1fr);gap:10px;} }
 
 /* ---------- CTA band ---------- */
 .cta{text-align:center;padding-block:clamp(70px,10vw,120px);}
