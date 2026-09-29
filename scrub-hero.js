@@ -9,13 +9,13 @@
   // Which hero footage to show is set by data-hero on <html> in index.html
   // (chosen by screen shape: landscape for wide screens, portrait for tall).
   var landscape = document.documentElement.getAttribute('data-hero') === 'landscape';
-  var total    = landscape ? 102 : 67;
-  var nativeW  = landscape ? 2048 : 2160;
-  var nativeH  = landscape ? 1152 : 3840;
-  var frameDir = landscape ? 'hero-frames-landscape-v3' : 'hero-frames-portrait';
+  var total    = 102;
+  var nativeW  = landscape ? 2048 : 1080;
+  var nativeH  = landscape ? 1152 : 1920;
+  var frameDir = landscape ? 'hero-frames-landscape-v3' : 'hero-frames-portrait-v3';
   var frames = new Array(total);
   var currentFrame = 0;
-  var cacheBust = '6';
+  var cacheBust = '7';
 
   var desktopQuery = window.matchMedia('(min-width:701px) and (hover:hover) and (pointer:fine)');
 
