@@ -6,15 +6,16 @@
   var bar = document.getElementById('scrub-progress-bar');
   var sticky = wrap.querySelector('.scrub-sticky');
 
-  // Which hero footage to show is set by data-hero on <html> in index.html.
+  // Which hero footage to show is set by data-hero on <html> in index.html
+  // (chosen by screen shape: landscape for wide screens, portrait for tall).
   var landscape = document.documentElement.getAttribute('data-hero') === 'landscape';
-  var total    = landscape ? 244 : 67;
-  var nativeW  = landscape ? 1920 : 2160;
-  var nativeH  = landscape ? 1080 : 3840;
-  var frameDir = landscape ? 'hero-frames-landscape' : 'hero-frames-portrait';
+  var total    = landscape ? 102 : 67;
+  var nativeW  = landscape ? 2048 : 2160;
+  var nativeH  = landscape ? 1152 : 3840;
+  var frameDir = landscape ? 'hero-frames-landscape-v3' : 'hero-frames-portrait';
   var frames = new Array(total);
   var currentFrame = 0;
-  var cacheBust = '5';
+  var cacheBust = '6';
 
   var desktopQuery = window.matchMedia('(min-width:701px) and (hover:hover) and (pointer:fine)');
 
