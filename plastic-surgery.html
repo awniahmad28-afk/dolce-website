@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Plastic Surgery — Dolce Aesthetic Clinic</title>
-<link rel="stylesheet" href="styles.css?v=62">
+<link rel="stylesheet" href="styles.css?v=63">
 </head>
 <body>
 
@@ -70,25 +70,38 @@
 
 <section class="psx-results">
   <div class="psx-results-inner">
-    <div class="psx-media">
-    <div class="ba ba-tall" data-ba>
-      <div class="ba-img ba-after"><img src="ps-body-after.jpg" alt="Abdomen 10 days after abdominal liposuction"></div>
-      <div class="ba-img ba-before"><img src="ps-body-before.jpg" alt="Abdomen on the day of abdominal liposuction, before surgery"></div>
-      <span class="ba-tag ba-tag-b">Before</span><span class="ba-tag ba-tag-a">After</span>
-      <div class="ba-handle" aria-hidden="true"><span>&#8249;&#8250;</span></div>
-      <input class="ba-range" type="range" min="0" max="100" value="50" aria-label="Drag to compare before and after">
-    </div>
-    </div>
-    <div class="psx-copy">
+    <div class="psx-results-head">
       <p class="eyebrow">Results</p>
-      <h2>Before &amp; after</h2>
-      <p class="psx-cap">Abdominal liposuction &middot; the day of surgery and 10 days after. Drag the handle to compare.</p>
-      <h3>Can I undergo more than one facial procedure?</h3>
-      <p>If desired, we can combine two or more procedures into one surgery to achieve more comprehensive facial rejuvenation and a balanced look. Combining procedures also has the benefit of less overall downtime and lower costs compared to undergoing multiple separate surgeries.</p>
-      <p class="psx-book">To learn more, book your consultation with our plastic surgeon today.</p>
-      <div class="psx-actions">
-        <a class="psx-btn" href="tel:+9647509000200">Call +964 750 900 0200</a>
-        <a class="psx-btn psx-btn-ghost" href="https://wa.me/9647509000200" target="_blank" rel="noopener">WhatsApp</a>
+      <h2>Real results</h2>
+    </div>
+    <div class="psx-gallery">
+      <figure class="psx-g">
+        <a class="psx-g-frame" href="ps-nose-front.jpg" data-lb><img src="ps-nose-front.jpg" width="1080" height="1350" alt="Rhinoplasty, front view: before (top) and after (bottom)" loading="lazy"></a>
+        <figcaption>Rhinoplasty <span>Front</span></figcaption>
+      </figure>
+      <figure class="psx-g">
+        <a class="psx-g-frame" href="ps-nose-side.jpg" data-lb><img src="ps-nose-side.jpg" width="1080" height="1350" alt="Rhinoplasty, side view: before (top) and after (bottom)" loading="lazy"></a>
+        <figcaption>Rhinoplasty <span>Side</span></figcaption>
+      </figure>
+      <figure class="psx-g psx-g-pair">
+        <div class="psx-g-frame">
+          <a href="ps-body-before.jpg" data-lb><img src="ps-body-before.jpg" width="1000" height="1778" alt="Abdomen on the day of abdominal liposuction" loading="lazy"></a>
+          <a href="ps-body-after.jpg" data-lb><img src="ps-body-after.jpg" width="1000" height="1778" alt="Abdomen 10 days after abdominal liposuction" loading="lazy"></a>
+        </div>
+        <figcaption>Abdominal liposuction <span>Day of surgery &middot; 10 days after</span></figcaption>
+      </figure>
+    </div>
+    <div class="psx-results-foot">
+      <div>
+        <h3>Can I undergo more than one facial procedure?</h3>
+        <p>If desired, we can combine two or more procedures into one surgery to achieve more comprehensive facial rejuvenation and a balanced look. Combining procedures also has the benefit of less overall downtime and lower costs compared to undergoing multiple separate surgeries.</p>
+      </div>
+      <div>
+        <p class="psx-book">To learn more, book your consultation with our plastic surgeon today.</p>
+        <div class="psx-actions">
+          <a class="psx-btn" href="tel:+9647509000200">Call +964 750 900 0200</a>
+          <a class="psx-btn psx-btn-ghost" href="https://wa.me/9647509000200" target="_blank" rel="noopener">WhatsApp</a>
+        </div>
       </div>
     </div>
   </div>
@@ -146,12 +159,26 @@
 
 <script src="booking.js"></script>
 <script>
-// Before / after sliders: drag (or use arrow keys) to reveal more of either photo.
-document.querySelectorAll('[data-ba]').forEach(function(ba){
-  var r = ba.querySelector('.ba-range');
-  function set(){ ba.style.setProperty('--pos', r.value + '%'); }
-  r.addEventListener('input', set); set();
-});
+// Results gallery: click a photo to see it large; arrows / swipe / keys to move, Esc or backdrop to close.
+(function(){
+  var links = [].slice.call(document.querySelectorAll('[data-lb]')); if (!links.length) return;
+  var box = document.createElement('div'); box.className = 'psx-lb'; box.setAttribute('role','dialog'); box.setAttribute('aria-modal','true');
+  box.innerHTML = '<button type="button" class="psx-lb-btn psx-lb-x" aria-label="Close">&times;</button><button type="button" class="psx-lb-btn psx-lb-p" aria-label="Previous">&#8249;</button><img alt=""><button type="button" class="psx-lb-btn psx-lb-n" aria-label="Next">&#8250;</button>';
+  document.body.appendChild(box);
+  var img = box.querySelector('img'), cur = 0;
+  function show(i){ cur = (i + links.length) % links.length; img.src = links[cur].getAttribute('href'); img.alt = links[cur].querySelector('img').alt; }
+  function open(i){ show(i); box.classList.add('open'); document.body.style.overflow = 'hidden'; }
+  function close(){ box.classList.remove('open'); document.body.style.overflow = ''; }
+  links.forEach(function(a, i){ a.addEventListener('click', function(e){ e.preventDefault(); open(i); }); });
+  box.querySelector('.psx-lb-x').addEventListener('click', close);
+  box.querySelector('.psx-lb-p').addEventListener('click', function(e){ e.stopPropagation(); show(cur - 1); });
+  box.querySelector('.psx-lb-n').addEventListener('click', function(e){ e.stopPropagation(); show(cur + 1); });
+  box.addEventListener('click', function(e){ if (e.target === box) close(); });
+  document.addEventListener('keydown', function(e){ if (!box.classList.contains('open')) return; if (e.key === 'Escape') close(); else if (e.key === 'ArrowLeft') show(cur - 1); else if (e.key === 'ArrowRight') show(cur + 1); });
+  var tx = null;
+  box.addEventListener('touchstart', function(e){ tx = e.touches[0].clientX; }, {passive:true});
+  box.addEventListener('touchend', function(e){ if (tx === null) return; var dx = e.changedTouches[0].clientX - tx; tx = null; if (Math.abs(dx) > 40) show(cur + (dx < 0 ? 1 : -1)); });
+})();
 </script>
 </body>
 </html>
