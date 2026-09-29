@@ -446,3 +446,40 @@ a.family-item:hover{border-color:var(--gold);transform:translateY(-2px);}
 .ivB-count{font-size:11.5px;font-weight:600;letter-spacing:.18em;color:var(--gold);}
 @media (max-width:860px){ .ivB{grid-template-columns:1fr;} .ivB-stage{position:static;margin:14px 0 4px;max-width:420px;} }
 .ivB h4{font-family:var(--font-display);font-weight:400;}
+
+/* ---------- Plastic Surgery: tabs + before/after slider ---------- */
+.ps-page{padding-block:clamp(48px,7vw,96px);}
+.ps-h{font-family:var(--font-display);font-weight:400;font-size:clamp(34px,4vw,56px);line-height:1.05;margin-top:12px;color:var(--ink);}
+.ps-lede{margin-top:16px;font-size:clamp(15px,1.1vw,16.5px);line-height:1.75;color:var(--ink-soft);max-width:58ch;}
+.ps-note{margin-top:22px;font-size:14px;line-height:1.7;color:var(--ink-soft);max-width:60ch;}
+.ps-note strong{color:var(--ink);font-weight:600;}
+.ps-cta{margin-top:22px;font-size:14.5px;color:var(--ink-soft);}
+
+/* ---- Before / after slider ---- */
+.ba{position:relative;aspect-ratio:4/5;overflow:hidden;user-select:none;background:#E9E0CE;--pos:50%;}
+.ba-img{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-size:12px;letter-spacing:.16em;text-transform:uppercase;}
+.ba-img img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;}
+.ba-after{background:#D9CBB3;color:#6B5843;}
+.ba-before{background:#EFE6D6;color:#9C8C74;clip-path:inset(0 calc(100% - var(--pos)) 0 0);}
+.ba-img span{position:absolute;top:50%;transform:translate(-50%,-50%);white-space:nowrap;}
+.ba-before span{left:25%;} .ba-after span{left:75%;}
+.ba-tag{position:absolute;top:14px;padding:5px 11px;font-size:10.5px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;background:rgba(36,26,16,.72);color:#F4ECDD;pointer-events:none;}
+.ba-tag-b{left:14px;} .ba-tag-a{right:14px;}
+.ba-handle{position:absolute;top:0;bottom:0;left:var(--pos);width:2px;margin-left:-1px;background:#fff;pointer-events:none;box-shadow:0 0 0 1px rgba(0,0,0,.08);}
+.ba-handle span{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:44px;height:44px;border-radius:50%;background:#fff;color:var(--gold);display:flex;align-items:center;justify-content:center;font-size:18px;letter-spacing:2px;box-shadow:0 6px 18px rgba(0,0,0,.18);}
+.ba-range{position:absolute;inset:0;width:100%;height:100%;opacity:0;cursor:ew-resize;margin:0;}
+
+/* ---- A: Tabs ---- */
+.psA{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr);gap:clamp(28px,5vw,72px);align-items:start;}
+.psA-tabs{display:flex;gap:6px;margin-top:28px;border-bottom:1px solid var(--line);}
+.psA-tab{all:unset;cursor:pointer;padding:12px 18px;font-size:12.5px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-faint);border-bottom:2px solid transparent;margin-bottom:-1px;}
+.psA-tab small{font-size:10px;color:var(--gold);margin-left:4px;}
+.psA-tab.is-on{color:var(--ink);border-bottom-color:var(--gold);}
+.psA-panel{display:none;padding-top:18px;}
+.psA-panel.is-on{display:block;}
+.psA-pill{all:unset;cursor:pointer;display:inline-block;margin:0 8px 10px 0;padding:9px 16px;border:1px solid var(--line);border-radius:999px;font-size:13.5px;color:var(--ink);background:var(--surface);transition:all .2s ease;}
+.psA-pill:hover{border-color:var(--gold);}
+.psA-pill.is-on{background:var(--ink);border-color:var(--ink);color:#F4ECDD;}
+.psA-desc{margin-top:6px;min-height:3.2em;font-family:var(--font-display);font-style:italic;font-size:clamp(18px,1.5vw,21px);line-height:1.45;color:var(--ink);}
+.psA-media{position:sticky;top:24px;}
+@media (max-width:860px){ .psA{grid-template-columns:1fr;} .psA-media{position:static;order:-1;max-width:460px;width:100%;margin:0 auto;} }
