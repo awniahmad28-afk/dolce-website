@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Plastic Surgery — Dolce Aesthetic Clinic</title>
-<link rel="stylesheet" href="styles.css?v=61">
+<link rel="stylesheet" href="styles.css?v=62">
 </head>
 <body>
 
@@ -35,32 +35,64 @@
 </header>
 <div class="rule"></div>
 
-<!-- PLASTIC SURGERY: intro + Face / Body tabs beside a before & after slider.
-     To add the photos, put an <img> inside .ba-before and .ba-after. -->
-<div class="wrap ps-page">
-  <section class="psA">
-    <div class="psA-copy">
-      <p class="eyebrow">02 &middot; Plastic Surgery</p>
-      <h2 class="ps-h">Refined results, safely done</h2>
-      <p class="ps-lede">If sagging, loose facial skin or stubborn wrinkles — or a nose that isn't quite the shape you'd like — are on your mind, our facial and body procedures are designed to rejuvenate your appearance and restore your confidence, prioritising the safest, highest-quality results.</p>
-      <div class="psA-tabs" role="tablist">
-        <button type="button" class="psA-tab is-on" data-tab="face">Face <small>6</small></button>
-        <button type="button" class="psA-tab" data-tab="body">Body <small>4</small></button>
-      </div>
-      <div class="psA-panel is-on" data-panel="face"><button type="button" class="psA-pill is-on" data-d="Eyelid surgery to remove excess skin, tighten and create an eyelid crease.">Upper &amp; Lower Blepharoplasty</button><button type="button" class="psA-pill" data-d="Addresses sagging and wrinkles in the mid-to-lower face by tightening underlying tissue and removing excess skin.">Face Lift (Rhytidectomy)</button><button type="button" class="psA-pill" data-d="Often performed with a face lift for a harmonious result.">Neck Lift</button><button type="button" class="psA-pill" data-d="Elevates a drooping eyebrow.">Brow Lift</button><button type="button" class="psA-pill" data-d="Adjusts the size, shape and projection of the nose.">Rhinoplasty</button><button type="button" class="psA-pill" data-d="Removes a section of tissue along the base of the nose for a fuller, more youthful pout.">Lip Lift</button><p class="psA-desc">Eyelid surgery to remove excess skin, tighten and create an eyelid crease.</p></div>
-      <div class="psA-panel" data-panel="body"><button type="button" class="psA-pill is-on" data-d="Removes fat from areas such as the abdomen, arms, thighs and chin.">Liposuction</button><button type="button" class="psA-pill" data-d="Improves breast size or shape.">Breast Augmentation</button><button type="button" class="psA-pill" data-d="Removes fat from one area and uses it to enhance another.">Fat Grafting</button><button type="button" class="psA-pill" data-d="Flattens, smooths and tightens the abdomen.">Tummy Tuck</button><p class="psA-desc">Removes fat from areas such as the abdomen, arms, thighs and chin.</p></div>
-      <p class="ps-note"><strong>Can I undergo more than one facial procedure?</strong> If desired, we can combine two or more procedures into one surgery to achieve more comprehensive facial rejuvenation and a balanced look. Combining procedures also has the benefit of less overall downtime and lower costs compared to undergoing multiple separate surgeries.</p>
-      <p class="ps-cta">To learn more, book your consultation with our plastic surgeon today — call or message <a class="tel-link" href="tel:+9647509000200">+964-750-900-0200</a>.</p>
-    </div>
-    <div class="psA-media"><div class="ba ba-tall" data-ba>
+<!-- PLASTIC SURGERY: centred intro, Face / Body lists, dark results band
+     with the before & after slider. -->
+<section class="psx-intro wrap">
+  <p class="eyebrow">02 &middot; Treatments</p>
+  <h1 class="psx-title">Plastic Surgery</h1>
+  <p class="psx-lede">If sagging, loose facial skin or stubborn wrinkles — or a nose that isn't quite the shape you'd like — are on your mind, our facial and body procedures are designed to rejuvenate your appearance and restore your confidence, prioritising the safest, highest-quality results.</p>
+  <span class="psx-rule" aria-hidden="true"></span>
+</section>
+
+<section class="psx-procs wrap">
+  <div class="psx-col">
+    <h2>Face</h2>
+    <ul>
+        <li><span class="nm">Upper &amp; Lower Blepharoplasty</span><span class="ds">Eyelid surgery to remove excess skin, tighten and create an eyelid crease.</span></li>
+        <li><span class="nm">Face Lift (Rhytidectomy)</span><span class="ds">Addresses sagging and wrinkles in the mid-to-lower face by tightening underlying tissue and removing excess skin.</span></li>
+        <li><span class="nm">Neck Lift</span><span class="ds">Often performed with a face lift for a harmonious result.</span></li>
+        <li><span class="nm">Brow Lift</span><span class="ds">Elevates a drooping eyebrow.</span></li>
+        <li><span class="nm">Rhinoplasty</span><span class="ds">Adjusts the size, shape and projection of the nose.</span></li>
+        <li><span class="nm">Lip Lift</span><span class="ds">Removes a section of tissue along the base of the nose for a fuller, more youthful pout.</span></li>
+    </ul>
+  </div>
+  <div class="psx-col">
+    <h2>Body</h2>
+    <p class="psx-colintro">Aesthetic body surgeries significantly alter and improve the appearance of the body — for areas affected by weight change, pregnancy or excess skin. Every procedure is individualised with our specialist surgeon during your consultation.</p>
+    <ul>
+        <li><span class="nm">Liposuction</span><span class="ds">Removes fat from areas such as the abdomen, arms, thighs and chin.</span></li>
+        <li><span class="nm">Breast Augmentation</span><span class="ds">Improves breast size or shape.</span></li>
+        <li><span class="nm">Fat Grafting</span><span class="ds">Removes fat from one area and uses it to enhance another.</span></li>
+        <li><span class="nm">Tummy Tuck</span><span class="ds">Flattens, smooths and tightens the abdomen.</span></li>
+    </ul>
+  </div>
+</section>
+
+<section class="psx-results">
+  <div class="psx-results-inner">
+    <div class="psx-media">
+    <div class="ba ba-tall" data-ba>
       <div class="ba-img ba-after"><img src="ps-body-after.jpg" alt="Abdomen 10 days after abdominal liposuction"></div>
       <div class="ba-img ba-before"><img src="ps-body-before.jpg" alt="Abdomen on the day of abdominal liposuction, before surgery"></div>
       <span class="ba-tag ba-tag-b">Before</span><span class="ba-tag ba-tag-a">After</span>
       <div class="ba-handle" aria-hidden="true"><span>&#8249;&#8250;</span></div>
       <input class="ba-range" type="range" min="0" max="100" value="50" aria-label="Drag to compare before and after">
-    </div><p class="ba-cap">Abdominal liposuction &middot; the day of surgery and 10 days after</p></div>
-  </section>
-</div>
+    </div>
+    </div>
+    <div class="psx-copy">
+      <p class="eyebrow">Results</p>
+      <h2>Before &amp; after</h2>
+      <p class="psx-cap">Abdominal liposuction &middot; the day of surgery and 10 days after. Drag the handle to compare.</p>
+      <h3>Can I undergo more than one facial procedure?</h3>
+      <p>If desired, we can combine two or more procedures into one surgery to achieve more comprehensive facial rejuvenation and a balanced look. Combining procedures also has the benefit of less overall downtime and lower costs compared to undergoing multiple separate surgeries.</p>
+      <p class="psx-book">To learn more, book your consultation with our plastic surgeon today.</p>
+      <div class="psx-actions">
+        <a class="psx-btn" href="tel:+9647509000200">Call +964 750 900 0200</a>
+        <a class="psx-btn psx-btn-ghost" href="https://wa.me/9647509000200" target="_blank" rel="noopener">WhatsApp</a>
+      </div>
+    </div>
+  </div>
+</section>
 
 <!-- CTA -->
 <section class="cta wrap">
@@ -120,22 +152,6 @@ document.querySelectorAll('[data-ba]').forEach(function(ba){
   function set(){ ba.style.setProperty('--pos', r.value + '%'); }
   r.addEventListener('input', set); set();
 });
-// Style A: Face / Body tabs and procedure buttons.
-(function(){
-  var box = document.querySelector('.psA'); if (!box) return;
-  var tabs = box.querySelectorAll('.psA-tab'), panels = box.querySelectorAll('.psA-panel');
-  tabs.forEach(function(t){ t.addEventListener('click', function(){
-    tabs.forEach(function(x){ x.classList.toggle('is-on', x === t); });
-    panels.forEach(function(p){ p.classList.toggle('is-on', p.getAttribute('data-panel') === t.getAttribute('data-tab')); });
-  }); });
-  panels.forEach(function(p){
-    var pills = p.querySelectorAll('.psA-pill'), desc = p.querySelector('.psA-desc');
-    pills.forEach(function(b){
-      function on(){ pills.forEach(function(x){ x.classList.toggle('is-on', x === b); }); desc.textContent = b.getAttribute('data-d'); }
-      b.addEventListener('click', on); b.addEventListener('mouseenter', on);
-    });
-  });
-})();
 </script>
 </body>
 </html>
