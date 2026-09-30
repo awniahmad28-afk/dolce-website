@@ -251,6 +251,10 @@ header.header-overlay .nav-toggle{color:#F1E9DA;}
 .cta p{max-width:52ch;margin:26px auto 0;color:var(--ink-soft);font-size:15.5px;}
 .btn{display:inline-block;margin-top:34px;font-size:12.5px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;text-decoration:none;color:var(--ink);border:1px solid var(--ink);border-radius:999px;padding:15px 34px;}
 .btn:hover{background:var(--ink);color:var(--ground);}
+.cta-btns{display:flex;justify-content:center;flex-wrap:wrap;gap:12px;margin-top:34px;}
+.cta-btns .btn{margin-top:0;min-width:150px;text-align:center;}
+/* Computers: WhatsApp only (Call shows on phones and tablets). */
+@media (min-width:701px) and (hover:hover) and (pointer:fine), (min-width:701px) and (min-height:600px){ .cta-call{display:none;} }
 
 /* ---------- testimonials ---------- */
 .rev-grid{display:flex;flex-direction:column;gap:22px;max-width:760px;margin:0 auto;}
