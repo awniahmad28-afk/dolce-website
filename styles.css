@@ -474,6 +474,22 @@ a.family-item:hover{border-color:var(--gold);transform:translateY(-2px);}
 .psx-title{font-family:var(--font-display);font-weight:400;font-size:clamp(44px,6vw,84px);line-height:1;margin-top:14px;color:var(--ink);}
 .psx-lede{max-width:62ch;margin:22px auto 0;font-size:clamp(15.5px,1.15vw,17px);line-height:1.8;color:var(--ink-soft);}
 .psx-rule{display:block;width:56px;height:1px;background:var(--gold);margin:clamp(32px,4vw,48px) auto 0;}
+/* Hero picture behind the intro: writing on the left (computers), banner above it (phones) */
+.psx-hero{position:relative;overflow:hidden;background:var(--ground);}
+.psx-hero-bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:right center;}
+.psx-hero::after{content:"";position:absolute;inset:0;pointer-events:none;background:linear-gradient(90deg,rgba(251,247,239,.94) 0%,rgba(251,247,239,.82) 38%,rgba(251,247,239,.35) 62%,rgba(251,247,239,.18) 100%);}
+.psx-hero .psx-intro{position:relative;z-index:1;text-align:left;min-height:clamp(460px,44vw,700px);display:flex;flex-direction:column;justify-content:center;padding-block:clamp(56px,7vw,100px);}
+.psx-hero .psx-title,.psx-hero .psx-lede{max-width:min(560px,50%);}
+.psx-hero .psx-lede{margin-left:0;}
+.psx-hero .psx-rule{margin-left:0;}
+@media (max-width:860px){
+  .psx-hero-bg{position:relative;height:auto;aspect-ratio:16/10;object-position:80% 35%;}
+  .psx-hero::after{display:none;}
+  .psx-hero .psx-intro{text-align:center;min-height:0;padding-top:clamp(36px,8vw,56px);padding-bottom:0;}
+  .psx-hero .psx-title,.psx-hero .psx-lede{max-width:none;}
+  .psx-hero .psx-lede{margin-left:auto;}
+  .psx-hero .psx-rule{margin-left:auto;}
+}
 .psx-procs{display:grid;grid-template-columns:1fr 1fr;gap:clamp(32px,6vw,96px);padding-block:clamp(40px,5vw,72px) clamp(64px,8vw,110px);align-items:start;}
 .psx-col h2{font-family:var(--font-display);font-weight:400;font-size:clamp(28px,2.6vw,38px);color:var(--ink);padding-bottom:14px;border-bottom:1px solid var(--ink);}
 .psx-colintro{margin:14px 0 0;font-size:14px;line-height:1.7;color:var(--ink-faint);}
