@@ -89,6 +89,27 @@
     </figure>
   </div>
 
+  <!-- Peptide treatments: same gallery as the IV list. Replace each .ivB-slot
+       with <img src="..." alt="..."> (keep the same order) when photos are ready. -->
+  <div class="idx-head" id="peptides" style="margin-top:clamp(90px,11vw,150px);padding-bottom:clamp(22px,3vw,40px);">
+    <h2>Peptide Treatment</h2>
+  </div>
+  <div class="ivB">
+    <ol class="ivB-list">
+      <li class="ivB-row is-on" data-i="0"><span class="n">01</span><div><h4>Acetyl-L-Carnitine Peptide Pen</h4><div class="ivB-d"><div><p>Supports energy production and fat metabolism, helping support overall energy and performance.</p></div></div></div></li>
+      <li class="ivB-row" data-i="1"><span class="n">02</span><div><h4>GHK-Cu Peptide Pen</h4><div class="ivB-d"><div><p>(Copper peptide pen) Supports skin renewal and collagen production, helping improve skin firmness, texture, and overall appearance.</p></div></div></div></li>
+      <li class="ivB-row" data-i="2"><span class="n">03</span><div><h4>Retatrutide Peptide Pen</h4><div class="ivB-d"><div><p>An investigational metabolic peptide being studied for weight management and improved blood sugar control.</p></div></div></div></li>
+    </ol>
+    <figure class="ivB-stage">
+      <div class="ivB-frame">
+        <div class="ivB-slot is-on">[ Photo &middot; Acetyl-L-Carnitine Peptide Pen ]</div>
+        <div class="ivB-slot">[ Photo &middot; GHK-Cu Peptide Pen ]</div>
+        <div class="ivB-slot">[ Photo &middot; Retatrutide Peptide Pen ]</div>
+      </div>
+      <figcaption><em class="ivB-name">Acetyl-L-Carnitine Peptide Pen</em><span class="ivB-count">01 / 03</span></figcaption>
+    </figure>
+  </div>
+
   <div class="idx-sub">
     <h3>Blood Testing</h3>
     <p class="lede">Dolce Clinic provides blood testing so you understand your body's reactions, progress and overall wellbeing. Choose from our Silver, Gold and Diamond packages, or our Vitamin + Hair Loss package to build a custom IV drip suited to you.</p>
@@ -171,7 +192,7 @@
 // IV list (gallery): pointing at a treatment (desktop) or tapping it (phone)
 // shows its picture. On phones the picture opens right under the tapped row.
 (function(){
-  var box = document.querySelector('.ivB'); if (!box) return;
+  [].forEach.call(document.querySelectorAll('.ivB'), function(box){
   var rows = [].slice.call(box.querySelectorAll('.ivB-row')), imgs = [].slice.call(box.querySelectorAll('.ivB-frame > *'));
   var stage = box.querySelector('.ivB-stage'), name = box.querySelector('.ivB-name'), count = box.querySelector('.ivB-count'), total = rows.length;
   var mouse = window.matchMedia('(hover:hover) and (pointer:fine)'), phone = window.matchMedia('(max-width:860px)');
@@ -194,6 +215,7 @@
   });
   if (phone.addEventListener) phone.addEventListener('change', place);
   place();
+  });
 })();
 </script>
 </body>
