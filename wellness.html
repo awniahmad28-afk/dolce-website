@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Wellness — Dolce Aesthetic Clinic</title>
-<link rel="stylesheet" href="styles.css?v=70">
+<link rel="stylesheet" href="styles.css?v=71">
 </head>
 <body>
 
@@ -110,9 +110,17 @@
     </figure>
   </div>
 
-  <div class="idx-sub">
-    <h3>Blood Testing</h3>
-    <p class="lede">Dolce Clinic provides blood testing so you understand your body's reactions, progress and overall wellbeing. Choose from our Silver, Gold and Diamond packages, or our Vitamin + Hair Loss package to build a custom IV drip suited to you.</p>
+  <!-- Blood testing: full-width band with the picture as background
+       (wide picture on computers, tall picture on phones). -->
+  <div class="blood-band">
+    <picture>
+      <source media="(max-width:860px)" srcset="blood-testing-bg-tall.jpg">
+      <img src="blood-testing-bg-wide.jpg" alt="Blood test tubes with silver, white and gold caps" loading="lazy">
+    </picture>
+    <div class="blood-copy"><div class="blood-text">
+      <h3>Blood Testing</h3>
+      <p>Dolce Clinic provides blood testing so you understand your body's reactions, progress and overall wellbeing. Choose from our Silver, Gold and Diamond packages, or our Vitamin + Hair Loss package to build a custom IV drip suited to you.</p>
+    </div></div>
   </div>
 
   <div class="idx-sub" style="margin-top:clamp(140px,16vw,220px);">

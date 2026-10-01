@@ -219,6 +219,14 @@ header.header-overlay .nav-toggle{color:#F1E9DA;}
 .idx-sub h3{font-size:20px;}
 .idx-sub p.lede{color:var(--ink-soft);font-size:14.5px;max-width:65ch;margin-top:16px;}
 .idx-sub p.lede.tx-wide{max-width:none;}
+/* Wellness: Blood Testing full-width band with picture background */
+.blood-band{position:relative;width:100vw;margin-left:calc(50% - 50vw);margin-top:clamp(90px,11vw,140px);min-height:clamp(480px,46.875vw,760px);display:flex;align-items:center;overflow:hidden;background:#C49A74;}
+.blood-band picture,.blood-band img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:70% 50%;}
+.blood-copy{position:relative;width:100%;max-width:1500px;margin-inline:auto;padding-inline:clamp(20px,5vw,64px);box-sizing:border-box;}
+.blood-text{max-width:520px;}
+.blood-band h3{font-family:var(--font-display);font-weight:400;font-size:clamp(38px,3.6vw,56px);line-height:1.08;color:#fff;text-shadow:0 2px 16px rgba(70,40,20,.25);}
+.blood-band p{margin-top:18px;font-size:clamp(15px,1.1vw,17px);line-height:1.75;color:rgba(255,255,255,.94);text-shadow:0 1px 10px rgba(70,40,20,.25);}
+@media (max-width:860px){ .blood-band{min-height:148vw;align-items:flex-start;} .blood-copy{padding-top:56px;} .blood-text{max-width:none;text-align:center;} }
 .tx-below-photo{margin-top:28px;max-width:360px;border-radius:3px;overflow:hidden;}
 .tx-below-photo img{width:100%;height:auto;display:block;}
 .idx-cols{display:grid;grid-template-columns:1fr 1fr;gap:16px 48px;margin-top:30px;}
