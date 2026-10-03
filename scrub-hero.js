@@ -17,6 +17,30 @@
   var currentFrame = 0;
   var cacheBust = '7';
 
+  // Dolce logo that emerges on the curtain over the last 6 frames. Position is
+  // in the final frame's pixels; the per-frame matrices (frames 97-102) follow
+  // the camera's small drift so the logo stays fixed to the curtain.
+  var LOGO_FRAMES = 6;
+  var logoPlace = landscape ? { cx: 1045, cy: 235, w: 420 } : { cx: 495, cy: 725, w: 430 };
+  var logoTrack = landscape ? [
+      [0.99526,-0.00323,9.03516,-0.00032,0.99635,37.3306],
+      [0.99347,-1e-05,-1.46028,0.0003,0.99059,45.3597],
+      [0.99451,0.00064,-7.32874,0.00058,0.9907,38.6261],
+      [0.99594,0.00047,-17.3707,0.00189,0.98872,23.6243],
+      [0.9981,0.00071,-14.9993,0.00161,0.99234,4.66336],
+      [1,0,0,0,1,0]
+    ] : [
+      [0.95352,0.00134,16.9634,0.00961,0.9366,34.0443],
+      [0.95664,0.00231,16.199,0.00881,0.93962,31.7328],
+      [0.96021,0.00236,13.1021,0.0082,0.94237,30.4296],
+      [0.96427,0.00185,11.0151,0.00827,0.94585,27.11],
+      [0.97163,0.0025,11.2277,0.00875,0.95249,19.6958],
+      [1,0,0,0,1,0]
+    ];
+  var logoImg = new Image();
+  logoImg.src = 'hero-logo-glow.png?v=1';
+  logoImg.onload = function(){ redrawCurrent(); };
+
   var desktopQuery = window.matchMedia('(min-width:701px) and (hover:hover) and (pointer:fine)');
 
   // On desktop the video is scrubbed by hovering it and using the wheel,
@@ -58,6 +82,7 @@
     var scale = Math.max(cw / iw, ch / ih);
     var w = iw * scale, h = ih * scale;
     ctx.drawImage(img, (cw - w) / 2, (ch - h) / 2, w, h);
+    return { sx: scale, sy: scale, ox: (cw - w) / 2, oy: (ch - h) / 2 };
   }
 
   // Portrait footage on a wide screen: full uncropped frame (stretched 2x
@@ -80,13 +105,29 @@
     var fw = cw - (cw - stretched) * 0.7;  // side bars 30% narrower than at 2x
     var fh = ih * containScale;
     ctx.drawImage(img, (cw - fw) / 2, (ch - fh) / 2, fw, fh);
+    return { sx: fw / iw, sy: fh / ih, ox: (cw - fw) / 2, oy: (ch - fh) / 2 };
+  }
+
+  function drawLogo(i, map){
+    var k = i - (total - LOGO_FRAMES);
+    if (k < 1 || !map || !logoImg.complete || !logoImg.naturalWidth) return;
+    var t = k / LOGO_FRAMES, e = t * t * (3 - 2 * t);
+    var m = logoTrack[k - 1];
+    var w = logoPlace.w * (0.94 + 0.06 * e), h = w * logoImg.naturalHeight / logoImg.naturalWidth;
+    ctx.save();
+    ctx.setTransform(map.sx * m[0], map.sy * m[3], map.sx * m[1], map.sy * m[4], map.sx * m[2] + map.ox, map.sy * m[5] + map.oy);
+    ctx.globalAlpha = e * 0.92;
+    var blur = (1 - e) * 10;
+    if (blur > 0.3) ctx.filter = 'blur(' + blur.toFixed(1) + 'px)';
+    ctx.drawImage(logoImg, logoPlace.cx - w / 2, logoPlace.cy - h / 2, w, h);
+    ctx.restore();
   }
 
   function draw(i){
     var img = frames[i - 1];
     if (!img || !img.complete || !img.naturalWidth) return;
-    if (!landscape && desktopQuery.matches) drawBlurPad(img);
-    else drawCover(img);
+    var map = (!landscape && desktopQuery.matches) ? drawBlurPad(img) : drawCover(img);
+    drawLogo(i, map);
     currentFrame = i;
   }
 
