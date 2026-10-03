@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<!-- TEST 3: scroll-scrubbed film hero (film/film-hero.js). ?film=frames|video forces a path. -->
+<!-- TEST 4 (phone sharpness): scroll-scrubbed film hero (film/film-hero.js). ?film=frames|video forces a path. -->
 <html lang="en">
 <head>
 <meta name="robots" content="noindex">
@@ -14,8 +14,10 @@
   var phys = window.innerWidth * Math.min(window.devicePixelRatio || 1, 2);
   var mode = !land ? 'frames-p' : (force === 'frames' ? 'frames-l' : (force === 'video' || phys >= 1441) ? 'video' : 'frames-l');
   var tier = phys >= 2801 ? '2160' : '1440';
-  var poster = mode === 'video' ? 'film/poster-' + tier + '.jpg' : mode === 'frames-p' ? 'film/poster-p.jpg' : 'film/poster-l.jpg';
-  var F = window.__film = { mode: mode, tier: tier, poster: poster, reduce: reduce, land: mode !== 'frames-p' };
+  var poster = mode === 'video' ? 'film/poster-' + tier + '.jpg' : mode === 'frames-p' ? 'film/poster-p2.jpg' : 'film/poster-l.jpg';
+  var F = window.__film = { mode: mode, tier: tier, poster: poster, reduce: reduce, land: mode !== 'frames-p',
+    /* TEST 4: sharper phone frames, full-sharpness canvas, high-quality resizing */
+    framesP: 'film/frames-p2/f-', maxDpr: 3, smoothHigh: true };
   d.setAttribute('data-hero', F.land ? 'landscape' : 'portrait');
   d.setAttribute('data-film', mode);
   d.style.setProperty('--film-ph', 'url(' + (F.land ? 'data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD//gAQTGF2YzYwLjMxLjEwMgD/2wBDAA0JCgsKCA0LCgsODg0PEyAVExISEyccHhcgLikxMC4pLSwzOko+MzZGNywtQFdBRkxOUlNSMj5aYVpQYEpRUk//2wBDAQ4ODhMREyYVFSZPNS01T09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT0//wAARCAASACADASIAAhEBAxEB/8QAHwAAAQUBAQEBAQEAAAAAAAAAAAECAwQFBgcICQoL/8QAtRAAAgEDAwIEAwUFBAQAAAF9AQIDAAQRBRIhMUEGE1FhByJxFDKBkaEII0KxwRVS0fAkM2JyggkKFhcYGRolJicoKSo0NTY3ODk6Q0RFRkdISUpTVFVWV1hZWmNkZWZnaGlqc3R1dnd4eXqDhIWGh4iJipKTlJWWl5iZmqKjpKWmp6ipqrKztLW2t7i5usLDxMXGx8jJytLT1NXW19jZ2uHi4+Tl5ufo6erx8vP09fb3+Pn6/8QAHwEAAwEBAQEBAQEBAQAAAAAAAAECAwQFBgcICQoL/8QAtREAAgECBAQDBAcFBAQAAQJ3AAECAxEEBSExBhJBUQdhcRMiMoEIFEKRobHBCSMzUvAVYnLRChYkNOEl8RcYGRomJygpKjU2Nzg5OkNERUZHSElKU1RVVldYWVpjZGVmZ2hpanN0dXZ3eHl6goOEhYaHiImKkpOUlZaXmJmaoqOkpaanqKmqsrO0tba3uLm6wsPExcbHyMnK0tPU1dbX2Nna4uPk5ebn6Onq8vP09fb3+Pn6/9oADAMBAAIRAxEAPwDt7eKLyI40CmFMfKcEdKytZghRZpLdEQoCxK+y/WuW0+/+zao72wWBSzKF8xiMHp17VpznV3SVGUCJ87mJBzkY49qnURmwyyXVvvlkJB7YqK6zjk7tuMZqjcXvklUaYRDp8w7j0qs1+YYWZn+0Fmzwaho1TI42YoSWOcdc12Oku7aHblmYkr1JoorRdTPscv4zGVts+rf0rkwSDwcUUUkM/9k=' : 'data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD//gAQTGF2YzYwLjMxLjEwMgD/2wBDAA0JCgsKCA0LCgsODg0PEyAVExISEyccHhcgLikxMC4pLSwzOko+MzZGNywtQFdBRkxOUlNSMj5aYVpQYEpRUk//2wBDAQ4ODhMREyYVFSZPNS01T09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT0//wAARCAAgABIDASIAAhEBAxEB/8QAHwAAAQUBAQEBAQEAAAAAAAAAAAECAwQFBgcICQoL/8QAtRAAAgEDAwIEAwUFBAQAAAF9AQIDAAQRBRIhMUEGE1FhByJxFDKBkaEII0KxwRVS0fAkM2JyggkKFhcYGRolJicoKSo0NTY3ODk6Q0RFRkdISUpTVFVWV1hZWmNkZWZnaGlqc3R1dnd4eXqDhIWGh4iJipKTlJWWl5iZmqKjpKWmp6ipqrKztLW2t7i5usLDxMXGx8jJytLT1NXW19jZ2uHi4+Tl5ufo6erx8vP09fb3+Pn6/8QAHwEAAwEBAQEBAQEBAQAAAAAAAAECAwQFBgcICQoL/8QAtREAAgECBAQDBAcFBAQAAQJ3AAECAxEEBSExBhJBUQdhcRMiMoEIFEKRobHBCSMzUvAVYnLRChYkNOEl8RcYGRomJygpKjU2Nzg5OkNERUZHSElKU1RVVldYWVpjZGVmZ2hpanN0dXZ3eHl6goOEhYaHiImKkpOUlZaXmJmaoqOkpaanqKmqsrO0tba3uLm6wsPExcbHyMnK0tPU1dbX2Nna4uPk5ebn6Onq8vP09fb3+Pn6/9oADAMBAAIRAxEAPwCnNpQHKgxH+6/Q/Q9KozWbxth0Kt/Ou81m2ht4p5LcBQiliMkjgelcxFK88O9tm0/wbeP8/Ssmmi07mJ5J/umitgxQ5Py/rRSuVY1b281S4imie3KxsCGdx6iuakvmX93DIgAGdp7H6V0X2vybdYBIzhRjcx5Ncb4ogVr2OcEfOmMAYxj/APXVtJaGUdif7RfHn7T1/wBkf4UVzuJPV/zNFFirn//Z') + ')');

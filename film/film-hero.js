@@ -111,12 +111,14 @@
   /* ---------- path A: webp frames on a canvas ---------- */
   var ctx = null, imgs = new Array(N + 1), ready = new Array(N + 1), inflight = 0, skeleton = [], skeletonAll = [];
   var canvasDrawn = false, shownX = 0;
-  var frameDir = land ? 'film/frames-l/f-' : 'film/frames-p/f-';
+  var frameDir = land ? 'film/frames-l/f-' : (F.framesP || 'film/frames-p/f-');
+  var MAX_DPR = F.maxDpr || 2;           // test 4: phones draw at their full sharpness (3x)
 
   function startFrames(){
     if (framesStarted) return;
     framesStarted = true;
     ctx = canvas.getContext('2d', { alpha: false });
+    smoothing();
     for (var i = 1; i <= N; i += 6) skeleton.push(i);
     if (skeleton[skeleton.length - 1] !== N) skeleton.push(N);
     skeletonAll = skeleton.slice();
@@ -159,10 +161,13 @@
     return 0;
   }
   function sizeCanvas(){
-    var dpr = Math.min(window.devicePixelRatio || 1, 2);
+    var dpr = Math.min(window.devicePixelRatio || 1, MAX_DPR);
     var w = Math.max(1, Math.round(stage.clientWidth * dpr)), h = Math.max(1, Math.round(stage.clientHeight * dpr));
-    if (canvas.width !== w || canvas.height !== h){ canvas.width = w; canvas.height = h; return true; }
+    if (canvas.width !== w || canvas.height !== h){ canvas.width = w; canvas.height = h; smoothing(); return true; }
     return false;
+  }
+  function smoothing(){            // resizing a canvas resets this, so set it again after every resize
+    if (ctx && F.smoothHigh){ ctx.imageSmoothingEnabled = true; ctx.imageSmoothingQuality = 'high'; }
   }
   function cover(img, alpha){
     var cw = canvas.width, ch = canvas.height, iw = img.naturalWidth, ih = img.naturalHeight;
