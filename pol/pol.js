@@ -1,5 +1,6 @@
-/* Polished: soft reveals for the salon's own pieces, and a gold dot in the
-   header that follows the section being read. (Runs after luxe/luxe.js.) */
+/* Polished: soft reveals for the salon's own pieces, and (on .pol-x pages)
+   a gold dot in the header that follows the section being read.
+   (Runs after luxe/luxe.js.) */
 (function(){
   var still = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
@@ -37,7 +38,7 @@
 
   /* ---------- header: gold dot under the current section ---------- */
   var nav = document.querySelector('.pol-nav');
-  if (!nav) return;
+  if (!nav || !document.body.classList.contains('pol-x')) return;
   var links = [].slice.call(nav.querySelectorAll('a[href^="#"]')).filter(function(a){
     return a.getAttribute('href').length > 1 && !a.classList.contains('pol-book-btn');
   });

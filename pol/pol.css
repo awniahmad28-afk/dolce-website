@@ -4,13 +4,16 @@
 /* ---------- opening: the Polished logo, a touch wider than Dolce's ---------- */
 .lx-intro img{width:min(360px,72vw);}
 
+/* Pieces marked .pol-x run only on pages whose <body> has class="pol-x"
+   (the full test set); the live Polished page uses the rest. */
+
 /* ---------- hero: slow drift on the video, gold frame on the logo ---------- */
-.pol-hero-photo{overflow:hidden;}
-.pol-hero-video{animation:polDrift 22s ease-in-out infinite alternate;transform-origin:60% 50%;}
+.pol-x .pol-hero-photo{overflow:hidden;}
+.pol-x .pol-hero-video{animation:polDrift 22s ease-in-out infinite alternate;transform-origin:60% 50%;}
 @keyframes polDrift{from{transform:scale(1.02) translate3d(0,0,0);}to{transform:scale(1.1) translate3d(-1.5%,-1%,0);}}
-.pol-hero-logo-plate{position:relative;padding:clamp(18px,2.2vw,26px) clamp(22px,2.8vw,34px);border:1px solid rgba(198,161,91,.55);}
-.pol-hero-logo-plate::before{content:"";position:absolute;inset:6px;border:1px solid rgba(198,161,91,.22);pointer-events:none;}
-.pol-hero-logo-plate::after{content:"";position:absolute;left:50%;bottom:-4px;width:7px;height:7px;background:var(--pol-gold);transform:translateX(-50%) rotate(45deg);}
+.pol-x .pol-hero-logo-plate{position:relative;padding:clamp(18px,2.2vw,26px) clamp(22px,2.8vw,34px);border:1px solid rgba(198,161,91,.55);}
+.pol-x .pol-hero-logo-plate::before{content:"";position:absolute;inset:6px;border:1px solid rgba(198,161,91,.22);pointer-events:none;}
+.pol-x .pol-hero-logo-plate::after{content:"";position:absolute;left:50%;bottom:-4px;width:7px;height:7px;background:var(--pol-gold);transform:translateX(-50%) rotate(45deg);}
 
 /* ---------- buttons: gold sweep on hover, a slow shimmer on gold ones ---------- */
 .pol-btn-outline,.pol-btn-dark-outline,.pol-more,.pol-nav .back{background-image:linear-gradient(var(--pol-gold),var(--pol-gold));background-repeat:no-repeat;background-position:left center;background-size:0% 100%;transition:background-size .55s cubic-bezier(.65,0,.35,1),color .4s ease,border-color .4s ease,transform .18s ease;}
@@ -38,7 +41,7 @@
 .pol-divider.on-cream{background:var(--pol-cream);}
 .pol-divider.on-beige{background:var(--pol-beige);}
 /* the emerald band is edged in gold */
-.pol-gallery{border-top:1px solid rgba(198,161,91,.55);border-bottom:1px solid rgba(198,161,91,.55);box-shadow:inset 0 6px 0 -5px rgba(198,161,91,.25),inset 0 -6px 0 -5px rgba(198,161,91,.25);}
+.pol-x .pol-gallery{border-top:1px solid rgba(198,161,91,.55);border-bottom:1px solid rgba(198,161,91,.55);box-shadow:inset 0 6px 0 -5px rgba(198,161,91,.25),inset 0 -6px 0 -5px rgba(198,161,91,.25);}
 
 /* ---------- services: a salon menu card ---------- */
 .pol-services-copy{justify-content:center;}
@@ -78,13 +81,13 @@
 }
 
 /* ---------- photo viewer: fades in, gold counter ---------- */
-.pol-lightbox{display:flex;opacity:0;visibility:hidden;transition:opacity .45s ease,visibility 0s linear .45s;}
-.pol-lightbox.open{opacity:1;visibility:visible;transition:opacity .45s ease;}
-.pol-lightbox img{transform:scale(.97);transition:transform .6s cubic-bezier(.2,.7,.2,1),opacity .35s ease;}
-.pol-lightbox.open img{transform:none;}
-.pol-lightbox img.is-swap{opacity:0;}
-.pol-lb-count{color:var(--pol-gold);font-family:var(--pol-font-display);font-style:italic;font-size:15px;letter-spacing:.08em;}
-.pol-lb-close,.pol-lb-prev,.pol-lb-next{font-weight:200;}
+.pol-x .pol-lightbox{display:flex;opacity:0;visibility:hidden;transition:opacity .45s ease,visibility 0s linear .45s;}
+.pol-x .pol-lightbox.open{opacity:1;visibility:visible;transition:opacity .45s ease;}
+.pol-x .pol-lightbox img{transform:scale(.97);transition:transform .6s cubic-bezier(.2,.7,.2,1),opacity .35s ease;}
+.pol-x .pol-lightbox.open img{transform:none;}
+.pol-x .pol-lightbox img.is-swap{opacity:0;}
+.pol-x .pol-lb-count{color:var(--pol-gold);font-family:var(--pol-font-display);font-style:italic;font-size:15px;letter-spacing:.08em;}
+.pol-x .pol-lb-close,.pol-x .pol-lb-prev,.pol-x .pol-lb-next{font-weight:200;}
 
 /* ---------- reviews: one large quote at a time ---------- */
 .pol-quotes{max-width:900px;margin:clamp(40px,6vw,64px) auto 0;text-align:center;}
@@ -110,8 +113,11 @@
 .pol-footer .pol-sign img{height:42px;width:auto;margin:0;transition:transform .5s ease;}
 .pol-sign:hover img{transform:translateY(-2px);}
 
-/* ---------- reveals: luxe.js sets these; Polished items share the same feel ---------- */
+/* ---------- without .pol-x: no paper grain, plain underlined links ---------- */
+body:not(.pol-x)::after{content:none;}
+body:not(.pol-x) .tel-link{background-image:none;padding-bottom:0;text-decoration:underline;text-underline-offset:2px;}
+
 @media (prefers-reduced-motion:reduce){
-  .pol-hero-video,.pol-btn-solid::after,.pol-book-btn::after{animation:none;}
-  .pol-lightbox,.pol-lightbox img{transition:none;}
+  .pol-x .pol-hero-video,.pol-btn-solid::after,.pol-book-btn::after{animation:none;}
+  .pol-x .pol-lightbox,.pol-x .pol-lightbox img{transition:none;}
 }

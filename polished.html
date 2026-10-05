@@ -3,22 +3,23 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="preload" as="image" href="pol/intro-logo.png" fetchpriority="high">
 <link rel="icon" href="favicon.ico" sizes="any">
 <link rel="icon" type="image/png" sizes="32x32" href="icons/icon-32.png">
 <link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
 <meta name="theme-color" content="#241A10">
 <meta name="description" content="The beauty salon of Dolce Aesthetic Clinic — hair, nails and beauty delivered with the same precision and standard of care, at our Park View salon in Erbil.">
 <meta property="og:type" content="website">
-<meta property="og:site_name" content="Polished by Dolce Salon">
-<meta property="og:title" content="Polished by Dolce Salon — Park View, Erbil">
+<meta property="og:site_name" content="Polished by Dolce">
+<meta property="og:title" content="Polished by Dolce — Park View, Erbil">
 <meta property="og:description" content="The beauty salon of Dolce Aesthetic Clinic — hair, nails and beauty delivered with the same precision and standard of care, at our Park View salon in Erbil.">
 <meta property="og:url" content="https://awniahmad28-afk.github.io/dolce-website/polished.html">
 <meta property="og:image" content="https://awniahmad28-afk.github.io/dolce-website/og-polished.jpg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="Polished by Dolce Salon">
+<meta property="og:image:alt" content="Polished by Dolce">
 <meta name="twitter:card" content="summary_large_image">
-<title>Polished by Dolce Salon — Park View, Erbil</title>
+<title>Polished by Dolce — Park View, Erbil</title>
 <link rel="stylesheet" href="styles.css?v=52">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400..600;1,9..144,400..600&family=Jost:wght@300;400;500;600&display=swap">
 <style>
@@ -197,8 +198,37 @@
   .pol-footer .bottom{margin-top:34px; padding-top:22px; border-top:1px solid rgba(198,161,91,.2); font-size:11.5px; display:flex; justify-content:center; gap:20px; flex-wrap:wrap; font-weight:300;}
   .pol-footer .bottom a{color:inherit; text-decoration:underline;}
 </style>
+<link rel="stylesheet" href="luxe/luxe.css?v=3">
+<link rel="stylesheet" href="pol/pol.css?v=2">
 </head>
 <body>
+<script>/* First visit in a session: the Polished logo draws itself in, then fades
+   into the page; later pages: a soft cream fade-in. */
+(function(){
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  var seen = false;
+  try { seen = !!sessionStorage.getItem('pol-intro'); } catch (e) {}
+  var v = document.createElement('div');
+  v.className = 'lx-veil' + (seen ? '' : ' lx-intro');
+  document.body.appendChild(v);
+  function out(){ v.classList.add('lx-out'); setTimeout(function(){ v.remove(); }, 900); }
+  if (seen){ requestAnimationFrame(function(){ requestAnimationFrame(out); }); return; }
+  var img = new Image(), done = false;
+  img.alt = '';
+  function go(){
+    if (done) return; done = true;
+    try { sessionStorage.setItem('pol-intro', '1'); } catch (e) {}
+    v.appendChild(img);
+    requestAnimationFrame(function(){ requestAnimationFrame(function(){ v.classList.add('lx-go'); }); });
+    setTimeout(out, 1900);
+  }
+  function skip(){ if (done) return; done = true; v.classList.add('lx-quick'); out(); }
+  img.onload = function(){ if (img.decode) img.decode().then(go, go); else go(); };
+  img.onerror = skip;
+  img.src = 'pol/intro-logo.png';
+  setTimeout(skip, 2500);
+})();
+</script>
 
 <header class="pol-header">
   <a class="pol-wordmark" href="#top"><img src="polished-logo.png" alt="Polished by Dolce"></a>
@@ -317,28 +347,13 @@
     <h2>What Clients Say</h2>
     <a class="pol-google-link" href="https://www.google.com/maps/place/Polished+by+Dolce/@36.2086197,43.9833904,17z/data=!4m8!3m7!1s0x40072316d41cf561:0xffe60317543841ce!8m2!3d36.2086197!4d43.9833904!9m1!1b1!16s%2Fg%2F11vbscjgnb?entry=ttu&amp;g_ep=EgoyMDI2MDkyNy4xIKXMDSoASAFQAw%3D%3D" target="_blank" rel="noopener"><svg class="g" viewBox="0 0 48 48" aria-hidden="true"><path fill="#FFC107" d="M43.6 20.5H42V20H24v8h11.3C33.7 32.7 29.2 36 24 36c-6.6 0-12-5.4-12-12s5.4-12 12-12c3.1 0 5.9 1.2 8 3.1l5.7-5.7C34.1 6.1 29.3 4 24 4 12.9 4 4 12.9 4 24s8.9 20 20 20 20-8.9 20-20c0-1.3-.1-2.4-.4-3.5z"/><path fill="#FF3D00" d="M6.3 14.7l6.6 4.8C14.7 15.1 19 12 24 12c3.1 0 5.9 1.2 8 3.1l5.7-5.7C34.1 6.1 29.3 4 24 4 16.3 4 9.7 8.3 6.3 14.7z"/><path fill="#4CAF50" d="M24 44c5.2 0 9.9-2 13.4-5.2l-6.2-5.2C29.2 35.1 26.7 36 24 36c-5.2 0-9.6-3.3-11.3-7.9l-6.5 5C9.5 39.6 16.2 44 24 44z"/><path fill="#1976D2" d="M43.6 20.5H42V20H24v8h11.3c-.8 2.2-2.2 4.2-4.1 5.6l6.2 5.2C37 39.2 44 34 44 24c0-1.3-.1-2.4-.4-3.5z"/></svg><span class="star">&#9733;</span><span>See all our reviews on Google</span><span class="arr">&rarr;</span></a>
   </div>
-  <div class="pol-testi-grid">
-    <div class="pol-testi-card">
-      <div class="mark">&ldquo;</div>
-      <p class="quote">I’ve been coming here regularly for my lash lifts as well as my mani/pedis, and I honestly love it every time! Everyone is always so nice and the service is great. My lash lift always turns out exactly how I like it, and my nails are always perfect. Definitely my go-to place!</p>
-      <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-      <div class="attr">Kevy Y.</div>
-      <div class="src">Google review</div>
+  <div class="pol-quotes" data-ed-quotes aria-roledescription="carousel" aria-label="Google reviews">
+    <div class="ed-stack">
+      <figure class="ed-quote is-on"><blockquote>I’ve been coming here regularly for my lash lifts as well as my mani/pedis, and I honestly love it every time! Everyone is always so nice and the service is great. My lash lift always turns out exactly how I like it, and my nails are always perfect. Definitely my go-to place!</blockquote><div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><figcaption>Kevy Y. &middot; Google review</figcaption></figure>
+      <figure class="ed-quote"><blockquote>Best place in Erbil for nail design and hairstyling, the staff is great and amazing, the drinks are delicious, overall good vibes and great service! Special thanks to Alaa and Oleana for doing the best job always!</blockquote><div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><figcaption>Zaineb A. &middot; Google review</figcaption></figure>
+      <figure class="ed-quote"><blockquote>Loved this place, came here for the first time, and everyone was super lovely, and professional, the beautician did a great job with nail art as well. Thank you so much</blockquote><div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><figcaption>Rebaz R. &middot; Google review</figcaption></figure>
     </div>
-    <div class="pol-testi-card">
-      <div class="mark">&ldquo;</div>
-      <p class="quote">Best place in Erbil for nail design and hairstyling, the staff is great and amazing, the drinks are delicious, overall good vibes and great service! Special thanks to Alaa and Oleana for doing the best job always!</p>
-      <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-      <div class="attr">Zaineb A.</div>
-      <div class="src">Google review</div>
-    </div>
-    <div class="pol-testi-card">
-      <div class="mark">&ldquo;</div>
-      <p class="quote">Loved this place, came here for the first time, and everyone was super lovely, and professional, the beautician did a great job with nail art as well. Thank you so much</p>
-      <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-      <div class="attr">Rebaz R.</div>
-      <div class="src">Google review</div>
-    </div>
+    <div class="ed-dots"><button type="button" aria-label="Review 1" class="is-on"></button><button type="button" aria-label="Review 2"></button><button type="button" aria-label="Review 3"></button></div>
   </div>
 </section>
 
@@ -357,7 +372,7 @@
   <div class="pol-section-head">
     <p class="eyebrow">Visit</p>
     <h2>Find Polished</h2>
-    <p class="lede">Polished by Dolce Salon &mdash; Park View, Erbil, Iraq. Located alongside Dolce Aesthetic Clinic.</p>
+    <p class="lede">Polished by Dolce &mdash; Park View, Erbil, Iraq. Located alongside Dolce Aesthetic Clinic.</p>
     <p class="lede"><a class="tel-link" href="tel:+9647519000200">+964 751 900 0200</a>&nbsp;&middot;&nbsp;<a class="tel-link" href="mailto:polished.erbil@gmail.com">polished.erbil@gmail.com</a><button type="button" class="copy-email-btn" data-email="polished.erbil@gmail.com" aria-label="Copy email address" title="Copy email address"><span>⧉</span> Copy</button></p>
     <div class="pol-map">
       <iframe src="https://maps.google.com/maps?q=Polished+by+Dolce+6X5M%2BC9+Erbil&z=17&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Polished by Dolce location"></iframe>
@@ -367,8 +382,8 @@
 </section>
 
 <footer class="pol-footer">
-  <img src="logo.png" alt="Dolçe Aesthetic Clinic">
-  <p class="line1">Polished by Dolce Salon &mdash; a Dolce brand</p>
+  <a class="pol-sign" href="index.html" aria-label="Polished is a Dolce brand: visit Dolce Aesthetic Clinic"><span class="l"></span><em>by</em><img src="logo.png" alt="Dolçe Aesthetic Clinic"><span class="r"></span></a>
+  <p class="line1">Polished by Dolce &mdash; a Dolce brand</p>
   <p class="phone"><a href="tel:+9647519000200" style="color:inherit;">+964 751 900 0200</a></p>
   <div class="bottom">
     <span><a href="index.html">&larr; Back to Dolce Clinic</a></span>
@@ -397,12 +412,6 @@
       });
     });
   }
-  document.querySelectorAll('a[href="index.html"]').forEach(function(a){
-    a.addEventListener('click', function(e){
-      e.preventDefault();
-      window.location.href = 'index.html';
-    });
-  });
 
   document.querySelectorAll('.copy-email-btn').forEach(function(btn){
     btn.addEventListener('click', function(){
@@ -510,6 +519,9 @@
   });
 })();
 </script>
+<script src="luxe/luxe.js?v=2" defer></script>
+<script src="ed/editorial.js?v=2" defer></script>
+<script src="pol/pol.js?v=2" defer></script>
 <script src="wa-float.js?v=1" data-wa="9647519000200" defer></script>
 </body>
 </html>
