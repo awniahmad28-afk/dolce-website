@@ -21,6 +21,8 @@
   // in the final frame's pixels; the per-frame matrices (frames 97-102) follow
   // the camera's small drift so the logo stays fixed to the curtain.
   var LOGO_FRAMES = 6;
+  var LOGO_DESK_DX = 70;        // desktop: shift right (frame pixels)
+  var LOGO_HEADER_GAP = 28;     // desktop: min gap below the menu bar (CSS px)
   var logoPlace = landscape ? { cx: 1045, cy: 235, w: 420 } : { cx: 495, cy: 725, w: 430 };
   var logoTrack = landscape ? [
       [0.99526,-0.00323,9.03516,-0.00032,0.99635,37.3306],
@@ -114,12 +116,25 @@
     var t = k / LOGO_FRAMES, e = t * t * (3 - 2 * t);
     var m = logoTrack[k - 1];
     var w = logoPlace.w * (0.94 + 0.06 * e), h = w * logoImg.naturalHeight / logoImg.naturalWidth;
+    // Desktop: nudge the logo right, and keep its top clear of the menu bar
+    // (wide screens crop the top of the footage, which pushes it up).
+    var desk = landscape && desktopQuery.matches;
+    var cx = logoPlace.cx + (desk ? LOGO_DESK_DX : 0), shift = 0;
+    if (desk){
+      var hdr = document.querySelector('header'), cr = canvas.getBoundingClientRect();
+      if (hdr && cr.width){
+        var px = canvas.width / cr.width;
+        var minTop = (hdr.getBoundingClientRect().bottom - cr.top + LOGO_HEADER_GAP) * px;
+        var top = map.sy * (m[3] * (cx - w / 2) + m[4] * (logoPlace.cy - h / 2) + m[5]) + map.oy;
+        shift = Math.max(0, minTop - top);
+      }
+    }
     ctx.save();
-    ctx.setTransform(map.sx * m[0], map.sy * m[3], map.sx * m[1], map.sy * m[4], map.sx * m[2] + map.ox, map.sy * m[5] + map.oy);
+    ctx.setTransform(map.sx * m[0], map.sy * m[3], map.sx * m[1], map.sy * m[4], map.sx * m[2] + map.ox, map.sy * m[5] + map.oy + shift);
     ctx.globalAlpha = e * 0.92;
     var blur = (1 - e) * 10;
     if (blur > 0.3) ctx.filter = 'blur(' + blur.toFixed(1) + 'px)';
-    ctx.drawImage(logoImg, logoPlace.cx - w / 2, logoPlace.cy - h / 2, w, h);
+    ctx.drawImage(logoImg, cx - w / 2, logoPlace.cy - h / 2, w, h);
     ctx.restore();
   }
 
