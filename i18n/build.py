@@ -147,7 +147,7 @@ def build(page, lang):
         'html.parser')
     for c in reversed(list(extra.contents)):
         vp.insert_after(c)
-    head.append(BeautifulSoup('<link rel="stylesheet" href="i18n/i18n.css?v=2">', 'html.parser').link)
+    head.append(BeautifulSoup('<link rel="stylesheet" href="i18n/i18n.css?v=3">', 'html.parser').link)
 
     # language switcher: header row + phone menu
     hr = soup.select_one('.head-right') or soup.select_one('.pol-head-right')
@@ -155,6 +155,17 @@ def build(page, lang):
     nav = soup.select_one('nav.mainnav') or soup.select_one('nav.pol-nav')
     nav.append(switcher(page, lang, 'ls-menu'))
 
+    # Our Story: the first word of the story in gold (in place of the large
+    # opening letter, which would break a joined Arabic-script word)
+    for p0 in soup.select('.story-text > p:first-child'):
+        t = p0.find(string=True)
+        if t and t.strip():
+            s0 = str(t); lead = s0[:len(s0) - len(s0.lstrip())]; body = s0.lstrip()
+            word, _, rest = body.partition(' ')
+            sp = soup.new_tag('span', attrs={'class': 'first-word'}); sp.string = word
+            t.replace_with(sp)
+            if lead: sp.insert_before(lead)
+            if rest: sp.insert_after(' ' + rest)
     # stand-alone arrows (outside the translated wording) point the other way
     for t in list(soup.body.find_all(string=re.compile(r'^\s*[→←]\s*$'))):
         if t.parent.name not in ('script', 'style'):
