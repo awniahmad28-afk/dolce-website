@@ -1,5 +1,5 @@
-/* EDITORIAL TEST: bigger headlines, more white space, full-width photography,
-   one review at a time. Loaded only by the ed-*.html test pages. */
+/* Editorial layout (all Dolce pages): bigger headlines, more white space,
+   full-width photography, one review at a time. */
 
 /* full-width pieces use 100vw; never let that cause sideways scrolling */
 html,body{overflow-x:clip;}

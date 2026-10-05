@@ -1,4 +1,4 @@
-/* EDITORIAL TEST: reviews show one large quote at a time and fade to the
+/* Reviews show one large quote at a time and fade to the
    next every 7 s; dots pick one, hover/touch pauses, swipe on phones. */
 (function(){
   var box = document.querySelector('[data-ed-quotes]'); if (!box) return;
