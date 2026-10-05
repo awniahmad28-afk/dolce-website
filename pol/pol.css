@@ -17,7 +17,12 @@
 
 /* ---------- buttons: gold sweep on hover, a slow shimmer on gold ones ---------- */
 .pol-btn-outline,.pol-btn-dark-outline,.pol-more,.pol-nav .back{background-image:linear-gradient(var(--pol-gold),var(--pol-gold));background-repeat:no-repeat;background-position:left center;background-size:0% 100%;transition:background-size .55s cubic-bezier(.65,0,.35,1),color .4s ease,border-color .4s ease,transform .18s ease;}
-.pol-btn-outline:hover,.pol-more:hover,.pol-nav .back:hover{opacity:1;background-color:transparent;background-size:100% 100%;color:var(--pol-ink);border-color:var(--pol-gold);}
+/* the page's own hover rules use the "background" shorthand, which would wipe
+   the gold layer, so the hover state spells it out again */
+.pol-btn-outline:hover,.pol-more:hover,.pol-nav .back:hover{opacity:1;background-color:transparent;background-image:linear-gradient(var(--pol-gold),var(--pol-gold));background-repeat:no-repeat;background-position:left center;background-size:100% 100%;color:var(--pol-ink);border-color:var(--pol-gold);}
+/* right-to-left pages: the gold sweeps in from the right */
+html[dir=rtl] .pol-btn-outline,html[dir=rtl] .pol-more,html[dir=rtl] .pol-nav .back,html[dir=rtl] .pol-btn-dark-outline,
+html[dir=rtl] .pol-btn-outline:hover,html[dir=rtl] .pol-more:hover,html[dir=rtl] .pol-nav .back:hover,html[dir=rtl] .pol-btn-dark-outline:hover{background-position:right center;}
 .pol-btn-dark-outline{background-image:linear-gradient(var(--pol-ink),var(--pol-ink));}
 .pol-btn-dark-outline:hover{opacity:1;background-size:100% 100%;color:var(--pol-beige);border-color:var(--pol-ink);}
 .pol-btn-solid,.pol-book-btn{position:relative;overflow:hidden;isolation:isolate;}
