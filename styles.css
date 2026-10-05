@@ -276,7 +276,7 @@ html.app-soon-lock{overflow:hidden;}
 .cta-btns{display:flex;justify-content:center;flex-wrap:wrap;gap:12px;margin-top:34px;}
 .cta-btns .btn{margin-top:0;min-width:150px;text-align:center;}
 /* Computers: WhatsApp only (Call shows on phones and tablets). */
-@media (min-width:701px) and (hover:hover) and (pointer:fine), (min-width:701px) and (min-height:600px){ .cta-call{display:none;} }
+@media (min-width:701px) and (hover:hover) and (pointer:fine), (min-width:701px) and (min-height:600px){ .cta-call,.psx-btn.cta-call{display:none;} }
 
 /* ---------- testimonials ---------- */
 .rev-grid{display:flex;flex-direction:column;gap:22px;max-width:760px;margin:0 auto;}

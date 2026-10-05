@@ -947,7 +947,7 @@
  {
   "page": "plastic-surgery",
   "kind": "html",
-  "en": "<a class=\"psx-btn\" href=\"tel:+9647509000200\">Call +964 750 900 0200</a>\n<a class=\"psx-btn psx-btn-ghost\" href=\"https://wa.me/9647509000200\" rel=\"noopener\" target=\"_blank\">WhatsApp</a>"
+  "en": "<a class=\"psx-btn cta-call\" href=\"tel:+9647509000200\">Call +964 750 900 0200</a>\n<a class=\"psx-btn psx-btn-ghost\" href=\"https://wa.me/9647509000200\" rel=\"noopener\" target=\"_blank\">WhatsApp</a>"
  },
  {
   "page": "plastic-surgery",
