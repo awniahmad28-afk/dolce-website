@@ -368,6 +368,13 @@ T = {
 304: ("Polished by Dolce — Park View، هەولێر", "Polished by Dolce — Park View، أربيل"),
 }
 
+# Wording added after the numbered list above, keyed by the English.
+EXTRA = {
+    'Abdominal liposuction': None,
+    '<span>Day of surgery</span><span>10 days after</span>':
+        ("<1>ڕۆژی نەشتەرگەری</1><2>10 ڕۆژ دوای نەشتەرگەری</2>", "<1>يوم الجراحة</1><2>بعد 10 أيام</2>"),
+}
+
 # Words the scripts put on screen (copy button, app popup, photo viewer, WhatsApp button).
 JS = {
     'ckb': {'copied': '✓ کۆپی کرا', 'soon': 'بەم زووانە', 'close': 'داخستن', 'appLabel': 'ئەپی Dolce+، بەم زووانە',

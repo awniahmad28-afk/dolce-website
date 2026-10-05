@@ -927,12 +927,7 @@
  {
   "page": "plastic-surgery",
   "kind": "html",
-  "en": "Abdominal liposuction"
- },
- {
-  "page": "plastic-surgery",
-  "kind": "html",
-  "en": "<span>Day of surgery</span><span>10 days after</span>"
+  "en": "Abdominal liposuction <span>Day of surgery · 10 days after</span>"
  },
  {
   "page": "plastic-surgery",

@@ -526,13 +526,17 @@ a.family-item:hover{border-color:var(--gold);transform:translateY(-2px);}
 .psx-results-head h2{font-family:var(--font-display);font-weight:400;font-size:clamp(34px,3.6vw,52px);color:#FBF6EC;margin-top:10px;}
 /* Gallery: three tiles of equal height (two 4:5 nose photos + a pair of 9:16 body photos) */
 .psx-gallery{margin-top:clamp(28px,3.5vw,44px);display:grid;grid-template-columns:1fr 1fr 1.406fr;gap:clamp(12px,1.6vw,22px);align-items:start;}
-.psx-g{margin:0;}
+.psx-g{margin:0;display:flex;flex-direction:column;}
+/* the name of each result sits above its photo; on the paired photo, a label sits under each half */
+.psx-g figcaption{order:-1;}
 .psx-g-frame{display:block;overflow:hidden;background:#1b140e;}
 .psx-g-pair .psx-g-frame{display:grid;grid-template-columns:1fr 1fr;gap:2px;}
 .psx-g-frame a{display:block;overflow:hidden;}
 .psx-g img{display:block;width:100%;height:auto;transition:transform .6s ease,opacity .3s ease;cursor:zoom-in;}
 .psx-g a:hover img{transform:scale(1.03);}
-.psx-g figcaption{margin-top:12px;font-family:var(--font-display);font-size:19px;color:#FBF6EC;}
+.psx-g figcaption{margin:0 0 12px;font-family:var(--font-display);font-size:19px;color:#FBF6EC;}
+.psx-g-lbls{display:grid;grid-template-columns:1fr 1fr;gap:2px;margin-top:10px;}
+.psx-g-lbls span{font-family:var(--font-body);font-size:11px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:#D8B88E;}
 .psx-g figcaption span{display:block;margin-top:3px;font-family:var(--font-body);font-size:11px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:#D8B88E;}
 @media (max-width:760px){ .psx-gallery{grid-template-columns:1fr 1fr;} .psx-g-pair{grid-column:1 / -1;} }
 .psx-results-foot{margin-top:clamp(40px,5vw,64px);padding-top:clamp(28px,3vw,40px);border-top:1px solid rgba(239,230,214,.18);display:grid;grid-template-columns:1.2fr 1fr;gap:clamp(28px,5vw,80px);align-items:end;}

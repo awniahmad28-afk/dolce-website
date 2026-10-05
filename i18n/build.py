@@ -14,7 +14,7 @@ ROOT = os.path.dirname(HERE)
 sys.path.insert(0, HERE)
 os.chdir(ROOT)
 from extract import PAGES, walk, key_of, ATTRS  # noqa: E402
-from tr import T, JS  # noqa: E402
+from tr import T, EXTRA, JS  # noqa: E402
 
 LANGS = {
     'ckb': {'suffix': 'ku', 'name': 'کوردی', 'col': 0, 'locale': 'ckb_IQ'},
@@ -24,10 +24,15 @@ SITE = 'https://awniahmad28-afk.github.io/dolce-website/'
 ARABIC = re.compile(r'[؀-ۿ]')
 LATIN = re.compile(r'[A-Za-z]')
 
-strings = json.load(open('i18n/strings.json', encoding='utf-8'))
-INDEX = {s['en']: i for i, s in enumerate(strings)}
-missing = [i for i in range(len(strings)) if i not in T]
-assert not missing, f'no translation for units {missing}'
+# T is numbered by the wording list as it was when it was written
+# (strings.base.json); EXTRA holds wording added since, keyed by the English.
+# Both become one English -> (ckb, ar) table, so new wording never shifts
+# the existing translations.
+base = json.load(open('i18n/strings.base.json', encoding='utf-8'))
+BYEN = {s['en']: T[i] for i, s in enumerate(base)}
+BYEN.update(EXTRA)
+missing = [s['en'] for s in json.load(open('i18n/strings.json', encoding='utf-8')) if s['en'] not in BYEN]
+assert not missing, 'no translation for: ' + ' | '.join(m[:80] for m in missing)
 
 OPEN_TAG = re.compile(r'<([a-zA-Z][a-zA-Z0-9]*)\b[^>]*?>')
 
@@ -46,10 +51,7 @@ def fill(src, tpl, idx):
     return out
 
 def tr(en, lang):
-    i = INDEX.get(en.strip())
-    if i is None:
-        return None
-    v = T[i]
+    v = BYEN.get(en.strip())
     return None if v is None else v[LANGS[lang]['col']]
 
 def page_href(href, sfx):
@@ -90,14 +92,13 @@ def build(page, lang):
             todo.append(it)
     for it in todo:
         en = key_of(it)
-        i = INDEX[en]
-        v = T[i]
+        v = BYEN[en]
         if v is None:
             continue
         t = v[L['col']]
         if it[0] == 'html':
             el = it[1]
-            new = fill(el.decode_contents().strip(), t, i)
+            new = fill(el.decode_contents().strip(), t, en[:60])
             el.clear()
             for c in list(BeautifulSoup(new, 'html.parser').contents):
                 el.append(c)
