@@ -5,8 +5,28 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Wellness — Dolce Aesthetic Clinic</title>
 <link rel="stylesheet" href="styles.css?v=76">
+<link rel="stylesheet" href="luxe/luxe.css?v=2">
 </head>
 <body>
+<script>/* First visit in a session -> the Dolce logo draws itself in gold, then fades
+   into the page; later pages -> a soft cream fade-in. */
+(function(){
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  var first = false;
+  try { first = !sessionStorage.getItem('lx-intro'); sessionStorage.setItem('lx-intro', '1'); } catch (e) {}
+  var v = document.createElement('div');
+  v.className = 'lx-veil' + (first ? ' lx-intro' : '');
+  document.body.appendChild(v);
+  function out(){ v.classList.add('lx-out'); setTimeout(function(){ v.remove(); }, 900); }
+  if (!first){ requestAnimationFrame(function(){ requestAnimationFrame(out); }); return; }
+  var img = new Image(), done = false;
+  img.alt = '';
+  function go(){ if (done) return; done = true; v.appendChild(img); requestAnimationFrame(function(){ v.classList.add('lx-go'); }); setTimeout(out, 1850); }
+  img.onload = go; img.onerror = function(){ done = true; out(); };
+  img.src = 'luxe/intro-logo.png';
+  setTimeout(function(){ if (!done){ done = true; out(); } }, 1500);
+})();
+</script>
 
 <header>
   <a href="index.html"><img class="logo-img" src="logo.png" alt="Dolçe Aesthetic Clinic"></a>
@@ -144,6 +164,7 @@
 </section>
 
 <!-- CTA -->
+<div class="lx-divider" aria-hidden="true"><span></span><img src="luxe/mark.png" alt=""><span></span></div>
 <section class="cta wrap">
   <p class="eyebrow">Take a moment for yourself</p>
   <h2>Start your journey at Dolce</h2>
@@ -226,5 +247,6 @@
   });
 })();
 </script>
+<script src="luxe/luxe.js?v=2" defer></script>
 </body>
 </html>

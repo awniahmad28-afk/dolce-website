@@ -5,9 +5,29 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Dermatology &amp; Non-Invasive — Dolce Aesthetic Clinic</title>
 <link rel="stylesheet" href="styles.css?v=76">
-<link rel="stylesheet" href="derm.css?v=4">
+<link rel="stylesheet" href="luxe/luxe.css?v=2">
+<link rel="stylesheet" href="derm.css?v=6">
 </head>
 <body>
+<script>/* First visit in a session -> the Dolce logo draws itself in gold, then fades
+   into the page; later pages -> a soft cream fade-in. */
+(function(){
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  var first = false;
+  try { first = !sessionStorage.getItem('lx-intro'); sessionStorage.setItem('lx-intro', '1'); } catch (e) {}
+  var v = document.createElement('div');
+  v.className = 'lx-veil' + (first ? ' lx-intro' : '');
+  document.body.appendChild(v);
+  function out(){ v.classList.add('lx-out'); setTimeout(function(){ v.remove(); }, 900); }
+  if (!first){ requestAnimationFrame(function(){ requestAnimationFrame(out); }); return; }
+  var img = new Image(), done = false;
+  img.alt = '';
+  function go(){ if (done) return; done = true; v.appendChild(img); requestAnimationFrame(function(){ v.classList.add('lx-go'); }); setTimeout(out, 1850); }
+  img.onload = go; img.onerror = function(){ done = true; out(); };
+  img.src = 'luxe/intro-logo.png';
+  setTimeout(function(){ if (!done){ done = true; out(); } }, 1500);
+})();
+</script>
 
 <header>
   <a href="index.html"><img class="logo-img" src="logo.png" alt="Dolçe Aesthetic Clinic"></a>
@@ -106,9 +126,9 @@
     <p class="dx-eyebrow">Dermal Fillers &amp; Botox</p>
     <h2 class="dx-h2">Before &amp; after</h2>
     <div class="dx-ba-grid">
-      <figure class="dx-ba-card"><div class="dx-media"><img src="lip%20filler.png" alt="Lip filler before and after" loading="lazy"></div><figcaption>Lip Filler</figcaption></figure>
-      <figure class="dx-ba-card"><div class="dx-media"><img src="rhino%20filler.png" alt="Rhino dermal filler before and after" loading="lazy"></div><figcaption>Rhino Dermal Filler</figcaption></figure>
-      <figure class="dx-ba-card"><div class="dx-media"><img src="botox.png" alt="Botox before and after" loading="lazy"></div><figcaption>Botox</figcaption></figure>
+      <figure class="dx-ba-card"><div class="dx-media"><a class="dx-lb-link" href="lip%20filler.png" data-lb><img src="lip%20filler.png" alt="Lip filler before and after" loading="lazy"></a></div><figcaption>Lip Filler</figcaption></figure>
+      <figure class="dx-ba-card"><div class="dx-media"><a class="dx-lb-link" href="rhino%20filler.png" data-lb><img src="rhino%20filler.png" alt="Rhino dermal filler before and after" loading="lazy"></a></div><figcaption>Rhino Dermal Filler</figcaption></figure>
+      <figure class="dx-ba-card"><div class="dx-media"><a class="dx-lb-link" href="botox.png" data-lb><img src="botox.png" alt="Botox before and after" loading="lazy"></a></div><figcaption>Botox</figcaption></figure>
     </div>
     <div class="dx-ba-copy">
       <div>
@@ -125,7 +145,7 @@
 
 <!-- HAIR LOSS -->
 <section class="dx-section dx-split flip" id="hair-loss">
-  <div class="dx-split-media is-portrait"><div class="dx-media"><img src="hair%20loss.jpg" alt="Hair loss PRP treatment, before and after" loading="lazy"></div></div>
+  <div class="dx-split-media is-portrait"><div class="dx-media"><a class="dx-lb-link" href="hair%20loss.jpg" data-lb><img src="hair%20loss.jpg" alt="Hair loss PRP treatment, before and after" loading="lazy"></a></div></div>
   <div class="dx-split-copy">
     <p class="dx-eyebrow">Hair Loss Solutions</p>
     <h2 class="dx-h2">PRP therapy</h2>
@@ -162,6 +182,7 @@
 </main>
 
 <!-- CTA -->
+<div class="lx-divider" aria-hidden="true"><span></span><img src="luxe/mark.png" alt=""><span></span></div>
 <section class="cta wrap">
   <p class="eyebrow">Take a moment for yourself</p>
   <h2>Start your journey at Dolce</h2>
@@ -230,5 +251,28 @@
   Object.keys(byId).forEach(function(id){ var s = document.getElementById(id); if (s) io.observe(s); });
 })();
 </script>
+<script>
+// Before & after photos: click a photo to see it large; arrows / swipe / keys to move, Esc or backdrop to close.
+(function(){
+  var links = [].slice.call(document.querySelectorAll('[data-lb]')); if (!links.length) return;
+  var box = document.createElement('div'); box.className = 'psx-lb'; box.setAttribute('role','dialog'); box.setAttribute('aria-modal','true');
+  box.innerHTML = '<button type="button" class="psx-lb-btn psx-lb-x" aria-label="Close">&times;</button><button type="button" class="psx-lb-btn psx-lb-p" aria-label="Previous">&#8249;</button><img alt=""><button type="button" class="psx-lb-btn psx-lb-n" aria-label="Next">&#8250;</button>';
+  document.body.appendChild(box);
+  var img = box.querySelector('img'), cur = 0;
+  function show(i){ cur = (i + links.length) % links.length; img.src = links[cur].getAttribute('href'); img.alt = links[cur].querySelector('img').alt; }
+  function open(i){ show(i); box.classList.add('open'); document.body.style.overflow = 'hidden'; }
+  function close(){ box.classList.remove('open'); document.body.style.overflow = ''; }
+  links.forEach(function(a, i){ a.addEventListener('click', function(e){ e.preventDefault(); open(i); }); });
+  box.querySelector('.psx-lb-x').addEventListener('click', close);
+  box.querySelector('.psx-lb-p').addEventListener('click', function(e){ e.stopPropagation(); show(cur - 1); });
+  box.querySelector('.psx-lb-n').addEventListener('click', function(e){ e.stopPropagation(); show(cur + 1); });
+  box.addEventListener('click', function(e){ if (e.target === box) close(); });
+  document.addEventListener('keydown', function(e){ if (!box.classList.contains('open')) return; if (e.key === 'Escape') close(); else if (e.key === 'ArrowLeft') show(cur - 1); else if (e.key === 'ArrowRight') show(cur + 1); });
+  var tx = null;
+  box.addEventListener('touchstart', function(e){ tx = e.touches[0].clientX; }, {passive:true});
+  box.addEventListener('touchend', function(e){ if (tx === null) return; var dx = e.changedTouches[0].clientX - tx; tx = null; if (Math.abs(dx) > 40) show(cur + (dx < 0 ? 1 : -1)); });
+})();
+</script>
+<script src="luxe/luxe.js?v=2" defer></script>
 </body>
 </html>

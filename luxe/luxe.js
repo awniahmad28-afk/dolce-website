@@ -1,4 +1,4 @@
-/* LUXE TEST: soft reveals, slow photo drift, page-to-page fades.
+/* Soft reveals and page-to-page fades.
    (The first-visit opening and the arrival fade run from a tiny inline
    script at the top of <body>, so they start before anything paints.) */
 (function(){
@@ -45,18 +45,6 @@
     });
   }
   window.addEventListener('scroll', function(){ if (!pending){ pending = true; setTimeout(sweep, 120); } }, { passive: true });
-
-  /* ---------- slow drift on photos while on screen ---------- */
-  var FRAMES = '.about-v2-photo, .dx-media, .story-photo-frame, .page-banner .banner-photo:not(.app-photo), .full-photo, .psx-g-frame, .psx-hero';
-  var drift = new IntersectionObserver(function(entries){
-    entries.forEach(function(e){
-      var img = e.target.querySelectorAll('img, video');
-      img.forEach(function(m){
-        if (e.isIntersecting){ m.classList.remove('lx-drift'); void m.offsetWidth; m.classList.add('lx-drift'); }
-      });
-    });
-  }, { threshold: 0.2 });
-  document.querySelectorAll(FRAMES).forEach(function(f){ drift.observe(f); });
 
   /* ---------- page-to-page fade ---------- */
   document.addEventListener('click', function(e){
