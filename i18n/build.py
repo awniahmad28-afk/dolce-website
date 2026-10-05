@@ -23,6 +23,7 @@ LANGS = {
 SITE = 'https://awniahmad28-afk.github.io/dolce-website/'
 ARABIC = re.compile(r'[؀-ۿ]')
 LATIN = re.compile(r'[A-Za-z]')
+PLUS = re.compile(r'(Dolce\+|NAD\+)')
 
 # T is numbered by the wording list as it was when it was written
 # (strings.base.json); EXTRA holds wording added since, keyed by the English.
@@ -68,6 +69,17 @@ def isolate_latin(soup):
         if p is None or p.name in ('script', 'style', 'bdi', 'title', 'option', 'textarea') or p.find_parent(['script', 'style', 'svg', 'bdi']):
             continue
         s = str(t)
+        if ARABIC.search(s) and PLUS.search(s):
+            # brand names ending in "+" inside Kurdish / Arabic text: keep the
+            # "+" on the right side of the name
+            parts = re.split(r'(?:Dolce\+|NAD\+)', s); names = PLUS.findall(s); new = []
+            for k, part in enumerate(parts):
+                if part: new.append(NavigableString(part))
+                if k < len(names):
+                    b = soup.new_tag('bdi'); b.string = names[k]; new.append(b)
+            for n in new: t.insert_before(n)
+            t.extract()
+            continue
         if not s.strip() or ARABIC.search(s):
             continue
         if not (LATIN.search(s) or re.search(r'\d', s)):

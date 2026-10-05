@@ -57,10 +57,14 @@ html[dir=rtl] .ivB-row::before{left:auto;right:0;}
 html[dir=rtl] :is(.btn,.psx-btn,.pol-btn,.nav-app-btn,.foot-wa-btn,.pol-book-btn,.pol-more,.copy-email-btn,.dx-tag,.pol-nav .back){line-height:1.25;}
 /* English words keep the letter spacing they have on the English pages */
 html[dir=rtl] :is(.btn,.psx-btn,.pol-btn,.nav-app-btn,.foot-wa-btn,.pol-book-btn,.pol-more) bdi{letter-spacing:.12em !important;}
-html[dir=rtl] :is(.eyebrow,.dx-eyebrow,.dx-tabs a,.dx-ba-card figcaption,.dx-stage-cap,.ivB-count,.family-label,.app-badge .badge-small) bdi{letter-spacing:.14em !important;}
+html[dir=rtl] :is(.eyebrow,.dx-eyebrow,.dx-tabs a,.dx-ba-card figcaption,.dx-stage-cap,.ivB-count,.family-label) bdi{letter-spacing:.14em !important;}
+html[dir=rtl] .badge-small bdi{letter-spacing:.04em !important;}
 
 /* counters such as 08 / 09 always read left to right */
 html[dir=rtl] :is(.ivB-count,.pol-lb-count,.psx-lb-count){direction:ltr;unicode-bidi:isolate;}
+
+/* App Store / Google Play badges keep their official left-to-right layout */
+html[dir=rtl] :is(.app-badge,.foot-app-badge){direction:ltr;}
 
 /* the "by Dolçe" signature is English, so it keeps English order */
 html[dir=rtl] .pol-sign{direction:ltr;}
