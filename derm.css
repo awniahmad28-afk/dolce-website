@@ -28,7 +28,7 @@
 .dx-tabs a:hover{color:var(--ink);}
 .dx-tabs a.is-active{color:var(--gold);border-bottom-color:var(--gold);}
 @media (max-width:860px){ .dx-tabs ul{justify-content:flex-start;} }
-.dx-section{scroll-margin-top:64px;}
+.dx-section{scroll-margin-top:48px;}
 
 /* Signature treatments explorer */
 .dx-sig{max-width:1320px;margin:0 auto;padding:clamp(64px,9vw,130px) clamp(20px,5vw,64px);}

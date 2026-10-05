@@ -24,7 +24,7 @@
 <link href="luxe/luxe.css?v=3" rel="stylesheet"/>
 <link as="image" fetchpriority="high" href="luxe/intro-logo-s.png" rel="preload"/>
 <link href="ed/editorial.css?v=3" rel="stylesheet"/>
-<link href="derm.css?v=6" rel="stylesheet"/>
+<link href="derm.css?v=7" rel="stylesheet"/>
 <link href="i18n/i18n.css?v=3" rel="stylesheet"/></head>
 <body>
 <script>/* First visit in a session: the Dolce logo draws itself in gold, then fades
@@ -244,9 +244,22 @@
 </footer>
 <script src="booking.js?v=3"></script>
 <script>
-// Section tabs: highlight the section on screen.
+// Section tabs: a tap scrolls the section to sit right under the sticky tab
+// bar (measured, so nothing from the section before peeks through), and the
+// tab for the section on screen is highlighted.
 (function(){
   var links = [].slice.call(document.querySelectorAll('.dx-tabs a'));
+  var bar = document.querySelector('.dx-tabs');
+  links.forEach(function(a){
+    a.addEventListener('click', function(e){
+      var s = document.getElementById(a.getAttribute('href').slice(1));
+      if (!s || !bar) return;
+      e.preventDefault();
+      var y = s.getBoundingClientRect().top + window.pageYOffset - bar.offsetHeight + 1;
+      window.scrollTo({ top: Math.max(0, y), behavior: 'smooth' });
+      if (history.replaceState) history.replaceState(null, '', '#' + s.id);
+    });
+  });
   if (!links.length || !('IntersectionObserver' in window)) return;
   var byId = {}; links.forEach(function(a){ byId[a.getAttribute('href').slice(1)] = a; });
   var io = new IntersectionObserver(function(entries){
