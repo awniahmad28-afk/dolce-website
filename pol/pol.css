@@ -1,0 +1,117 @@
+/* Polished: finishing touches (gold details, menu card, editorial gallery,
+   one-at-a-time reviews, signature footer). Loaded after luxe/luxe.css. */
+
+/* ---------- opening: the Polished logo, a touch wider than Dolce's ---------- */
+.lx-intro img{width:min(360px,72vw);}
+
+/* ---------- hero: slow drift on the video, gold frame on the logo ---------- */
+.pol-hero-photo{overflow:hidden;}
+.pol-hero-video{animation:polDrift 22s ease-in-out infinite alternate;transform-origin:60% 50%;}
+@keyframes polDrift{from{transform:scale(1.02) translate3d(0,0,0);}to{transform:scale(1.1) translate3d(-1.5%,-1%,0);}}
+.pol-hero-logo-plate{position:relative;padding:clamp(18px,2.2vw,26px) clamp(22px,2.8vw,34px);border:1px solid rgba(198,161,91,.55);}
+.pol-hero-logo-plate::before{content:"";position:absolute;inset:6px;border:1px solid rgba(198,161,91,.22);pointer-events:none;}
+.pol-hero-logo-plate::after{content:"";position:absolute;left:50%;bottom:-4px;width:7px;height:7px;background:var(--pol-gold);transform:translateX(-50%) rotate(45deg);}
+
+/* ---------- buttons: gold sweep on hover, a slow shimmer on gold ones ---------- */
+.pol-btn-outline,.pol-btn-dark-outline,.pol-more,.pol-nav .back{background-image:linear-gradient(var(--pol-gold),var(--pol-gold));background-repeat:no-repeat;background-position:left center;background-size:0% 100%;transition:background-size .55s cubic-bezier(.65,0,.35,1),color .4s ease,border-color .4s ease,transform .18s ease;}
+.pol-btn-outline:hover,.pol-more:hover,.pol-nav .back:hover{opacity:1;background-color:transparent;background-size:100% 100%;color:var(--pol-ink);border-color:var(--pol-gold);}
+.pol-btn-dark-outline{background-image:linear-gradient(var(--pol-ink),var(--pol-ink));}
+.pol-btn-dark-outline:hover{opacity:1;background-size:100% 100%;color:var(--pol-beige);border-color:var(--pol-ink);}
+.pol-btn-solid,.pol-book-btn{position:relative;overflow:hidden;isolation:isolate;}
+.pol-btn-solid::after,.pol-book-btn::after{content:"";position:absolute;top:0;bottom:0;left:-60%;width:45%;z-index:-1;background:linear-gradient(100deg,rgba(255,250,235,0) 0%,rgba(255,250,235,.55) 50%,rgba(255,250,235,0) 100%);transform:skewX(-18deg);animation:polShine 7s ease-in-out infinite;}
+.pol-book-btn::after{animation-delay:3.5s;}
+@keyframes polShine{0%,72%{left:-60%;}100%{left:130%;}}
+.pol-btn-solid:hover,.pol-book-btn:hover{opacity:1;background:#D4B270;}
+
+/* ---------- header: a gold dot follows the section you're reading ---------- */
+@media (min-width:761px){.pol-nav{position:relative;}}
+.pol-nav-dot{position:absolute;bottom:-9px;left:0;width:5px;height:5px;border-radius:50%;background:var(--pol-gold);opacity:0;transform:translateX(-50%);transition:left .55s cubic-bezier(.65,0,.35,1),opacity .4s ease;pointer-events:none;}
+.pol-nav-dot.is-on{opacity:1;}
+.pol-nav a.is-current{color:var(--pol-gold);}
+@media (max-width:760px){.pol-nav-dot{display:none;}}
+
+/* ---------- gold hairline divider ---------- */
+.pol-divider{display:flex;align-items:center;justify-content:center;gap:18px;padding:clamp(28px,4vw,44px) 20px;}
+.pol-divider span{display:block;height:1px;width:min(170px,26vw);background:linear-gradient(90deg,rgba(198,161,91,0),rgba(198,161,91,.8));}
+.pol-divider span:last-child{background:linear-gradient(90deg,rgba(198,161,91,.8),rgba(198,161,91,0));}
+.pol-divider i{display:block;width:6px;height:6px;background:var(--pol-gold);transform:rotate(45deg);}
+.pol-divider.on-cream{background:var(--pol-cream);}
+.pol-divider.on-beige{background:var(--pol-beige);}
+/* the emerald band is edged in gold */
+.pol-gallery{border-top:1px solid rgba(198,161,91,.55);border-bottom:1px solid rgba(198,161,91,.55);box-shadow:inset 0 6px 0 -5px rgba(198,161,91,.25),inset 0 -6px 0 -5px rgba(198,161,91,.25);}
+
+/* ---------- services: a salon menu card ---------- */
+.pol-services-copy{justify-content:center;}
+.pol-card{position:relative;background:var(--pol-cream);border:1px solid var(--pol-emerald);padding:clamp(40px,5vw,60px) clamp(24px,4vw,52px);text-align:center;max-width:560px;width:100%;margin:0 auto;box-shadow:0 30px 60px -40px rgba(59,42,30,.45);}
+.pol-card::before{content:"";position:absolute;inset:7px;border:1px solid rgba(198,161,91,.6);pointer-events:none;}
+.pol-card .pol-section-head h2{font-style:italic;}
+.pol-card-orn{display:flex;align-items:center;justify-content:center;gap:12px;margin:22px auto 0;}
+.pol-card-orn span{width:46px;height:1px;background:var(--pol-gold);}
+.pol-card-orn i{width:5px;height:5px;background:var(--pol-gold);transform:rotate(45deg);}
+.pol-card .pol-menu-group{margin-top:34px;}
+.pol-card .pol-menu-group p.label{display:flex;align-items:center;justify-content:center;gap:14px;margin-bottom:6px;font-size:11px;letter-spacing:.28em;color:var(--pol-emerald);}
+.pol-card .pol-menu-group p.label::before,.pol-card .pol-menu-group p.label::after{content:"";width:28px;height:1px;background:rgba(198,161,91,.7);}
+.pol-card .pol-menu-item{display:block;padding:16px 0;border-bottom:none;position:relative;}
+.pol-card .pol-menu-item + .pol-menu-item::before{content:"";position:absolute;top:0;left:50%;width:4px;height:4px;background:rgba(198,161,91,.8);transform:translate(-50%,-50%) rotate(45deg);}
+.pol-card .pol-menu-item .name{font-family:var(--pol-font-display);font-size:clamp(21px,2vw,24px);font-weight:400;letter-spacing:.01em;}
+.pol-card .pol-menu-item .desc{font-size:13.5px;font-style:italic;letter-spacing:.02em;margin-top:4px;}
+
+/* ---------- gallery: editorial mosaic ---------- */
+.pol-mosaic{display:grid;grid-template-columns:repeat(4,1fr);grid-auto-flow:dense;gap:10px;max-width:1200px;margin:48px auto 0;text-align:left;}
+.pol-mosaic .pol-m-item{position:relative;margin:0;aspect-ratio:4/5;cursor:zoom-in;background:rgba(0,0,0,.14);}
+.pol-mosaic .pol-m-item:nth-child(8n+1){grid-column:span 2;grid-row:span 2;aspect-ratio:auto;}
+.pol-mosaic .pol-m-item:nth-child(8n+8){grid-column:span 2;aspect-ratio:auto;}
+.pol-mosaic .pol-m-item img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform 1.2s cubic-bezier(.2,.7,.2,1),filter .6s ease;}
+.pol-mosaic .pol-m-item:hover img{transform:scale(1.025);}
+.pol-mosaic .pol-m-item::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(22,61,49,0) 60%,rgba(22,30,24,.55) 100%);pointer-events:none;}
+.pol-tag{position:absolute;left:14px;bottom:12px;z-index:1;display:flex;align-items:center;gap:8px;font-size:10.5px;font-weight:600;letter-spacing:.26em;text-transform:uppercase;color:#E9D3A3;}
+.pol-tag::before{content:"";width:18px;height:1px;background:var(--pol-gold);}
+.pol-mosaic .pol-m-item:nth-child(8n+1) .pol-tag{left:22px;bottom:20px;font-size:11.5px;}
+.pol-mosaic .pol-m-item.is-hidden{display:none;}
+@media (max-width:640px){
+  .pol-mosaic{grid-template-columns:repeat(2,1fr);gap:6px;margin-top:36px;}
+  /* on phones the feature and the wide photo each fill a row, so they set their own shape */
+  .pol-mosaic .pol-m-item:nth-child(8n+1){grid-row:span 1;aspect-ratio:4/5;}
+  .pol-mosaic .pol-m-item:nth-child(8n+8){aspect-ratio:8/5;}
+  .pol-tag{left:10px;bottom:9px;font-size:9.5px;letter-spacing:.2em;}
+  .pol-tag::before{width:12px;}
+}
+
+/* ---------- photo viewer: fades in, gold counter ---------- */
+.pol-lightbox{display:flex;opacity:0;visibility:hidden;transition:opacity .45s ease,visibility 0s linear .45s;}
+.pol-lightbox.open{opacity:1;visibility:visible;transition:opacity .45s ease;}
+.pol-lightbox img{transform:scale(.97);transition:transform .6s cubic-bezier(.2,.7,.2,1),opacity .35s ease;}
+.pol-lightbox.open img{transform:none;}
+.pol-lightbox img.is-swap{opacity:0;}
+.pol-lb-count{color:var(--pol-gold);font-family:var(--pol-font-display);font-style:italic;font-size:15px;letter-spacing:.08em;}
+.pol-lb-close,.pol-lb-prev,.pol-lb-next{font-weight:200;}
+
+/* ---------- reviews: one large quote at a time ---------- */
+.pol-quotes{max-width:900px;margin:clamp(40px,6vw,64px) auto 0;text-align:center;}
+.pol-quotes::before{content:"\201C";display:block;font-family:var(--pol-font-display);font-size:clamp(96px,11vw,150px);line-height:.55;color:var(--pol-gold);opacity:.6;}
+.pol-quotes .ed-stack{display:grid;margin-top:clamp(18px,2vw,26px);}
+.pol-quotes .ed-quote{grid-area:1/1;align-self:center;margin:0;opacity:0;transform:translateY(10px);transition:opacity .6s ease,transform .6s ease;pointer-events:none;}
+.pol-quotes .ed-quote.is-on{opacity:1;transform:none;pointer-events:auto;transition:opacity .9s ease .6s,transform 1s cubic-bezier(.2,.7,.2,1) .6s;}
+.pol-quotes blockquote{margin:0;font-family:var(--pol-font-display);font-style:italic;font-weight:400;font-size:clamp(20px,2.2vw,30px);line-height:1.5;color:var(--pol-ink);}
+.pol-quotes .stars{margin-top:26px;color:var(--pol-gold);letter-spacing:.24em;font-size:14px;}
+.pol-quotes figcaption{margin-top:10px;font-size:11.5px;font-weight:600;letter-spacing:.22em;text-transform:uppercase;color:#7A6650;}
+.pol-quotes .ed-dots{display:flex;justify-content:center;gap:6px;margin-top:clamp(26px,3vw,40px);}
+.pol-quotes .ed-dots button{all:unset;cursor:pointer;padding:12px 6px;}
+.pol-quotes .ed-dots button::before{content:"";display:block;width:34px;height:2px;background:var(--pol-line);transition:background .4s ease;}
+.pol-quotes .ed-dots button.is-on::before{background:var(--pol-gold);}
+.pol-quotes .ed-dots button:focus-visible::before{outline:2px solid var(--pol-gold);outline-offset:4px;}
+
+/* ---------- footer: Polished, then a "by Dolçe" signature ---------- */
+.pol-footer .pol-foot-logo{height:auto;width:min(220px,56vw);margin:0 auto;filter:drop-shadow(0 0 8px rgba(241,233,218,.35));}
+.pol-sign{display:inline-flex;align-items:center;gap:16px;margin-top:30px;text-decoration:none;color:#C9B99A;}
+.pol-sign span.l{width:clamp(40px,8vw,90px);height:1px;background:linear-gradient(90deg,rgba(198,161,91,0),rgba(198,161,91,.85));}
+.pol-sign span.r{width:clamp(40px,8vw,90px);height:1px;background:linear-gradient(90deg,rgba(198,161,91,.85),rgba(198,161,91,0));}
+.pol-sign em{font-family:var(--pol-font-display);font-style:italic;font-size:17px;color:#E9D3A3;}
+.pol-footer .pol-sign img{height:42px;width:auto;margin:0;transition:transform .5s ease;}
+.pol-sign:hover img{transform:translateY(-2px);}
+
+/* ---------- reveals: luxe.js sets these; Polished items share the same feel ---------- */
+@media (prefers-reduced-motion:reduce){
+  .pol-hero-video,.pol-btn-solid::after,.pol-book-btn::after{animation:none;}
+  .pol-lightbox,.pol-lightbox img{transition:none;}
+}
