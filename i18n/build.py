@@ -147,7 +147,7 @@ def build(page, lang):
         'html.parser')
     for c in reversed(list(extra.contents)):
         vp.insert_after(c)
-    head.append(BeautifulSoup('<link rel="stylesheet" href="i18n/i18n.css?v=1">', 'html.parser').link)
+    head.append(BeautifulSoup('<link rel="stylesheet" href="i18n/i18n.css?v=2">', 'html.parser').link)
 
     # language switcher: header row + phone menu
     hr = soup.select_one('.head-right') or soup.select_one('.pol-head-right')

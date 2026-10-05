@@ -14,6 +14,9 @@ html[dir=rtl] body *{letter-spacing:0 !important;font-style:normal !important;}
 html[dir=rtl] h1,html[dir=rtl] h2,html[dir=rtl] h3,html[dir=rtl] h4{line-height:1.45;}
 html[dir=rtl] p,html[dir=rtl] li,html[dir=rtl] blockquote{line-height:1.9;}
 html[dir=rtl] .eyebrow{font-size:13px;}
+/* no large opening letter: Arabic-script letters join, so lifting the
+   first one out would break the word */
+html[dir=rtl] .story-text p:first-child::first-letter{float:none;font-size:inherit;line-height:inherit;padding:0;color:inherit;font-family:inherit;}
 /* English kept as is (names, reviews) sits in its own left-to-right run */
 html[dir=rtl] bdi{unicode-bidi:isolate;}
 /* phone numbers and e-mail addresses always read left to right */
