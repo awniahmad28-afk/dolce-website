@@ -35,3 +35,50 @@
     });
   });
 })();
+
+// App Store / Google Play buttons: the app isn't out yet, so they open a
+// "Dolce+ - Coming soon" popup over a faded, blurred page.
+(function(){
+  var badges = document.querySelectorAll('.app-badge, .foot-app-badge');
+  if (!badges.length) return;
+  var modal = null, lastFocus = null;
+  function build(){
+    modal = document.createElement('div');
+    modal.className = 'app-soon';
+    modal.setAttribute('role', 'dialog');
+    modal.setAttribute('aria-modal', 'true');
+    modal.setAttribute('aria-label', 'Dolce+ app, coming soon');
+    modal.innerHTML = '<button type="button" class="app-soon-x" aria-label="Close">&times;</button>' +
+      '<div class="app-soon-card"><img src="dolce-plus-logo.png" alt="Dolce+"><p>Coming soon</p></div>';
+    document.body.appendChild(modal);
+    modal.addEventListener('click', close);
+  }
+  function open(e){
+    if (e) e.preventDefault();
+    if (!modal) build();
+    lastFocus = document.activeElement;
+    void modal.offsetWidth;            // let the fade-in run on first open
+    modal.classList.add('is-open');
+    document.documentElement.classList.add('app-soon-lock');
+    modal.querySelector('.app-soon-x').focus();
+  }
+  function close(){
+    if (!modal || !modal.classList.contains('is-open')) return;
+    modal.classList.remove('is-open');
+    document.documentElement.classList.remove('app-soon-lock');
+    if (lastFocus && lastFocus.focus) lastFocus.focus();
+  }
+  badges.forEach(function(b){
+    if (b.tagName !== 'A' && b.tagName !== 'BUTTON'){
+      b.setAttribute('role', 'button');
+      b.setAttribute('tabindex', '0');
+    }
+    b.removeAttribute('aria-disabled');
+    b.removeAttribute('title');
+    b.addEventListener('click', open);
+    b.addEventListener('keydown', function(e){
+      if (e.key === 'Enter' || e.key === ' ') open(e);
+    });
+  });
+  document.addEventListener('keydown', function(e){ if (e.key === 'Escape') close(); });
+})();

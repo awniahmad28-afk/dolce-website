@@ -197,8 +197,16 @@ header.header-overlay .nav-toggle{color:#F1E9DA;}
 .badge-text .badge-big{font-size:14px;font-weight:700;}
 .app-badge{display:inline-flex;align-items:center;gap:10px;background:var(--ink);color:var(--ground);border:none;border-radius:8px;padding:9px 16px;text-decoration:none;transition:opacity .15s ease;}
 .app-badge:hover{opacity:.82;}
-.app-badge.is-soon{cursor:default;}
-.app-badge.is-soon:hover{opacity:1;}
+.app-badge.is-soon{cursor:pointer;}
+/* "Dolce+ - Coming soon" popup opened by the App Store / Google Play buttons */
+.app-soon{position:fixed;inset:0;z-index:1000;display:flex;align-items:center;justify-content:center;padding:24px;background:rgba(251,247,239,.84);-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px);opacity:0;visibility:hidden;transition:opacity .35s ease,visibility 0s linear .35s;cursor:pointer;}
+.app-soon.is-open{opacity:1;visibility:visible;transition:opacity .35s ease;}
+.app-soon-card{text-align:center;transform:translateY(12px) scale(.96);transition:transform .5s cubic-bezier(.2,.7,.2,1);}
+.app-soon.is-open .app-soon-card{transform:none;}
+.app-soon-card img{display:block;width:min(320px,68vw);height:auto;margin:0 auto;}
+.app-soon-card p{margin:24px 0 0;font-size:13px;font-weight:600;letter-spacing:.3em;text-transform:uppercase;color:var(--gold);}
+.app-soon-x{position:absolute;top:18px;right:20px;background:none;border:none;padding:6px 10px;font-size:34px;line-height:1;color:var(--ink);cursor:pointer;}
+html.app-soon-lock{overflow:hidden;}
 
 /* ---------- numbered treatment list (editorial index style) ---------- */
 .idx-head{text-align:center;padding-bottom:14px;}
