@@ -143,6 +143,11 @@ def build(page, lang):
     # <html>, <head>
     soup.html['lang'] = lang; soup.html['dir'] = 'rtl'
     head = soup.head
+    # the English pages load a tiny copy of the Arabic-script font holding only
+    # the letters of the language picker; here the full font is loaded, and
+    # mixing the two would break letters apart, so the tiny copy goes
+    for l in head.find_all('link', href=re.compile(r'fonts\.googleapis\.com/.*[?&]text=')):
+        l.decompose()
     vp = head.find('meta', attrs={'name': 'viewport'})
     extra = BeautifulSoup(
         f'<meta property="og:locale" content="{L["locale"]}">'
