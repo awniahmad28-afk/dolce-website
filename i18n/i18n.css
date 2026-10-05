@@ -1,0 +1,68 @@
+/* Kurdish (Sorani) and Arabic pages: right-to-left layout, Arabic-script
+   fonts, and the language switcher. */
+
+/* ---------- fonts: Latin words keep the site fonts, Arabic script uses Noto ---------- */
+html[lang=ckb], html[lang=ar]{
+  --font-display:'Cormorant Garamond','Noto Naskh Arabic','Iowan Old Style',Georgia,serif;
+  --font-body:'Work Sans','Noto Sans Arabic','Segoe UI',system-ui,sans-serif;
+  --pol-font-display:'Fraunces','Noto Naskh Arabic',serif;
+  --pol-font-body:'Jost','Noto Sans Arabic',sans-serif;
+}
+/* Arabic script joins its letters: spacing them out, slanting them or
+   capitalising has no place here. */
+html[dir=rtl] body *{letter-spacing:0 !important;font-style:normal !important;}
+html[dir=rtl] h1,html[dir=rtl] h2,html[dir=rtl] h3,html[dir=rtl] h4{line-height:1.45;}
+html[dir=rtl] p,html[dir=rtl] li,html[dir=rtl] blockquote{line-height:1.9;}
+html[dir=rtl] .eyebrow{font-size:13px;}
+/* English kept as is (names, reviews) sits in its own left-to-right run */
+html[dir=rtl] bdi{unicode-bidi:isolate;}
+/* phone numbers and e-mail addresses always read left to right */
+html[dir=rtl] .tel-link,html[dir=rtl] a[href^="tel:"]:not(.btn):not(.psx-btn):not(.pol-btn),
+html[dir=rtl] a[href^="mailto:"]{direction:ltr;unicode-bidi:isolate;}
+
+/* ---------- arrows and chevrons point the other way ---------- */
+html[dir=rtl] .back-arrow,html[dir=rtl] .pol-nav .back-arrow{transform:scaleX(-1);}
+
+/* ---------- heroes ---------- */
+/* Plastic Surgery: the photo leaves room on the left, so the text stays there */
+@media (min-width:761px){
+  html[dir=rtl] .psx-hero .psx-intro{align-items:flex-end;}
+  html[dir=rtl] .psx-hero .psx-title,html[dir=rtl] .psx-hero .psx-lede{width:min(560px,50%);text-align:right;}
+  html[dir=rtl] .psx-hero .psx-rule{margin-right:0;margin-left:calc(min(560px,50%) - 56px);}
+}
+/* Dermatology: text moves to the right, so the dark shading follows it */
+html[dir=rtl] .dx-hero::after{background:linear-gradient(270deg,rgba(20,14,9,.82) 0%,rgba(20,14,9,.55) 45%,rgba(20,14,9,.1) 100%),linear-gradient(0deg,rgba(20,14,9,.55),rgba(20,14,9,0) 50%);}
+
+/* full-width bands: the left-to-right centring trick, mirrored */
+html[dir=rtl] .blood-band,html[dir=rtl] .services .services-grid,html[dir=rtl] .duo-photos{margin-left:0;margin-right:calc(50% - 50vw);}
+/* Blood testing: the tubes sit on the right of the picture, so the text stays left */
+@media (min-width:861px){ html[dir=rtl] .blood-text{margin-left:0;margin-right:auto;} }
+
+/* the "by Dolçe" signature is English, so it keeps English order */
+html[dir=rtl] .pol-sign{direction:ltr;}
+
+/* ---------- language switcher ---------- */
+.lang-switch{display:flex;align-items:center;gap:2px;font-size:12px;font-weight:600;white-space:nowrap;}
+.lang-switch a{padding:4px 7px;border-radius:999px;text-decoration:none;color:inherit;opacity:.72;transition:opacity .2s ease,color .2s ease;}
+.lang-switch a:hover{opacity:1;color:var(--gold,#C6A15B);}
+.lang-switch a[aria-current=page]{opacity:1;color:#C6A15B !important;}
+.lang-switch a[lang=ckb],.lang-switch a[lang=ar]{font-family:'Noto Sans Arabic',sans-serif;font-size:13px;}
+.lang-switch a + a{position:relative;}
+.lang-switch a + a::before{content:"";position:absolute;top:50%;inset-inline-start:-1px;width:1px;height:11px;margin-top:-5px;background:currentColor;opacity:.35;}
+/* clinic header */
+.head-right .lang-switch{color:var(--ink-soft,#5b4a3a);}
+header.header-overlay .head-right .lang-switch{color:#F1E9DA;}
+/* Polished header */
+.pol-head-right .lang-switch{color:var(--pol-beige,#F1E9DA);}
+/* in the menu: only on screens where the menu folds away */
+.ls-menu{display:none;}
+@media (max-width:600px){
+  .ls-head{display:none;}
+  nav.mainnav .ls-menu{display:flex;padding:14px 0 4px;gap:6px;}
+  nav.mainnav .ls-menu a{width:auto !important;padding:4px 10px !important;border-bottom:none !important;font-size:13px !important;}
+}
+@media (max-width:760px){
+  .pol-head-right .ls-head{display:none;}
+  nav.pol-nav .ls-menu{display:flex;padding:14px 0 4px;gap:6px;color:var(--pol-beige,#F1E9DA);}
+  nav.pol-nav .ls-menu a{width:auto !important;padding:4px 10px !important;border-bottom:none !important;}
+}

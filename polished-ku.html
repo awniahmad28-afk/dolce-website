@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+
+<html dir="rtl" lang="ckb">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="noindex, nofollow" name="robots"/><meta content="ckb_IQ" property="og:locale"/><link href="https://awniahmad28-afk.github.io/dolce-website/polished.html" hreflang="en" rel="alternate"/><link href="https://awniahmad28-afk.github.io/dolce-website/polished-ku.html" hreflang="ckb" rel="alternate"/><link href="https://awniahmad28-afk.github.io/dolce-website/polished-ar.html" hreflang="ar" rel="alternate"/><link href="https://fonts.googleapis.com/css2?family=Noto+Naskh+Arabic:wght@400;500;600&amp;family=Noto+Sans+Arabic:wght@300;400;500;600&amp;display=swap" rel="stylesheet"/><script>window.DOLCE_T={"copied": "✓ کۆپی کرا", "soon": "بەم زووانە", "close": "داخستن", "appLabel": "ئەپی Dolce+، بەم زووانە", "next": "وێنەی دواتر", "prev": "وێنەی پێشوو", "wa": "لە WhatsApp قسەمان لەگەڵ بکە", "more": "زیاتر ببینە"};</script>
+<link as="image" fetchpriority="high" href="pol/intro-logo.png" rel="preload"/>
+<link href="favicon.ico" rel="icon" sizes="any"/>
+<link href="icons/icon-32.png" rel="icon" sizes="32x32" type="image/png"/>
+<link href="icons/apple-touch-icon.png" rel="apple-touch-icon"/>
+<meta content="#241A10" name="theme-color"/>
+<meta content="سالۆنی جوانیی سەر بە کلینیکی جوانکاریی Dolce — قژ، نینۆک و جوانی بە هەمان وردی و ئاستی گرنگیدان، لە سالۆنەکەمان لە Park View لە هەولێر." name="description"/>
+<meta content="website" property="og:type"/>
+<meta content="Polished by Dolce" property="og:site_name"/>
+<meta content="Polished by Dolce — Park View، هەولێر" property="og:title"/>
+<meta content="سالۆنی جوانیی سەر بە کلینیکی جوانکاریی Dolce — قژ، نینۆک و جوانی بە هەمان وردی و ئاستی گرنگیدان، لە سالۆنەکەمان لە Park View لە هەولێر." property="og:description"/>
+<meta content="https://awniahmad28-afk.github.io/dolce-website/polished-ku.html" property="og:url"/>
+<meta content="https://awniahmad28-afk.github.io/dolce-website/og-polished.jpg" property="og:image"/>
+<meta content="1200" property="og:image:width"/>
+<meta content="630" property="og:image:height"/>
+<meta content="Polished by Dolce" property="og:image:alt"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<title>Polished by Dolce — Park View، هەولێر</title>
+<link href="styles.css?v=52" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400..600;1,9..144,400..600&amp;family=Jost:wght@300;400;500;600&amp;display=swap" rel="stylesheet"/>
+<style>
+  :root{
+    --pol-beige:#F1E9DA;
+    --pol-cream:#FBF6EC;
+    --pol-line:#E3D5BC;
+    --pol-gold:#C6A15B;
+    --pol-brown:#6B4226;
+    --pol-ink:#3B2A1E;
+    --pol-emerald:#1F5C4A;
+    --pol-emerald-dark:#163D31;
+    --pol-font-display:'Fraunces', serif;
+    --pol-font-body:'Jost', sans-serif;
+  }
+  body{background:var(--pol-beige); color:var(--pol-ink); font-family:var(--pol-font-body);}
+
+  .pol-header{background:var(--pol-ink); border-bottom:1px solid rgba(198,161,91,.25);}
+  .pol-wordmark{display:flex; align-items:center; line-height:0;}
+  .pol-wordmark img{height:30px; width:auto; display:block; filter:drop-shadow(0 0 6px rgba(241,233,218,.55));}
+  .pol-nav{display:flex; align-items:center; gap:30px;}
+  .pol-nav a{font-size:12.5px; font-weight:600; letter-spacing:.1em; text-transform:uppercase; text-decoration:none; color:var(--pol-beige);}
+  .pol-nav a:hover{color:var(--pol-gold);}
+  .pol-nav .back{border:1px solid rgba(241,233,218,.35); border-radius:999px; padding:9px 20px; color:var(--pol-beige);}
+  .pol-nav .back-arrow{display:inline-block; width:.8em; height:.8em; margin-left:.45em; vertical-align:-.05em;}
+  .pol-nav .back:hover{background:var(--pol-gold); border-color:var(--pol-gold); color:var(--pol-ink);}
+  .pol-head-right{display:flex; align-items:center; gap:18px;}
+  .pol-head-social{display:flex; align-items:center; gap:14px;}
+  .pol-head-social a{color:var(--pol-beige); display:flex; align-items:center;}
+  .pol-head-social a:hover{color:var(--pol-gold);}
+  .pol-head-social svg{width:16px; height:16px; fill:currentColor; display:block;}
+  .pol-dolce-link{display:flex; align-items:center; flex-shrink:0;}
+  .pol-dolce-link img{height:30px; width:auto; display:block;}
+  .pol-core-link{display:flex; align-items:center; flex-shrink:0;}
+  .pol-core-link img{height:26px; width:auto; display:block;}
+  .pol-toggle{display:none; background:none; border:none; padding:4px; cursor:pointer; color:var(--pol-beige);}
+  .pol-toggle svg{width:24px; height:24px; display:block;}
+  .pol-book-btn{background:var(--pol-gold); color:var(--pol-ink); font-weight:600; border-radius:2px; padding:9px 18px; text-decoration:none; font-size:12.5px; letter-spacing:.08em; text-transform:uppercase;}
+  .pol-book-btn:hover{opacity:.87; color:var(--pol-ink);}
+  @media (max-width:760px){
+    .pol-toggle{display:block;}
+    .pol-nav{display:none; position:absolute; top:100%; left:0; right:0; flex-direction:column; align-items:flex-start; gap:0; background:var(--pol-ink); border-top:1px solid rgba(198,161,91,.25); border-bottom:1px solid rgba(198,161,91,.25); padding:6px clamp(20px,5vw,48px) 14px; z-index:60;}
+    .pol-nav.open{display:flex;}
+    .pol-nav a{width:100%; padding:13px 0; border-bottom:1px solid rgba(198,161,91,.18);}
+    .pol-nav .back{border:none; border-radius:0; padding:13px 0;}
+    .pol-nav .pol-book-btn{width:100%; box-sizing:border-box; text-align:center; margin-top:8px; border-bottom:none;}
+  }
+
+  /* hero */
+  .pol-hero{position:relative; background:var(--pol-ink); display:flex; min-height:560px; flex-wrap:wrap; overflow:hidden;}
+  .pol-hero-glow{position:absolute; top:10%; left:2%; width:420px; height:420px; border-radius:50%; background:radial-gradient(circle, var(--pol-gold) 0%, rgba(198,161,91,0) 68%); filter:blur(34px); animation:polGlow 6s ease-in-out infinite;}
+  @keyframes polGlow{ 0%,100%{ opacity:.35; transform:scale(1);} 50%{ opacity:.6; transform:scale(1.07);} }
+  .pol-hero-copy{position:relative; flex:1 1 460px; min-width:300px; display:flex; flex-direction:column; justify-content:center; gap:20px; padding:64px clamp(24px,5vw,64px);}
+  .pol-hero-copy .eyebrow{color:var(--pol-gold); font-family:var(--pol-font-body); letter-spacing:.2em;}
+  .pol-hero-copy h1{margin:0;}
+  .pol-hero-logo-plate{align-self:flex-start; margin-top:14px;}
+  .pol-hero-logo-plate img{height:clamp(56px,8vw,88px); width:auto; display:block; filter:drop-shadow(0 0 10px rgba(241,233,218,.55));}
+  .pol-hero-copy p{margin-top:18px; max-width:42ch; font-size:16px; line-height:1.65; color:#D9CBB4; font-weight:300;}
+  .pol-hero-actions{display:flex; gap:14px; margin-top:22px; flex-wrap:wrap;}
+  .pol-btn{font-size:12.5px; font-weight:600; letter-spacing:.08em; text-transform:uppercase; padding:15px 28px; border-radius:2px; text-decoration:none; transition:opacity .18s ease, transform .18s ease;}
+  .pol-btn:hover{opacity:.87; transform:translateY(-1px);}
+  .pol-btn-solid{background:var(--pol-gold); color:var(--pol-ink);}
+  .pol-btn-outline{color:#F1E9DA; border:1px solid rgba(241,233,218,.35);}
+  .pol-hero-photo{position:relative; flex:1 1 380px; min-width:260px; display:flex; align-items:stretch;}
+  .pol-hero-video{width:100%; height:100%; object-fit:cover; display:block;}
+  .pol-photo-block{width:100%; display:flex; align-items:center; justify-content:center; font-size:12px; letter-spacing:.08em; text-transform:uppercase; color:#E8DCC8; transition:transform .25s ease;}
+  .pol-photo-block:hover{transform:scale(1.02);}
+  .pol-photo-emerald{background:linear-gradient(160deg,#1F5C4A,#123D31);}
+  .pol-photo-brown{background:linear-gradient(160deg,#6B4226,#3B2A1E);}
+
+  /* section heads */
+  .pol-section{padding:clamp(64px,8vw,100px) clamp(24px,5vw,64px);}
+  .pol-section-head p.eyebrow{font-family:var(--pol-font-body); letter-spacing:.2em; color:var(--pol-gold);}
+  .pol-section-head h2{font-family:var(--pol-font-display); font-weight:400; font-size:clamp(30px,3.6vw,38px); letter-spacing:-.01em; margin-top:14px; color:var(--pol-ink);}
+
+  /* about */
+  .pol-about{background:var(--pol-cream); display:flex; flex-wrap:wrap;}
+  .pol-about-copy{flex:1 1 480px; min-width:300px; padding:clamp(64px,8vw,96px) clamp(24px,5vw,64px); display:flex; flex-direction:column; justify-content:center; gap:18px;}
+  .pol-about-copy .pol-section-head{margin-bottom:10px;}
+  .pol-about-copy .pol-section-head p.eyebrow{color:var(--pol-emerald);}
+  .pol-about-copy > p{max-width:52ch; font-size:16px; line-height:1.75; color:#6E5A45; font-weight:300;}
+  .pol-about-copy > p.pol-about-close{margin-top:8px; font-family:var(--pol-font-display); font-style:italic; font-size:clamp(19px,1.8vw,22px); line-height:1.5; color:var(--pol-ink); font-weight:400;}
+  .pol-about-photo{flex:1 1 360px; min-width:260px; display:flex; align-items:stretch;}
+  .pol-about-img{width:100%; aspect-ratio:4/5; object-fit:cover; display:block;}
+
+  /* services */
+  .pol-services{background:var(--pol-beige); display:flex; flex-wrap:wrap;}
+  .pol-services-copy{flex:1 1 480px; min-width:300px; padding:clamp(64px,8vw,96px) clamp(24px,5vw,64px); display:flex; flex-direction:column; gap:44px;}
+  .pol-services-copy .pol-section-head p.eyebrow{color:var(--pol-emerald);}
+  .pol-services-copy h2{color:var(--pol-ink);}
+  .pol-menu-group p.label{margin:0 0 4px; font-size:11.5px; font-weight:600; letter-spacing:.12em; text-transform:uppercase; color:var(--pol-gold);}
+  .pol-menu-item{display:flex; justify-content:space-between; gap:16px; padding:18px 0; border-bottom:1px solid var(--pol-line);}
+  .pol-menu-group .pol-menu-item:last-child{border-bottom:none;}
+  .pol-menu-item .name{font-size:17px; font-weight:500; color:var(--pol-ink);}
+  .pol-menu-item .desc{font-size:13.5px; color:#7A6650; margin-top:5px; font-weight:300;}
+  .pol-menu-item .price{font-size:14px; color:#7A6650; white-space:nowrap; font-weight:300;}
+  .pol-services-photo{flex:1 1 360px; min-width:260px; display:flex; align-items:stretch;}
+  .pol-services-video{width:100%; height:100%; object-fit:cover; display:block; background:#3B2A1E;}
+  @media (max-width:840px){ .pol-services-video{aspect-ratio:608/1080;} }
+
+  /* gallery */
+  .pol-gallery{background:var(--pol-emerald); text-align:center;}
+  .pol-gallery .pol-section-head p.eyebrow{color:var(--pol-gold);}
+  .pol-gallery .pol-section-head h2{color:#F1E9DA;}
+  .pol-masonry{column-count:4; column-gap:8px; max-width:1200px; margin:44px auto 0; text-align:left;}
+  @media (max-width:640px){ .pol-masonry{column-count:2; column-gap:6px;} }
+  .pol-masonry.is-rows{column-count:auto; display:flex; align-items:flex-start; gap:8px;}
+  @media (max-width:640px){ .pol-masonry.is-rows{gap:6px;} }
+  .pol-m-col{flex:1 1 0; min-width:0;}
+  .pol-m-item{display:block; break-inside:avoid; margin:0 0 8px; overflow:hidden; cursor:zoom-in; background:rgba(0,0,0,.12);}
+  @media (max-width:640px){ .pol-m-item{margin-bottom:6px;} }
+  .pol-m-item img{width:100%; height:auto; display:block; transition:transform .35s ease;}
+  .pol-m-item:hover img{transform:scale(1.03);}
+  .pol-m-item.is-hidden{display:none;}
+  .pol-more{margin-top:32px; font-family:var(--pol-font-body); font-size:12.5px; font-weight:600; letter-spacing:.12em; text-transform:uppercase; color:#F1E9DA; background:none; border:1px solid rgba(241,233,218,.5); border-radius:999px; padding:13px 30px; cursor:pointer; transition:background .2s ease,color .2s ease,border-color .2s ease;}
+  .pol-more:hover{background:var(--pol-gold); border-color:var(--pol-gold); color:var(--pol-ink);}
+
+  /* photo viewer */
+  .pol-lightbox{position:fixed; inset:0; z-index:200; display:none; align-items:center; justify-content:center; padding:clamp(56px,6vw,72px) clamp(16px,6vw,88px); background:rgba(22,15,10,.94);}
+  .pol-lightbox.open{display:flex;}
+  .pol-lightbox img{max-width:100%; max-height:100%; object-fit:contain; box-shadow:0 20px 60px rgba(0,0,0,.45);}
+  .pol-lb-btn{position:absolute; border:none; background:none; color:#F1E9DA; cursor:pointer; line-height:1; padding:10px;}
+  .pol-lb-btn:hover{color:var(--pol-gold);}
+  .pol-lb-close{top:10px; right:14px; font-size:36px;}
+  .pol-lb-prev, .pol-lb-next{top:50%; transform:translateY(-50%); font-size:44px;}
+  .pol-lb-prev{left:clamp(4px,1.5vw,20px);}
+  .pol-lb-next{right:clamp(4px,1.5vw,20px);}
+  .pol-lb-count{position:absolute; bottom:16px; left:0; right:0; text-align:center; font-size:12px; letter-spacing:.14em; color:rgba(241,233,218,.7);}
+
+  /* testimonials */
+  .pol-testimonials{background:var(--pol-beige); text-align:center;}
+  .pol-testimonials .pol-section-head p.eyebrow{color:var(--pol-emerald);}
+  .pol-google-link{display:inline-flex; align-items:center; gap:8px; margin-top:18px; padding:10px 18px; border:1px solid var(--pol-line); border-radius:999px; background:rgba(255,255,255,.55); color:var(--pol-ink); font-size:13.5px; font-weight:500; text-decoration:none; transition:border-color .2s ease, background .2s ease;}
+  .pol-google-link:hover{border-color:var(--pol-gold); background:#fff;}
+  .pol-google-link .g{width:18px; height:18px; flex-shrink:0;}
+  .pol-google-link .star{color:#F4B400; font-size:15px; line-height:1;}
+  .pol-google-link .arr{color:var(--pol-gold);}
+  .pol-testi-grid{display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); gap:1px; max-width:1140px; margin:44px auto 0; background:var(--pol-line); text-align:left;}
+  .pol-testi-card{background:var(--pol-cream); padding:40px 32px;}
+  .pol-testi-card .mark{font-family:var(--pol-font-display); font-size:34px; line-height:1; color:var(--pol-gold);}
+  .pol-testi-card p.quote{margin-top:14px; font-size:14.5px; line-height:1.65; color:#4A3826; font-weight:300;}
+  .pol-testi-card .stars{margin-top:20px; color:var(--pol-emerald); font-size:13px; letter-spacing:.1em;}
+  .pol-testi-card .attr{margin-top:8px; font-size:13px; font-weight:600; color:var(--pol-ink);}
+  .pol-testi-card .src{margin-top:4px; font-size:11.5px; letter-spacing:.04em; color:#8A7560;}
+
+  /* booking CTA */
+  /* Call shows on phones only (incl. phones turned sideways); hidden on
+     desktops and tablets. */
+  @media (min-width:701px) and (hover:hover) and (pointer:fine), (min-width:701px) and (min-height:600px){ .pol-call-btn{display:none;} }
+  .pol-book{position:relative; background:var(--pol-gold); padding:clamp(64px,9vw,110px) clamp(24px,5vw,64px); text-align:center; display:flex; flex-direction:column; align-items:center; gap:26px; overflow:hidden;}
+  .pol-book-glow{position:absolute; top:0; left:50%; transform:translateX(-50%); width:560px; height:320px; border-radius:50%; background:radial-gradient(circle, rgba(255,255,255,.5) 0%, rgba(255,255,255,0) 68%); filter:blur(36px); animation:polGlow 6s ease-in-out infinite;}
+  .pol-book p.eyebrow{position:relative; color:var(--pol-ink); font-family:var(--pol-font-body); letter-spacing:.2em;}
+  .pol-book h2{position:relative; font-family:var(--pol-font-display); font-style:italic; font-weight:400; font-size:clamp(28px,4vw,42px); letter-spacing:-.01em; color:var(--pol-ink); max-width:17ch; margin-top:14px;}
+  .pol-book-actions{position:relative; display:flex; gap:14px; flex-wrap:wrap; justify-content:center;}
+  .pol-btn-dark{background:var(--pol-ink); color:var(--pol-beige);}
+  .pol-btn-dark-outline{color:var(--pol-ink); border:1px solid rgba(59,42,30,.4);}
+
+  /* visit / contact */
+  .pol-visit{background:var(--pol-beige); text-align:center;}
+  .pol-visit .pol-section-head p.eyebrow{color:var(--pol-gold);}
+  .pol-visit .lede{margin-top:16px; color:#7A6650; font-size:15px;}
+  .pol-visit .tel-link{color:var(--pol-ink); text-decoration-color:var(--pol-gold);}
+  .pol-visit .copy-email-btn{border-color:var(--pol-line); color:#7A6650;}
+  .pol-visit .copy-email-btn:hover{background:var(--pol-ink); color:var(--pol-beige); border-color:var(--pol-ink);}
+  .pol-visit .copy-email-btn.copied{background:var(--pol-gold); color:var(--pol-ink); border-color:var(--pol-gold);}
+  .pol-map{margin:28px auto 0;width:420px;max-width:100%;aspect-ratio:16/9;border-radius:10px;overflow:hidden;border:1px solid var(--pol-line);}
+  .pol-map iframe{width:100%;height:100%;border:0;display:block;}
+  .pol-map-link{display:inline-block;margin-top:14px;font-size:12px;font-weight:600;letter-spacing:.03em;color:var(--pol-ink);text-decoration:underline;text-underline-offset:2px;}
+  .pol-map-link:hover{color:var(--pol-gold);}
+
+  /* footer */
+  .pol-footer{background:var(--pol-emerald-dark); padding:56px clamp(24px,5vw,64px) 32px; text-align:center; color:#C9B99A;}
+  .pol-footer img{height:26px; margin:0 auto;}
+  .pol-footer .line1{margin-top:26px; font-size:13px; font-weight:300;}
+  .pol-footer .phone{margin-top:8px; font-family:var(--pol-font-display); font-size:19px; color:#F1E9DA;}
+  .pol-footer .bottom{margin-top:34px; padding-top:22px; border-top:1px solid rgba(198,161,91,.2); font-size:11.5px; display:flex; justify-content:center; gap:20px; flex-wrap:wrap; font-weight:300;}
+  .pol-footer .bottom a{color:inherit; text-decoration:underline;}
+</style>
+<link href="luxe/luxe.css?v=3" rel="stylesheet"/>
+<link href="pol/pol.css?v=2" rel="stylesheet"/>
+<link href="i18n/i18n.css?v=1" rel="stylesheet"/></head>
+<body>
+<script>/* First visit in a session: the Polished logo draws itself in, then fades
+   into the page; later pages: a soft cream fade-in. */
+(function(){
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  var seen = false;
+  try { seen = !!sessionStorage.getItem('pol-intro'); } catch (e) {}
+  var v = document.createElement('div');
+  v.className = 'lx-veil' + (seen ? '' : ' lx-intro');
+  document.body.appendChild(v);
+  function out(){ v.classList.add('lx-out'); setTimeout(function(){ v.remove(); }, 900); }
+  if (seen){ requestAnimationFrame(function(){ requestAnimationFrame(out); }); return; }
+  var img = new Image(), done = false;
+  img.alt = '';
+  function go(){
+    if (done) return; done = true;
+    try { sessionStorage.setItem('pol-intro', '1'); } catch (e) {}
+    v.appendChild(img);
+    requestAnimationFrame(function(){ requestAnimationFrame(function(){ v.classList.add('lx-go'); }); });
+    setTimeout(out, 1900);
+  }
+  function skip(){ if (done) return; done = true; v.classList.add('lx-quick'); out(); }
+  img.onload = function(){ if (img.decode) img.decode().then(go, go); else go(); };
+  img.onerror = skip;
+  img.src = 'pol/intro-logo.png';
+  setTimeout(skip, 2500);
+})();
+</script>
+<header class="pol-header">
+<a class="pol-wordmark" href="#top"><img alt="Polished by Dolce" src="polished-logo.png"/></a>
+<div class="pol-head-right"><div aria-label="Language" class="lang-switch ls-head" role="navigation"><a href="polished.html" hreflang="en" lang="en"><bdi>EN</bdi></a><a aria-current="page" href="polished-ku.html" hreflang="ckb" lang="ckb">کوردی</a><a href="polished-ar.html" hreflang="ar" lang="ar">العربية</a></div>
+<div class="pol-head-social">
+<a aria-label="Instagram" href="https://www.instagram.com/polished.erbil/?hl=en" rel="noopener" target="_blank"><svg viewbox="0 0 24 24"><path d="M12 2.2c3.2 0 3.6 0 4.9.07 1.2.06 2.1.26 2.8.55a5.7 5.7 0 0 1 2.1 1.35 5.7 5.7 0 0 1 1.35 2.1c.29.7.49 1.6.55 2.8.06 1.3.07 1.7.07 4.9s0 3.6-.07 4.9c-.06 1.2-.26 2.1-.55 2.8a5.9 5.9 0 0 1-3.45 3.45c-.7.29-1.6.49-2.8.55-1.3.06-1.7.07-4.9.07s-3.6 0-4.9-.07c-1.2-.06-2.1-.26-2.8-.55a5.7 5.7 0 0 1-2.1-1.35 5.7 5.7 0 0 1-1.35-2.1c-.29-.7-.49-1.6-.55-2.8C2.21 15.6 2.2 15.2 2.2 12s0-3.6.07-4.9c.06-1.2.26-2.1.55-2.8A5.7 5.7 0 0 1 4.17 2.2a5.7 5.7 0 0 1 2.1-1.35c.7-.29 1.6-.49 2.8-.55C10.4 2.21 10.8 2.2 12 2.2zm0 3.3a6.5 6.5 0 1 0 0 13 6.5 6.5 0 0 0 0-13zm0 10.7a4.2 4.2 0 1 1 0-8.4 4.2 4.2 0 0 1 0 8.4zm6.8-11a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z"></path></svg></a>
+<a aria-label="Facebook" href="https://www.facebook.com/p/Polished-erbil-61586118965335/" rel="noopener" target="_blank"><svg viewbox="0 0 24 24"><path d="M13.5 21v-7.6h2.55l.38-2.96h-2.93V8.55c0-.86.24-1.44 1.47-1.44h1.57V4.46A21 21 0 0 0 14.2 4.3c-2.2 0-3.7 1.34-3.7 3.8v2.12H7.94v2.96h2.56V21h3z"></path></svg></a>
+</div>
+<a aria-label="گەڕانەوە بۆ کلینیکی جوانکاریی Dolce" class="pol-dolce-link" href="index-ku.html" title="گەڕانەوە بۆ کلینیکی جوانکاریی Dolce">
+<img alt="کلینیکی جوانکاریی Dolce" src="logo.png"/>
+</a>
+<a aria-label="Core Yoga &amp; Pilates Studio" class="pol-core-link" href="https://coreyogapilatesstudio.com/" rel="noopener" target="_blank" title="Core Yoga &amp; Pilates Studio">
+<img alt="Core Yoga &amp; Pilates Studio" src="core-logo.png"/>
+</a>
+<button aria-label="لیستە" class="pol-toggle"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="2" viewbox="0 0 24 24"><path d="M3 6h18M3 12h18M3 18h18"></path></svg></button>
+<nav class="pol-nav">
+<a href="#services">خزمەتگوزارییەکان</a>
+<a href="#gallery">گەلەری</a>
+<a href="#testimonials">هەڵسەنگاندنەکان</a>
+<a class="back" href="index-ku.html">کلینیکی Dolce<svg aria-hidden="true" class="back-arrow" viewbox="0 0 12 12"><path d="M3 9L9 3M4.5 3H9v4.5" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.4"></path></svg></a>
+<a class="pol-book-btn" href="#book">ئێستا نۆرە بگرە</a>
+<div aria-label="Language" class="lang-switch ls-menu" role="navigation"><a href="polished.html" hreflang="en" lang="en"><bdi>EN</bdi></a><a aria-current="page" href="polished-ku.html" hreflang="ckb" lang="ckb">کوردی</a><a href="polished-ar.html" hreflang="ar" lang="ar">العربية</a></div></nav>
+</div>
+</header>
+<div id="top"></div>
+<section class="pol-hero">
+<div class="pol-hero-glow"></div>
+<div class="pol-hero-copy">
+<p class="eyebrow">قژ · نینۆک · جوانی</p>
+<h1 class="pol-hero-logo-plate"><img alt="Polished by Dolce" src="polished-logo.png"/></h1>
+<p>سالۆنی جوانیی سەر بە کلینیکی جوانکاریی Dolce — قژ، نینۆک و جوانی بە هەمان وردی و ئاستی گرنگیدان، لە سالۆنەکەمان لە Park View لە هەولێر.</p>
+<div class="pol-hero-actions"><a class="pol-btn pol-btn-solid" href="#book">نۆرەکەت بگرە</a>
+<a class="pol-btn pol-btn-outline" href="#services">خزمەتگوزارییەکان ببینە</a></div>
+</div>
+<div class="pol-hero-photo">
+<video autoplay="" class="pol-hero-video" loop="" muted="" playsinline="" src="polished-hero.mp4"></video>
+</div>
+</section>
+<section class="pol-about" id="about">
+<div class="pol-about-copy">
+<div class="pol-section-head">
+<p class="eyebrow">دەربارەی Polished</p>
+<h2>جوانی، بە ستانداردی Dolce</h2>
+</div>
+<p>Polished by Dolce سالۆنی جوانیی سەر بە کلینیکی جوانکاریی Dolce یە و لە هەمان ناونیشانی Park View لە هەولێر جێگیرە. هەمان گرنگیدان، وردی و سەرنجدان بە وردەکارییەکانی کلینیکەکە دەگەیەنێتە هەموو نۆرەیەکی قژ، نینۆک و جوانی.</p>
+<p>لە ڕەنگکردن و شێوەدانی قژ بە سێشوارەوە تا مانیکیۆر، برژانگ و برۆ، هەموو خزمەتگوزارییەک لەلایەن تیمێکی شارەزاوە پێشکەش دەکرێت، لە شوێنێکی هێمن و دڵگیردا کە بۆ تۆ دروستکراوە تا پشوو بدەیت و کاتی خۆت بە ئارامی بەسەر ببەیت.</p>
+<p class="pol-about-close">ئامانجمان سادەیە: کە بە دەرکەوتنێکی ناسک، هەستکردن بە گرنگیپێدان و بە تەواوی وەک خۆت بڕۆیت.</p>
+</div>
+<div class="pol-about-photo">
+<img alt="ئاوێنەی ڕووناک لە Polished by Dolce" class="pol-about-img" src="polished%20miror.jpg"/>
+</div>
+</section>
+<section class="pol-services" id="services">
+<div class="pol-services-copy">
+<div class="pol-section-head">
+<p class="eyebrow">لیستی خزمەتگوزاری</p>
+<h2>خزمەتگوزارییەکان</h2>
+</div>
+<div class="pol-menu-group">
+<p class="label">جوانی</p>
+<div class="pol-menu-item">
+<div><div class="name"><bdi>Nails</bdi></div><div class="desc">مانیکیۆر و پێدیکیۆر، کلاسیک و جێل</div></div>
+</div>
+<div class="pol-menu-item">
+<div><div class="name"><bdi>Hair</bdi></div><div class="desc">بڕین، ڕەنگکردن، بالایاژ و شێوەدانی قژ بە سێشوار</div></div>
+</div>
+<div class="pol-menu-item">
+<div><div class="name"><bdi>Lashes</bdi></div><div class="desc">بەرزکردنەوە، ڕەنگکردن و درێژکردنەوەی برژانگ</div></div>
+</div>
+</div>
+<div class="pol-menu-group">
+<p class="label">تەواوکارییەکان</p>
+<div class="pol-menu-item">
+<div><div class="name"><bdi>Brows</bdi></div><div class="desc">شێوەدان، ڕەنگکردن و لامینەیشن</div></div>
+</div>
+<div class="pol-menu-item">
+<div><div class="name"><bdi>Microblading</bdi></div><div class="desc">هێڵی برۆی نیمچە هەمیشەیی بە دیمەنێکی سروشتی</div></div>
+</div>
+<div class="pol-menu-item">
+<div><div class="name"><bdi>Makeup</bdi></div><div class="desc">مەیکئەپی ڕۆژانە و بۆنەکان</div></div>
+</div>
+</div>
+</div>
+<div class="pol-services-photo">
+<video aria-label="Styling chair at Polished by Dolce" autoplay="" class="pol-services-video" loop="" muted="" playsinline="" src="styling%20chair.mp4"></video>
+</div>
+</section>
+<section class="pol-gallery pol-section" id="gallery">
+<div class="pol-section-head">
+<p class="eyebrow">کارەکانمان</p>
+<h2>دوایین کارەکان</h2>
+</div>
+<div class="pol-masonry">
+<a class="pol-m-item" href="hair-1.jpg"><img alt="شەپۆلی نەرمی قژ لە Polished" height="1600" loading="lazy" src="hair-1.jpg" width="1200"/></a>
+<a class="pol-m-item" href="hair-2.jpg"><img alt="قژی شەپۆلاوی نیوە بەرزکراوە لەگەڵ قژ هۆنینەوە لە Polished" height="1600" loading="lazy" src="hair-2.jpg" width="1200"/></a>
+<a class="pol-m-item" href="lashes-1.jpg"><img alt="درێژکردنەوەی برژانگ لە Polished" height="1350" loading="lazy" src="lashes-1.jpg" width="1045"/></a>
+<a class="pol-m-item" href="lashes-2.jpg"><img alt="درێژکردنەوەی برژانگی ڤۆلیوم لە Polished" height="1350" loading="lazy" src="lashes-2.jpg" width="1080"/></a>
+<a class="pol-m-item" href="nail-1.jpg"><img alt="نەخشی نینۆکی مەڕمەڕی شین لە Polished" height="1350" loading="lazy" src="nail-1.jpg" width="1080"/></a>
+<a class="pol-m-item" href="nail-2.jpg"><img alt="نینۆکی بادەمی بە ڕەنگی مۆری کاڵی درەوشاوە لە Polished" height="1500" loading="lazy" src="nail-2.jpg" width="1200"/></a>
+<a class="pol-m-item" href="nail-4.jpg"><img alt="نینۆکی مۆری کاڵ لەگەڵ گلیتەر و نەخشی گوڵ لە Polished" height="1350" loading="lazy" src="nail-4.jpg" width="1080"/></a>
+<a class="pol-m-item" href="nail-3.jpg"><img alt="نینۆکی فرێنچی ڕەنگ کاڵ لەگەڵ نەخشی گوڵ لە Polished" height="1600" loading="lazy" src="nail-3.jpg" width="1200"/></a>
+</div>
+<button class="pol-more" type="button">زیاتر ببینە</button>
+</section>
+<section class="pol-testimonials pol-section" id="testimonials">
+<div class="pol-section-head">
+<p class="eyebrow">قسەی جوان</p>
+<h2>کڕیاران چی دەڵێن</h2>
+<a class="pol-google-link" href="https://www.google.com/maps/place/Polished+by+Dolce/@36.2086197,43.9833904,17z/data=!4m8!3m7!1s0x40072316d41cf561:0xffe60317543841ce!8m2!3d36.2086197!4d43.9833904!9m1!1b1!16s%2Fg%2F11vbscjgnb?entry=ttu&amp;g_ep=EgoyMDI2MDkyNy4xIKXMDSoASAFQAw%3D%3D" rel="noopener" target="_blank"><svg aria-hidden="true" class="g" viewbox="0 0 48 48"><path d="M43.6 20.5H42V20H24v8h11.3C33.7 32.7 29.2 36 24 36c-6.6 0-12-5.4-12-12s5.4-12 12-12c3.1 0 5.9 1.2 8 3.1l5.7-5.7C34.1 6.1 29.3 4 24 4 12.9 4 4 12.9 4 24s8.9 20 20 20 20-8.9 20-20c0-1.3-.1-2.4-.4-3.5z" fill="#FFC107"></path><path d="M6.3 14.7l6.6 4.8C14.7 15.1 19 12 24 12c3.1 0 5.9 1.2 8 3.1l5.7-5.7C34.1 6.1 29.3 4 24 4 16.3 4 9.7 8.3 6.3 14.7z" fill="#FF3D00"></path><path d="M24 44c5.2 0 9.9-2 13.4-5.2l-6.2-5.2C29.2 35.1 26.7 36 24 36c-5.2 0-9.6-3.3-11.3-7.9l-6.5 5C9.5 39.6 16.2 44 24 44z" fill="#4CAF50"></path><path d="M43.6 20.5H42V20H24v8h11.3c-.8 2.2-2.2 4.2-4.1 5.6l6.2 5.2C37 39.2 44 34 44 24c0-1.3-.1-2.4-.4-3.5z" fill="#1976D2"></path></svg><span class="star">★</span><span>هەموو هەڵسەنگاندنەکانمان لە Google ببینە</span><span class="arr">←</span></a>
+</div>
+<div aria-label="هەڵسەنگاندنەکانی Google" aria-roledescription="carousel" class="pol-quotes" data-ed-quotes="">
+<div class="ed-stack">
+<figure class="ed-quote is-on"><blockquote><bdi>I’ve been coming here regularly for my lash lifts as well as my mani/pedis, and I honestly love it every time! Everyone is always so nice and the service is great. My lash lift always turns out exactly how I like it, and my nails are always perfect. Definitely my go-to place!</bdi></blockquote><div class="stars">★★★★★</div><figcaption>Kevy Y. · هەڵسەنگاندن لە Google</figcaption></figure>
+<figure class="ed-quote"><blockquote><bdi>Best place in Erbil for nail design and hairstyling, the staff is great and amazing, the drinks are delicious, overall good vibes and great service! Special thanks to Alaa and Oleana for doing the best job always!</bdi></blockquote><div class="stars">★★★★★</div><figcaption>Zaineb A. · هەڵسەنگاندن لە Google</figcaption></figure>
+<figure class="ed-quote"><blockquote><bdi>Loved this place, came here for the first time, and everyone was super lovely, and professional, the beautician did a great job with nail art as well. Thank you so much</bdi></blockquote><div class="stars">★★★★★</div><figcaption>Rebaz R. · هەڵسەنگاندن لە Google</figcaption></figure>
+</div>
+<div class="ed-dots"><button aria-label="هەڵسەنگاندنی 1" class="is-on" type="button"></button><button aria-label="هەڵسەنگاندنی 2" type="button"></button><button aria-label="هەڵسەنگاندنی 3" type="button"></button></div>
+</div>
+</section>
+<section class="pol-book" id="book">
+<div class="pol-book-glow"></div>
+<p class="eyebrow">نۆرەکەت بگرە</p>
+<h2>لە Polished جوانترین دەرکەوتن و باشترین هەستت هەبێت</h2>
+<div class="pol-book-actions"><a class="pol-btn pol-btn-dark-outline pol-call-btn" href="tel:+9647519000200">پەیوەندی بکە</a>
+<a class="pol-btn pol-btn-dark-outline" href="https://wa.me/9647519000200" rel="noopener" target="_blank"><bdi>WhatsApp</bdi></a>
+<a class="pol-btn pol-btn-dark-outline" href="https://www.instagram.com/polished.erbil/?hl=en" rel="noopener" target="_blank"><bdi>Instagram</bdi></a></div>
+</section>
+<section class="pol-visit pol-section" id="visit">
+<div class="pol-section-head">
+<p class="eyebrow">سەردانمان بکە</p>
+<h2>Polished بدۆزەرەوە</h2>
+<p class="lede">Polished by Dolce — Park View، هەولێر، عێراق. لە تەنیشت کلینیکی جوانکاریی Dolce.</p>
+<p class="lede"><a class="tel-link" href="tel:+9647519000200"><bdi dir="ltr">+964 751 900 0200</bdi></a> · <a class="tel-link" href="mailto:polished.erbil@gmail.com"><bdi>polished.erbil@gmail.com</bdi></a><button aria-label="کۆپیکردنی ناونیشانی ئیمەیڵ" class="copy-email-btn" data-email="polished.erbil@gmail.com" title="کۆپیکردنی ناونیشانی ئیمەیڵ" type="button"><span>⧉</span> کۆپی</button></p>
+<div class="pol-map">
+<iframe loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://maps.google.com/maps?q=Polished+by+Dolce+6X5M%2BC9+Erbil&amp;z=17&amp;output=embed" title="Polished by Dolce location"></iframe>
+</div>
+<a class="pol-map-link" href="https://www.google.com/maps/search/?api=1&amp;query=Polished+by+Dolce+6X5M%2BC9+Erbil" rel="noopener" target="_blank">ڕێنمایی ڕێگا ←</a>
+</div>
+</section>
+<footer class="pol-footer">
+<a aria-label="Polished یەکێکە لە براندەکانی Dolce: سەردانی کلینیکی جوانکاریی Dolce بکە" class="pol-sign" href="index-ku.html"><span class="l"></span><em><bdi>by</bdi></em><img alt="کلینیکی جوانکاریی Dolçe" src="logo.png"/><span class="r"></span></a>
+<p class="line1">Polished by Dolce — براندێکی Dolce</p>
+<p class="phone"><a href="tel:+9647519000200" style="color:inherit;"><bdi dir="ltr">+964 751 900 0200</bdi></a></p>
+<div class="bottom"><span><a href="index-ku.html">→ گەڕانەوە بۆ کلینیکی Dolce</a></span></div>
+</footer>
+<script>
+(function(){
+  var t = document.querySelector('.pol-toggle');
+  var n = document.querySelector('.pol-nav');
+  if (t && n) {
+    t.addEventListener('click', function(){ n.classList.toggle('open'); });
+    n.querySelectorAll('a').forEach(function(a){
+      a.addEventListener('click', function(e){
+        var href = a.getAttribute('href') || '';
+        n.classList.remove('open');
+        if (href.charAt(0) === '#' && href.length > 1) {
+          var target = document.querySelector(href);
+          if (target) {
+            e.preventDefault();
+            requestAnimationFrame(function(){
+              target.scrollIntoView({behavior:'smooth', block:'start'});
+            });
+          }
+        }
+      });
+    });
+  }
+
+  document.querySelectorAll('.copy-email-btn').forEach(function(btn){
+    btn.addEventListener('click', function(){
+      var email = btn.dataset.email;
+      var done = function(){
+        var orig = btn.innerHTML;
+        btn.textContent = '✓ کۆپی کرا';
+        btn.classList.add('copied');
+        setTimeout(function(){ btn.innerHTML = orig; btn.classList.remove('copied'); }, 1500);
+      };
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(email).then(done);
+      } else {
+        var ta = document.createElement('textarea');
+        ta.value = email;
+        document.body.appendChild(ta);
+        ta.select();
+        document.execCommand('copy');
+        document.body.removeChild(ta);
+        done();
+      }
+    });
+  });
+})();
+
+// Gallery: first 12 shown, "Show more" reveals the rest. Click a photo to view it
+// large; move with the arrows, arrow keys or a swipe; close with ×, backdrop or Esc.
+(function(){
+  var PAGE = 12;
+  var items = Array.prototype.slice.call(document.querySelectorAll('.pol-m-item'));
+  var more = document.querySelector('.pol-more');
+  var shown = Math.min(PAGE, items.length);
+  function applyShown(){
+    items.forEach(function(a, i){ a.classList.toggle('is-hidden', i >= shown); });
+    if (more) more.style.display = shown >= items.length ? 'none' : '';
+  }
+  if (more) more.addEventListener('click', function(){ shown = Math.min(shown + PAGE, items.length); applyShown(); });
+  applyShown();
+
+  // Photos are dealt left to right, row by row, into 4 columns (2 on phones),
+  // so photos 1-2, 3-4, 5-6... always sit side by side. With fewer photos
+  // than columns, use fewer columns and centre them.
+  var grid = document.querySelector('.pol-masonry');
+  var phoneQuery = window.matchMedia('(max-width:640px)');
+  function layoutRows(){
+    if (!grid) return;
+    var full = phoneQuery.matches ? 2 : 4;
+    var cols = Math.max(1, Math.min(full, items.length));
+    grid.style.maxWidth = cols < full ? (1200 / 4 * cols) + 'px' : '';
+    grid.innerHTML = '';
+    var columns = [];
+    for (var c = 0; c < cols; c++){
+      var col = document.createElement('div');
+      col.className = 'pol-m-col';
+      grid.appendChild(col);
+      columns.push(col);
+    }
+    items.forEach(function(a, i){ columns[i % cols].appendChild(a); });
+    grid.classList.add('is-rows');
+  }
+  layoutRows();
+  if (phoneQuery.addEventListener) phoneQuery.addEventListener('change', layoutRows);
+  else if (phoneQuery.addListener) phoneQuery.addListener(layoutRows);
+
+  var box = document.createElement('div');
+  box.className = 'pol-lightbox';
+  box.setAttribute('role', 'dialog');
+  box.setAttribute('aria-modal', 'true');
+  box.innerHTML = '<button type="button" class="pol-lb-btn pol-lb-close" aria-label="داخستن">&times;</button>' +
+    '<button type="button" class="pol-lb-btn pol-lb-prev" aria-label="وێنەی پێشوو">&#8249;</button>' +
+    '<img alt="">' +
+    '<button type="button" class="pol-lb-btn pol-lb-next" aria-label="وێنەی دواتر">&#8250;</button>' +
+    '<div class="pol-lb-count"></div>';
+  document.body.appendChild(box);
+  var img = box.querySelector('img'), count = box.querySelector('.pol-lb-count');
+  var current = 0, lastFocus = null;
+
+  function show(i){
+    current = (i + items.length) % items.length;
+    var a = items[current], thumb = a.querySelector('img');
+    img.src = a.getAttribute('href');
+    img.alt = thumb ? thumb.alt : '';
+    count.textContent = (current + 1) + ' / ' + items.length;
+  }
+  function open(i){ lastFocus = items[i]; show(i); box.classList.add('open'); document.body.style.overflow = 'hidden'; box.querySelector('.pol-lb-close').focus(); }
+  function close(){ box.classList.remove('open'); document.body.style.overflow = ''; if (lastFocus) lastFocus.focus(); }
+
+  items.forEach(function(a, i){ a.addEventListener('click', function(e){ e.preventDefault(); open(i); }); });
+  box.querySelector('.pol-lb-close').addEventListener('click', close);
+  box.querySelector('.pol-lb-prev').addEventListener('click', function(e){ e.stopPropagation(); show(current - 1); });
+  box.querySelector('.pol-lb-next').addEventListener('click', function(e){ e.stopPropagation(); show(current + 1); });
+  box.addEventListener('click', function(e){ if (e.target === box) close(); });
+  document.addEventListener('keydown', function(e){
+    if (!box.classList.contains('open')) return;
+    if (e.key === 'Escape') close();
+    else if (e.key === 'ArrowLeft') show(current - 1);
+    else if (e.key === 'ArrowRight') show(current + 1);
+  });
+  var touchX = null;
+  box.addEventListener('touchstart', function(e){ touchX = e.touches[0].clientX; }, {passive:true});
+  box.addEventListener('touchend', function(e){
+    if (touchX === null) return;
+    var dx = e.changedTouches[0].clientX - touchX; touchX = null;
+    if (Math.abs(dx) > 40) show(current + (dx < 0 ? 1 : -1));
+  });
+})();
+</script>
+<script defer="" src="luxe/luxe.js?v=2"></script>
+<script defer="" src="ed/editorial.js?v=2"></script>
+<script defer="" src="pol/pol.js?v=2"></script>
+<script data-wa="9647519000200" defer="" src="wa-float.js?v=2"></script>
+</body>
+</html>

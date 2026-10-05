@@ -17,7 +17,7 @@
       var email = btn.dataset.email;
       var done = function(){
         var orig = btn.innerHTML;
-        btn.textContent = '✓ Copied';
+        btn.textContent = (window.DOLCE_T || {}).copied || '✓ Copied';
         btn.classList.add('copied');
         setTimeout(function(){ btn.innerHTML = orig; btn.classList.remove('copied'); }, 1500);
       };
@@ -47,9 +47,10 @@
     modal.className = 'app-soon';
     modal.setAttribute('role', 'dialog');
     modal.setAttribute('aria-modal', 'true');
-    modal.setAttribute('aria-label', 'Dolce+ app, coming soon');
-    modal.innerHTML = '<button type="button" class="app-soon-x" aria-label="Close">&times;</button>' +
-      '<div class="app-soon-card"><img src="dolce-plus-logo.png" alt="Dolce+"><p>Coming soon</p></div>';
+    var t = window.DOLCE_T || {};
+    modal.setAttribute('aria-label', t.appLabel || 'Dolce+ app, coming soon');
+    modal.innerHTML = '<button type="button" class="app-soon-x" aria-label="' + (t.close || 'Close') + '">&times;</button>' +
+      '<div class="app-soon-card"><img src="dolce-plus-logo.png" alt="Dolce+"><p>' + (t.soon || 'Coming soon') + '</p></div>';
     document.body.appendChild(modal);
     modal.addEventListener('click', close);
   }
