@@ -22,6 +22,7 @@
   // the camera's small drift so the logo stays fixed to the curtain.
   var LOGO_FRAMES = 6;
   var LOGO_DESK_DX = 70;        // desktop: shift right (frame pixels)
+  var LOGO_PHONE_DX = 45;       // phones / tablets (portrait footage): shift right to sit centred
   var LOGO_HEADER_GAP = 28;     // desktop: min gap below the menu bar (CSS px)
   var logoPlace = landscape ? { cx: 1045, cy: 235, w: 420 } : { cx: 495, cy: 725, w: 430 };
   var logoTrack = landscape ? [
@@ -119,7 +120,7 @@
     // Desktop: nudge the logo right, and keep its top clear of the menu bar
     // (wide screens crop the top of the footage, which pushes it up).
     var desk = landscape && desktopQuery.matches;
-    var cx = logoPlace.cx + (desk ? LOGO_DESK_DX : 0), shift = 0;
+    var cx = logoPlace.cx + (desk ? LOGO_DESK_DX : (landscape ? 0 : LOGO_PHONE_DX)), shift = 0;
     if (desk){
       var hdr = document.querySelector('header'), cr = canvas.getBoundingClientRect();
       if (hdr && cr.width){
