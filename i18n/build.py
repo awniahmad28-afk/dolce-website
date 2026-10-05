@@ -1,4 +1,4 @@
-"""Build the Kurdish (Sorani) and Arabic test pages from the English ones.
+"""Build the Kurdish (Sorani) and Arabic pages from the English ones.
 
     python3 i18n/build.py            # writes index-ku.html, index-ar.html, ...
 
@@ -55,12 +55,6 @@ def tr(en, lang):
 def page_href(href, sfx):
     m = re.match(r'^(%s)\.html(#.*)?$' % '|'.join(map(re.escape, PAGES)), href or '')
     return f'{m.group(1)}-{sfx}.html{m.group(2) or ""}' if m else href
-
-def switcher(page, lang, cls):
-    items = [('en', f'{page}.html', 'EN')] + [(l, f'{page}-{c["suffix"]}.html', c['name']) for l, c in LANGS.items()]
-    cur = ' aria-current="page"'
-    links = ''.join(f'<a href="{h}" lang="{l}" hreflang="{l}"{cur if l == lang else ""}>{n}</a>' for l, h, n in items)
-    return BeautifulSoup(f'<div class="lang-switch {cls}" role="navigation" aria-label="Language">{links}</div>', 'html.parser').div
 
 def isolate_latin(soup):
     """Wrap left-to-right runs (English names, reviews, numbers) in <bdi> so
@@ -138,22 +132,12 @@ def build(page, lang):
     head = soup.head
     vp = head.find('meta', attrs={'name': 'viewport'})
     extra = BeautifulSoup(
-        '<meta name="robots" content="noindex, nofollow">'
         f'<meta property="og:locale" content="{L["locale"]}">'
-        + ''.join(f'<link rel="alternate" hreflang="{l}" href="{SITE}{page}{"" if l == "en" else "-" + c}.html">'
-                  for l, c in [('en', ''), ('ckb', 'ku'), ('ar', 'ar')])
         + '<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Naskh+Arabic:wght@400;500;600&family=Noto+Sans+Arabic:wght@300;400;500;600&display=swap">'
         + f'<script>window.DOLCE_T={json.dumps(JS[lang], ensure_ascii=False)};</script>',
         'html.parser')
     for c in reversed(list(extra.contents)):
         vp.insert_after(c)
-    head.append(BeautifulSoup('<link rel="stylesheet" href="i18n/i18n.css?v=3">', 'html.parser').link)
-
-    # language switcher: header row + phone menu
-    hr = soup.select_one('.head-right') or soup.select_one('.pol-head-right')
-    hr.insert(0, switcher(page, lang, 'ls-head'))
-    nav = soup.select_one('nav.mainnav') or soup.select_one('nav.pol-nav')
-    nav.append(switcher(page, lang, 'ls-menu'))
 
     # Our Story: the first word of the story in gold (in place of the large
     # opening letter, which would break a joined Arabic-script word)
