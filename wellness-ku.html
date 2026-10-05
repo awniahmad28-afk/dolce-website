@@ -20,7 +20,7 @@
 <meta content="کلینیکی جوانکاریی Dolce" property="og:image:alt"/>
 <meta content="summary_large_image" name="twitter:card"/>
 <title>تەندروستی و ئاسوودەیی — کلینیکی جوانکاریی Dolce</title>
-<link href="styles.css?v=77" rel="stylesheet"/>
+<link href="styles.css?v=80" rel="stylesheet"/>
 <link href="luxe/luxe.css?v=3" rel="stylesheet"/>
 <link as="image" fetchpriority="high" href="luxe/intro-logo-s.png" rel="preload"/>
 <link href="ed/editorial.css?v=3" rel="stylesheet"/>
@@ -29,7 +29,7 @@
 <link href="https://awniahmad28-afk.github.io/dolce-website/wellness-ar.html" hreflang="ar" rel="alternate"/>
 <link href="https://awniahmad28-afk.github.io/dolce-website/wellness.html" hreflang="x-default" rel="alternate"/>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Arabic:wght@500&amp;text=%DA%A9%D9%88%D8%B1%D8%AF%DB%8C%D8%A7%D9%84%D8%B9%D8%B1%D8%A8%D9%8A%D8%A9&amp;display=swap" rel="stylesheet"/>
-<link href="i18n/i18n.css?v=5" rel="stylesheet"/>
+<link href="i18n/i18n.css?v=7" rel="stylesheet"/>
 </head>
 <body>
 <script>/* First visit in a session: the Dolce logo draws itself in gold, then fades
@@ -243,20 +243,40 @@
   var mouse = window.matchMedia('(hover:hover) and (pointer:fine)'), phone = window.matchMedia('(max-width:860px)');
   var current = 0;
   function place(){
-    if (phone.matches) rows[current].querySelector('.ivB-d > div').appendChild(stage);
-    else if (stage.parentNode !== box) box.appendChild(stage);
+    if (phone.matches){ if (stage.parentNode !== rows[current]) rows[current].appendChild(stage); }
+    else if (stage.parentNode !== box){ box.appendChild(stage); [].forEach.call(stage.children, function(el){ el.style.maxWidth = ''; }); }
   }
-  function on(i){
+  // Phones and tablets: the switch happens at once, the tapped treatment stays
+  // under the finger, then glides to the middle of the screen (or, if it is
+  // taller than the screen, its title settles near the top).
+  function on(i, tapped){
+    var row = rows[i], glide = tapped && phone.matches, before = glide ? row.getBoundingClientRect().top : 0;
+    if (glide) box.classList.add('ivB-instant');
     current = i;
     rows.forEach(function(r, k){ r.classList.toggle('is-on', k === i); });
     imgs.forEach(function(m, k){ m.classList.toggle('is-on', k === i); });
     name.textContent = rows[i].querySelector('h4').textContent;
     count.textContent = ('0' + (i + 1)).slice(-2) + ' / ' + ('0' + total).slice(-2);
     place();
+    if (!glide) return;
+    // a long description: the picture gives way so the whole treatment fits on screen
+    var fit = [].slice.call(stage.children), vh = window.innerHeight;
+    fit.forEach(function(el){ el.style.maxWidth = ''; });
+    var over = row.getBoundingClientRect().height - (vh - 40);
+    if (over > 0){
+      var w = Math.max(200, stage.querySelector('.ivB-frame').offsetWidth - over / 1.25);
+      fit.forEach(function(el){ el.style.maxWidth = w + 'px'; });
+    }
+    window.scrollBy({ top: row.getBoundingClientRect().top - before, behavior: 'instant' });
+    void box.offsetHeight;
+    box.classList.remove('ivB-instant');
+    var r = row.getBoundingClientRect();
+    var y = r.height <= vh - 40 ? r.top - (vh - r.height) / 2 : r.top - 20;
+    window.scrollTo({ top: window.pageYOffset + y, behavior: 'smooth' });
   }
   rows.forEach(function(r, i){
     r.addEventListener('mouseenter', function(){ if (mouse.matches && !phone.matches) on(i); });
-    r.addEventListener('click', function(){ on(i); });
+    r.addEventListener('click', function(){ on(i, true); });
   });
   if (phone.addEventListener) phone.addEventListener('change', place);
   place();

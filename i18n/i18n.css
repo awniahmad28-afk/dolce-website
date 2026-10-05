@@ -34,6 +34,11 @@ html[dir=rtl] .back-arrow,html[dir=rtl] .pol-nav .back-arrow{transform:scaleX(-1
   html[dir=rtl] .psx-hero .psx-title,html[dir=rtl] .psx-hero .psx-lede{width:min(560px,50%);text-align:right;}
   html[dir=rtl] .psx-hero .psx-rule{margin-right:0;margin-left:calc(min(560px,50%) - 56px);}
 }
+/* phones: Arabic-script headings run taller, so the hero titles are set a size smaller */
+@media (max-width:760px){
+  html[dir=rtl] .psx-hero .psx-title{font-size:36px;line-height:1.3;}
+  html[dir=rtl] .dx-hero h1{font-size:38px;line-height:1.3;}
+}
 /* Dermatology: text moves to the right, so the dark shading follows it */
 html[dir=rtl] .dx-hero::after{background:linear-gradient(270deg,rgba(20,14,9,.82) 0%,rgba(20,14,9,.55) 45%,rgba(20,14,9,.1) 100%),linear-gradient(0deg,rgba(20,14,9,.55),rgba(20,14,9,0) 50%);}
 
@@ -41,6 +46,21 @@ html[dir=rtl] .dx-hero::after{background:linear-gradient(270deg,rgba(20,14,9,.82
 html[dir=rtl] .blood-band,html[dir=rtl] .services .services-grid,html[dir=rtl] .duo-photos{margin-left:0;margin-right:calc(50% - 50vw);}
 /* Blood testing: the tubes sit on the right of the picture, so the text stays left */
 @media (min-width:861px){ html[dir=rtl] .blood-text{margin-left:0;margin-right:auto;} }
+
+/* IV and peptide lists: the gold bar and its spacing sit on the right */
+html[dir=rtl] .ivB-row{padding:22px 18px 22px 0;}
+html[dir=rtl] .ivB-row::before{left:auto;right:0;}
+
+/* buttons: the Arabic-script font needs a taller line, which made the
+   buttons grow and left English words (WhatsApp) sitting high; a set line
+   height keeps them the same size as in English */
+html[dir=rtl] :is(.btn,.psx-btn,.pol-btn,.nav-app-btn,.foot-wa-btn,.pol-book-btn,.pol-more,.copy-email-btn,.dx-tag,.pol-nav .back){line-height:1.25;}
+/* English words keep the letter spacing they have on the English pages */
+html[dir=rtl] :is(.btn,.psx-btn,.pol-btn,.nav-app-btn,.foot-wa-btn,.pol-book-btn,.pol-more) bdi{letter-spacing:.12em !important;}
+html[dir=rtl] :is(.eyebrow,.dx-eyebrow,.dx-tabs a,.dx-ba-card figcaption,.dx-stage-cap,.ivB-count,.family-label,.app-badge .badge-small) bdi{letter-spacing:.14em !important;}
+
+/* counters such as 08 / 09 always read left to right */
+html[dir=rtl] :is(.ivB-count,.pol-lb-count,.psx-lb-count){direction:ltr;unicode-bidi:isolate;}
 
 /* the "by Dolçe" signature is English, so it keeps English order */
 html[dir=rtl] .pol-sign{direction:ltr;}
@@ -68,8 +88,6 @@ header.header-overlay .head-right .lang-btn{color:#F1E9DA;}
 @media (max-width:760px){ .pol-head-right .lang-pick{display:none;} nav.pol-nav .lang-row{display:flex;} }
 /* the logo never gets squeezed; the menu links (which may wrap) give way instead */
 @media (min-width:601px){ header > a:has(> .logo-img){flex-shrink:0;} }
-/* Polished tablets: one full header row, so the menu links sit a little closer to make room */
-@media (min-width:761px) and (max-width:1099px){ .pol-nav{gap:16px;} .pol-head-right{gap:14px;} }
 .lang-row{gap:8px;padding:18px 0 6px;flex-wrap:wrap;}
 nav .lang-row a{width:auto !important;padding:8px 16px !important;border:1px solid currentColor !important;border-radius:999px;font-size:13px !important;font-weight:500;letter-spacing:0 !important;text-transform:none !important;opacity:.7;line-height:1.2;}
 nav .lang-row a[lang=ckb],nav .lang-row a[lang=ar]{font-family:'Noto Sans Arabic',sans-serif;font-size:14px !important;}

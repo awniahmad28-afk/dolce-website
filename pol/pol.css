@@ -32,11 +32,11 @@ html[dir=rtl] .pol-btn-outline:hover,html[dir=rtl] .pol-more:hover,html[dir=rtl]
 .pol-btn-solid:hover,.pol-book-btn:hover{opacity:1;background:#D4B270;}
 
 /* ---------- header: a gold dot follows the section you're reading ---------- */
-@media (min-width:761px){.pol-nav{position:relative;}}
+@media (min-width:1100px){.pol-nav{position:relative;}}
 .pol-nav-dot{position:absolute;bottom:-9px;left:0;width:5px;height:5px;border-radius:50%;background:var(--pol-gold);opacity:0;transform:translateX(-50%);transition:left .55s cubic-bezier(.65,0,.35,1),opacity .4s ease;pointer-events:none;}
 .pol-nav-dot.is-on{opacity:1;}
 .pol-nav a.is-current{color:var(--pol-gold);}
-@media (max-width:760px){.pol-nav-dot{display:none;}}
+@media (max-width:1099px){.pol-nav-dot{display:none;}}
 
 /* ---------- gold hairline divider ---------- */
 .pol-divider{display:flex;align-items:center;justify-content:center;gap:18px;padding:clamp(28px,4vw,44px) 20px;}
