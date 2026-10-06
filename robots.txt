@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://awniahmad28-afk.github.io/dolce-website/sitemap.xml
