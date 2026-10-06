@@ -83,3 +83,14 @@
   });
   document.addEventListener('keydown', function(e){ if (e.key === 'Escape') close(); });
 })();
+
+// Computers: a phone number in the treatment FAQs opens a WhatsApp chat
+// (there is no phone to call from); phones keep the normal call link.
+(function(){
+  if (!window.matchMedia('(hover:hover) and (pointer:fine)').matches) return;
+  document.querySelectorAll('.dx-faq a.tel-link[href^="tel:"]').forEach(function(a){
+    a.href = 'https://wa.me/' + a.getAttribute('href').replace(/\D/g, '');
+    a.target = '_blank';
+    a.rel = 'noopener';
+  });
+})();

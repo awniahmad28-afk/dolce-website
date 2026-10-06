@@ -125,3 +125,6 @@
 
 /* before & after photos open large in the photo viewer */
 .dx-lb-link{position:absolute;inset:0;display:block;cursor:zoom-in;}
+
+/* phone numbers in the FAQs stay on one line */
+.dx-faq .tel-link{white-space:nowrap;}
