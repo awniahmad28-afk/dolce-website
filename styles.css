@@ -558,3 +558,7 @@ a.family-item:hover{border-color:var(--gold);transform:translateY(-2px);}
 .psx-lb-x{top:10px;right:14px;font-size:36px;}
 .psx-lb-p,.psx-lb-n{top:50%;transform:translateY(-50%);font-size:44px;}
 .psx-lb-p{left:clamp(4px,1.5vw,20px);} .psx-lb-n{right:clamp(4px,1.5vw,20px);}
+
+/* Phones and tablets: tapping the e-mail address opens the mail app, so the
+   copy button is only shown on computers with a mouse. */
+@media (hover:none) and (pointer:coarse){ .copy-email-btn{display:none !important;} }
