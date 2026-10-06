@@ -2,6 +2,9 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
+<!-- Language: a visitor whose browser prefers Arabic or Kurdish opens that
+     version of this page, unless they have picked a language on the site. -->
+<script>(function(){try{var f=location.pathname.split('/').pop().replace(/\.html$/,'')||'index';if(['index','our-story','dermatology','plastic-surgery','wellness','polished'].indexOf(f)<0)return;var t=null;try{t=localStorage.getItem('dolce-lang');}catch(e){}if(!t){var L=navigator.languages||[navigator.language||''];for(var i=0;i<L.length;i++){var l=String(L[i]).toLowerCase();if(/^(ckb|ku)\b/.test(l)){t='ku';break;}if(/^ar\b/.test(l)){t='ar';break;}if(/^en\b/.test(l)){t='en';break;}}}if(t==='ku'||t==='ar')location.replace(f+'-'+t+'.html'+location.search+location.hash);}catch(e){}})();</script>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="icon" href="favicon.ico" sizes="any">
 <link rel="icon" type="image/png" sizes="32x32" href="icons/icon-32.png">
@@ -303,6 +306,6 @@
 <script src="luxe/luxe.js?v=2" defer></script>
 <script src="ed/editorial.js?v=2" defer></script>
 <script src="wa-float.js?v=3" data-wa="9647509000200" defer></script>
-<script src="i18n/lang.js?v=2" defer></script>
+<script src="i18n/lang.js?v=3" defer></script>
 </body>
 </html>

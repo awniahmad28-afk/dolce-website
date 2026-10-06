@@ -47,6 +47,15 @@
     nav.appendChild(row);
   }
 
+  // a language picked here is remembered, and wins over the browser's
+  // language from then on (see the check at the top of the English pages)
+  document.addEventListener('click', function(e){
+    var a = e.target.closest && e.target.closest('.lang-menu a, .lang-row a');
+    if (!a) return;
+    var k = { en: 'en', ckb: 'ku', ar: 'ar' }[a.getAttribute('lang')];
+    try { localStorage.setItem('dolce-lang', k); } catch (err) {}
+  });
+
   var btn = wrap.querySelector('.lang-btn');
   function set(open){
     wrap.classList.toggle('open', open);

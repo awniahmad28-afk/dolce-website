@@ -3,6 +3,9 @@
 <html dir="rtl" lang="ckb">
 <head>
 <meta charset="utf-8"/>
+<!-- Language: a visitor whose browser prefers Arabic or Kurdish opens that
+     version of this page, unless they have picked a language on the site. -->
+<script>(function(){try{var f=location.pathname.split('/').pop().replace(/\.html$/,'')||'index';if(['index','our-story','dermatology','plastic-surgery','wellness','polished'].indexOf(f)<0)return;var t=null;try{t=localStorage.getItem('dolce-lang');}catch(e){}if(!t){var L=navigator.languages||[navigator.language||''];for(var i=0;i<L.length;i++){var l=String(L[i]).toLowerCase();if(/^(ckb|ku)\b/.test(l)){t='ku';break;}if(/^ar\b/.test(l)){t='ar';break;}if(/^en\b/.test(l)){t='en';break;}}}if(t==='ku'||t==='ar')location.replace(f+'-'+t+'.html'+location.search+location.hash);}catch(e){}})();</script>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="ckb_IQ" property="og:locale"/><link href="https://fonts.googleapis.com/css2?family=Noto+Naskh+Arabic:wght@400;500;600&amp;family=Noto+Sans+Arabic:wght@300;400;500;600&amp;display=swap" rel="stylesheet"/><script>window.DOLCE_T={"copied": "✓ کۆپی کرا", "soon": "بەم زووانە", "close": "داخستن", "appLabel": "ئەپی Dolce+، بەم زووانە", "next": "وێنەی دواتر", "prev": "وێنەی پێشوو", "wa": "لە WhatsApp قسەمان لەگەڵ بکە", "more": "زیاتر ببینە"};</script>
 <link href="favicon.ico" rel="icon" sizes="any"/>
 <link href="icons/icon-32.png" rel="icon" sizes="32x32" type="image/png"/>
@@ -304,6 +307,6 @@
 <script defer="" src="luxe/luxe.js?v=2"></script>
 <script defer="" src="ed/editorial.js?v=2"></script>
 <script data-wa="9647509000200" defer="" src="wa-float.js?v=3"></script>
-<script defer="" src="i18n/lang.js?v=2"></script>
+<script defer="" src="i18n/lang.js?v=3"></script>
 </body>
 </html>
