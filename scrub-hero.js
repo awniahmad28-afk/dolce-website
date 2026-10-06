@@ -213,6 +213,10 @@
 
   function onWheelDesktop(e){
     if (!desktopQuery.matches) return;
+    // Only while the whole video is on screen: coming back up from further
+    // down the page, the page scrolls until the hero is fully in view
+    // instead of rewinding it with its top cut off.
+    if (sticky.getBoundingClientRect().top < -1) return;
     var d = normalizeDelta(e);
     var atEnd = desktopProgress >= 1 && d > 0;
     var atStart = desktopProgress <= 0 && d < 0;
