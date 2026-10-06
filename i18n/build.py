@@ -20,7 +20,7 @@ LANGS = {
     'ckb': {'suffix': 'ku', 'name': 'کوردی', 'col': 0, 'locale': 'ckb_IQ'},
     'ar':  {'suffix': 'ar', 'name': 'العربية', 'col': 1, 'locale': 'ar_IQ'},
 }
-SITE = 'https://dolceclinic.com/'
+SITE = 'https://www.dolceclinic.com/'
 ARABIC = re.compile(r'[؀-ۿ]')
 LATIN = re.compile(r'[A-Za-z]')
 PLUS = re.compile(r'(Dolce\+|NAD\+)')
