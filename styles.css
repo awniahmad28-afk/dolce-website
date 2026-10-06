@@ -562,3 +562,6 @@ a.family-item:hover{border-color:var(--gold);transform:translateY(-2px);}
 /* Phones and tablets: tapping the e-mail address opens the mail app, so the
    copy button is only shown on computers with a mouse. */
 @media (hover:none) and (pointer:coarse){ .copy-email-btn{display:none !important;} }
+/* Computers: the e-mail address is plain text (no mail app opens on click);
+   the copy button beside it does the job. */
+@media (hover:hover) and (pointer:fine){ a[href^="mailto:"]{pointer-events:none;cursor:text;} }
