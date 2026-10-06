@@ -181,7 +181,7 @@ def build(page, lang):
                  ('aria-label="Next photo"', f'aria-label="{j["next"]}"'),
                  ('aria-label="Previous photo"', f'aria-label="{j["prev"]}"'),
                  ("'✓ Copied'", f"'{j['copied']}'"),
-                 ('booking.js?v=2', 'booking.js?v=3'), ('wa-float.js?v=1', 'wa-float.js?v=2')]:
+                 ('booking.js?v=2', 'booking.js?v=3')]:
         out = out.replace(a, b)
     open(f'{page}-{sfx}.html', 'w', encoding='utf-8').write(out)
     return out
