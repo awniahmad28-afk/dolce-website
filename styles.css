@@ -564,4 +564,4 @@ a.family-item:hover{border-color:var(--gold);transform:translateY(-2px);}
 @media (hover:none) and (pointer:coarse){ .copy-email-btn{display:none !important;} }
 /* Computers: the e-mail address is plain text (no mail app opens on click);
    the copy button beside it does the job. */
-@media (hover:hover) and (pointer:fine){ a[href^="mailto:"]{pointer-events:none;cursor:text;} }
+@media (hover:hover) and (pointer:fine){ a[href^="mailto:"]{pointer-events:none;cursor:text;text-decoration:none !important;background-image:none !important;padding-bottom:0 !important;} }
