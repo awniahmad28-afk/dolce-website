@@ -370,6 +370,9 @@ T = {
 
 # Wording added after the numbered list above, keyed by the English.
 EXTRA = {
+    'For texture and fine lines, our <strong>Fractional Laser</strong> softens the appearance of wrinkles and treats acne scars by stimulating collagen production. <strong>Plasma Pen</strong> is used for mole removal and to rejuvenate the skin, including under-eye bags.':
+        ("بۆ ڕووکاری پێست و هێڵە وردەکان، <1>Fractional Laser</1> چرچ و لۆچ کەمتر دەردەخات و شوێنەواری زیپکە چارەسەر دەکات بە هاندانی بەرهەمهێنانی کۆلاجین. <2>Plasma Pen</2> بۆ لابردنی خاڵی پێست و نوێکردنەوەی پێست بەکاردێت، لەوانەش کیسەی ژێر چاو.",
+         "لتحسين ملمس البشرة والخطوط الدقيقة، يخفّف <1>Fractional Laser</1> من مظهر التجاعيد ويعالج ندبات حب الشباب عبر تحفيز إنتاج الكولاجين. أما <2>Plasma Pen</2> فيُستخدم لإزالة الشامات وتجديد البشرة، بما في ذلك الانتفاخات تحت العينين."),
     'Abdominal liposuction': None,
     '<span>Day of surgery</span><span>10 days after</span>':
         ("<1>ڕۆژی نەشتەرگەری</1><2>10 ڕۆژ دوای نەشتەرگەری</2>", "<1>يوم الجراحة</1><2>بعد 10 أيام</2>"),
