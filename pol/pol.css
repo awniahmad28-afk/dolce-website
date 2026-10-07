@@ -120,6 +120,7 @@ html[dir=rtl] .pol-btn-outline:hover,html[dir=rtl] .pol-more:hover,html[dir=rtl]
 
 /* ---------- without .pol-x: no paper grain, plain underlined links ---------- */
 body:not(.pol-x)::after{content:none;}
+body:not(.pol-x),body:not(.pol-x) footer{background-image:none;}
 body:not(.pol-x) .tel-link{background-image:none;padding-bottom:0;text-decoration:underline;text-underline-offset:2px;}
 
 @media (prefers-reduced-motion:reduce){

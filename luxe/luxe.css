@@ -19,8 +19,12 @@
 .lx-reveal.lx-in{opacity:1;transform:none;}
 
 
-/* ---------- paper grain ---------- */
-body::after{content:"";position:fixed;inset:0;z-index:9000;pointer-events:none;background:url(grain.png) repeat;background-size:96px 96px;opacity:.45;}
+/* ---------- paper grain ----------
+   Part of the page's own backgrounds (the paper and the cream, beige and dark
+   bands) rather than a layer over the whole screen, so it never lies over
+   photos or the hero video. grain-soft.png is grain.png at the 45% strength
+   it had as an overlay. */
+body,.about-v2-copy,.psx-hero,.dx-tabs,.dx-band,.dx-ba,.blood-band,.psx-results,footer{background-image:url(grain-soft.png);background-size:96px 96px;}
 
 /* ---------- gold hairline divider with the Dolce mark ---------- */
 .lx-divider{display:flex;align-items:center;justify-content:center;gap:clamp(16px,2.4vw,28px);margin:clamp(56px,8vw,96px) auto 0;padding-inline:20px;}
