@@ -55,6 +55,8 @@ html[dir=rtl] .ivB-row::before{left:auto;right:0;}
    buttons grow and left English words (WhatsApp) sitting high; a set line
    height keeps them the same size as in English */
 html[dir=rtl] :is(.btn,.psx-btn,.pol-btn,.nav-app-btn,.foot-wa-btn,.pol-book-btn,.pol-more,.copy-email-btn,.dx-tag,.pol-nav .back){line-height:1.25;}
+/* the Copy button sits to the left of the e-mail address, so its gap moves to its right */
+html[dir=rtl] .copy-email-btn{margin-left:0;margin-right:10px;}
 /* English words keep the letter spacing they have on the English pages */
 html[dir=rtl] :is(.btn,.psx-btn,.pol-btn,.nav-app-btn,.foot-wa-btn,.pol-book-btn,.pol-more) bdi{letter-spacing:.12em !important;}
 html[dir=rtl] :is(.eyebrow,.dx-eyebrow,.dx-tabs a,.dx-ba-card figcaption,.dx-stage-cap,.ivB-count,.family-label) bdi{letter-spacing:.14em !important;}

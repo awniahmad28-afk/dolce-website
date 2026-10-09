@@ -181,24 +181,23 @@
   .pol-btn-dark{background:var(--pol-ink); color:var(--pol-beige);}
   .pol-btn-dark-outline{color:var(--pol-ink); border:1px solid rgba(59,42,30,.4);}
 
-  /* visit / contact */
-  .pol-visit{background:var(--pol-beige); text-align:center;}
+  /* visit: the closing words before the footer (contact details are in the footer) */
+  .pol-visit{background:var(--pol-beige); text-align:center; padding-top:clamp(84px,10vw,128px); padding-bottom:clamp(84px,10vw,128px);}
   .pol-visit .pol-section-head p.eyebrow{color:var(--pol-gold);}
-  .pol-visit .lede{margin-top:16px; color:#7A6650; font-size:15px;}
-  .pol-visit .tel-link{color:var(--pol-ink); text-decoration-color:var(--pol-gold);}
-  .pol-visit .copy-email-btn{border-color:var(--pol-line); color:#7A6650;}
-  .pol-visit .copy-email-btn:hover{background:var(--pol-ink); color:var(--pol-beige); border-color:var(--pol-ink);}
-  .pol-visit .copy-email-btn.copied{background:var(--pol-gold); color:var(--pol-ink); border-color:var(--pol-gold);}
-  .pol-map{margin:28px auto 0;width:420px;max-width:100%;aspect-ratio:16/9;border-radius:10px;overflow:hidden;border:1px solid var(--pol-line);}
-  .pol-map iframe{width:100%;height:100%;border:0;display:block;}
-  .pol-map-link{display:inline-block;margin-top:14px;font-size:12px;font-weight:600;letter-spacing:.03em;color:var(--pol-ink);text-decoration:underline;text-underline-offset:2px;}
-  .pol-map-link:hover{color:var(--pol-gold);}
+  .pol-visit .pol-section-head h2{font-size:clamp(38px,5vw,58px); line-height:1.1; margin-top:18px;}
+  .pol-visit .lede{max-width:520px; margin:22px auto 0; color:#7A6650; font-size:16px; line-height:1.8;}
+  .pol-visit-rule{width:44px; height:1px; background:var(--pol-gold); margin:30px auto 0; opacity:.8;}
 
   /* footer */
   .pol-footer{background:var(--pol-emerald-dark); padding:56px clamp(24px,5vw,64px) 32px; text-align:center; color:#C9B99A;}
   .pol-footer img{height:26px; margin:0 auto;}
   .pol-footer .line1{margin-top:26px; font-size:13px; font-weight:300;}
+  .pol-footer .addr{margin-top:22px; font-size:13px; font-weight:300; line-height:1.7;}
   .pol-footer .phone{margin-top:8px; font-family:var(--pol-font-display); font-size:19px; color:#F1E9DA;}
+  .pol-footer .mail{margin-top:6px; font-size:13.5px; color:#F1E9DA;}
+  .pol-footer .mail .tel-link{color:inherit;}
+  .pol-footer .directions{display:inline-block; margin-top:14px; font-size:11.5px; font-weight:600; letter-spacing:.08em; text-transform:uppercase; color:var(--pol-gold); text-decoration:none; border-bottom:1px solid rgba(198,161,91,.5); padding-bottom:2px; transition:color .2s ease, border-color .2s ease;}
+  .pol-footer .directions:hover{color:#F1E9DA; border-color:#F1E9DA;}
   .pol-footer .bottom{margin-top:34px; padding-top:22px; border-top:1px solid rgba(198,161,91,.2); font-size:11.5px; display:flex; justify-content:center; gap:20px; flex-wrap:wrap; font-weight:300;}
   .pol-footer .bottom a{color:inherit; text-decoration:underline;}
 </style>
@@ -209,7 +208,7 @@
 <link rel="alternate" hreflang="ar" href="https://www.dolceclinic.com/polished-ar.html">
 <link rel="alternate" hreflang="x-default" href="https://www.dolceclinic.com/polished.html">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+Arabic:wght@500&amp;text=%DA%A9%D9%88%D8%B1%D8%AF%DB%8C%D8%A7%D9%84%D8%B9%D8%B1%D8%A8%D9%8A%D8%A9&amp;display=swap">
-<link rel="stylesheet" href="i18n/i18n.css?v=9">
+<link rel="stylesheet" href="i18n/i18n.css?v=10">
 </head>
 <body>
 <script>/* First visit in a session: the Polished logo draws itself in, then fades
@@ -380,21 +379,20 @@
 
 <section id="visit" class="pol-visit pol-section">
   <div class="pol-section-head">
-    <p class="eyebrow">Visit</p>
-    <h2>Find Polished</h2>
-    <p class="lede">Polished by Dolce &mdash; Park View, Erbil, Iraq. Located alongside Dolce Aesthetic Clinic.</p>
-    <p class="lede"><a class="tel-link" href="tel:+9647519000200">+964 751 900 0200</a>&nbsp;&middot;&nbsp;<a class="tel-link" href="mailto:polished.erbil@gmail.com">polished.erbil@gmail.com</a><button type="button" class="copy-email-btn" data-email="polished.erbil@gmail.com" aria-label="Copy email address" title="Copy email address"><span>⧉</span> Copy</button></p>
-    <div class="pol-map">
-      <iframe src="https://maps.google.com/maps?q=Polished+by+Dolce+6X5M%2BC9+Erbil&z=17&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Polished by Dolce location"></iframe>
-    </div>
-    <a class="pol-map-link" href="https://www.google.com/maps/search/?api=1&query=Polished+by+Dolce+6X5M%2BC9+Erbil" target="_blank" rel="noopener">Get Directions →</a>
+    <p class="eyebrow">Visit us</p>
+    <h2>We&rsquo;ll save you a chair</h2>
+    <p class="lede">Step into Polished at Park View, Erbil, where hair, nails and beauty are cared for with the same precision as Dolce.</p>
+    <div class="pol-visit-rule"></div>
   </div>
 </section>
 
 <footer class="pol-footer">
   <a class="pol-sign" href="index.html" aria-label="Polished is a Dolce brand: visit Dolce Aesthetic Clinic"><span class="l"></span><em>by</em><img src="logo.png" alt="Dolçe Aesthetic Clinic"><span class="r"></span></a>
   <p class="line1">Polished by Dolce &mdash; a Dolce brand</p>
+  <p class="addr">Park View, Erbil, Iraq &middot; alongside Dolce Aesthetic Clinic</p>
   <p class="phone"><a href="tel:+9647519000200" style="color:inherit;">+964 751 900 0200</a></p>
+  <p class="mail"><a class="tel-link" href="mailto:polished.erbil@gmail.com">polished.erbil@gmail.com</a><button type="button" class="copy-email-btn" data-email="polished.erbil@gmail.com" aria-label="Copy email address" title="Copy email address"><span>⧉</span> Copy</button></p>
+  <a class="directions" href="https://www.google.com/maps/search/?api=1&query=Polished+by+Dolce+6X5M%2BC9+Erbil" target="_blank" rel="noopener">Get Directions →</a>
   <div class="bottom">
     <span><a href="index.html">&larr; Back to Dolce Clinic</a></span>
   </div>

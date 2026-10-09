@@ -1437,22 +1437,17 @@
  {
   "page": "polished",
   "kind": "html",
-  "en": "Visit"
+  "en": "Visit us"
  },
  {
   "page": "polished",
   "kind": "html",
-  "en": "Find Polished"
+  "en": "We’ll save you a chair"
  },
  {
   "page": "polished",
   "kind": "html",
-  "en": "Polished by Dolce — Park View, Erbil, Iraq. Located alongside Dolce Aesthetic Clinic."
- },
- {
-  "page": "polished",
-  "kind": "html",
-  "en": "<a class=\"tel-link\" href=\"tel:+9647519000200\">+964 751 900 0200</a> · <a class=\"tel-link\" href=\"mailto:polished.erbil@gmail.com\">polished.erbil@gmail.com</a><button aria-label=\"Copy email address\" class=\"copy-email-btn\" data-email=\"polished.erbil@gmail.com\" title=\"Copy email address\" type=\"button\"><span>⧉</span> Copy</button>"
+  "en": "Step into Polished at Park View, Erbil, where hair, nails and beauty are cared for with the same precision as Dolce."
  },
  {
   "page": "polished",
@@ -1463,6 +1458,16 @@
   "page": "polished",
   "kind": "html",
   "en": "Polished by Dolce — a Dolce brand"
+ },
+ {
+  "page": "polished",
+  "kind": "html",
+  "en": "Park View, Erbil, Iraq · alongside Dolce Aesthetic Clinic"
+ },
+ {
+  "page": "polished",
+  "kind": "html",
+  "en": "<a class=\"tel-link\" href=\"mailto:polished.erbil@gmail.com\">polished.erbil@gmail.com</a><button aria-label=\"Copy email address\" class=\"copy-email-btn\" data-email=\"polished.erbil@gmail.com\" title=\"Copy email address\" type=\"button\"><span>⧉</span> Copy</button>"
  },
  {
   "page": "polished",

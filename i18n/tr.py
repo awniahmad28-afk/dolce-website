@@ -376,6 +376,16 @@ EXTRA = {
     'Abdominal liposuction': None,
     '<span>Day of surgery</span><span>10 days after</span>':
         ("<1>ڕۆژی نەشتەرگەری</1><2>10 ڕۆژ دوای نەشتەرگەری</2>", "<1>يوم الجراحة</1><2>بعد 10 أيام</2>"),
+    # Polished: closing words, and the contact details now in the footer
+    'Visit us': ("سەردانمان بکە", "زورونا"),
+    'We’ll save you a chair': ("کورسییەکت بۆ ئامادە دەکەین", "سنحجز لك مقعدًا"),
+    'Step into Polished at Park View, Erbil, where hair, nails and beauty are cared for with the same precision as Dolce.':
+        ("وەرە ناو Polished لە Park View لە هەولێر، کە تێیدا قژ، نینۆک و جوانی بە هەمان وردیی Dolce گرنگییان پێدەدرێت.",
+         "تفضّل بزيارة Polished في Park View بأربيل، حيث نعتني بالشعر والأظافر والجمال بدقة Dolce نفسها."),
+    'Park View, Erbil, Iraq · alongside Dolce Aesthetic Clinic':
+        ("Park View، هەولێر، عێراق · لە تەنیشت کلینیکی جوانکاریی Dolce", "Park View، أربيل، العراق · بجوار عيادة Dolce للتجميل"),
+    '<a class="tel-link" href="mailto:polished.erbil@gmail.com">polished.erbil@gmail.com</a><button aria-label="Copy email address" class="copy-email-btn" data-email="polished.erbil@gmail.com" title="Copy email address" type="button"><span>⧉</span> Copy</button>':
+        ("<1>polished.erbil@gmail.com</1><2><3>⧉</3> کۆپی</2>", "<1>polished.erbil@gmail.com</1><2><3>⧉</3> نسخ</2>"),
 }
 
 # Words the scripts put on screen (copy button, app popup, photo viewer, WhatsApp button).
