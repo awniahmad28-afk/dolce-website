@@ -193,7 +193,17 @@
   .pol-footer{background:var(--pol-emerald-dark); padding:56px clamp(24px,5vw,64px) 32px; text-align:center; color:#C9B99A;}
   .pol-footer img{height:26px; margin:0 auto;}
   .pol-footer .line1{margin-top:26px; font-size:13px; font-weight:300;}
-  .pol-footer .addr{margin-top:22px; font-size:13px; font-weight:300; line-height:1.7;}
+  /* contact details beside the map (stacked on phones) */
+  .pol-foot-visit{display:flex; align-items:center; justify-content:center; gap:clamp(32px,5vw,64px); max-width:860px; margin:30px auto 0;}
+  .pol-foot-contact{flex:1 1 0; min-width:0;}
+  .pol-foot-map{flex:0 0 380px; aspect-ratio:16/10; border-radius:10px; overflow:hidden; border:1px solid rgba(198,161,91,.4); box-shadow:0 22px 44px -26px rgba(0,0,0,.65);}
+  .pol-foot-map iframe{width:100%; height:100%; border:0; display:block;}
+  @media (max-width:760px){
+    .pol-foot-visit{flex-direction:column; gap:26px;}
+    .pol-foot-contact{flex:none;}
+    .pol-foot-map{flex:none; width:100%; max-width:420px;}
+  }
+  .pol-footer .addr{margin-top:0; font-size:13px; font-weight:300; line-height:1.7;}
   .pol-footer .phone{margin-top:8px; font-family:var(--pol-font-display); font-size:19px; color:#F1E9DA;}
   .pol-footer .mail{margin-top:6px; font-size:13.5px; color:#F1E9DA;}
   .pol-footer .mail .tel-link{color:inherit;}
@@ -376,10 +386,17 @@
 <footer class="pol-footer">
 <a aria-label="Polished یەکێکە لە براندەکانی Dolce: سەردانی کلینیکی جوانکاریی Dolce بکە" class="pol-sign" href="index-ku.html"><span class="l"></span><em><bdi>by</bdi></em><img alt="کلینیکی جوانکاریی Dolçe" src="logo.png"/><span class="r"></span></a>
 <p class="line1">Polished by Dolce — براندێکی Dolce</p>
+<div class="pol-foot-visit">
+<div class="pol-foot-contact">
 <p class="addr">Park View، هەولێر، عێراق · لە تەنیشت کلینیکی جوانکاریی Dolce</p>
 <p class="phone"><a href="tel:+9647519000200" style="color:inherit;"><bdi dir="ltr">+964 751 900 0200</bdi></a></p>
 <p class="mail"><a class="tel-link" href="mailto:polished.erbil@gmail.com"><bdi>polished.erbil@gmail.com</bdi></a><button aria-label="کۆپیکردنی ناونیشانی ئیمەیڵ" class="copy-email-btn" data-email="polished.erbil@gmail.com" title="کۆپیکردنی ناونیشانی ئیمەیڵ" type="button"><span>⧉</span> کۆپی</button></p>
 <a class="directions" href="https://www.google.com/maps/search/?api=1&amp;query=Polished+by+Dolce+6X5M%2BC9+Erbil" rel="noopener" target="_blank">ڕێنمایی ڕێگا ←</a>
+</div>
+<div class="pol-foot-map">
+<iframe loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://maps.google.com/maps?q=Polished+by+Dolce+6X5M%2BC9+Erbil&amp;z=17&amp;output=embed" title="شوێنی Polished by Dolce"></iframe>
+</div>
+</div>
 <div class="bottom"><span><a href="index-ku.html">→ گەڕانەوە بۆ کلینیکی Dolce</a></span></div>
 </footer>
 <script>

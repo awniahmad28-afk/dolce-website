@@ -378,6 +378,7 @@ EXTRA = {
         ("<1>ڕۆژی نەشتەرگەری</1><2>10 ڕۆژ دوای نەشتەرگەری</2>", "<1>يوم الجراحة</1><2>بعد 10 أيام</2>"),
     # Polished: closing words, and the contact details now in the footer
     'Visit us': ("سەردانمان بکە", "زورونا"),
+    'Polished by Dolce location': ("شوێنی Polished by Dolce", "موقع Polished by Dolce"),
     'We’ll save you a chair': ("کورسییەکت بۆ ئامادە دەکەین", "سنحجز لك مقعدًا"),
     'Step into Polished at Park View, Erbil, where hair, nails and beauty are cared for with the same precision as Dolce.':
         ("وەرە ناو Polished لە Park View لە هەولێر، کە تێیدا قژ، نینۆک و جوانی بە هەمان وردیی Dolce گرنگییان پێدەدرێت.",
