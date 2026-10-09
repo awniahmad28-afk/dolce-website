@@ -203,6 +203,15 @@
     .pol-foot-contact{flex:none;}
     .pol-foot-map{flex:none; width:100%; max-width:420px;}
   }
+  /* computers: contact details in one centred column, the map as a tile in
+     the footer's bottom-right corner (same corner in every language), and
+     the dividing line stopping short of it on both sides */
+  @media (min-width:1100px){
+    .pol-footer{position:relative;}
+    .pol-foot-visit{display:block; max-width:none; margin-top:26px;}
+    .pol-foot-map{position:absolute; right:clamp(24px,5vw,64px); bottom:32px; width:280px;}
+    .pol-footer .bottom{margin-left:304px; margin-right:304px;}
+  }
   .pol-footer .addr{margin-top:0; font-size:13px; font-weight:300; line-height:1.7;}
   .pol-footer .phone{margin-top:8px; font-family:var(--pol-font-display); font-size:19px; color:#F1E9DA;}
   .pol-footer .mail{margin-top:6px; font-size:13.5px; color:#F1E9DA;}
