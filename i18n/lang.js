@@ -6,8 +6,9 @@
   var host = document.querySelector('.head-right, .pol-head-right');
   if (!host || host.querySelector('.lang-pick')) return;
 
+  // the page name, with or without ".html" (short links such as /polished)
   var file = location.pathname.split('/').pop() || 'index.html';
-  var m = file.match(/^(.*?)(?:-(ku|ar))?\.html?$/);
+  var m = file.match(/^(.+?)(?:-(ku|ar))?(?:\.html?)?$/);
   var base = (m && m[1]) || 'index';
   var cur = (m && m[2]) || 'en';
   var langs = [
