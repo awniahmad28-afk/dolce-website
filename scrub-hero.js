@@ -179,7 +179,11 @@
       var available = nearestLoaded(target);
       if (available) draw(available);
     }
-    if (bar) bar.style.width = (progress * 100) + '%';
+    if (bar){
+      bar.style.width = (progress * 100) + '%';
+      // the line goes away once the video has played to the end
+      bar.parentNode.classList.toggle('is-done', progress >= 1);
+    }
     return progress;
   }
 
