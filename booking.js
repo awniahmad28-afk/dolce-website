@@ -36,10 +36,11 @@
   });
 })();
 
-// App Store / Google Play buttons: the app isn't out yet, so they open a
-// "Dolce+ - Coming soon" popup over a faded, blurred page.
+// Store buttons for a store the app isn't in yet (Google Play) open a
+// "Dolce+ - Coming soon" popup over a faded, blurred page; the App Store
+// buttons are plain links to the app's page.
 (function(){
-  var badges = document.querySelectorAll('.app-badge, .foot-app-badge');
+  var badges = document.querySelectorAll('.app-badge:not([href^="https://apps.apple.com"]), .foot-app-badge:not([href^="https://apps.apple.com"])');
   if (!badges.length) return;
   var modal = null, lastFocus = null;
   function build(){

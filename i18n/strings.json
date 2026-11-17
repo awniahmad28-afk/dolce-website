@@ -177,7 +177,7 @@
  {
   "page": "index",
   "kind": "html",
-  "en": "Coming soon"
+  "en": "Now on the App Store"
  },
  {
   "page": "index",
@@ -343,6 +343,11 @@
   "page": "index",
   "kind": "attr",
   "en": "The Dolce+ app: choose your destination — Dolce, Polished or Core"
+ },
+ {
+  "page": "index",
+  "kind": "attr",
+  "en": "Coming soon"
  },
  {
   "page": "index",

@@ -377,6 +377,7 @@ EXTRA = {
     '<span>Day of surgery</span><span>10 days after</span>':
         ("<1>ڕۆژی نەشتەرگەری</1><2>10 ڕۆژ دوای نەشتەرگەری</2>", "<1>يوم الجراحة</1><2>بعد 10 أيام</2>"),
     # Polished: closing words, and the contact details now in the footer
+    'Now on the App Store': ("ئێستا لە App Store بەردەستە", "متوفر الآن على App Store"),
     'Visit us': ("سەردانمان بکە", "زورونا"),
     'Polished by Dolce location': ("شوێنی Polished by Dolce", "موقع Polished by Dolce"),
     'We’ll save you a chair': ("کورسییەکت بۆ ئامادە دەکەین", "سنحجز لك مقعدًا"),
