@@ -377,6 +377,10 @@ EXTRA = {
     '<span>Day of surgery</span><span>10 days after</span>':
         ("<1>ڕۆژی نەشتەرگەری</1><2>10 ڕۆژ دوای نەشتەرگەری</2>", "<1>يوم الجراحة</1><2>بعد 10 أيام</2>"),
     # Polished: closing words, and the contact details now in the footer
+    # Polished booking row with the app button
+    '<a class="pol-btn pol-btn-dark-outline pol-call-btn" href="tel:+9647519000200">Call</a>\n<a class="pol-btn pol-btn-dark-outline" href="https://wa.me/9647519000200" rel="noopener" target="_blank">WhatsApp</a>\n<a class="pol-btn pol-btn-dark-outline" href="https://www.instagram.com/polished.erbil/?hl=en" rel="noopener" target="_blank">Instagram</a>\n<a class="pol-btn pol-btn-dark-outline" href="https://apps.apple.com/us/app/dolce/id6827982047" rel="noopener" target="_blank">Book in the App</a>':
+        ('<1>پەیوەندی بکە</1>\n<2>WhatsApp</2>\n<3>Instagram</3>\n<4>لە ئەپەکەدا نۆرە بگرە</4>',
+         '<1>اتصل</1>\n<2>WhatsApp</2>\n<3>Instagram</3>\n<4>احجز عبر التطبيق</4>'),
     'Now on the App Store': ("ئێستا لە App Store بەردەستە", "متوفر الآن على App Store"),
     'Visit us': ("سەردانمان بکە", "زورونا"),
     'Polished by Dolce location': ("شوێنی Polished by Dolce", "موقع Polished by Dolce"),
