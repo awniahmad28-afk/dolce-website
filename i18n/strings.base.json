@@ -272,7 +272,7 @@
  {
   "page": "index",
   "kind": "html",
-  "en": "Prefer email? Write to <a class=\"tel-link\" href=\"mailto:hello@dolceclinic.com\">hello@dolceclinic.com</a><button aria-label=\"Copy email address\" class=\"copy-email-btn\" data-email=\"hello@dolceclinic.com\" title=\"Copy email address\" type=\"button\"><span>⧉</span> Copy</button>"
+  "en": "Prefer email? Write to <a class=\"tel-link\" href=\"mailto:dolce.erbil@gmail.com\">dolce.erbil@gmail.com</a><button aria-label=\"Copy email address\" class=\"copy-email-btn\" data-email=\"dolce.erbil@gmail.com\" title=\"Copy email address\" type=\"button\"><span>⧉</span> Copy</button>"
  },
  {
   "page": "index",
